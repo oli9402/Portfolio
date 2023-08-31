@@ -1,11 +1,16 @@
 ---
-title: "Portfolio"
+title: "Oliver Zingg"
+image: oli.jpg
+resources: cvm.pdf
+about: 
+  template: jolla
+  image-shape: round
+  image-width: 15em
+  links:
+    - text: Email
+      icon: envelope
+      href: mailto:oliver9402@gmail.com
+    - text: resume
+      icon: file-text
+      href: cvm.pdf
 ---
-
-This is a Quarto website.
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
-
-```{r}
-1 + 1
-```

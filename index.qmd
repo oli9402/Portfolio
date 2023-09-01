@@ -15,7 +15,8 @@ about:
       href: cvm.pdf
     - text: LinkedIn
       icon: linkedin
-      href: www.youtube.com
+      href: https://www.linkedin.com/in/oliver-zingg-321b0228a/
+    - text: Twitter
+      icon: twitter
+      href: https://twitter.com/oliver_zingg
 ---
-
-dsadsadsa

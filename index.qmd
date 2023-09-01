@@ -13,6 +13,9 @@ about:
     - text: resume
       icon: file-text
       href: cvm.pdf
+    - text: LinkedIn
+      icon: linkedin
+      href: www.youtube.com
 ---
 
 dsadsadsa

@@ -1,7 +1,6 @@
 ---
 title: "Oliver Zingg"
 image: oli.jpg
-resources: cvm.pdf
 about: 
   template: trestles
   image-shape: round
@@ -10,9 +9,6 @@ about:
     - text: Email
       icon: envelope
       href: mailto:oliver9402@gmail.com
-    - text: resume
-      icon: file-text
-      href: cvm.pdf
     - text: LinkedIn
       icon: linkedin
       href: https://www.linkedin.com/in/oliver-zingg-321b0228a/

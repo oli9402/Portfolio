@@ -2,10 +2,18 @@
 title: "About"
 ---
 
-About this site
+:::{.panel-tabset}
 
-```{r}
-1 + 1
-```
+# Skills
 
-this is a test
+**Programming** | R | Matlab | C | Python
+
+\*\*Programme\*\* \| RStudio \| SPSS \| LaTex \| MS-Office \| Abelton Live \| Markdown
+
+\# Sprachkenntnisse
+
+\*\*Englisch\*\* \| Fliessend
+
+\*\*Deutsch\*\* \| Fliessend
+
+:::

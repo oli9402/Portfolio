@@ -20,13 +20,18 @@ about:
       icon: twitter
       href: https://twitter.com/oliver_zingg
   id: pcc
+
 ---
+
+
+Willkommen auf meiner Webseite (working progress), die ich mit Quarto und Rstudio erstellt habe. 
+
 
 :::{.panel-tabset}
 
 # Ausbildung
 
-**M.Sc. in Psychologie** | September 2021 – Current | Universität Zürich | Praktrikum noch offen
+**M.Sc. in Psychologie** | September 2021 – Current | Universität Zürich | Praktikum noch ausstehend
 
 **B.Sc. in Psychologie** | September 2018 - Juli 2021 | Universität Zürich | Nebenfach: Filmwissenschaft
 
@@ -38,27 +43,9 @@ about:
 
 **Vebego** ||
 
-# Current Status
+# Aktueller Status
 
 Zur Zeit suche ich nach einem Praktikum im Bereich Markforschung. Nach einem Praktikum von 3 Monaten oder länger erhalte ich den M.Sc. in Psychologie.  
 :::
 
-:::{.panel-tabset}
 
-# Skills
-
-**Programming** | Python | Jupyter | nbdev | Quarto | fastai | PyTorch | Scikit Learn | Pandas | NumPy
-
-**3D Computer Graphics** | Blender
-
-**Teaching** | Can teach in a logical manner that fosters understanding and the solidification of concepts.
-
-
-
-
-# Known Languages
-
-**Englisch** | Native level fluency.
-
-**Deutsch** | 
-:::

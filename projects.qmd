@@ -1,0 +1,20 @@
+---
+title: "Projects"
+format: 
+  html:
+    code-fold: true
+---
+
+## Bachelorarbeit 
+
+My bachelor thesis *"Comparison between Support Vector Machine and Convolutional Neural Network for Alzheimer's Disease Classification"* can be found [here](https://github.com/oli9402/Bachelorarbeit_UZH). 
+
+grade: 6 
+
+## Masterarbeit 
+
+My master thesis *"Investigating the Neuronal Basis of Learning Processes and Memory Formation in Children and Adolescents with Various Psychiatric Disorders"* can be found [here](https://github.com/oli9402/Masterarbeit_UZH)
+
+grade: 6
+
+## Project 1: 

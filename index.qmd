@@ -3,7 +3,7 @@ title: "Oliver Zingg"
 image: oli.jpg
 resources: cvm.pdf
 about: 
-  template: jolla
+  template: trestles
   image-shape: round
   image-width: 15em
   links:
@@ -19,4 +19,13 @@ about:
     - text: Twitter
       icon: twitter
       href: https://twitter.com/oliver_zingg
+  id: pcc
 ---
+
+:::{#ppc}
+B.Sc. Psychologie UZH
+
+Auf der suche nach einem Praktikum, um den Grad Master of Science in Psychologie zu erhalten.
+Help me out :D
+
+:::

@@ -4,13 +4,48 @@
     "href": "index.html",
     "title": "Oliver Zingg",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "B.Sc. Psychologie UZH\nAuf der suche nach einem Praktikum, um den Grad Master of Science in Psychologie zu erhalten. Help me out :D"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "About this site\n\n1 + 1\n\n[1] 2\n\n\nthis is a test"
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "My bachelor thesis “Comparison between Support Vector Machine and Convolutional Neural Network for Alzheimer’s Disease Classification” can be found here.\ngrade: 6"
+  },
+  {
+    "objectID": "projects.html#project-1-bachelorarbeit",
+    "href": "projects.html#project-1-bachelorarbeit",
+    "title": "Projects",
+    "section": "",
+    "text": "My bachelor thesis “Comparison between Support Vector Machine and Convolutional Neural Network for Alzheimer’s Disease Classification” can be found here.\ngrade: 6"
+  },
+  {
+    "objectID": "projects.html#bachelorarbeit",
+    "href": "projects.html#bachelorarbeit",
+    "title": "Projects",
+    "section": "",
+    "text": "My bachelor thesis “Comparison between Support Vector Machine and Convolutional Neural Network for Alzheimer’s Disease Classification” can be found here.\ngrade: 6"
+  },
+  {
+    "objectID": "projects.html#masterarbeit",
+    "href": "projects.html#masterarbeit",
+    "title": "Projects",
+    "section": "Masterarbeit",
+    "text": "Masterarbeit\nMy master thesis “Investigating the Neuronal Basis of Learning Processes and Memory Formation in Children and Adolescents with Various Psychiatric Disorders” can be found here\ngrade: 6"
+  },
+  {
+    "objectID": "projects.html#project-1",
+    "href": "projects.html#project-1",
+    "title": "Projects",
+    "section": "Project 1:",
+    "text": "Project 1:"
   }
 ]

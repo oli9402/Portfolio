@@ -18,7 +18,7 @@
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "My bachelor thesis “Comparison between Support Vector Machine and Convolutional Neural Network for Alzheimer’s Disease Classification” can be found here.\ngrade: 6"
+    "text": "My bachelor thesis “Comparison between Support Vector Machine and Convolutional Neural Network for Alzheimer’s Disease Classification” can be found on GitHub.\n\n\nTopic: Using machine learning for analysing MRI images.\nMethod: Systematic review\nMain pitfalls: Overfitting, unknown ground truth, black box\nGrade: 6\n\n\n\nThere is a rise in using machine learning to analyse MRI images to help identifying Alzheimer’s Disease. In my thesis the current literature on this topic was systematically reviewed. More specifically, two mayor types of machine learning methods were compared: Support Vector Machine and Convolutional Neural Network.\n\n\n\nMachine learning provides big potential in a lot of areas. Still, there are many pitfalls that need to be addressed. A main problem is overfitting where a statistical model learns random noise that is tied to the training data. Many studies use methods to account for overfitting (e.g., crossvalidiation or independent test data). Nevertheless, inexpensive diagnostical questionnaires tend to perform equally well as more expensive machine learning methods."
   },
   {
     "objectID": "projects.html#project-1-bachelorarbeit",
@@ -32,14 +32,14 @@
     "href": "projects.html#bachelorarbeit",
     "title": "Projects",
     "section": "",
-    "text": "My bachelor thesis “Comparison between Support Vector Machine and Convolutional Neural Network for Alzheimer’s Disease Classification” can be found here.\ngrade: 6"
+    "text": "My bachelor thesis “Comparison between Support Vector Machine and Convolutional Neural Network for Alzheimer’s Disease Classification” can be found on GitHub.\n\n\nTopic: Using machine learning for analysing MRI images.\nMethod: Systematic review\nMain pitfalls: Overfitting, unknown ground truth, black box\nGrade: 6\n\n\n\nThere is a rise in using machine learning to analyse MRI images to help identifying Alzheimer’s Disease. In my thesis the current literature on this topic was systematically reviewed. More specifically, two mayor types of machine learning methods were compared: Support Vector Machine and Convolutional Neural Network.\n\n\n\nMachine learning provides big potential in a lot of areas. Still, there are many pitfalls that need to be addressed. A main problem is overfitting where a statistical model learns random noise that is tied to the training data. Many studies use methods to account for overfitting (e.g., crossvalidiation or independent test data). Nevertheless, inexpensive diagnostical questionnaires tend to perform equally well as more expensive machine learning methods."
   },
   {
     "objectID": "projects.html#masterarbeit",
     "href": "projects.html#masterarbeit",
     "title": "Projects",
     "section": "Masterarbeit",
-    "text": "Masterarbeit\nMy master thesis “Investigating the Neuronal Basis of Learning Processes and Memory Formation in Children and Adolescents with Various Psychiatric Disorders” can be found here\ngrade: 6"
+    "text": "Masterarbeit\nMy master thesis “Investigating the Neuronal Basis of Learning Processes and Memory Formation in Children and Adolescents with Various Psychiatric Disorders” can be found on GitHub\n\nKey Takeaways\nTopic: Using EEG to track successful learning in children and adolescents with psychiatric disorders\nMethod: Analyzing existing data set\nStand out: Large data set (n &gt; 1000),\nMain pitfalls: Model fit, confoundation, validity of EEG\nGrade: 6\n\n\nWhat was is about?\n\n\nWhat i’ve learned?"
   },
   {
     "objectID": "projects.html#project-1",

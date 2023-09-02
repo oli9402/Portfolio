@@ -22,10 +22,43 @@ about:
   id: pcc
 ---
 
-:::{#ppc}
-B.Sc. Psychologie UZH
+:::{.panel-tabset}
 
-Auf der suche nach einem Praktikum, um den Grad Master of Science in Psychologie zu erhalten.
-Help me out :D
+# Ausbildung
 
+**M.Sc. in Psychologie** | September 2021 – Current | Universität Zürich | Praktrikum noch offen
+
+**B.Sc. in Psychologie** | September 2018 - Juli 2021 | Universität Zürich | Nebenfach: Filmwissenschaft
+
+**Assessmentjahr Wirtschaftsinformatik** | September 2017 - Juli 2018 | Universität Zürich 
+
+
+
+# Berufserfahrung
+
+**Vebego** ||
+
+# Current Status
+
+Zur Zeit suche ich nach einem Praktikum im Bereich Markforschung. Nach einem Praktikum von 3 Monaten oder länger erhalte ich den M.Sc. in Psychologie.  
+:::
+
+:::{.panel-tabset}
+
+# Skills
+
+**Programming** | Python | Jupyter | nbdev | Quarto | fastai | PyTorch | Scikit Learn | Pandas | NumPy
+
+**3D Computer Graphics** | Blender
+
+**Teaching** | Can teach in a logical manner that fosters understanding and the solidification of concepts.
+
+
+
+
+# Known Languages
+
+**Englisch** | Native level fluency.
+
+**Deutsch** | 
 :::

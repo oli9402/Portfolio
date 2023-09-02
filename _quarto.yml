@@ -5,11 +5,18 @@ project:
 website:
   title: "Oliver Zingg"
   navbar:
+    pinned: True
     left:
-      - href: index.qmd
+      - icon: house-door
+        href: index.qmd
         text: Home
-      - about.qmd
-      - projects.qmd
+      - icon: file-person
+        href: about.qmd
+      - icon: list-task
+        href: projects.qmd
+    tools:
+      - icon: code-slash
+        href: https://github.com/oli9402/Portfolio
 
 format:
   html:

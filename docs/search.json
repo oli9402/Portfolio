@@ -1,12 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Oliver Zingg",
-    "section": "",
-    "text": "Willkommen auf meiner Webseite (working progress), die ich mit Quarto und Rstudio erstellt habe.\n\nAusbildungBerufserfahrungAktueller Status\n\n\nM.Sc. in Psychologie | September 2021 – Current | Universität Zürich | Praktikum noch ausstehend\nB.Sc. in Psychologie | September 2018 - Juli 2021 | Universität Zürich | Nebenfach: Filmwissenschaft\nAssessmentjahr Wirtschaftsinformatik | September 2017 - Juli 2018 | Universität Zürich\n\n\nVebego ||\n\n\nZur Zeit suche ich nach einem Praktikum im Bereich Markforschung. Nach einem Praktikum von 3 Monaten oder länger erhalte ich den M.Sc. in Psychologie."
-  },
-  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
@@ -14,53 +7,18 @@
     "text": "Skills\n\n\nProgramming | R | Matlab | C | Python\n**Programme** | RStudio | SPSS | LaTex | MS-Office | Abelton Live | Markdown\n# Sprachkenntnisse\n**Englisch** | Fliessend\n**Deutsch** | Fliessend"
   },
   {
-    "objectID": "projects.html",
-    "href": "projects.html",
-    "title": "Projects",
-    "section": "",
-    "text": "Masterarbeit\n\n\n\n\n\n\n\nData Analysis\n\n\nMultilevel Analysis\n\n\nEEG\n\n\nPsychiatric Disorders\n\n\n\n\n\n\n\n\n\n\n\nJun 1, 2023\n\n\nOliver Zingg\n\n\n\n\n\n\n  \n\n\n\n\nBachelorarbeit\n\n\n\n\n\n\n\nMachine Learning\n\n\nSystematic review\n\n\nMRI\n\n\n\n\n\n\n\n\n\n\n\nJun 1, 2021\n\n\nOliver Zingg\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "projects.html#project-1-bachelorarbeit",
-    "href": "projects.html#project-1-bachelorarbeit",
-    "title": "Projects",
-    "section": "",
-    "text": "My bachelor thesis “Comparison between Support Vector Machine and Convolutional Neural Network for Alzheimer’s Disease Classification” can be found here.\ngrade: 6"
-  },
-  {
-    "objectID": "projects.html#bachelorarbeit",
-    "href": "projects.html#bachelorarbeit",
-    "title": "Projects",
-    "section": "",
-    "text": "My bachelor thesis “Comparison between Support Vector Machine and Convolutional Neural Network for Alzheimer’s Disease Classification” can be found on GitHub.\n\n\nTopic: Using machine learning for analysing MRI images.\nMethod: Systematic review\nMain pitfalls: Overfitting, unknown ground truth, black box\nGrade: 6\n\n\n\nThere is a rise in using machine learning to analyse MRI images to help identifying Alzheimer’s Disease. In my thesis the current literature on this topic was systematically reviewed. More specifically, two mayor types of machine learning methods were compared: Support Vector Machine and Convolutional Neural Network.\n\n\n\nMachine learning provides big potential in a lot of areas. Still, there are many pitfalls that need to be addressed. A main problem is overfitting where a statistical model learns random noise that is tied to the training data. Many studies use methods to account for overfitting (e.g., crossvalidiation or independent test data). Nevertheless, inexpensive diagnostical questionnaires tend to perform equally well as more expensive machine learning methods."
-  },
-  {
-    "objectID": "projects.html#masterarbeit",
-    "href": "projects.html#masterarbeit",
-    "title": "Projects",
-    "section": "Masterarbeit",
-    "text": "Masterarbeit\nMy master thesis “Investigating the Neuronal Basis of Learning Processes and Memory Formation in Children and Adolescents with Various Psychiatric Disorders” can be found on GitHub\n\nKey Takeaways\nTopic: Using EEG to track successful learning in children and adolescents with psychiatric disorders\nMethod: Analyzing existing data set\nStand out: Large data set (n &gt; 1000),\nMain pitfalls: Model fit, confoundation, validity of EEG\nGrade: 6\n\n\nWhat was is about?\n\n\nWhat i’ve learned?"
-  },
-  {
-    "objectID": "projects.html#project-1",
-    "href": "projects.html#project-1",
-    "title": "Projects",
-    "section": "Project 1:",
-    "text": "Project 1:"
-  },
-  {
-    "objectID": "index.html#lived-in",
-    "href": "index.html#lived-in",
+    "objectID": "index.html",
+    "href": "index.html",
     "title": "Oliver Zingg",
-    "section": "Lived in",
-    "text": "Lived in\nUnited Kingdom (5 years) | Saudi Arabia (6 years) | Pakistan (9 years)"
+    "section": "",
+    "text": "Willkommen auf meiner Webseite (working progress), die ich mit Quarto und Rstudio erstellt habe.\n\nAusbildungBerufserfahrungAktueller Status\n\n\nM.Sc. in Psychologie | September 2021 – Current | Universität Zürich | Praktikum noch ausstehend\nB.Sc. in Psychologie | September 2018 - Juli 2021 | Universität Zürich | Nebenfach: Filmwissenschaft\nAssessmentjahr Wirtschaftsinformatik | September 2017 - Juli 2018 | Universität Zürich\n\n\nVebego ||\n\n\nZur Zeit suche ich nach einem Praktikum im Bereich Markforschung. Nach einem Praktikum von 3 Monaten oder länger erhalte ich den M.Sc. in Psychologie."
   },
   {
-    "objectID": "index.html#been-to",
-    "href": "index.html#been-to",
-    "title": "Oliver Zingg",
-    "section": "Been to",
-    "text": "Been to\n\n\nEgypt* | England | France | Greece | Italy | Jordan* | Lebanon* | Malaysia | Pakistan | Qatar* | Saudi Arabia | Sri Lanka | Switzerland | Tanzania | Thailand | Turkey | UAE | Wales\n*Transit destinations; I count them still because I was technically within the country’s border."
+    "objectID": "posts/Bachelorarbeit/index.html",
+    "href": "posts/Bachelorarbeit/index.html",
+    "title": "Bachelorarbeit",
+    "section": "",
+    "text": "My bachelor thesis “Comparison between Support Vector Machine and Convolutional Neural Network for Alzheimer’s Disease Classification” can be found on GitHub.\n\nKey Takeaways\nTopic: Using machine learning for analysing MRI images.\nMethod: Systematic review\nMain pitfalls: Overfitting, unknown ground truth, black box\nGrade: 6\n\n\nWhat was is about?\nThere is a rise in using machine learning to analyse MRI images to help identifying Alzheimer’s Disease. In my thesis the current literature on this topic was systematically reviewed. More specifically, two mayor types of machine learning methods were compared: Support Vector Machine and Convolutional Neural Network.\n\n\nWhat i’ve learned?\nMachine learning provides big potential in a lot of areas. Still, there are many pitfalls that need to be addressed. A main problem is overfitting where a statistical model learns random noise that is tied to the training data. Many studies use methods to account for overfitting (e.g., crossvalidiation or independent test data). Nevertheless, inexpensive diagnostical questionnaires tend to perform equally well as more expensive machine learning methods."
   },
   {
     "objectID": "posts/Masterarbeit/index.html",
@@ -70,10 +28,10 @@
     "text": "My master thesis “Investigating the Neuronal Basis of Learning Processes and Memory Formation in Children and Adolescents with Various Psychiatric Disorders” can be found on GitHub\n\nKey Takeaways\nTopic: Using EEG to track successful learning in children and adolescents with psychiatric disorders\nMethod: Analyzing existing data set\nStand out: Large data set (n &gt; 1000),\nMain pitfalls: Model fit, confoundation, validity of EEG\nGrade: 6\n\n\nWhat was is about?\n\n\nWhat I’ve learned?"
   },
   {
-    "objectID": "posts/Bachelorarbeit/index.html",
-    "href": "posts/Bachelorarbeit/index.html",
-    "title": "Bachelorarbeit",
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
     "section": "",
-    "text": "My bachelor thesis “Comparison between Support Vector Machine and Convolutional Neural Network for Alzheimer’s Disease Classification” can be found on GitHub.\n\nKey Takeaways\nTopic: Using machine learning for analysing MRI images.\nMethod: Systematic review\nMain pitfalls: Overfitting, unknown ground truth, black box\nGrade: 6\n\n\nWhat was is about?\nThere is a rise in using machine learning to analyse MRI images to help identifying Alzheimer’s Disease. In my thesis the current literature on this topic was systematically reviewed. More specifically, two mayor types of machine learning methods were compared: Support Vector Machine and Convolutional Neural Network.\n\n\nWhat i’ve learned?\nMachine learning provides big potential in a lot of areas. Still, there are many pitfalls that need to be addressed. A main problem is overfitting where a statistical model learns random noise that is tied to the training data. Many studies use methods to account for overfitting (e.g., crossvalidiation or independent test data). Nevertheless, inexpensive diagnostical questionnaires tend to perform equally well as more expensive machine learning methods."
+    "text": "Masterarbeit\n\n\n\n\n\n\n\nData Analysis\n\n\nMixed-Effects Model\n\n\nEEG\n\n\nPsychiatric Disorders\n\n\n\n\n\n\n\n\n\n\n\nJun 1, 2023\n\n\nOliver Zingg\n\n\n\n\n\n\n  \n\n\n\n\nBachelorarbeit\n\n\n\n\n\n\n\nMachine Learning\n\n\nSystematic literature review\n\n\nMRI\n\n\n\n\n\n\n\n\n\n\n\nJun 1, 2021\n\n\nOliver Zingg\n\n\n\n\n\n\nNo matching items"
   }
 ]

@@ -4,6 +4,7 @@ project:
 
 website:
   title: "Oliver Zingg"
+  favicon: "oli.jpg"
   navbar:
     pinned: True
     left:
@@ -17,12 +18,13 @@ website:
     tools:
       - icon: code-slash
         href: https://github.com/oli9402/Portfolio
-
 format:
   html:
     theme: cosmo
     css: styles.css
     toc: true
-
+    code-link: true
+    code-fold: show
+    highlight-style: breeze
 editor: visual
 

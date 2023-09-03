@@ -1,0 +1,8 @@
+---
+title: "Simpson's Paradox"
+author: "Oliver Zingg"
+date: "Juni 2023"
+categories: [Mixed-Effects Model, Statistics, Random Effects]
+image: "MA.jpg"
+---
+

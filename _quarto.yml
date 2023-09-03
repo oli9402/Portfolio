@@ -6,6 +6,7 @@ website:
   title: "Oliver Zingg"
   favicon: "oli.jpg"
   navbar:
+    background: primary
     pinned: True
     left:
       - icon: house-door

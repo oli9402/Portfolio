@@ -1,0 +1,25 @@
+---
+title: "Masterarbeit"
+author: "Oliver Zingg"
+date: "Juni 2023"
+categories: [Data Analysis, Mixed-Effects Model, EEG, Psychiatric Disorders]
+image: "MA.jpg"
+---
+
+My master thesis **"Investigating the Neuronal Basis of Learning Processes and Memory Formation in Children and Adolescents with Various Psychiatric Disorders"** can be found on  [GitHub](https://github.com/oli9402/Masterarbeit_UZH)
+
+#### Key Takeaways
+
+Topic: Using EEG to track successful learning in children and adolescents with psychiatric disorders
+
+Method: Analyzing existing data set 
+
+Stand out: Large data set (n > 1000), 
+
+Main pitfalls: Model fit, confoundation, validity of EEG 
+
+Grade: 6 
+
+#### What was is about? 
+
+#### What I've learned?

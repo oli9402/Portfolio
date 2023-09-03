@@ -1,52 +1,12 @@
 ---
 title: "Projects"
-format: 
-  html:
-    code-fold: true
+listing: 
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: false
+  filter-ui: false
+page-layout: full
+title-block-banner: true
 ---
-
-## Bachelorarbeit 
-
-My bachelor thesis **"Comparison between Support Vector Machine and Convolutional Neural Network for Alzheimer's Disease Classification"** can be found on [GitHub](https://github.com/oli9402/Bachelorarbeit_UZH). 
-
-#### Key Takeaways
-
-Topic: Using machine learning for analysing MRI images.
-
-Method: Systematic review
-
-Main pitfalls: Overfitting, unknown ground truth, black box 
-
-Grade: 6 
-
-#### What was is about? 
-
-There is a rise in using machine learning to analyse MRI images to help identifying Alzheimer's Disease. In my thesis the current literature on this topic was systematically reviewed. More specifically, two mayor types of machine learning methods were compared: Support Vector Machine and Convolutional Neural Network.  
-
-#### What i've learned?
-
-Machine learning provides big potential in a lot of areas. Still, there are many pitfalls that need to be addressed. A main problem is overfitting where a statistical model learns random noise that is tied to the training data. Many studies use methods to account for overfitting (e.g., crossvalidiation or independent test data). Nevertheless, inexpensive diagnostical questionnaires tend to perform equally well as more expensive machine learning methods.   
-
-
-
-## Masterarbeit 
-
-My master thesis **"Investigating the Neuronal Basis of Learning Processes and Memory Formation in Children and Adolescents with Various Psychiatric Disorders"** can be found on  [GitHub](https://github.com/oli9402/Masterarbeit_UZH)
-
-#### Key Takeaways
-
-Topic: Using EEG to track successful learning in children and adolescents with psychiatric disorders
-
-Method: Analyzing existing data set 
-
-Stand out: Large data set (n > 1000), 
-
-Main pitfalls: Model fit, confoundation, validity of EEG 
-
-Grade: 6 
-
-#### What was is about? 
-
-#### What i've learned?
-
-## Project 1: 

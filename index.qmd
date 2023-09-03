@@ -22,6 +22,7 @@ about:
 
 ---
 
+Willkommen auf meiner Webseite. Hier findest du mehr Infos über mich, wie auch Beschreibungen meiner bisherigen Projekte. Für Fragen bin ich erreichbar per Email.
 
 :::{.panel-tabset}
 

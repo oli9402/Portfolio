@@ -5,7 +5,6 @@ date: "Juni 2023"
 categories: [Data Analysis, Mixed-Effects Model, EEG, Psychiatric Disorders]
 image: "MA.jpg"
 ---
-
 My master thesis **"Investigating the Neuronal Basis of Learning Processes and Memory Formation in Children and Adolescents with Various Psychiatric Disorders"** can be found on  [GitHub](https://github.com/oli9402/Masterarbeit_UZH)
 
 #### Key Takeaways

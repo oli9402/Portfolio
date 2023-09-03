@@ -5,7 +5,6 @@ date: "Juni 2021"
 categories: [Machine Learning, Systematic literature review, MRI]
 image: "BA.jpg"
 ---
-
 My bachelor thesis **"Comparison between Support Vector Machine and Convolutional Neural Network for Alzheimer's Disease Classification"** can be found on [GitHub](https://github.com/oli9402/Bachelorarbeit_UZH). 
 
 #### Key Takeaways

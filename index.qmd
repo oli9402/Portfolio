@@ -15,19 +15,19 @@ about:
     - text: Twitter
       icon: twitter
       href: https://twitter.com/oliver_zingg
+    - text: GitHub
+      icon: github
+      href: https://github.com/oli9402
   id: pcc
 
 ---
-
-
-Willkommen auf meiner Webseite (working progress), die ich mit Quarto und Rstudio erstellt habe. 
 
 
 :::{.panel-tabset}
 
 # Ausbildung
 
-**M.Sc. in Psychologie** | September 2021 – Current | Universität Zürich | Praktikum noch ausstehend
+**M.Sc. in Psychologie** | September 2021 – Aktuell | Universität Zürich | Praktikum noch ausstehend
 
 **B.Sc. in Psychologie** | September 2018 - Juli 2021 | Universität Zürich | Nebenfach: Filmwissenschaft
 
@@ -37,11 +37,15 @@ Willkommen auf meiner Webseite (working progress), die ich mit Quarto und Rstudi
 
 # Berufserfahrung
 
-**Vebego** ||
+**Kabinenreiniger (Flugzeuge)** | Juli 2019 - November 2019 | Vebego Airport AG | Zürich
 
-# Aktueller Status
+**Mitarbeiter Wäscherei Bodensee** | November 2015 - Juli 2016 | Wäscherei Bodensee AG | Münsterlingen (TG)
 
-Zur Zeit suche ich nach einem Praktikum im Bereich Markforschung. Nach einem Praktikum von 3 Monaten oder länger erhalte ich den M.Sc. in Psychologie.  
+**Kommissionierer** | August 2015 - September 2015 | Lidl Schweiz | Weinfelden (TG)
+
+# Aktueller Status 
+
+Aktuell bin ich auf der Suche nach einem Praktikum im Bereich Marketing, Meinungsforschung  oder User Experience. 
 :::
 
 

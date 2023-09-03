@@ -8,12 +8,12 @@ title: "About"
 
 **Programming** | R | Matlab | C | Python
 
-\*\*Programme\*\* \| RStudio \| SPSS \| LaTex \| MS-Office \| Abelton Live \| Markdown
+**Programme** | RStudio | SPSS | LaTex | MS-Office | Abelton Live | Markdown
 
-\# Sprachkenntnisse
+# Sprachkenntnisse
 
-\*\*Englisch\*\* \| Fliessend
+**Englisch** | Bilingual
 
-\*\*Deutsch\*\* \| Fliessend
+**Deutsch** | Bilingual
 
 :::

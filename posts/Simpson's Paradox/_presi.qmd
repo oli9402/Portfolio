@@ -1,0 +1,25 @@
+---
+title: "Simpson's Paradox"
+author: "Oliver Zingg"
+format: 
+  revealjs:
+    theme: night
+    footer: "Oliver Zingg Test"
+    embed-resources: true
+---
+
+## Let's test quarto to make a presentation
+
+-   Hello World
+
+## No let's use tabs {background-color="aquamarine"}
+
+::: panel-tabset
+### Tab A
+
+Content for `Tab A`
+
+### Tab B
+
+Content for `Tab B`
+:::

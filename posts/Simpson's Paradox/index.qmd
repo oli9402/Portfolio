@@ -6,3 +6,10 @@ categories: [Mixed-Effects Model, Statistics, Random Effects]
 image: "MA.jpg"
 ---
 
+
+# Presentation
+
+
+```{html}
+<iframe src="_presi.html" width="800" height="400"></iframe>
+

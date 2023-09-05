@@ -5,6 +5,7 @@ date: "09.05.2023"
 categories: [Linear Mixed Effects, Statistics, Random Effects]
 image: "sp.png"
 bibliography: ref.bib
+
 ---
 
 ## Simpson's Paradox
@@ -28,9 +29,9 @@ Beispiele sind:
 -   Prüfungsnoten genested in Schüler (Zwei Ebenen)
 -   Kundenzufriedenheit genested Person genested in Altersgruppen (Drei Ebenen)
 
-## Visualisierung Simpson's Paradox in R
 
-### Beispiel Pinguine
+
+## Beispiel Pinguine 
 
 Daten (@pingu):
 
@@ -60,7 +61,10 @@ penguins <- palmerpenguins::penguins
 head(penguins)
 ```
 
-Von Interesse sind *bill_length_mm* (Schnabel) und *flipper_length_mm* (Flügel) ![Flügel und Schnabel](bill_flipper.jpg)
+::: {.panel-tabset}
+::: {.panel}
+### Daten explorieren 
+
 
 ```{r, warning = FALSE}
 ggplot(data = penguins,
@@ -121,6 +125,10 @@ penguins_new <-
 penguins_new
   
 ```
+:::
+::: {.panel}
+### Visualize Simpson's Paradox
+
 ```{r, warning = FALSE}
 ggplot(data = penguins,
        mapping = aes(x = bill_length_mm, y = bill_depth_mm))+
@@ -134,6 +142,12 @@ penguins %>%
   geom_point() +
   geom_smooth(method = 'lm', formula = y ~x)
 ```
- 
- 
+:::
+:::
+
+
+## Interpretation
+
+Wir sehen auf den letzten beiden Plots, dass wenn wir die Art der Penguine ingnorieren wir falsche Schlüsse ziehen über den Zusammenhang zwischen Schnabellänge und -breite.  
+
 More information on mixed-effects models and simpson's paradox [see @hoxMultilevelAnalysisTechniques2017]

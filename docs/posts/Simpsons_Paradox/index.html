@@ -193,9 +193,10 @@ div.csl-indent {
   </ul>
 </li>
   <li>
-<a href="#visualisierung-simpsons-paradox-in-r" id="toc-visualisierung-simpsons-paradox-in-r" class="nav-link" data-scroll-target="#visualisierung-simpsons-paradox-in-r">Visualisierung Simpson’s Paradox in R</a>
+<a href="#beispiel-pinguine" id="toc-beispiel-pinguine" class="nav-link" data-scroll-target="#beispiel-pinguine">Beispiel Pinguine</a>
   <ul class="collapse">
-<li><a href="#beispiel-pinguine" id="toc-beispiel-pinguine" class="nav-link" data-scroll-target="#beispiel-pinguine">Beispiel Pinguine</a></li>
+<li><a href="#daten-explorieren" id="toc-daten-explorieren" class="nav-link" data-scroll-target="#daten-explorieren">Daten explorieren</a></li>
+  <li><a href="#visualize-simpsons-paradox" id="toc-visualize-simpsons-paradox" class="nav-link" data-scroll-target="#visualize-simpsons-paradox">Visualize Simpson’s Paradox</a></li>
   </ul>
 </li>
   </ul></nav>
@@ -215,8 +216,7 @@ div.csl-indent {
 <ul>
 <li>Prüfungsnoten genested in Schüler (Zwei Ebenen)</li>
 <li>Kundenzufriedenheit genested Person genested in Altersgruppen (Drei Ebenen)</li>
-</ul></section></section><section id="visualisierung-simpsons-paradox-in-r" class="level2"><h2 class="anchored" data-anchor-id="visualisierung-simpsons-paradox-in-r">Visualisierung Simpson’s Paradox in R</h2>
-<section id="beispiel-pinguine" class="level3"><h3 class="anchored" data-anchor-id="beispiel-pinguine">Beispiel Pinguine</h3>
+</ul></section></section><section id="beispiel-pinguine" class="level2 tabset-pills"><h2 class="tabset-pills anchored" data-anchor-id="beispiel-pinguine">Beispiel Pinguine</h2>
 <p>Daten (<span class="citation" data-cites="pingu">Gorman (<a href="#ref-pingu" role="doc-biblioref">2014</a>)</span>):</p>
 <ul>
 <li>palmerpenguins
@@ -270,7 +270,7 @@ Attache Paket: 'dplyr'</code></pre>
 # … with abbreviated variable names ¹​flipper_length_mm, ²​body_mass_g</code></pre>
 </div>
 </div>
-<p>Von Interesse sind <em>bill_length_mm</em> (Schnabel) und <em>flipper_length_mm</em> (Flügel) <img src="bill_flipper.jpg" class="img-fluid" alt="Flügel und Schnabel"></p>
+<section id="daten-explorieren" class="level3"><h3 class="anchored" data-anchor-id="daten-explorieren">Daten explorieren</h3>
 <div class="cell">
 <details open=""><summary>Code</summary><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">penguins</span>,</span>
 <span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">sex</span>, y <span class="op">=</span> <span class="va">body_mass_g</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
@@ -428,6 +428,7 @@ the `.groups` argument.</code></pre>
 #   ²​flipper_length_mm, ³​body_mass_g, ⁴​year_factor</code></pre>
 </div>
 </div>
+</section><section id="visualize-simpsons-paradox" class="level3"><h3 class="anchored" data-anchor-id="visualize-simpsons-paradox">Visualize Simpson’s Paradox</h3>
 <div class="cell">
 <details open=""><summary>Code</summary><div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">penguins</span>,</span>
 <span>       mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">bill_length_mm</span>, y <span class="op">=</span> <span class="va">bill_depth_mm</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>

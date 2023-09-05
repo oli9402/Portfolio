@@ -32,14 +32,14 @@
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "Masterarbeit\n\n\n\n\n\n\n\nData Analysis\n\n\nMixed-Effects Model\n\n\nEEG\n\n\nPsychiatric Disorders\n\n\n\n\n\n\n\n\n\n\n\nJun 1, 2023\n\n\nOliver Zingg\n\n\n\n\n\n\n  \n\n\n\n\nSimpson’s Paradox\n\n\n\n\n\n\n\nMixed-Effects Model\n\n\nStatistics\n\n\nRandom Effects\n\n\n\n\n\n\n\n\n\n\n\nJun 1, 2023\n\n\nOliver Zingg\n\n\n\n\n\n\n  \n\n\n\n\nBachelorarbeit\n\n\n\n\n\n\n\nMachine Learning\n\n\nSystematic literature review\n\n\nMRI\n\n\n\n\n\n\n\n\n\n\n\nJun 1, 2021\n\n\nOliver Zingg\n\n\n\n\n\n\nNo matching items"
+    "text": "Simpson’s Paradox\n\n\n\n\n\n\n\nLinear Mixed Effects\n\n\nStatistics\n\n\nRandom Effects\n\n\n\n\n\n\n\n\n\n\n\nSep 5, 2023\n\n\nOliver Zingg\n\n\n\n\n\n\n  \n\n\n\n\nMasterarbeit\n\n\n\n\n\n\n\nData Analysis\n\n\nMixed-Effects Model\n\n\nEEG\n\n\nPsychiatric Disorders\n\n\n\n\n\n\n\n\n\n\n\nJun 1, 2023\n\n\nOliver Zingg\n\n\n\n\n\n\n  \n\n\n\n\nBachelorarbeit\n\n\n\n\n\n\n\nMachine Learning\n\n\nSystematic literature review\n\n\nMRI\n\n\n\n\n\n\n\n\n\n\n\nJun 1, 2021\n\n\nOliver Zingg\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/Simpson's Paradox/index.html",
     "href": "posts/Simpson's Paradox/index.html",
     "title": "Simpson’s Paradox",
     "section": "",
-    "text": "Presentation"
+    "text": "Simpson’s Paradox bezeichnet ein statistische Phänomen, in der die Daten eine hierarchisch angeordnete Struktur aufweisen. Die Analyse der Daten kann deshalb auf unterschiedliche Ebenen dieser Sturktur gemacht werden und einen Einfluss auf das Resultat haben. Teilweise kann wird dadurch die Interpretation der Forschungsfrage beeinflusst je nach untersuchten Ebenen. Solche Beispiele werden oft verwendet um die Vorteile von Linear Mixed Effects Model im Vergleich zur einfacher linearen Regression darzustellen."
   },
   {
     "objectID": "posts/Simpson's Paradox/index.html#lets-test-quarto-to-make-a-presentation",
@@ -54,5 +54,26 @@
     "title": "Simpson’s Paradox",
     "section": "",
     "text": "Tab ATab B\n\n\nContent for Tab A\n\n\nContent for Tab B"
+  },
+  {
+    "objectID": "posts/Simpson's Paradox/index.html#simpsons-paradox",
+    "href": "posts/Simpson's Paradox/index.html#simpsons-paradox",
+    "title": "Simpson’s Paradox",
+    "section": "",
+    "text": "Simpson’s Paradox bezeichnet ein statistische Phänomen, in der die Daten eine hierarchisch angeordnete Struktur aufweisen. Die Analyse der Daten kann deshalb auf unterschiedliche Ebenen dieser Sturktur gemacht werden und einen Einfluss auf das Resultat haben. Teilweise kann wird dadurch die Interpretation der Forschungsfrage beeinflusst je nach untersuchten Ebenen. Solche Beispiele werden oft verwendet um die Vorteile von Linear Mixed Effects Model im Vergleich zur einfacher linearen Regression darzustellen."
+  },
+  {
+    "objectID": "posts/Simpson's Paradox/index.html#hierarchische-datenstruktur",
+    "href": "posts/Simpson's Paradox/index.html#hierarchische-datenstruktur",
+    "title": "Simpson’s Paradox",
+    "section": "Hierarchische Datenstruktur",
+    "text": "Hierarchische Datenstruktur\n\nIm Querschnitt\nBeispiele sind:\n\nSchüler genested in Schulen (Zwei Ebenen)\nSchüler genested in Schulen genested in Kantonen (Drei Ebenen)\nMitarbeiter genested in Unternehmen (Zwei Ebenen)\n\n\n\nIm Längschnitt\nBeispiele sind:\n\nPrüfungsnoten genested in Schüler (Zwei Ebenen)\nKundenzufriedenheit genested Person genested in Altersgruppen (Drei Ebenen)"
+  },
+  {
+    "objectID": "posts/Simpson's Paradox/index.html#visualisierung-in-r",
+    "href": "posts/Simpson's Paradox/index.html#visualisierung-in-r",
+    "title": "Simpson’s Paradox",
+    "section": "Visualisierung in R",
+    "text": "Visualisierung in R\n\nBeispiel Pinguine"
   }
 ]

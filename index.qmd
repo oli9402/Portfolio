@@ -19,34 +19,28 @@ about:
       icon: github
       href: https://github.com/oli9402
   id: pcc
-
 ---
 
 Willkommen auf meiner Webseite. Hier findest du mehr Infos über mich, wie auch Beschreibungen meiner bisherigen Projekte. Für Fragen bin ich erreichbar per Email.
 
-:::{.panel-tabset}
-
+::: panel-tabset
 # Ausbildung
 
-**M.Sc. in Psychologie** | September 2021 – Aktuell | Universität Zürich | Praktikum noch ausstehend
+**M.Sc. in Psychologie** \| September 2021 -- Aktuell \| Universität Zürich \| Praktikum noch ausstehend
 
-**B.Sc. in Psychologie** | September 2018 - Juli 2021 | Universität Zürich | Nebenfach: Filmwissenschaft
+**B.Sc. in Psychologie** \| September 2018 - Juli 2021 \| Universität Zürich \| Nebenfach: Filmwissenschaft
 
-**Assessmentjahr Wirtschaftsinformatik** | September 2017 - Juli 2018 | Universität Zürich 
-
-
+**Assessmentjahr Wirtschaftsinformatik** \| September 2017 - Juli 2018 \| Universität Zürich
 
 # Berufserfahrung
 
-**Kabinenreiniger (Flugzeuge)** | Juli 2019 - November 2019 | Vebego Airport AG | Zürich
+**Kabinenreiniger (Flugzeuge)** \| Juli 2019 - November 2019 \| Vebego Airport AG \| Zürich
 
-**Mitarbeiter Wäscherei Bodensee** | November 2015 - Juli 2016 | Wäscherei Bodensee AG | Münsterlingen (TG)
+**Mitarbeiter Wäscherei Bodensee** \| November 2015 - Juli 2016 \| Wäscherei Bodensee AG \| Münsterlingen (TG)
 
-**Kommissionierer** | August 2015 - September 2015 | Lidl Schweiz | Weinfelden (TG)
+**Kommissionierer** \| August 2015 - September 2015 \| Lidl Schweiz \| Weinfelden (TG)
 
-# Aktueller Status 
+# Aktueller Status
 
-Aktuell bin ich auf der Suche nach einem Praktikum im Bereich Marketing, Meinungsforschung  oder User Experience. 
+Aktuell bin ich auf der Suche nach einem Praktikum im Bereich Marketing, Meinungsforschung oder User Experience.
 :::
-
-

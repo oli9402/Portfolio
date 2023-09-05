@@ -1,0 +1,32 @@
+---
+title: "Simpson's Paradox"
+author: "Oliver Zingg" 
+date: "09.05.2023"
+categories: [Linear Mixed Effects, Statistics, Random Effects]
+image: ""
+---
+
+## Simpson's Paradox
+
+Simpson's Paradox bezeichnet ein statistische Phänomen, in dem die Daten eine hierarchisch angeordnete Struktur aufweisen. Die Analyse der Daten kann deshalb auf unterschiedliche Ebenen dieser Sturktur gemacht werden und Einfluss auf das Resultat haben. Teilweise kann wird dadurch die Interpretation der Forschungsfrage beeinflusst je nach untersuchten Ebenen. Simpson's Paradox wird oft verwendet um die Vorteile von Linear Mixed Effects Model im Vergleich zur einfacher linearen Regression darzustellen. 
+
+## Hierarchische Datenstruktur
+
+### Im Querschnitt
+
+Beispiele sind: 
+
+* Schüler genested in Schulen  (Zwei Ebenen)
+* Schüler genested in Schulen genested in Kantonen (Drei Ebenen)
+* Mitarbeiter genested in Unternehmen (Zwei Ebenen)
+
+### Im Längschnitt
+
+Beispiele sind:
+
+* Prüfungsnoten genested in Schüler (Zwei Ebenen)
+* Kundenzufriedenheit genested Person genested in Altersgruppen (Drei Ebenen)
+
+## Visualisierung in R 
+
+### Beispiel Pinguine

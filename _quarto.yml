@@ -6,6 +6,9 @@ project:
 website:
   title: "Oliver Zingg"
   favicon: "oli.jpg"
+  page-footer:
+    left: |
+      Created by Oliver Zingg with Quarto and RStudio
   navbar:
     background: primary
     pinned: True
@@ -20,6 +23,7 @@ website:
     tools:
       - icon: code-slash
         href: https://github.com/oli9402/Portfolio
+
 format:
   html:
     theme: cosmo
@@ -29,4 +33,4 @@ format:
     code-fold: show
     highlight-style: breeze
 editor: visual
-
+ 

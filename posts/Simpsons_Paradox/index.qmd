@@ -1,0 +1,139 @@
+---
+title: "Simpson's Paradox"
+author: "Oliver Zingg" 
+date: "09.05.2023"
+categories: [Linear Mixed Effects, Statistics, Random Effects]
+image: "sp.png"
+bibliography: ref.bib
+---
+
+## Simpson's Paradox
+
+Simpson's Paradox bezeichnet ein statistische Phänomen, in dem die Daten eine hierarchisch angeordnete Struktur aufweisen. Die Analyse der Daten kann deshalb auf unterschiedliche Ebenen dieser Sturktur gemacht werden und Einfluss auf das Resultat haben. Teilweise kann wird dadurch die Interpretation der Forschungsfrage beeinflusst je nach untersuchten Ebenen. Simpson's Paradox wird oft verwendet um die Vorteile von Linear Mixed Effects Model im Vergleich zur einfacher linearen Regression darzustellen.
+
+## Hierarchische Datenstruktur
+
+### Im Querschnitt
+
+Beispiele sind:
+
+-   Schüler genested in Schulen (Zwei Ebenen)
+-   Schüler genested in Schulen genested in Kantonen (Drei Ebenen)
+-   Mitarbeiter genested in Unternehmen (Zwei Ebenen)
+
+### Im Längschnitt
+
+Beispiele sind:
+
+-   Prüfungsnoten genested in Schüler (Zwei Ebenen)
+-   Kundenzufriedenheit genested Person genested in Altersgruppen (Drei Ebenen)
+
+## Visualisierung Simpson's Paradox in R
+
+### Beispiel Pinguine
+
+Daten (@pingu):
+
+-   palmerpenguins
+    -   344 Pinguine
+    -   3 Arten (Adéline, chinstrap und gentoo)
+
+Die Daten wurden von Dr Allison Horst, Alison Hill und Kristen Gorman zu einem R Packet *palmerpenguins* verarbeitet. Das folgende Projekt basiert auf dem [Turtorial](https://slides.silviacanelon.com/tour-of-the-tidyverse) von Silvia Canelon.
+
+**Zuerst, R Packete installieren**
+
+```{r eval =FALSE}
+install.packages("palmerpenguins") #Data
+install.packages("tibble") #Data handling
+install.packges("ggplot2") #Plotting
+install.packages("dplyr")
+```
+
+**Packete laden**
+
+```{r, warning=FALSE}
+library(palmerpenguins)
+library(tibble)
+library(ggplot2)
+library(dplyr)
+penguins <- palmerpenguins::penguins
+head(penguins)
+```
+
+Von Interesse sind *bill_length_mm* (Schnabel) und *flipper_length_mm* (Flügel) ![Flügel und Schnabel](bill_flipper.jpg)
+
+```{r, warning = FALSE}
+ggplot(data = penguins,
+       aes(x = sex, y = body_mass_g))+
+  geom_boxplot(aes(fill = species))
+```
+
+Die Boxplotte deuten darauf hin, dass bei Gentoo ein geschlechtsspezifischer Unterschiedlich im Body Mass zu sehen ist, wobei dies möglicherweise nicht der Fall ist bei Adelie und Chinstrap.
+
+```{r, warning = FALSE}
+penguins %>%
+  select(species, sex, body_mass_g) %>%
+  arrange(desc(body_mass_g))
+```
+```{r, warning = FALSE}
+penguins %>%
+  select(species, sex, body_mass_g) %>%
+  group_by(species,sex) %>%
+  summarize(mean = mean(body_mass_g))
+```
+
+```{r, warning = FALSE}
+penguins %>%
+  group_by(species) %>%
+  mutate(n_species = n()) %>%
+  ungroup() %>%
+  group_by(species,sex,n_species) %>%
+  summarize(n=n())
+```
+```{r, warning = FALSE}
+penguins %>%
+  count(species, sex) %>%
+  add_count(species, wt = n,
+            name = "n_species")
+```
+
+```{r, warning = FALSE}
+penguins %>%
+  count(species, sex) %>%
+  add_count(species, wt = n,
+            name = "n_species") %>%
+  mutate(prop = n/n_species*100)
+```
+
+```{r, warning = FALSE}
+penguins %>%
+  count(species, sex) %>%
+  add_count(species, wt = n,
+            name = "n_species") %>%
+  mutate(prop = n/n_species*100) %>%
+  filter(species == "Chinstrap")
+```
+
+```{r, warning = FALSE}
+penguins_new <-
+  penguins %>%
+  mutate(year_factor = factor(year, levels = unique(year)))
+penguins_new
+  
+```
+```{r, warning = FALSE}
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, y = bill_depth_mm))+
+  geom_point() +
+  geom_smooth(method='lm', formula = y ~x)
+```
+
+```{r, warning = FALSE}
+penguins %>%
+  ggplot(mapping = aes(x = bill_length_mm, y = bill_depth_mm, group = species, col = species)) + 
+  geom_point() +
+  geom_smooth(method = 'lm', formula = y ~x)
+```
+ 
+ 
+More information on mixed-effects models and simpson's paradox [see @hoxMultilevelAnalysisTechniques2017]

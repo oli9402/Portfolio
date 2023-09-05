@@ -28,52 +28,38 @@
     "text": "My master thesis “Investigating the Neuronal Basis of Learning Processes and Memory Formation in Children and Adolescents with Various Psychiatric Disorders” can be found on GitHub\n\nKey Takeaways\n\nTopic: Using EEG to track successful learning in children and adolescents with psychiatric disorders\nMethod: Analyzing existing data set\nStand out: Large data set (n &gt; 1000),\nMain pitfalls: Model fit, confoundation, validity of EEG\nGrade: 6\n\n\n\nWhat was is about?\nIt has been suggested that an EEG brain marker can be used to track successful learning. To investigate whether this still holds in a sample of children and adolescents with psychiatric disorders and/or learning problems, such a sample was analysed. More specific a sample of over 1’000 participants with a longitudinal data structure (i.e., data point every 2 ms during a learning task) was analysed using linear mixed-effects models. The results indicated that the same EEG marker can be used in such a population, therefore paving the way for using brain data to aid learning and help with identifying individuals with learning problems.\n\n\nWhat I’ve learned?\nA big part of this thesis consisted of preparing and analyzing a large complex data set (12 GB). This was an interesting experience in which I could learn a lot about programming and challenges that come with such a data set. Additionally, a deeper understanding of complex mixed-effects models was gained. Especially, the limits when it comes to fitting non-normal data and interpretation of the resulting coefficients was challenging. There are still questions regarding the validity of the investigated EEG marker that couldn’t be answered with my thesis. This was due to the nature of EEG data and confounding variables that couldn’t be controlled for. Nevertheless, research in this area could possible lead to promising tools that may be helpful in clinical or school settings."
   },
   {
+    "objectID": "posts/Simpsons_Paradox/index.html",
+    "href": "posts/Simpsons_Paradox/index.html",
+    "title": "Simpson’s Paradox",
+    "section": "",
+    "text": "Simpson’s Paradox bezeichnet ein statistische Phänomen, in dem die Daten eine hierarchisch angeordnete Struktur aufweisen. Die Analyse der Daten kann deshalb auf unterschiedliche Ebenen dieser Sturktur gemacht werden und Einfluss auf das Resultat haben. Teilweise kann wird dadurch die Interpretation der Forschungsfrage beeinflusst je nach untersuchten Ebenen. Simpson’s Paradox wird oft verwendet um die Vorteile von Linear Mixed Effects Model im Vergleich zur einfacher linearen Regression darzustellen."
+  },
+  {
+    "objectID": "posts/Simpsons_Paradox/index.html#simpsons-paradox",
+    "href": "posts/Simpsons_Paradox/index.html#simpsons-paradox",
+    "title": "Simpson’s Paradox",
+    "section": "",
+    "text": "Simpson’s Paradox bezeichnet ein statistische Phänomen, in dem die Daten eine hierarchisch angeordnete Struktur aufweisen. Die Analyse der Daten kann deshalb auf unterschiedliche Ebenen dieser Sturktur gemacht werden und Einfluss auf das Resultat haben. Teilweise kann wird dadurch die Interpretation der Forschungsfrage beeinflusst je nach untersuchten Ebenen. Simpson’s Paradox wird oft verwendet um die Vorteile von Linear Mixed Effects Model im Vergleich zur einfacher linearen Regression darzustellen."
+  },
+  {
+    "objectID": "posts/Simpsons_Paradox/index.html#hierarchische-datenstruktur",
+    "href": "posts/Simpsons_Paradox/index.html#hierarchische-datenstruktur",
+    "title": "Simpson’s Paradox",
+    "section": "Hierarchische Datenstruktur",
+    "text": "Hierarchische Datenstruktur\nIm Querschnitt\nBeispiele sind:\n\nSchüler genested in Schulen (Zwei Ebenen)\nSchüler genested in Schulen genested in Kantonen (Drei Ebenen)\nMitarbeiter genested in Unternehmen (Zwei Ebenen)\nIm Längschnitt\nBeispiele sind:\n\nPrüfungsnoten genested in Schüler (Zwei Ebenen)\nKundenzufriedenheit genested Person genested in Altersgruppen (Drei Ebenen)"
+  },
+  {
+    "objectID": "posts/Simpsons_Paradox/index.html#visualisierung-simpsons-paradox-in-r",
+    "href": "posts/Simpsons_Paradox/index.html#visualisierung-simpsons-paradox-in-r",
+    "title": "Simpson’s Paradox",
+    "section": "Visualisierung Simpson’s Paradox in R",
+    "text": "Visualisierung Simpson’s Paradox in R\nBeispiel Pinguine\nDaten (Gorman (2014)):\n\npalmerpenguins\n\n344 Pinguine\n3 Arten (Adéline, chinstrap und gentoo)\n\n\n\nDie Daten wurden von Dr Allison Horst, Alison Hill und Kristen Gorman zu einem R Packet palmerpenguins verarbeitet. Das folgende Projekt basiert auf dem Turtorial von Silvia Canelon.\nZuerst, R Packete installieren\n\nCodeinstall.packages(\"palmerpenguins\") #Data\ninstall.packages(\"tibble\") #Data handling\ninstall.packges(\"ggplot2\") #Plotting\ninstall.packages(\"dplyr\")\n\n\nPackete laden\n\nCodelibrary(palmerpenguins)\nlibrary(tibble)\nlibrary(ggplot2)\nlibrary(dplyr)\n\n\nAttache Paket: 'dplyr'\n\n\nDie folgenden Objekte sind maskiert von 'package:stats':\n\n    filter, lag\n\n\nDie folgenden Objekte sind maskiert von 'package:base':\n\n    intersect, setdiff, setequal, union\n\nCodepenguins &lt;- palmerpenguins::penguins\nhead(penguins)\n\n# A tibble: 6 × 8\n  species island    bill_length_mm bill_depth_mm flipper_l…¹ body_…² sex    year\n  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;       &lt;int&gt;   &lt;int&gt; &lt;fct&gt; &lt;int&gt;\n1 Adelie  Torgersen           39.1          18.7         181    3750 male   2007\n2 Adelie  Torgersen           39.5          17.4         186    3800 fema…  2007\n3 Adelie  Torgersen           40.3          18           195    3250 fema…  2007\n4 Adelie  Torgersen           NA            NA            NA      NA &lt;NA&gt;   2007\n5 Adelie  Torgersen           36.7          19.3         193    3450 fema…  2007\n6 Adelie  Torgersen           39.3          20.6         190    3650 male   2007\n# … with abbreviated variable names ¹​flipper_length_mm, ²​body_mass_g\n\n\nVon Interesse sind bill_length_mm (Schnabel) und flipper_length_mm (Flügel) \n\nCodeggplot(data = penguins,\n       aes(x = sex, y = body_mass_g))+\n  geom_boxplot(aes(fill = species))\n\n\n\n\nDie Boxplotte deuten darauf hin, dass bei Gentoo ein geschlechtsspezifischer Unterschiedlich im Body Mass zu sehen ist, wobei dies möglicherweise nicht der Fall ist bei Adelie und Chinstrap.\n\nCodepenguins %&gt;%\n  select(species, sex, body_mass_g) %&gt;%\n  arrange(desc(body_mass_g))\n\n# A tibble: 344 × 3\n   species sex   body_mass_g\n   &lt;fct&gt;   &lt;fct&gt;       &lt;int&gt;\n 1 Gentoo  male         6300\n 2 Gentoo  male         6050\n 3 Gentoo  male         6000\n 4 Gentoo  male         6000\n 5 Gentoo  male         5950\n 6 Gentoo  male         5950\n 7 Gentoo  male         5850\n 8 Gentoo  male         5850\n 9 Gentoo  male         5850\n10 Gentoo  male         5800\n# … with 334 more rows\n\n\n\nCodepenguins %&gt;%\n  select(species, sex, body_mass_g) %&gt;%\n  group_by(species,sex) %&gt;%\n  summarize(mean = mean(body_mass_g))\n\n`summarise()` has grouped output by 'species'. You can override using the\n`.groups` argument.\n\n\n# A tibble: 8 × 3\n# Groups:   species [3]\n  species   sex     mean\n  &lt;fct&gt;     &lt;fct&gt;  &lt;dbl&gt;\n1 Adelie    female 3369.\n2 Adelie    male   4043.\n3 Adelie    &lt;NA&gt;     NA \n4 Chinstrap female 3527.\n5 Chinstrap male   3939.\n6 Gentoo    female 4680.\n7 Gentoo    male   5485.\n8 Gentoo    &lt;NA&gt;     NA \n\n\n\nCodepenguins %&gt;%\n  group_by(species) %&gt;%\n  mutate(n_species = n()) %&gt;%\n  ungroup() %&gt;%\n  group_by(species,sex,n_species) %&gt;%\n  summarize(n=n())\n\n`summarise()` has grouped output by 'species', 'sex'. You can override using\nthe `.groups` argument.\n\n\n# A tibble: 8 × 4\n# Groups:   species, sex [8]\n  species   sex    n_species     n\n  &lt;fct&gt;     &lt;fct&gt;      &lt;int&gt; &lt;int&gt;\n1 Adelie    female       152    73\n2 Adelie    male         152    73\n3 Adelie    &lt;NA&gt;         152     6\n4 Chinstrap female        68    34\n5 Chinstrap male          68    34\n6 Gentoo    female       124    58\n7 Gentoo    male         124    61\n8 Gentoo    &lt;NA&gt;         124     5\n\n\n\nCodepenguins %&gt;%\n  count(species, sex) %&gt;%\n  add_count(species, wt = n,\n            name = \"n_species\")\n\n# A tibble: 8 × 4\n  species   sex        n n_species\n  &lt;fct&gt;     &lt;fct&gt;  &lt;int&gt;     &lt;int&gt;\n1 Adelie    female    73       152\n2 Adelie    male      73       152\n3 Adelie    &lt;NA&gt;       6       152\n4 Chinstrap female    34        68\n5 Chinstrap male      34        68\n6 Gentoo    female    58       124\n7 Gentoo    male      61       124\n8 Gentoo    &lt;NA&gt;       5       124\n\n\n\nCodepenguins %&gt;%\n  count(species, sex) %&gt;%\n  add_count(species, wt = n,\n            name = \"n_species\") %&gt;%\n  mutate(prop = n/n_species*100)\n\n# A tibble: 8 × 5\n  species   sex        n n_species  prop\n  &lt;fct&gt;     &lt;fct&gt;  &lt;int&gt;     &lt;int&gt; &lt;dbl&gt;\n1 Adelie    female    73       152 48.0 \n2 Adelie    male      73       152 48.0 \n3 Adelie    &lt;NA&gt;       6       152  3.95\n4 Chinstrap female    34        68 50   \n5 Chinstrap male      34        68 50   \n6 Gentoo    female    58       124 46.8 \n7 Gentoo    male      61       124 49.2 \n8 Gentoo    &lt;NA&gt;       5       124  4.03\n\n\n\nCodepenguins %&gt;%\n  count(species, sex) %&gt;%\n  add_count(species, wt = n,\n            name = \"n_species\") %&gt;%\n  mutate(prop = n/n_species*100) %&gt;%\n  filter(species == \"Chinstrap\")\n\n# A tibble: 2 × 5\n  species   sex        n n_species  prop\n  &lt;fct&gt;     &lt;fct&gt;  &lt;int&gt;     &lt;int&gt; &lt;dbl&gt;\n1 Chinstrap female    34        68    50\n2 Chinstrap male      34        68    50\n\n\n\nCodepenguins_new &lt;-\n  penguins %&gt;%\n  mutate(year_factor = factor(year, levels = unique(year)))\npenguins_new\n\n# A tibble: 344 × 9\n   species island    bill_length_mm bill_d…¹ flipp…² body_…³ sex    year year_…⁴\n   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;    &lt;dbl&gt;   &lt;int&gt;   &lt;int&gt; &lt;fct&gt; &lt;int&gt; &lt;fct&gt;  \n 1 Adelie  Torgersen           39.1     18.7     181    3750 male   2007 2007   \n 2 Adelie  Torgersen           39.5     17.4     186    3800 fema…  2007 2007   \n 3 Adelie  Torgersen           40.3     18       195    3250 fema…  2007 2007   \n 4 Adelie  Torgersen           NA       NA        NA      NA &lt;NA&gt;   2007 2007   \n 5 Adelie  Torgersen           36.7     19.3     193    3450 fema…  2007 2007   \n 6 Adelie  Torgersen           39.3     20.6     190    3650 male   2007 2007   \n 7 Adelie  Torgersen           38.9     17.8     181    3625 fema…  2007 2007   \n 8 Adelie  Torgersen           39.2     19.6     195    4675 male   2007 2007   \n 9 Adelie  Torgersen           34.1     18.1     193    3475 &lt;NA&gt;   2007 2007   \n10 Adelie  Torgersen           42       20.2     190    4250 &lt;NA&gt;   2007 2007   \n# … with 334 more rows, and abbreviated variable names ¹​bill_depth_mm,\n#   ²​flipper_length_mm, ³​body_mass_g, ⁴​year_factor\n\n\n\nCodeggplot(data = penguins,\n       aes(x = bill_length_mm, y = bill_depth_mm))+\n  geom_point() +\n  geom_smooth(method='lm', formula = y ~x)\n\n\n\n\n\nCodepenguins %&gt;%\n  ggplot(aes(x = bill_length_mm, y = bill_depth_mm, group = species, col = species)) + \n  geom_point() +\n  geom_smooth(method = 'lm', formula = y ~x)\n\n\n\n\nMore information on mixed-effects models and simpson’s paradox (see Hox, Moerbeek, and Van de Schoot 2017)"
+  },
+  {
     "objectID": "projects.html",
     "href": "projects.html",
     "title": "Projects",
     "section": "",
     "text": "Simpson’s Paradox\n\n\n\n\n\n\n\nLinear Mixed Effects\n\n\nStatistics\n\n\nRandom Effects\n\n\n\n\n\n\n\n\n\n\n\nSep 5, 2023\n\n\nOliver Zingg\n\n\n\n\n\n\n  \n\n\n\n\nMasterarbeit\n\n\n\n\n\n\n\nData Analysis\n\n\nMixed-Effects Model\n\n\nEEG\n\n\nPsychiatric Disorders\n\n\n\n\n\n\n\n\n\n\n\nJun 1, 2023\n\n\nOliver Zingg\n\n\n\n\n\n\n  \n\n\n\n\nBachelorarbeit\n\n\n\n\n\n\n\nMachine Learning\n\n\nSystematic literature review\n\n\nMRI\n\n\n\n\n\n\n\n\n\n\n\nJun 1, 2021\n\n\nOliver Zingg\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/Simpson's Paradox/index.html",
-    "href": "posts/Simpson's Paradox/index.html",
-    "title": "Simpson’s Paradox",
-    "section": "",
-    "text": "Simpson’s Paradox bezeichnet ein statistische Phänomen, in der die Daten eine hierarchisch angeordnete Struktur aufweisen. Die Analyse der Daten kann deshalb auf unterschiedliche Ebenen dieser Sturktur gemacht werden und einen Einfluss auf das Resultat haben. Teilweise kann wird dadurch die Interpretation der Forschungsfrage beeinflusst je nach untersuchten Ebenen. Solche Beispiele werden oft verwendet um die Vorteile von Linear Mixed Effects Model im Vergleich zur einfacher linearen Regression darzustellen."
-  },
-  {
-    "objectID": "posts/Simpson's Paradox/index.html#lets-test-quarto-to-make-a-presentation",
-    "href": "posts/Simpson's Paradox/index.html#lets-test-quarto-to-make-a-presentation",
-    "title": "Simpson’s Paradox",
-    "section": "",
-    "text": "Hello World"
-  },
-  {
-    "objectID": "posts/Simpson's Paradox/index.html#no-lets-use-tabs",
-    "href": "posts/Simpson's Paradox/index.html#no-lets-use-tabs",
-    "title": "Simpson’s Paradox",
-    "section": "",
-    "text": "Tab ATab B\n\n\nContent for Tab A\n\n\nContent for Tab B"
-  },
-  {
-    "objectID": "posts/Simpson's Paradox/index.html#simpsons-paradox",
-    "href": "posts/Simpson's Paradox/index.html#simpsons-paradox",
-    "title": "Simpson’s Paradox",
-    "section": "",
-    "text": "Simpson’s Paradox bezeichnet ein statistische Phänomen, in der die Daten eine hierarchisch angeordnete Struktur aufweisen. Die Analyse der Daten kann deshalb auf unterschiedliche Ebenen dieser Sturktur gemacht werden und einen Einfluss auf das Resultat haben. Teilweise kann wird dadurch die Interpretation der Forschungsfrage beeinflusst je nach untersuchten Ebenen. Solche Beispiele werden oft verwendet um die Vorteile von Linear Mixed Effects Model im Vergleich zur einfacher linearen Regression darzustellen."
-  },
-  {
-    "objectID": "posts/Simpson's Paradox/index.html#hierarchische-datenstruktur",
-    "href": "posts/Simpson's Paradox/index.html#hierarchische-datenstruktur",
-    "title": "Simpson’s Paradox",
-    "section": "Hierarchische Datenstruktur",
-    "text": "Hierarchische Datenstruktur\n\nIm Querschnitt\nBeispiele sind:\n\nSchüler genested in Schulen (Zwei Ebenen)\nSchüler genested in Schulen genested in Kantonen (Drei Ebenen)\nMitarbeiter genested in Unternehmen (Zwei Ebenen)\n\n\n\nIm Längschnitt\nBeispiele sind:\n\nPrüfungsnoten genested in Schüler (Zwei Ebenen)\nKundenzufriedenheit genested Person genested in Altersgruppen (Drei Ebenen)"
-  },
-  {
-    "objectID": "posts/Simpson's Paradox/index.html#visualisierung-in-r",
-    "href": "posts/Simpson's Paradox/index.html#visualisierung-in-r",
-    "title": "Simpson’s Paradox",
-    "section": "Visualisierung in R",
-    "text": "Visualisierung in R\n\nBeispiel Pinguine"
   }
 ]

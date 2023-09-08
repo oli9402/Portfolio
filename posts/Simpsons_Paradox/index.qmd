@@ -61,8 +61,7 @@ penguins <- palmerpenguins::penguins
 head(penguins)
 ```
 
-::: {.panel-tabset}
-::: {.panel}
+
 ### Daten explorieren 
 
 
@@ -125,8 +124,7 @@ penguins_new <-
 penguins_new
   
 ```
-:::
-::: {.panel}
+
 ### Visualize Simpson's Paradox
 
 ```{r, warning = FALSE}
@@ -142,8 +140,7 @@ penguins %>%
   geom_point() +
   geom_smooth(method = 'lm', formula = y ~x)
 ```
-:::
-:::
+
 
 
 ## Interpretation

@@ -1,0 +1,131 @@
+---
+title: "Confidence Intervals"
+author: "Oliver Zingg"
+date: "09.06.2023"
+image: "ci.png"
+bibliography: "ci.bib"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+-   Full credit goes to: https://www.kaggle.com/code/hamelg/intro-to-r-part-23-confidence-intervals/notebook
+-   My contribution is only adding comments to learn from this code as much as possible
+- More on confidence intervals can be found here @hoekstraRobustMisinterpretationConfidence2014
+
+## Generating data
+
+The following example simulates the process of finding the **mean age value** of a population of voters.
+
+-   First we generate a population with their age values
+    -   1 Million values a generated from an exponential distribution and 1.5 Million values from a poisson distribution
+    -   18 is added to make sure that no age value is below 18 years old.
+-   For numbers higher than 100 the modulo (%%) is taken and 18 is added to make sure we don't end up with too large numbers.
+
+```{r, results='hide'}
+set.seed(12)
+
+# Generate a population
+population_ages <- c(rexp(1000000,0.015)+18,   
+                    rpois(500000,20)+18,
+                    rpois(500000,32.5)+18,
+                    rpois(500000,45)+18)
+
+population_ages <- ifelse(population_ages<100, 
+                          population_ages, population_ages%%100+18)
+
+```
+
+```{r, echo=FALSE}
+hist(population_ages)
+```
+
+```{r, results='hide'}
+
+true_mean <- mean(population_ages)   # Check the population mean
+
+true_mean
+```
+
+## Drawing different sample from the population and calculating the mean
+
+-   The central limit theorem states that the distribution of the mean values are normally distributed no matter what the distribution is of the population.
+
+```{r, echo = FALSE}
+set.seed(12)
+point_estimates <- c()    # Create an empty vector to hold results
+
+num_samples <- 200        # Initialize number of samples to take
+
+# Draw 200 samples and make 200 point estimates
+for (x in 1:num_samples){         
+    sample <- sample(population_ages, size=1000)
+    point_estimates <- c(point_estimates, mean(sample))
+}
+
+```
+
+### Let's visualize the distribution of mean values. A skewness of 0 would be a normal distribution.
+
+```{r, echo=FALSE, warning=FALSE}
+library(e1071)
+plot(density(point_estimates))  # Plot the sampling distribution
+skewness(point_estimates)
+```
+
+
+## Confidence Intervals for the mean values
+
+-   First the sample size is determined then an empty vector is created that will store the boundaries of all confidence intervals
+-   The for loop is set to 25, meaning we draw a sample of size 1000 25 times.
+-   With qnorm we can get the z value that is used to calculate the boundaries of the confidence intervals
+
+```{r, results='hide'}
+set.seed(12)
+sample_size <- 1000
+
+intervals <- c()  # Create and store 25 intervals
+ 
+for (sample in 1:25){
+sample_ages <- sample(population_ages, size=sample_size)  # Take a sample of 1000 ages
+
+sample_mean <- mean(sample_ages)  # Get the sample mean
+
+z_critical <- qnorm(0.975)        # Get the z-critical value*
+
+pop_stdev <- sd(population_ages)  # Get the population standard deviation
+
+margin_of_error <- z_critical * (pop_stdev / sqrt(sample_size)) # Calculate margin of error
+
+confidence_interval  <- c(sample_mean - margin_of_error,  # Calculate the the interval
+                          sample_mean + margin_of_error)  
+
+intervals <- c(intervals, confidence_interval)    
+}
+
+interval_df <- data.frame(t(matrix(intervals,2,25)))  # Store intervals as data frame
+
+```
+
+## Plotting the 25 confidence intervals
+
+The red line shows the true mean. We see the first confidence interval not including the true mean. (1/25 = 0.04)
+
+```{r, echo = FALSE, warning = FALSE}
+library(ggplot2)
+# Plot confidence intervals and show the true mean
+my_plot <- ggplot(data=interval_df, aes(x=1:nrow(interval_df))) +
+                geom_errorbar(aes(ymax = X2, ymin = X1)) +
+                geom_point(aes(y=rowMeans(interval_df)), shape=1, size=3) +
+                geom_abline(intercept=true_mean, slope=0,color="red",lwd=1) +
+                ylab("Interval Range (Red Line=True Mean)") +
+                xlab("Interval Number")
+
+my_plot
+
+```
+
+## Summary
+
+-   Simulating confidence interval shows that some will not include the true value.

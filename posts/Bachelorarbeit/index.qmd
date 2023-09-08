@@ -10,13 +10,13 @@ My bachelor thesis **"Comparison between Support Vector Machine and Convolutiona
 
 #### Key Takeaways
 
-* **Topic:** Using machine learning for analysing MRI images.
+-   **Topic:** Using machine learning for analysing MRI images.
 
-* **Method:** Systematic review
+-   **Method:** Systematic review
 
-* **Main pitfalls:** Overfitting, unknown ground truth, black box
+-   **Main pitfalls:** Overfitting, unknown ground truth, black box
 
-* **Grade:** 6
+-   **Grade:** 6
 
 #### What was is about?
 

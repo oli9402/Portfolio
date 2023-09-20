@@ -1,0 +1,228 @@
+---
+title: "Learning R with R for Data Science"
+author: "Oliver Zingg"
+date: "09.10.2023"
+image: "bird.jpg"
+---
+
+
+Dieses Projekt dient dazu mein Wissen über die Programmiersprache R zu vertiefen. Dazu verwende ich [R for Data Science](https://r4ds.hadley.nz/intro)
+
+
+# Packete installieren und laden 
+
+```{r, eval = FALSE}
+# install.packages(
+#  c("arrow", "babynames", "curl", "duckdb", "gapminder", 
+#    "ggrepel", "ggridges", "ggthemes", "hexbin", "janitor", "Lahman", 
+#    "leaflet", "maps", "nycflights13", "openxlsx", "palmerpenguins", 
+#    "repurrrsive", "tidymodels", "writexl", "tidyverse")
+#  )
+```
+
+```{r, warning = FALSE, message = F}
+library(tidyverse) #ggplot2
+library(palmerpenguins) #data
+library(ggthemes) #color bild colors 
+
+```
+
+
+# GGplot2
+
+Argumente: 
+
+* data = was für einen Datensatz wird verwendet?
+* mapping = wie sollten Daten visuell dargestellt werden, mit aes() Funktion
+* + müssen immer am Ende der Linie und nicht zu Beginn platziert werden!
+
+```{r, warning = FALSE, message= F}
+penguins <- palmerpenguins::penguins
+
+ggplot(
+  data = penguins,
+  mapping = aes(x = flipper_length_mm, y = body_mass_g, color = species)
+) + geom_point() + geom_smooth(method ="lm")
+```
+
+
+Da nun *color = species* in ggplot() definiert worden ist, werden weiter Funktionen wie geom_point() auf die unterschiedlichen species angewendet. Jedoch wollen wir eine Regressionslinie die mithilfe aller Pünkte (Species) kreiert wird aber die Farben für unterschiedliche Species beibehaltet werden soll, dann muss folgender Code verwendet werden: 
+
+```{r, warning = FALSE, message=F}
+ggplot(
+  data = penguins,
+  mapping = aes(x = flipper_length_mm, y = body_mass_g)
+) +
+  geom_point(mapping = aes(color = species, shape = species)) + 
+  geom_smooth(method = "lm")
+```
+
+
+```{r, warning = FALSE, message = F}
+ggplot(
+  data = penguins,
+  mapping = aes(x = flipper_length_mm, y = body_mass_g)
+) +
+  geom_point(aes(color = species, shape = species)) +
+  geom_smooth(method = "lm") +
+  labs(
+    title = "Body mass and flipper length",
+    subtitle = "Dimensions for Adelie, Chinstrap, and Gentoo Penguins",
+    x = "Flipper length (mm)", y = "Body mass (g)",
+    color = "Species", shape = "Species",
+    caption = "Data came from palmerpenguins package"
+  ) +
+  scale_color_colorblind()
+```
+```{r, warning=FALSE}
+ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+  geom_point(aes(color = species, shape = island))
+
+
+#OR
+ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+  geom_point(aes(color = species, shape = species)) +
+  facet_wrap(~island)
+
+#ggsave(filename = "penguin-plot.png") <- for saving
+
+```
+
+# Data transformation
+
+
+```{r}
+
+flights <- nycflights13::flights
+glimpse(flights)
+
+```
+
+Jetzt wird mit dem Packet **dplyr** - welches mit tidyverse geladen wird - die relevanten Daten rausgefiltert.
+
+Dplyrs Verben ("Funktionen")  können auf Reihen, Spalten, Gruppen und Tabellen operien.
+
+## Dplyrs Funktionen
+
+* **filter()** = filtert Reihen ohne ihre Reihenfolge zu ändern
+* **arrange()** = verändert Reihenfolge ohne zu filtern
+
+Diese Funktionen können mit logischen Statments als Argumente umgehen. %in% ist eine abgekürzte Schreibweise für | und ==.
+```{r}
+# A shorter way to select flights that departed in January or February
+flights |> 
+  filter(month %in% c(1, 2))
+```
+```{r}
+flights |> 
+  arrange(year, month, day, dep_time)
+```
+
+Mit der Funktion distinct() kann man Reihne, die mehrfach wiederholt werden rausfiltern
+
+```{r}
+flights |>
+  distinct()
+```
+
+Alle einzigartige Kombination von Abflug- und Ankunftsort lassen sich folgenermassen herausfiltern:
+
+```{r}
+flights |>
+  distinct(origin,dest)
+```
+Mit count() kann man die Anzahl Flüge dieser Kombination kalkulieren
+```{r}
+flights |>
+  count(origin, dest, sort = TRUE)
+
+```
+Wenn man mehrere Spalten selektionieren will wie z.B. "x1", "x2" usw.:
+
+```{r}
+# dataset |>
+#  select(num_range("x", 1:3)) selektioniert x1, x2 and x3.
+```
+
+Mit ==select(new variable name = variable)== kann man die selektionierten Variablen neu benennen. Falls man alle anderen Variablen behalten will, kann man auch ==rename()== verwenden.
+
+## Excercise
+
+### Sort flights to find the flights with longest departure delays. Find the flights that left earliest in the morning.
+
+```{r}
+flights |>
+  arrange(desc(dep_delay))
+
+flights|>
+  arrange(time_hour)
+
+```
+
+
+### Sort flights to find the fastest flights. (Hint: Try including a math calculation inside of your function.)
+
+```{r}
+flights |>
+  mutate(speed = distance/air_time *60, .before = 1) |>  #.before = 1 adds speed to start of coloumns, we can also use .before = year
+  arrange(desc(speed))
+```
+Wenn dem Argument .keep = "used" behält man alle Variablen die man in der Funktion mutate() verwendet hat.
+
+```{r, eval=FALSE}
+flights |>
+  mutate(speed = distance/air_time *60, .keep = "used") |>
+  arrange(desc(speed))
+```
+
+### Was there a flight on every day of 2013?
+
+```{r}
+flights |>
+  filter(year == 2013) |>
+  distinct(month,day) |>
+  count()
+```
+
+### Fast flight to Houston's IAH airport
+
+```{r}
+flights |> 
+  filter(dest == "IAH") |> 
+  mutate(speed = distance / air_time * 60) |> 
+  select(year:day, dep_time, carrier, flight, speed) |> 
+  arrange(desc(speed)) 
+```
+
+### Which month has most delays on average?
+
+```{r}
+flights |> 
+  group_by(month) |> 
+  summarize(
+    delay = round(mean(dep_delay, na.rm = TRUE),2), n_rows = n()
+  ) |>
+  arrange(desc(delay))
+
+#Alternative:
+
+#flights |> 
+#  summarize(
+#    delay = mean(dep_delay, na.rm = TRUE), 
+#    n = n(),
+#    .by = month
+#  )
+```
+### Find most delays flight for each destination
+
+```{r}
+flights |> 
+  group_by(dest) |> 
+  slice_max(arr_delay, n = 1) |> #if two flights same delay both are kept, with_ties = FALSE if strictly only one row per destination 
+  relocate(dest) |>
+  arrange(desc(arr_delay))
+
+```
+
+
+

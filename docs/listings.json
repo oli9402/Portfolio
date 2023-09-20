@@ -2,6 +2,7 @@
   {
     "listing": "/projects.html",
     "items": [
+      "/posts/Learning_R/index.html",
       "/posts/confidence_intervals/index.html",
       "/posts/Simpsons_Paradox/index.html",
       "/posts/Masterarbeit/index.html",

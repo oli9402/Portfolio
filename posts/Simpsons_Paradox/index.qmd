@@ -5,7 +5,6 @@ date: "09.05.2023"
 categories: [Linear Mixed Effects, Statistics, Random Effects]
 image: "sp.png"
 bibliography: ref.bib
-
 ---
 
 ## Simpson's Paradox
@@ -29,9 +28,7 @@ Beispiele sind:
 -   Prüfungsnoten genested in Schüler (Zwei Ebenen)
 -   Kundenzufriedenheit genested Person genested in Altersgruppen (Drei Ebenen)
 
-
-
-## Beispiel Pinguine 
+## Beispiel Pinguine
 
 Daten (@pingu):
 
@@ -43,7 +40,7 @@ Die Daten wurden von Dr Allison Horst, Alison Hill und Kristen Gorman zu einem R
 
 **Zuerst, R Packete installieren**
 
-```{r eval =FALSE}
+```{r, eval =FALSE}
 install.packages("palmerpenguins") #Data
 install.packages("tibble") #Data handling
 install.packges("ggplot2") #Plotting
@@ -61,9 +58,7 @@ penguins <- palmerpenguins::penguins
 head(penguins)
 ```
 
-
-### Daten explorieren 
-
+### Daten explorieren
 
 ```{r, warning = FALSE}
 ggplot(data = penguins,
@@ -78,6 +73,7 @@ penguins %>%
   select(species, sex, body_mass_g) %>%
   arrange(desc(body_mass_g))
 ```
+
 ```{r, warning = FALSE}
 penguins %>%
   select(species, sex, body_mass_g) %>%
@@ -93,6 +89,7 @@ penguins %>%
   group_by(species,sex,n_species) %>%
   summarize(n=n())
 ```
+
 ```{r, warning = FALSE}
 penguins %>%
   count(species, sex) %>%
@@ -141,10 +138,8 @@ penguins %>%
   geom_smooth(method = 'lm', formula = y ~x)
 ```
 
-
-
 ## Interpretation
 
-Wir sehen auf den letzten beiden Plots, dass wenn wir die Art der Penguine ingnorieren wir falsche Schlüsse ziehen über den Zusammenhang zwischen Schnabellänge und -breite.  
+Wir sehen auf den letzten beiden Plots, dass wenn wir die Art der Penguine ingnorieren wir falsche Schlüsse ziehen über den Zusammenhang zwischen Schnabellänge und -breite.
 
 More information on mixed-effects models and simpson's paradox [see @hoxMultilevelAnalysisTechniques2017]

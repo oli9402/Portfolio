@@ -224,5 +224,29 @@ flights |>
 
 ```
 
+```{r}
+avg_flight <- flights %>% 
+  group_by(month, day) %>% 
+  summarize(n = n())
+
+ggplot(data = avg_flight,
+       # By default, the y-axis will have December at the top, so use fct_rev() to reverse it
+       mapping = aes(x = day, y = month, fill = n)) +
+  geom_tile() +
+  # Add viridis colors
+scale_fill_viridis_c(option = "inferno") + 
+  # Add nice labels
+  labs(x = "Day", y = "Month",
+       title = "Flights per day",
+       subtitle = "2013",
+       fill = "Count") +
+
+  # Force all the tiles to have equal widths and heights
+  coord_equal() +
+  # Use a cleaner theme
+  theme_minimal()
+  
+```
+
 
 

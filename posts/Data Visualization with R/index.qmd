@@ -1,0 +1,187 @@
+---
+title: "Themes for Data Visualization with R"
+author: "Oliver Zingg"
+date: "09.10.2023"
+---
+
+
+# Example 1: Save Themes
+
+* https://datavizs23.classes.andrewheiss.com/example/05-example.html
+
+```{r, message= F, warning=FALSE}
+library(tidyverse)  # For ggplot, dplyr, and friends
+library(gapminder)  # For gapminder data
+library(scales)     # For nice axis labels
+
+gapminder_filtered <- gapminder %>% 
+  filter(year > 2000)
+
+base_plot <- ggplot(data = gapminder_filtered,
+                    mapping = aes(x = gdpPercap, y = lifeExp, 
+                                  color = continent, size = pop)) +
+  geom_point() +
+  # Use dollars, and get rid of the cents part (i.e. $300 instead of $300.00)
+  scale_x_log10(labels = dollar_format(accuracy = 1)) +
+  # Format with commas
+  scale_size_continuous(labels = comma) +
+  # Use viridis
+  scale_color_viridis_d(option = "plasma", end = 0.9) +
+  labs(x = "GDP per capita", y = "Life expectancy",
+       color = "Continent", size = "Population",
+       title = "Here's a cool title",
+       subtitle = "And here's a neat subtitle",
+       caption = "Source: The Gapminder Project") +
+  facet_wrap(vars(year))
+
+```
+
+## Create and save theme (my_pretty_theme)
+```{r}
+windowsFonts(`Roboto Condensed` = windowsFont("Roboto Condensed"))
+
+my_pretty_theme <- theme_minimal(base_family = "Roboto Condensed", base_size = 12) +
+  theme(panel.grid.minor = element_blank(),
+        # Bold, bigger title
+        plot.title = element_text(face = "bold", size = rel(1.7)),
+        # Plain, slightly bigger subtitle that is grey
+        plot.subtitle = element_text(face = "plain", size = rel(1.3), color = "grey70"),
+        # Italic, smaller, grey caption that is left-aligned
+        plot.caption = element_text(face = "italic", size = rel(0.7), 
+                                    color = "grey70", hjust = 0),
+        # Bold legend titles
+        legend.title = element_text(face = "bold"),
+        # Bold, slightly larger facet titles that are left-aligned for the sake of repetition
+        strip.text = element_text(face = "bold", size = rel(1.1), hjust = 0),
+        # Bold axis titles
+        axis.title = element_text(face = "bold"),
+        # Add some space above the x-axis title and make it left-aligned
+        axis.title.x = element_text(margin = margin(t = 10), hjust = 0),
+        # Add some space to the right of the y-axis title and make it top-aligned
+        axis.title.y = element_text(margin = margin(r = 10), hjust = 1),
+        # Add a light grey background to the facet titles, with no borders
+        strip.background = element_rect(fill = "grey90", color = NA),
+        # Add a thin grey border around all the plots to tie in the facet titles
+        panel.border = element_rect(color = "grey90", fill = NA))
+
+```
+
+```{r}
+base_plot + 
+  my_pretty_theme
+```
+# Example 2: BBC News data team style 
+
+* https://bbc.github.io/rcookbook/
+
+```{r, warning=F, message=F}
+#This line of code installs the pacman page if you do not have it installed - if you do, it simply loads the package
+if(!require(pacman))install.packages("pacman")
+
+pacman::p_load('dplyr', 'tidyr', 'gapminder',
+               'ggplot2',  'ggalt',
+               'forcats', 'R.utils', 'png', 
+               'grid', 'ggpubr', 'scales',
+               'bbplot')
+#install.packages('devtools')
+#devtools::install_github('bbc/bbplot')
+library(bbplot)
+
+```
+
+
+
+
+
+```{r, warning=FALSE}
+#Prepare data
+multiple_line_df <- gapminder %>%
+  filter(country == "China" | country == "United States") 
+
+#Make plot
+multiple_line <- ggplot(multiple_line_df, aes(x = year, y = lifeExp, colour = country)) +
+  geom_line(size = 2) +
+  geom_hline(yintercept = 0, size = 1, colour="#333333") +
+  scale_colour_manual(values = c("#FAAB18", "#1380A1")) +
+  bbc_style() +
+  labs(title="Living longer",
+       subtitle = "Life expectancy in China and the US")
+multiple_line
+
+```
+## Add annotation
+
+```{r,warning=FALSE}
+multiple_line <- multiple_line + 
+  geom_label(aes(x = 1980, y = 45, label = "I'm quite a long\nannotation over\nthree rows"), 
+             hjust = 0, 
+             vjust = 0.5, 
+             lineheight = 0.8,
+             colour = "#555555", 
+             fill = "white", 
+             label.size = NA, 
+             family="Helvetica", 
+             size = 6) 
+multiple_line
+```
+## Add legend to lines
+
+```{r,warning=FALSE}
+multiple_line <- multiple_line + 
+  theme(legend.position = "none") + 
+  xlim(c(1950, 2011)) +
+  geom_label(aes(x = 2007, y = 79, label = "US"), 
+             hjust = 0, 
+             vjust = 0.5, 
+             colour = "#1380A1", 
+             fill = "white", 
+             label.size = NA, 
+             family="Helvetica", 
+             size = 6) +
+  geom_label(aes(x = 2007, y = 72, label = "China"), 
+             hjust = 0, 
+             vjust = 0.5, 
+             colour = "#FAAB18", 
+             fill = "white", 
+             label.size = NA, 
+             family="Helvetica", 
+             size = 6)
+multiple_line
+```
+## Add arrow to address dip in china
+
+```{r,warning=FALSE}
+multiple_line + geom_curve(aes(x = 1979, y = 45, xend = 1965, yend = 43), 
+                             colour = "#555555", 
+                             size=0.5, 
+                             curvature = -0.2,
+                             arrow = arrow(length = unit(0.03, "npc")))
+```
+
+
+## Dumbbell plot
+
+```{r, warning=FALSE}
+library("ggalt")
+library("tidyr")
+
+#Prepare data
+dumbbell_df <- gapminder %>%
+  filter(year == 1967 | year == 2007) %>%
+  select(country, year, lifeExp) %>%
+  spread(year, lifeExp) %>%
+  mutate(gap = `2007` - `1967`) %>%
+  arrange(desc(gap)) %>%
+  head(10)
+
+#Make plot
+ggplot(dumbbell_df, aes(x = `1967`, xend = `2007`, y = reorder(country, gap), group = country)) + 
+  geom_dumbbell(colour = "#dddddd",
+                size = 3,
+                colour_x = "#FAAB18",
+                colour_xend = "#1380A1") +
+  bbc_style() + 
+  labs(title="We're living longer",
+       subtitle="Biggest life expectancy rise, 1967-2007")
+```
+

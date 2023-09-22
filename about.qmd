@@ -2,18 +2,16 @@
 title: "About"
 ---
 
-:::{.panel-tabset}
-
+::: panel-tabset
 # Skills
 
-**Programming** | R | Matlab | C | Python
+**Programming** \| R \| Matlab \| C \| Python
 
-**Programme** | RStudio | SPSS | LaTex | MS-Office | Abelton Live | Markdown
+**Programme** \| RStudio \| SPSS \| LaTex \| MS-Office \| Abelton Live \| Markdown
 
 # Sprachkenntnisse
 
-**Englisch** | Bilingual
+**Englisch** \| Bilingual
 
-**Deutsch** | Bilingual
-
+**Deutsch** \| Bilingual
 :::

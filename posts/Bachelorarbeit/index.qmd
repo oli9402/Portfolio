@@ -2,7 +2,7 @@
 title: "Bachelorarbeit"
 author: "Oliver Zingg"
 date: "Juni 2021"
-categories: [Machine Learning, Systematic literature review, MRI]
+categories: [Machine Learning, Systematic literature review, MRI, Bachelorarbeit]
 image: "BA.jpg"
 ---
 

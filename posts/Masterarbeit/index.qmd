@@ -2,7 +2,7 @@
 title: "Masterarbeit"
 author: "Oliver Zingg"
 date: "Juni 2023"
-categories: [Data Analysis, Mixed-Effects Model, EEG, Psychiatric Disorders]
+categories: [Data Analysis, Mixed-Effects Model, EEG, Psychiatric Disorders, Masterarbeit]
 image: "MA.jpg"
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Oliver Zingg"
-image: oli2.jpg
+image: oli.jpg
 about: 
   template: trestles
   image-shape: round

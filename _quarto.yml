@@ -6,13 +6,30 @@ project:
 website:
   title: "Oliver Zingg"
   favicon: "oli.jpg"
+  page-navigation: true
   page-footer:
+    background: "#000000"
     left: |
       Created by Oliver Zingg with Quarto and RStudio
+    center:  
+      - href: https://github.com/oli9402
+        icon: github
+        aria-label: GitHub
+      - href: https://twitter.com/oliver_zingg
+        icon: twitter
+        aria-label: Twitter
+      - href: https://www.linkedin.com/in/oliver-zingg-321b0228a/
+        icon: linkedin
+        aria-label: LinkedIn
+    right: |
+      Viel Spass beim durchstöbern meiner Seite
   navbar:
-    background: primary
+    background: "#f0eeeb"
+    logo: logo.png
+    title: false
+    collapse-below: lg
     pinned: True
-    left:
+    right:
       - icon: house-door
         href: index.qmd
         text: Home
@@ -20,17 +37,23 @@ website:
         href: about.qmd
       - icon: list-task
         href: projects.qmd
-    tools:
-      - icon: code-slash
-        href: https://github.com/oli9402/Portfolio
+      - icon: file-earmark
+        href: CV.qmd
 
+        
 format:
   html:
-    theme: cosmo
-    css: styles.css
+    theme: [lux, rwds.scss]
+    css: rwds.css
     toc: true
     code-link: true
-    code-fold: show
+    code-fold: true
+    font-family: monospace
+    grid:
+      sidebar-width: 0px
+      body-width: 1000px
+      margin-width: 250px
     highlight-style: breeze
-editor: visual
- 
+
+execute: 
+  freeze: auto

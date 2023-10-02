@@ -1,0 +1,180 @@
+---
+title: "CV"
+---
+
+Aktuell bin ich auf der Suche nach einem Praktikum im Bereich Marketing, Meinungsforschung oder User Experience.
+
+
+
+
+### Ausbildung
+
+::: {.d-flex .justify-content-between}
+::: {}
+**Universität Zürich**  
+M.Sc. in Psychologie
+(Praktikum noch offen)
+:::
+::: {.text-end}
+Zürich  
+Voraussichtlicher Abschluss Sommer 2024
+:::
+:::
+- Masterarbeit: *Investigating the Neuronal Basis of Learning Processes and Memory Formation in Children and Adolescents with Various Psychiatric Disorders*
+- Note: 6
+
+::: {.d-flex .justify-content-between}
+::: {}
+**Universität Zürich**  
+B.Sc. in Psychologie
+:::
+::: {.text-end}
+Zürich 
+2018 - 2021
+:::
+:::
+- Bachelorarbeit: *Comparison between Support Vector Machine and Convolutional Neural Network for Alzheimer's Disease Classification*
+- Note: 6
+
+::: {.d-flex .justify-content-between}
+::: {}
+**Universität Zürich**  
+Assessmentjahr Wirtschaftsinformatik
+:::
+::: {.text-end}
+Zürich  
+2017 - 2018
+:::
+:::
+
+
+### Arbeitserfahrung
+
+::: {.d-flex .justify-content-between}
+::: {}
+**Kabinenreiniger (Temporärarbeit)**  
+Vebego Airport AG
+:::
+::: {.text-end}
+Zürich, Juli 2019 - Nov 2019
+:::
+:::
+- Langstreckenflugzeuge Innenräume reinigen.
+- Kurzes Zeitfenster: zwischen Landen und Boarding des Flugzeugs.
+- In einem kleineren Team zwischen Flugzeugen rotieren und verschiedene Aufgaben erfüllen:
+Abfall entsorgen, Boardküche reinigen, Boden saugen, Kaugummi entfernen, usw.
+
+
+::: {.d-flex .justify-content-between}
+::: {}
+**Mitarbeiter Wäscherei Bodensee (Temporärarbeit)**
+Wäscherei Bodensee AG
+:::
+::: {.text-end}
+Münsterlingen, Nov 2016 - Juli 2016
+:::
+:::
+*Research Scientist*
+
+- Part of Eytan Bakshy's Adaptive Experimentation team
+- Developed statistical, machine learning and experimental methodology
+- Ran adaptive and contextual field experiments with a variety of product teams
+- Integrated advanced methodologies into a toolkit for scalable and automatic experimentation intended for optimization ([Ax](https://ax.dev/)) - [released at F8 2019](https://developers.facebook.com/videos/2019/product-optimization-with-adaptive-experimentation/))
+- Developed scalable methods for robust observational causal inference as the technical lead of our "CausalML" initiative
+
+::: {.d-flex .justify-content-between}
+::: {}
+**Princeton University**  
+:::
+::: {.text-end}
+September 2015 - May 2016
+:::
+:::
+*Pre-doctoral fellow*
+
+- Supervised by Kosuke Imai
+
+::: {.d-flex .justify-content-between}
+::: {}
+**Facebook Core Data Science**  
+:::
+::: {.text-end}
+Summer 2015
+:::
+:::
+*Summer Intern*
+
+- Statistical and Decision Science Team
+- Supervised by Eytan Bakshy
+
+### Teaching
+
+#### Facebook
+::: {.d-flex .justify-content-between}
+::: {}
+Internal datacamp class on designing and analyzing experiments 
+:::
+::: {.text-end}
+2017-2019
+:::
+:::
+
+#### NYU Undergraduate
+::: {.d-flex .justify-content-between}
+::: {}
+TA for Power and Politics in America (under Jonathan Nagler)
+:::
+::: {.text-end}
+Fall 2014
+:::
+:::
+
+::: {.d-flex .justify-content-between}
+::: {}
+TA for Games, Strategy and Politics (under Steven Brams)
+:::
+::: {.text-end}
+Fall 2013
+:::
+:::
+
+#### NYU Graduate
+
+::: {.d-flex .justify-content-between}
+::: {}
+TA for Quantitative Methods II (under Nathaniel Beck)
+:::
+::: {.text-end}
+Spring 2015
+:::
+:::
+
+::: {.d-flex .justify-content-between}
+::: {}
+TA for Quantitative Methods II (under Cyrus Samii)
+:::
+::: {.text-end}
+Spring 2014
+:::
+:::
+
+::: {.d-flex .justify-content-between}
+::: {}
+High Performance Computing Talk for NYU Datalab
+:::
+::: {.text-end}
+February 2014
+:::
+:::
+
+::: {.d-flex .justify-content-between}
+::: {}
+Introduction to R for NYU Datalab
+:::
+::: {.text-end}
+January 2013
+:::
+:::
+
+
+{{< downloadthis cvm.pdf dname="CV_Oliver.pdf" label="Download CV as PDF" icon="database-fill-down" type="info" >}}

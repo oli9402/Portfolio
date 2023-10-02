@@ -25,3 +25,5 @@ There is a rise in using machine learning to analyse MRI images to help identify
 #### What I've learned?
 
 Machine learning provides big potential in a lot of areas. Still, there are many pitfalls that need to be addressed. A main problem is overfitting where a statistical model learns random noise that is tied to the training data. Many studies use methods to account for overfitting (e.g., crossvalidiation or independent test data). Nevertheless, inexpensive diagnostical questionnaires tend to perform equally well as more expensive machine learning methods.
+
+{{< downloadthis .pdf dname="BA_OliverZingg_final.pdf" label="Download BA Thesis as PDF" icon="database-fill-down" type="info" >}}

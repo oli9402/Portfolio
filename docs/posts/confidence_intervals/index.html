@@ -88,23 +88,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit"
   }
-}</script><link rel="stylesheet" href="../../styles.css">
+}</script><link rel="stylesheet" href="../../rwds.css">
 </head>
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">Oliver Zingg</span>
-    </a>
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../logo.png" alt="" class="navbar-logo"></a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
 <li class="nav-item">
     <a class="nav-link" href="../../index.html" rel="" target=""><i class="bi bi-house-door" role="img">
 </i> 
@@ -113,16 +112,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li class="nav-item">
     <a class="nav-link" href="../../about.html" rel="" target=""><i class="bi bi-file-person" role="img">
 </i> 
- <span class="menu-text">About</span></a>
+ <span class="menu-text">About Me</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../projects.html" rel="" target=""><i class="bi bi-list-task" role="img">
 </i> 
  <span class="menu-text">Projects</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../CV.html" rel="" target=""><i class="bi bi-file-earmark" role="img">
+</i> 
+ <span class="menu-text">CV</span></a>
+  </li>  
 </ul>
-<div class="quarto-navbar-tools ms-auto">
-    <a href="https://github.com/oli9402/Portfolio" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-code-slash"></i></a>
+<div class="quarto-navbar-tools">
 </div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
@@ -194,7 +197,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>For numbers higher than 100 the modulo (%%) is taken and 18 is added to make sure we don’t end up with too large numbers.</li>
 </ul>
 <div class="cell">
-<details open=""><summary>Code</summary><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">12</span><span class="op">)</span></span>
+<details><summary>Code</summary><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">12</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Generate a population</span></span>
 <span><span class="va">population_ages</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Exponential.html">rexp</a></span><span class="op">(</span><span class="fl">1000000</span>,<span class="fl">0.015</span><span class="op">)</span><span class="op">+</span><span class="fl">18</span>,   </span>
@@ -212,7 +215,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<details open=""><summary>Code</summary><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">true_mean</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">population_ages</span><span class="op">)</span>   <span class="co"># Check the population mean</span></span>
+<details><summary>Code</summary><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">true_mean</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">population_ages</span><span class="op">)</span>   <span class="co"># Check the population mean</span></span>
 <span></span>
 <span><span class="va">true_mean</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -238,7 +241,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>With qnorm we can get the z value that is used to calculate the boundaries of the confidence intervals</li>
 </ul>
 <div class="cell">
-<details open=""><summary>Code</summary><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">12</span><span class="op">)</span></span>
+<details><summary>Code</summary><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">12</span><span class="op">)</span></span>
 <span><span class="va">sample_size</span> <span class="op">&lt;-</span> <span class="fl">1000</span></span>
 <span></span>
 <span><span class="va">intervals</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">)</span>  <span class="co"># Create and store 25 intervals</span></span>
@@ -517,11 +520,28 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">Created by Oliver Zingg with Quarto and RStudio</div>   
     <div class="nav-footer-center">
-      &nbsp;
-    </div>
-    <div class="nav-footer-right">
-      &nbsp;
-    </div>
+      <ul class="footer-items list-unstyled">
+<li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/oli9402">
+      <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/oliver_zingg">
+      <i class="bi bi-twitter" role="img" aria-label="Twitter">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/oliver-zingg-321b0228a/">
+      <i class="bi bi-linkedin" role="img" aria-label="LinkedIn">
+</i> 
+    </a>
+  </li>  
+</ul>
+</div>
+    <div class="nav-footer-right">Viel Spass beim durchstöbern meiner Seite</div>
   </div>
 </footer>
 

@@ -1,46 +1,21 @@
 ---
-title: "Oliver Zingg"
-image: oli.jpg
-about: 
-  template: trestles
-  image-shape: round
-  image-width: 15em
-  links:
-    - text: Email
-      icon: envelope
-      href: mailto:oliver9402@gmail.com
-    - text: LinkedIn
-      icon: linkedin
-      href: https://www.linkedin.com/in/oliver-zingg-321b0228a/
-    - text: Twitter
-      icon: twitter
-      href: https://twitter.com/oliver_zingg
-    - text: GitHub
-      icon: github
-      href: https://github.com/oli9402
-  id: pcc
+page-layout: full
 ---
 
-Willkommen auf meiner Webseite. Hier findest du mehr Infos über mich, wie auch Beschreibungen meiner bisherigen Projekte. Für Fragen bin ich erreichbar per Email.
+<!-- Nothing else to see here -->
 
-::: panel-tabset
-# Ausbildung
+::: grid
 
-**M.Sc. in Psychologie** \| September 2021 -- Aktuell \| Universität Zürich \| Praktikum noch ausstehend
+::: {#about-me-text .g-col-12 .g-col-md-6}
+<!-- # <span style="color:#1296e3">Willkommen auf meiner Webseite.</span> -->
 
-**B.Sc. in Psychologie** \| September 2018 - Juli 2021 \| Universität Zürich \| Nebenfach: Filmwissenschaft
+# Willkommen auf meiner Webseite
 
-**Assessmentjahr Wirtschaftsinformatik** \| September 2017 - Juli 2018 \| Universität Zürich
-
-# Berufserfahrung
-
-**Kabinenreiniger (Flugzeuge)** \| Juli 2019 - November 2019 \| Vebego Airport AG \| Zürich
-
-**Mitarbeiter Wäscherei Bodensee** \| November 2015 - Juli 2016 \| Wäscherei Bodensee AG \| Münsterlingen (TG)
-
-**Kommissionierer** \| August 2015 - September 2015 \| Lidl Schweiz \| Weinfelden (TG)
-
-# Aktueller Status
-
-Aktuell bin ich auf der Suche nach einem Praktikum im Bereich Marketing, Meinungsforschung oder User Experience.
+Willkommen auf meiner Webseite. Hier findest du mehr Infos über mich, wie auch Beschreibungen meiner bisherigen Projekte. Für Fragen bin ich erreichbar per [Email](mailto:oliver.zingg@uzh.ch).
 :::
+
+::: {.g-col-12 .g-col-md-6}
+<img src="oliver.png" width="90%" height="65%"/>
+:::
+:::
+

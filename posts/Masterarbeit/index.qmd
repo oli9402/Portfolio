@@ -27,3 +27,6 @@ It has been suggested that an EEG brain marker can be used to track successful l
 #### What I've learned?
 
 A big part of this thesis consisted of preparing and analyzing a large complex data set (12 GB). This was an interesting experience in which I could learn a lot about programming and challenges that come with such a data set. Additionally, a deeper understanding of complex mixed-effects models was gained. Especially, the limits when it comes to fitting non-normal data and interpretation of the resulting coefficients was challenging. There are still questions regarding the validity of the investigated EEG marker that couldn't be answered with my thesis. This was due to the nature of EEG data and confounding variables that couldn't be controlled for. Nevertheless, research in this area could possible lead to promising tools that may be helpful in clinical or school settings.
+
+
+{{< downloadthis .pdf dname="MA_Oliver.pdf" label="Download MA Thesis as PDF" icon="database-fill-down" type="info" >}}

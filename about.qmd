@@ -1,6 +1,50 @@
 ---
-title: "About"
+title: "About Me"
+image: oli.jpg
+about: 
+  template: trestles
+  image-shape: round
+  image-width: 15em
+  links:
+    - text: Email
+      icon: envelope
+      href: mailto:oliver9402@gmail.com
+    - text: LinkedIn
+      icon: linkedin
+      href: https://www.linkedin.com/in/oliver-zingg-321b0228a/
+    - text: Twitter
+      icon: twitter
+      href: https://twitter.com/oliver_zingg
+    - text: GitHub
+      icon: github
+      href: https://github.com/oli9402
+  id: pcc
 ---
+
+
+::: panel-tabset
+# Ausbildung
+
+**M.Sc. in Psychologie** \| September 2021 -- Aktuell \| Universität Zürich \| Praktikum noch ausstehend
+
+**B.Sc. in Psychologie** \| September 2018 - Juli 2021 \| Universität Zürich \| Nebenfach: Filmwissenschaft
+
+**Assessmentjahr Wirtschaftsinformatik** \| September 2017 - Juli 2018 \| Universität Zürich
+
+# Berufserfahrung
+
+**Kabinenreiniger (Flugzeuge)** \| Juli 2019 - November 2019 \| Vebego Airport AG \| Zürich
+
+**Mitarbeiter Wäscherei Bodensee** \| November 2015 - Juli 2016 \| Wäscherei Bodensee AG \| Münsterlingen (TG)
+
+**Kommissionierer** \| August 2015 - September 2015 \| Lidl Schweiz \| Weinfelden (TG)
+
+
+:::
+
+
+
+
 
 ::: panel-tabset
 # Skills

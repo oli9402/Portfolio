@@ -244,7 +244,46 @@ scale_fill_viridis_c(option = "inferno") +
   # Force all the tiles to have equal widths and heights
   coord_equal() +
   # Use a cleaner theme
-  theme_minimal()
+  theme_minimal()+
+  #new yticks
+  scale_y_continuous(breaks = seq(1, 12, 1)) +
+  #add sunday to january month
+  geom_label(aes(x = 6 , y = 1, label = "S"), 
+             hjust = 0, 
+             vjust = 0.5, 
+             lineheight = 0.8,
+             colour = "white", 
+             label.size = NA, 
+             family="Helvetica", 
+             size = 2) +
+    geom_label(aes(x = 13 , y = 1, label = "S"), 
+             hjust = 0, 
+             vjust = 0.5, 
+             lineheight = 0.8,
+             colour = "white", 
+             label.size = NA, 
+             family="Helvetica", 
+             size = 2) +
+    geom_label(aes(x = 20 , y = 1, label = "S"), 
+             hjust = 0, 
+             vjust = 0.5, 
+             lineheight = 0.8,
+             colour = "white", 
+             label.size = NA, 
+             family="Helvetica", 
+             size = 2) +
+    geom_label(aes(x = 27 , y = 1, label = "S"), 
+             hjust = 0, 
+             vjust = 0.5, 
+             lineheight = 0.8,
+             colour = "white", 
+             label.size = NA, 
+             family="Helvetica",
+             size = 2) +
+  #caption
+  labs(caption = "S = Sunday")
+  
+
   
 ```
 

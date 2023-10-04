@@ -11,7 +11,7 @@ page-layout: full
 
 # Willkommen auf meiner Webseite
 
-Willkommen auf meiner Webseite. Hier findest du mehr Infos über mich, wie auch Beschreibungen meiner bisherigen Projekte. Für Fragen bin ich erreichbar per [Email](mailto:oliver.zingg@uzh.ch).
+Hier findest du mehr Infos über mich, wie auch Beschreibungen meiner bisherigen Projekte. Für Fragen bin ich erreichbar per [Email](mailto:oliver.zingg@uzh.ch).
 :::
 
 ::: {.g-col-12 .g-col-md-6}

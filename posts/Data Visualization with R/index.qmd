@@ -4,12 +4,13 @@ author: "Oliver Zingg"
 date: "09.10.2023"
 ---
 
-
 # Example 1: Save Themes
 
 * https://datavizs23.classes.andrewheiss.com/example/05-example.html
 
 ```{r, message= F, warning=FALSE}
+knitr::opts_chunk$set(fig.width=15, fig.height=8) 
+
 library(tidyverse)  # For ggplot, dplyr, and friends
 library(gapminder)  # For gapminder data
 library(scales)     # For nice axis labels
@@ -38,6 +39,7 @@ base_plot <- ggplot(data = gapminder_filtered,
 
 ## Create and save theme (my_pretty_theme)
 ```{r}
+
 windowsFonts(`Roboto Condensed` = windowsFont("Roboto Condensed"))
 
 my_pretty_theme <- theme_minimal(base_family = "Roboto Condensed", base_size = 12) +
@@ -94,6 +96,8 @@ library(bbplot)
 
 
 ```{r, warning=FALSE}
+knitr::opts_chunk$set(fig.width=12, fig.height=8) 
+
 #Prepare data
 multiple_line_df <- gapminder %>%
   filter(country == "China" | country == "United States") 
@@ -127,6 +131,8 @@ multiple_line
 ## Add legend to lines
 
 ```{r,warning=FALSE}
+knitr::opts_chunk$set(fig.width=12, fig.height=8) 
+
 multiple_line <- multiple_line + 
   theme(legend.position = "none") + 
   xlim(c(1950, 2011)) +
@@ -183,5 +189,87 @@ ggplot(dumbbell_df, aes(x = `1967`, xend = `2007`, y = reorder(country, gap), gr
   bbc_style() + 
   labs(title="We're living longer",
        subtitle="Biggest life expectancy rise, 1967-2007")
+```
+
+# Example 3: [Youtube](https://www.youtube.com/watch?v=nDa6aHxiSYQ&list=LL&index=2&ab_channel=AlbertRapp)
+
+```{r setup, include=T, warning=FALSE}
+knitr::opts_chunk$set(fig.width=12, fig.height=8) 
+
+library(tidyverse)
+library(gghighlight)
+library(thematic)
+library(ggtext)
+df <- read.csv("time.csv")
+df_c <- df |> select(Year,alone = contains("alone"),coworkers = contains("coworker"), parents = contains("parents"), children = contains("children"), friends = contains("friends")) %>% pivot_longer(
+    cols = alone:friends, 
+    names_to = 'person',
+    values_to = 'minutes'
+)
+colors <- thematic::okabe_ito(2)
+title_text <- glue::glue(
+  'Around the age of 40, we spend less time with <span style = "color:{colors[2]}">**children**</span><br>and more time <span style = "color:{colors[1]}">**alone**</span>'
+)
+# plot
+df_c |> 
+  ggplot(aes(x = Year, y = minutes, color = person)) +
+  geom_line(linewidth = 1.5) +
+  labs(title = 'Time with others as we get older') + 
+  theme_minimal(
+    base_size = 24,
+    base_family = 'Source Sans Pro'
+  ) + labs(
+    x = 'Age',
+    y = element_blank(),
+    title = title_text,
+    subtitle = 'Daily time spent with others (in minutes)',
+    caption = 'Data: Our World in Data'
+  ) +
+  gghighlight(
+    person %in% c('alone', 'children'), 
+    Year >= 38, 
+    use_direct_label = F,
+    use_group_by = FALSE,
+    unhighlighted_params = list(color = 'grey80', linewidth = 1)
+  ) +
+  annotate(
+    'text',
+    x = 80,
+    y = c(425, 85),
+    size = 8,
+    label = c('alone', 'children'),
+    family = 'Source Sans Pro',
+    fontface = 'bold',
+    hjust = 1,
+    color = thematic::okabe_ito(2)
+  ) +
+  annotate(
+    'segment',
+    x = 38,
+    xend = 38,
+    y = 0,
+    yend = 275,
+    linetype = 2,
+    linewidth = 1,
+    color = 'grey10'
+  ) +
+  scale_color_manual(values = thematic::okabe_ito(2)) +
+  theme(
+    legend.position = 'none',
+    panel.grid.minor = element_blank(),
+    panel.grid.major = element_line(linewidth = 0.5, linetype = 2, color = 'grey85'),
+    plot.title.position = 'plot',
+    text = element_text(color = 'grey20'),
+    axis.text = element_text(color = 'grey40'),
+    plot.title = ggtext::element_markdown(
+      color = 'grey20', family = 'Merriweather'
+    ),
+    plot.subtitle = element_text(
+      color = 'grey30', 
+      size = rel(0.8), 
+      margin = margin(b = 8, unit = 'mm')
+    ),
+    plot.caption = element_text(size = rel(0.6), color = 'grey20')
+  )
 ```
 

@@ -68,7 +68,7 @@ my_pretty_theme <- theme_minimal(base_family = "Roboto Condensed", base_size = 1
 
 ```
 
-```{r}
+```{r,fig.width=10,fig.height=8}
 base_plot + 
   my_pretty_theme
 ```
@@ -193,8 +193,7 @@ ggplot(dumbbell_df, aes(x = `1967`, xend = `2007`, y = reorder(country, gap), gr
 
 # Example 3: [Youtube](https://www.youtube.com/watch?v=nDa6aHxiSYQ&list=LL&index=2&ab_channel=AlbertRapp)
 
-```{r setup, include=T, warning=FALSE}
-knitr::opts_chunk$set(fig.width=12, fig.height=8) 
+```{r setup, include=T, warning=FALSE,fig.width=10,fig.height=7}
 
 library(tidyverse)
 library(gghighlight)

@@ -9,7 +9,6 @@ date: "09.10.2023"
 * https://datavizs23.classes.andrewheiss.com/example/05-example.html
 
 ```{r, message= F, warning=FALSE}
-knitr::opts_chunk$set(fig.width=15, fig.height=8) 
 
 library(tidyverse)  # For ggplot, dplyr, and friends
 library(gapminder)  # For gapminder data
@@ -191,9 +190,17 @@ ggplot(dumbbell_df, aes(x = `1967`, xend = `2007`, y = reorder(country, gap), gr
        subtitle="Biggest life expectancy rise, 1967-2007")
 ```
 
-# Example 3: [Youtube](https://www.youtube.com/watch?v=nDa6aHxiSYQ&list=LL&index=2&ab_channel=AlbertRapp)
+# Example 3: Youtube
 
-```{r setup, include=T, warning=FALSE,fig.width=10,fig.height=7}
+- https://www.youtube.com/watch?v=nDa6aHxiSYQ&list=LL&index=2&ab_channel=AlbertRapp
+
+<details>
+<summary>Text that appears when folded</summary>
+Contents that appear when unfolded.
+Can contain many lines, as well as code chunks.
+</details>
+
+```{r setup, warning=FALSE,fig.width=10,fig.height=7}
 
 library(tidyverse)
 library(gghighlight)

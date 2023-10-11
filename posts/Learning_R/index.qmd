@@ -26,15 +26,29 @@ library(palmerpenguins) #data
 library(ggthemes) #color bild colors 
 
 ```
+# Daten importieren
 
+CSV files lassen sich mit ==read.csv()== importieren. Der Pfad sollte mit "" gekennzeichnet werden. Mit ==col_types = "Dcfffilllddddc== kann man die Variabeln Klassen beim importieren bestimmen. 
+
+* D = date
+* c = character (strings)
+* f = factor
+* i = integer
+* l = logical
+* d = double
 
 # GGplot2
 
 Argumente: 
 
 * data = was für einen Datensatz wird verwendet?
-* mapping = wie sollten Daten visuell dargestellt werden, mit aes() Funktion
+* mapping = wie sollten Daten visuell dargestellt werden, mit aes() Funktion. Mapping daten und Aesthetics
 * + müssen immer am Ende der Linie und nicht zu Beginn platziert werden!
+* aes() kann auch logical beinhalten z.b aes(color = age > 10)
+* super präsentation für mehr infos: (Rconf: Cédric Scherer)[https://rstudio-conf-2022.github.io/ggplot2-graphic-design/modules/d1-02_concepts_pt1.html]
+* mit theme_set(theme_light()) lässt sich ein Theme Gloabl erstellen
+
+
 
 ```{r, warning = FALSE, message= F}
 penguins <- palmerpenguins::penguins
@@ -56,7 +70,7 @@ ggplot(
   geom_point(mapping = aes(color = species, shape = species)) + 
   geom_smooth(method = "lm")
 ```
-
+in labs() lässt sich die Legende durch color= bearbeiten 
 
 ```{r, warning = FALSE, message = F}
 ggplot(
@@ -74,6 +88,39 @@ ggplot(
   ) +
   scale_color_colorblind()
 ```
+### Simple Boxplot
+
+```{r, warning = F, message = F}
+ggplot(penguins, aes(x = species, y = flipper_length_mm)) + geom_boxplot() + 
+  stat_summary(
+    fun = mean,
+    geom = "point",
+    color = "#28a87d",
+    size = 3
+  ) +
+  coord_flip()
+
+```
+Was auch möglich ist:
+
+```{r, warning = F, message = F}
+ggplot(penguins, aes(x = species, y = flipper_length_mm)) + 
+ stat_summary(
+    fun = mean, 
+    fun.max = function(y) mean(y) + sd(y), 
+    fun.min = function(y) mean(y) - sd(y) 
+  ) 
+```
+## Einfach barplots sortieren
+
+```{r, message = F , warning = F}
+ggplot(penguins,aes(x = fct_infreq(species))) + geom_bar() 
+```
+
+
+Speichert man ein ggplot Objekt ab, lässt es sich inspektieren mit **objektname$data**  oder **objektname$mapping**
+
+
 ```{r, warning=FALSE}
 ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
   geom_point(aes(color = species, shape = island))
@@ -87,6 +134,7 @@ ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
 #ggsave(filename = "penguin-plot.png") <- for saving
 
 ```
+
 
 # Data transformation
 

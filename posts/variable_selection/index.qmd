@@ -2,10 +2,15 @@
 title: "Accuracy of selected predictors per sample size"
 date: "2022-10-10"
 authors: "Oliver Zingg, Maué Pantoja , Chiara Breuer" 
-image: "var.jpg"
+image: "jacksonj.jpg"
 ---
-* With this exercise we want to inspect how **lm function** and **step function** vary when it comes to selection of correct variables depending on sample size
-* Our team: Maué Pantoja , Chiara Breuer, Oliver Zingg
+
+With this exercise we want to inspect how **lm function** and **step function** vary when it comes to selection of  correct variables depending on sample size.
+Our team: Maué Pantoja , Chiara Breuer, Oliver Zingg
+
+Foto von <a href="https://unsplash.com/de/@jacksonjost?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Jackson Jost</a> auf <a href="https://unsplash.com/de/fotos/tjKSTwb4mnI?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+
+
 
 ## Generate Data
 ```{r echo=T, results='hide', error=FALSE,message=FALSE, warning=FALSE}

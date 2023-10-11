@@ -71,7 +71,7 @@ Zürich
 :::
 
 
-{{< downloadthis cvm.pdf dname="CV_Oliver.pdf" label="Download Full CV" icon="database-fill-down" type="info" >}}
+<!-- {{< downloadthis cvm.pdf dname="CV_Oliver.pdf" label="Download Full CV" icon="database-fill-down" type="info" >}} -->
 
 
 

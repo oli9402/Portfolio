@@ -3,7 +3,7 @@ title: "Simpson's Paradox"
 author: "Oliver Zingg" 
 date: "09.05.2023"
 categories: [Linear Mixed Effects, Statistics, Random Effects]
-image: "sp.png"
+image: "my_plot.png"
 bibliography: ref.bib
 ---
 
@@ -49,7 +49,7 @@ install.packages("dplyr")
 
 **Packete laden**
 
-```{r, warning=FALSE}
+```{r, warning=FALSE, message = F}
 library(palmerpenguins)
 library(tibble)
 library(ggplot2)
@@ -132,10 +132,11 @@ ggplot(data = penguins,
 ```
 
 ```{r, warning = FALSE}
-penguins %>%
+plot_simps <- penguins %>%
   ggplot(mapping = aes(x = bill_length_mm, y = bill_depth_mm, group = species, col = species)) + 
   geom_point() +
   geom_smooth(method = 'lm', formula = y ~x)
+plot_simps
 ```
 
 ## Interpretation
@@ -143,3 +144,46 @@ penguins %>%
 Wir sehen auf den letzten beiden Plots, dass wenn wir die Art der Penguine ingnorieren wir falsche Schlüsse ziehen über den Zusammenhang zwischen Schnabellänge und -breite.
 
 More information on mixed-effects models and simpson's paradox [see @hoxMultilevelAnalysisTechniques2017]
+
+## Lets make a nice plot
+
+```{r, warning = F, message = F, fig.width=10,fig.height=7}
+library(thematic)
+library(ggtext)
+colors <- thematic::okabe_ito(3)
+title_text <- glue::glue(
+  'Bill Depth per Bill Length in mm for <span style = "color:{colors[1]}">**Adelie**</span>, <span style = "color:{colors[2]}">**Chinstrap**</span>, <span style = "color:{colors[3]}">**Gentoo**</span>')
+
+plot_simps <- plot_simps  + 
+  labs(x = "Bill Lenght [mm]", y = "Bill Depth [mm]",
+       color = "Species",
+       title = title_text,
+       caption = "Source: Penguins Data") + 
+  scale_y_continuous(
+    breaks = 13:22
+  )+ 
+  scale_x_continuous(
+    breaks = seq(30,60,by = 5)
+    )+ 
+  #guide = none, legend wird ausgelassen
+  scale_color_manual(values = thematic::okabe_ito(3), guide = "none") +
+  theme_minimal(base_family = 'Source Sans Pro', base_size = 12)+
+  theme(plot.title = ggtext::element_markdown(color = 'grey20', size = rel(1.7),face= "bold"),
+        plot.title.position = "plot",
+  # Bold axis titles
+  axis.title = element_text(face = "bold"),
+  # Add some space above the x-axis title and make it left-aligned
+  axis.title.x = element_text(margin = margin(t = 10), hjust = 0),
+  # Add some space to the right of the y-axis title and make it top-aligned
+  axis.title.y = element_text(margin = margin(r = 10), hjust = 1, margin (0,4,0,0)),) 
+plot_simps
+
+```
+## Save plot
+```{r, execute = F}
+library(here)
+p <- here("my_plot.png")
+#ggsave(p,plot_simps, width=45, height=30, units = "cm", dpi=500)
+
+```
+

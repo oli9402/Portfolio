@@ -130,7 +130,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </div> <!-- /container-fluid -->
     </nav></header><!-- content --><header id="title-block-header" class="quarto-title-block default page-columns page-full"><div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Accuracy of selected predictor per sample size</h1>
+      <h1 class="title">Accuracy of selected predictors per sample size</h1>
                       </div>
   </div>
     
@@ -140,7 +140,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p>Maué Pantoja , Chiara Breuer, Oliver Zingg </p>
+               <p>Oliver Zingg, Maué Pantoja , Chiara Breuer </p>
             </div>
     </div>
       
@@ -162,15 +162,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-<li><a href="#now-lets-visualize-these-results" id="toc-now-lets-visualize-these-results" class="nav-link active" data-scroll-target="#now-lets-visualize-these-results">Now lets visualize these results</a></li>
+<li>
+<a href="#about" id="toc-about" class="nav-link active" data-scroll-target="#about">About</a>
+  <ul class="collapse">
+<li><a href="#generate-data" id="toc-generate-data" class="nav-link" data-scroll-target="#generate-data">Generate Data</a></li>
+  <li><a href="#now-lets-visualize-these-results" id="toc-now-lets-visualize-these-results" class="nav-link" data-scroll-target="#now-lets-visualize-these-results">Now lets visualize these results</a></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary:</a></li>
+  </ul>
+</li>
   </ul></nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content"><ul>
+<main class="content quarto-banner-title-block" id="quarto-document-content"><section id="about" class="level1"><h1>About</h1>
+<p>Foto von <a href="https://unsplash.com/de/@jacksonjost?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">Jackson Jost</a> auf <a href="https://unsplash.com/de/fotos/tjKSTwb4mnI?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">Unsplash</a></p>
+<ul>
 <li>With this exercise we want to inspect how <strong>lm function</strong> and <strong>step function</strong> vary when it comes to selection of correct variables depending on sample size</li>
 <li>Our team: Maué Pantoja , Chiara Breuer, Oliver Zingg</li>
 </ul>
+<section id="generate-data" class="level2"><h2 class="anchored" data-anchor-id="generate-data">Generate Data</h2>
 <div class="cell">
 <details><summary>Code</summary><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Load packages </span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/lme4/lme4/">lme4</a></span><span class="op">)</span></span>
@@ -287,7 +296,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<section id="now-lets-visualize-these-results" class="level2"><h2 class="anchored" data-anchor-id="now-lets-visualize-these-results">Now lets visualize these results</h2>
+</section><section id="now-lets-visualize-these-results" class="level2"><h2 class="anchored" data-anchor-id="now-lets-visualize-these-results">Now lets visualize these results</h2>
 <div class="cell">
 <details><summary>Code</summary><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># final data frame used for visualization</span></span>
 <span><span class="va">sample_s</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"N25"</span>, <span class="st">"N30"</span>, <span class="st">"N40"</span>, <span class="st">"N60"</span>, <span class="st">"N100"</span>, <span class="st">"N500"</span>, <span class="st">"N1000"</span><span class="op">)</span></span>
@@ -333,7 +342,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 
 
-</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");

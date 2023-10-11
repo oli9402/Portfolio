@@ -2,6 +2,7 @@
 title: "Themes for Data Visualization with R"
 author: "Oliver Zingg"
 date: "09.10.2023"
+image: "pic.png"
 ---
 
 # Example 1: Save Themes
@@ -172,7 +173,7 @@ df_2007 <-  gapminder_filtered %>%
 
 
 
-plot_nice + geom_label(aes(x = 12000, y = 55, label = "South Africa"), 
+plot_nice_anno <- plot_nice + geom_label(aes(x = 12000, y = 55, label = "South Africa"), 
                   hjust = 0, 
                   vjust = 0.5, 
                   lineheight = 0.8,
@@ -190,6 +191,18 @@ plot_nice + geom_label(aes(x = 12000, y = 55, label = "South Africa"),
              size=0.8, 
              curvature = -0.2,
              arrow = arrow(length = unit(0.03, "npc")))
+plot_nice_anno
+```
+
+## Lets keep playing around
+
+```{r, warning = F, message = F, fig.width=10,fig.height=7}
+plot_nice_anno +
+  scale_y_continuous(
+    breaks = c(4:7*10, seq(70, 80, by = 2))
+    )
+              
+
 ```
 
 

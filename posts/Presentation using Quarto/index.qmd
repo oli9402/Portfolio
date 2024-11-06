@@ -18,6 +18,11 @@ As an example here is a very simple presentation created:
 
 Using *iframes* we can incorporate the same presentation into this blog post but certain controls like **F for fullscreen** doesn't work. 
 
+::: {.callout-tip}
+## Controls in Iframe
+Press on the presentation displayed below and use right and left **arrow keys** to navigate.
+:::
+
 ```{=html}
 <iframe width="1200" height="700" src="https://oli9402.github.io/Revealjs/" title="Quarto Presentation" data-external="1"></iframe>
 ```

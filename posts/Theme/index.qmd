@@ -35,7 +35,7 @@ p <- ggplot(cars, aes(dist, speed))+
 
 
 # Theme        
-tx_theme <- theme_minimal(base_size = 18, base_family = "Roboto") +
+tx_theme <- theme_minimal(base_size = 18) +
   theme(panel.grid.minor = element_blank(),
         panel.grid.major = element_line(color = "grey70",linetype = 1),
         # Bold, bigger title

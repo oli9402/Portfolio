@@ -1,0 +1,13 @@
+---
+title: "Using Quarto for interactive Presentations"
+description: "R and Revealjs is used in the background"
+author: "Oliver Zingg"
+code_folding: true
+---
+
+[Link to fullscreen presentation](https://oli9402.github.io/Revealjs/)
+
+```{=html}
+<iframe width="1200" height="700" src="https://oli9402.github.io/Revealjs/" title="Quarto Presentation" data-external="1"></iframe>
+```
+

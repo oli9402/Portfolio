@@ -3,6 +3,7 @@ title: "Using Quarto for interactive Presentations"
 description: "R and Revealjs is used in the background"
 author: "Oliver Zingg"
 code_folding: true
+image: "quarto.png"
 ---
 
 In quarto for R environment we can create presentations that runs on revealjs. 
@@ -24,6 +25,6 @@ Press on the presentation displayed below and use right and left **arrow keys** 
 :::
 
 ```{=html}
-<iframe width="1200" height="700" src="https://oli9402.github.io/Revealjs/" title="Quarto Presentation" data-external="1"></iframe>
+<iframe width="1200" height="700" src="https://oli9402.github.io/Interactive-Slides-/" title="Quarto Presentation" data-external="1"></iframe>
 ```
 

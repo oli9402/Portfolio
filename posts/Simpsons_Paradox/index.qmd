@@ -3,7 +3,6 @@ title: "Simpson's Paradox"
 author: "Oliver Zingg" 
 date: "09.05.2023"
 categories: [Linear Mixed Effects, Statistics, Random Effects]
-image: "my_plot.png"
 bibliography: ref.bib
 ---
 

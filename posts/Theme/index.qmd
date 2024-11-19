@@ -3,6 +3,9 @@ title: "Own Theme"
 description: "Experimenting with own themes"
 author: "Oliver Zingg"
 code_folding: true
+date: "11.1.2023"
+categories: [ggplot2, Visualization, Boxplot, Company Theme]
+
 ---
 
 ```{r setup, include=FALSE}

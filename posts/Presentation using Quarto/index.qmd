@@ -1,9 +1,13 @@
 ---
 title: "Using Quarto for interactive Presentations"
-description: "R and Revealjs is used in the background"
+description: "A simple demonstration of how to use R, Revealjs and Echarts4r to create interactive Presentations. HTML file can be easily sent to other and opened with different browsers. See Github for Code "
 author: "Oliver Zingg"
 code_folding: true
 image: "quarto.png"
+date: "11.19.2024"
+categories: [Quarto, Presentation, Echarts4r, Interactive, HMTL]
+
+
 ---
 
 In quarto for R environment we can create presentations that runs on revealjs. 

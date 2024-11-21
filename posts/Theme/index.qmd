@@ -10,10 +10,6 @@ categories: [ggplot2, Visualization, Boxplot, Company Theme]
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set( message = FALSE, warning = FALSE,
-                      dev = "svg", fig.width = 10, fig.height = 7)
-
-
 library(tidyverse)
 
 ```
@@ -103,7 +99,7 @@ p <- ggplot(cars, aes(fast,dist)) +
 
 ```
 
-```{r}
+```{r, fig.width= 10}
 p <- ggplot(cars, aes(fast,dist)) +
   geom_boxplot(col = "white", fill = color_tx[1], linewidth = 1.5, fatten = 1, outlier.size = 3) +
   scale_x_discrete(labels=c('Slow', 'Fast'))+
@@ -131,19 +127,11 @@ p <- ggplot(cars, aes(fast,dist)) +
         plot.subtitle = element_text(margin=margin(0,0,30,0))) 
 
 p
-# ggsave(here::here("posts","Theme", "box.svg"), width = 10, height = 7)
+#ggsave(here::here("posts","Theme", "box.svg"), width = 10, height = 7)
+
 
 ```
 
 
 
-***
 
-<details><summary>Session Info</summary>
-
-```{r sessionInfo, echo=FALSE}
-Sys.time()
-
-```
-
-</details>

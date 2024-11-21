@@ -5,7 +5,7 @@ author: "Oliver Zingg"
 code_folding: true
 image: "quarto.png"
 date: "11.19.2024"
-date-modified: "11/20/2024"
+date-modified: "11/21/2024"
 categories: [Quarto, Presentation, Echarts4r, Interactive, HMTL]
 
 

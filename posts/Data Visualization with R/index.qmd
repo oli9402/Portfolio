@@ -40,8 +40,6 @@ base_plot <- ggplot(data = gapminder_filtered,
 ## Create and save theme (my_pretty_theme)
 ```{r}
 
-windowsFonts(`Roboto Condensed` = windowsFont("Roboto Condensed"))
-
 my_pretty_theme <- theme_minimal(base_family = "Roboto Condensed", base_size = 12) +
   theme(panel.grid.minor = element_blank(),
         # Bold, bigger title

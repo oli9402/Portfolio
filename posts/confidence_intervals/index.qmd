@@ -3,6 +3,7 @@ title: "Confidence Intervals"
 author: "Oliver Zingg"
 date: "09.06.2023"
 image: "ci.png"
+date-modified: "1/1/2023"
 bibliography: "ci.bib"
 ---
 

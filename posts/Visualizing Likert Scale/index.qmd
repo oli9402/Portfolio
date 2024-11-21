@@ -1,0 +1,32 @@
+---
+title: 'Visualizing Likert Scales'
+describtion: 'Diverging Bar Plots for visualizing positive vs. negative opinions'
+author: 'Oliver Zingg'
+date: '11/21/2024'
+date-modified: '11/21/2024'
+image: 'likert001.png'
+categories: [likert, ggplot2, bar plot]
+
+---
+
+
+
+# Diverging Bar Plot
+
+![Diverging Bar plot](likert001.png)
+
+
+
+
+Of course the magic happens in ggplot2. 
+
+Likert scales are a very typical way of gathering the opinion of a sample of customers or population. One way of visualizing the results of such survey in a fast way are: **diverging bar plots**
+
+## When to use?
+
+This kind of plot is useful if the main interest is the difference in size between positive and negative response. But if the main interest is to compare all opinions with each other then diverging bar plots may be the wrong choice since stacked bars with different starting points are difficult to compare visually.
+
+## Code
+
+See [github](https://github.com/oli9402/visualisation/blob/main/likert_plots/likert_vis.qmd)
+

@@ -1,0 +1,16 @@
+---
+title: 'Things to Remember'
+---
+
+::: {.callout-caution collapse="true"}
+## Implicit representation of Linear system Solution?
+
+This is an example of a 'folded' caution callout that can be expanded by the user. You can use `collapse="true"` to collapse it by default or `collapse="false"` to make a collapsible callout that is expanded by default.
+:::
+
+::: {.callout-caution collapse="true"}
+## Explicit Representation of Linear system Solution?
+
+This is an example of a 'folded' caution callout that can be expanded by the user. You can use `collapse="true"` to collapse it by default or `collapse="false"` to make a collapsible callout that is expanded by default.
+:::
+

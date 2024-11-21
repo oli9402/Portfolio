@@ -62,6 +62,11 @@ website:
            contents: 
            - text: 'Confidence Intervals'
              href: wiki/Statistics/ci.qmd
+         - section: 'Linear Algebra'
+           href: wiki/LinAlg/linalg_start.qmd
+           contents:
+            - text: 'Things to remember'
+              href: wiki/LinAlg/ttr.qmd
         
 format:
   html:

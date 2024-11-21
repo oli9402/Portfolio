@@ -1,6 +1,6 @@
 ---
 title: 'Visualizing Likert Scales'
-describtion: 'Diverging Bar Plots for visualizing positive vs. negative opinions'
+description: 'Diverging Bar Plots for visualizing positive vs. negative opinions'
 author: 'Oliver Zingg'
 date: '11/21/2024'
 date-modified: '11/21/2024'

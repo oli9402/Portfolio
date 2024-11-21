@@ -6,7 +6,6 @@ date: '11/21/2024'
 date-modified: '11/21/2024'
 image: 'likert001.png'
 categories: [likert, ggplot2, bar plot]
-
 ---
 
 
@@ -14,6 +13,7 @@ categories: [likert, ggplot2, bar plot]
 # Diverging Bar Plot
 
 ![Diverging Bar plot](likert001.png)
+
 
 
 

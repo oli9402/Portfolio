@@ -25,10 +25,9 @@ website:
       Viel Spass beim durchstöbern meiner Seite
   navbar:
     background: "#f0eeeb"
-    logo: logo.png
-    title: false
+    title: 'Oliver Zingg'
     collapse-below: lg
-    pinned: True
+    pinned: true
     right:
       - icon: house-door
         href: index.qmd
@@ -39,20 +38,41 @@ website:
         href: projects.qmd
       - icon: file-earmark
         href: CV.qmd
-
+      - icon: book-half
+        text: Wiki
+        href: wiki.qmd
+       
+  sidebar: 
+      - title: "Wiki"
+        style: "docked"
+        background: light
+        contents:
+         - href: wiki.qmd
+           text: 'Personal Wiki'
+         - text: '------'
+         - section: 'Python'
+           href: wiki/Python/python_start.qmd
+           contents:
+             - text: 'Basics'
+               href: wiki/Python/basics.qmd
+             - text: 'Wrangling'
+               href: wiki/Python/wrangling.qmd
+         - section: 'Statistics'
+           href: wiki/Statistics/stats_start.qmd
+           contents: 
+           - text: 'Confidence Intervals'
+             href: wiki/Statistics/ci.qmd
         
 format:
   html:
-    theme: [lux, rwds.scss]
-    css: rwds.css
     toc: true
     code-link: true
     code-fold: true
     font-family: monospace
     grid:
-      sidebar-width: 0px
+      sidebar-width: 200px
       body-width: 1000px
-      margin-width: 250px
+      margin-width: 200px
     highlight-style: breeze
 
 execute: 

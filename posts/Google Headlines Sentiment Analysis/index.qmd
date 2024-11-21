@@ -1,0 +1,72 @@
+---
+title: "Google Headlines Analysis"
+description: "..."
+author: "Oliver Zingg"
+date: "11.20.2023"
+code-fold: show
+categories: [Headlines, Google, Python, Sentiment Analysis]
+---
+
+
+# Title
+
+Why news headlines? One reason may be that news headlines are easier to analyse since they are often grammatically correct and....
+
+## Fetch News Headlines
+
+```{python}
+#| echo: true
+#| output: false
+
+import requests
+
+# API key from newsapi.org
+api_key = 'd962237586064b7ea7d8cfdfda47a164'
+
+# URL Parameters  
+keyword = 'Donald Trump'
+language = 'de'
+sortBy = 'popularity'
+# https://newsapi.org/docs/endpoints/everything
+
+# Add Api to url with parameters
+url = f'https://newsapi.org/v2/everything?q={keyword}&language={language}&sortBy={sortBy}&apiKey={api_key}'
+
+response = requests.get(url)
+
+if response.status_code == 200:
+    data = response.json()
+    articles = data["articles"]
+
+    for article in articles:
+        print(f"Title: {article['title']}")
+        print(f"Description: {article['description']}")
+        print(f"URL: {article['url']}")
+        print("-" * 50)
+else:
+    print(f"Error: {response.status_code}")
+
+
+```
+
+```{python}
+#| warning: false
+
+import germansentiment
+
+#print(articles[1]['title'])
+
+texts = []
+for article in articles:
+  texts.append(article['title'])
+  
+model = germansentiment.SentimentModel()
+predictions = model.predict_sentiment(texts)
+
+
+for text, prediction in zip(texts, predictions):
+  print(text, "\n", prediction, "\n", "-"*50)
+  
+```
+
+

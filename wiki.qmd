@@ -1,0 +1,33 @@
+---
+title: "Introduction to My Personal Knowledge Base"
+page-layout: full
+---
+
+
+Welcome to my Personal Knowledge Base (PKB), a curated repository designed to organize, preserve, and access the wealth of information I encounter in my personal and professional life. This knowledge base serves as a digital extension of my mind, empowering me to think, create, and make decisions more effectively.
+
+## Purpose and Vision
+The primary goal of this PKB is to centralize diverse information—insights from books, articles, conversations, projects, and experiences—in a structured and meaningful way. It reflects my evolving interests, skills, and understanding of the world. Whether exploring new ideas or revisiting past learnings, this knowledge base is a tool for lifelong learning and problem-solving.
+
+
+:::{.callout-note}
+Introduction text is written with ChatGPT but it generally reflects my use case for this site 
+:::
+
+## Why a Quarto Website?
+
+Browsing Youtube Video for tutorials of creating a personal knowledge will most likely lead you to a video of programs like Notion, Obsidian or Remnote. 
+These Programs are great for personal knowledge bases. So why would I end up creating a personal website for such a purpose? 
+
+My reasons: 
+
+- Open Source
+- Can be easily viewed in any browser on any device 
+- Portfolio purposes
+- Quarto documents have executable code
+- Simultaneously working on projects and creating blog post 
+- Learning purposes (HTTP, CSS, SCSS)
+- Feeling of "owning" the product
+- RStudio's integration with GitHub
+
+

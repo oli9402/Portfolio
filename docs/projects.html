@@ -78,9 +78,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
+      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -128,7 +128,6 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="rwds.css">
 </head>
 
 <body class="nav-fixed">
@@ -138,8 +137,8 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./logo.png" alt="" class="navbar-logo">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Oliver Zingg</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -167,6 +166,11 @@ window.Quarto = {
     <a class="nav-link" href="./CV.html"> <i class="bi bi-file-earmark" role="img">
 </i> 
 <span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./wiki.html"> <i class="bi bi-book-half" role="img">
+</i> 
+<span class="menu-text">Wiki</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -197,7 +201,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(9)</span></div><div class="category" data-category="Bachelorarbeit">Bachelorarbeit <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Boxplot">Boxplot <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Company Theme">Company Theme <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Data Analysis">Data Analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="EEG">EEG <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Echarts4r">Echarts4r <span class="quarto-category-count">(1)</span></div><div class="category" data-category="HMTL">HMTL <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Interactive">Interactive <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Linear Mixed Effects">Linear Mixed Effects <span class="quarto-category-count">(1)</span></div><div class="category" data-category="MRI">MRI <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Machine Learning">Machine Learning <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Masterarbeit">Masterarbeit <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Mixed-Effects Model">Mixed-Effects Model <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Presentation">Presentation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Psychiatric Disorders">Psychiatric Disorders <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Quarto">Quarto <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Random Effects">Random Effects <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Statistics">Statistics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Systematic literature review">Systematic literature review <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Visualization">Visualization <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ggplot2">ggplot2 <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(9)</span></div><div class="category" data-category="Bachelorarbeit">Bachelorarbeit <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Boxplot">Boxplot <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Company Theme">Company Theme <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Data Analysis">Data Analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="EEG">EEG <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Echarts4r">Echarts4r <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Google">Google <span class="quarto-category-count">(1)</span></div><div class="category" data-category="HMTL">HMTL <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Headlines">Headlines <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Interactive">Interactive <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Linear Mixed Effects">Linear Mixed Effects <span class="quarto-category-count">(1)</span></div><div class="category" data-category="MRI">MRI <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Machine Learning">Machine Learning <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Masterarbeit">Masterarbeit <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Mixed-Effects Model">Mixed-Effects Model <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Presentation">Presentation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Psychiatric Disorders">Psychiatric Disorders <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Python">Python <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Quarto">Quarto <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Random Effects">Random Effects <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Sentiment Analysis">Sentiment Analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Statistics">Statistics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Systematic literature review">Systematic literature review <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Visualization">Visualization <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ggplot2">ggplot2 <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
@@ -209,249 +213,18 @@ window.Quarto = {
 
 
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-       <option value="" disabled="" selected="" hidden="">Order By</option>
-       <option value="index" data-direction="asc">Default</option>
-         <option value="listing-title" data-direction="asc">
-          Title
-        </option>
-         <option value="listing-date-sort" data-direction="asc">
-          Date - Oldest
-        </option>
-         <option value="listing-date-sort" data-direction="desc">
-          Date - Newest
-        </option>
-     </select>
-  </div>
-</div>
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Quarto,Presentation,Echarts4r,Interactive,HMTL" data-listing-date-sort="1731970800000" data-listing-file-modified-sort="1732023295904" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="140">
-<div class="thumbnail">
-<p><a href="./posts/Presentation using Quarto/index.html" class="no-external"></a></p><a href="./posts/Presentation using Quarto/index.html" class="no-external">
-<p><img src="./posts/Presentation using Quarto/quarto.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/Presentation using Quarto/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/Presentation using Quarto/index.html" class="no-external">Using Quarto for interactive Presentations</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/Presentation using Quarto/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Quarto'); return false;">
-Quarto
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Presentation'); return false;">
-Presentation
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Echarts4r'); return false;">
-Echarts4r
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Interactive'); return false;">
-Interactive
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('HMTL'); return false;">
-HMTL
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/Presentation using Quarto/index.html" class="no-external">A simple demonstration of how to use R, Revealjs and Echarts4r to create interactive Presentations. HTML file can be easily sent to other and opened with different browsers. See Github for Code </a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/Presentation using Quarto/index.html" class="no-external">
-<div class="listing-date">
-Nov 19, 2024
-</div>
-<div class="listing-author">
-Oliver Zingg
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="ggplot2,Visualization,Boxplot,Company Theme" data-listing-date-sort="1698793200000" data-listing-file-modified-sort="1732023142257" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="938">
-<div class="thumbnail">
-<p><a href="./posts/Theme/index.html" class="no-external"></a></p><a href="./posts/Theme/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/Theme/index_files/figure-html/unnamed-chunk-2-1.svg"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/Theme/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/Theme/index.html" class="no-external">Own Theme</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/Theme/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('ggplot2'); return false;">
-ggplot2
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Visualization'); return false;">
-Visualization
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Boxplot'); return false;">
-Boxplot
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Company Theme'); return false;">
-Company Theme
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/Theme/index.html" class="no-external">Experimenting with own themes</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/Theme/index.html" class="no-external">
-<div class="listing-date">
-Nov 1, 2023
-</div>
-<div class="listing-author">
-Oliver Zingg
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-listing-date-sort="1694296800000" data-listing-file-modified-sort="1709330285029" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="18" data-listing-word-count-sort="3468">
-<div class="thumbnail">
-<p><a href="./posts/Data Visualization with R/index.html" class="no-external"></a></p><a href="./posts/Data Visualization with R/index.html" class="no-external">
-<p><img src="./posts/Data Visualization with R/pic.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/Data Visualization with R/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/Data Visualization with R/index.html" class="no-external">Themes for Data Visualization with R</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/Data Visualization with R/index.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/Data Visualization with R/index.html" class="no-external">Annotionations can be great to highlight information that gets lost otherwise. For example we see that South Africa increases its GDP per capita from 2002 to 2007 but life…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/Data Visualization with R/index.html" class="no-external">
-<div class="listing-date">
-Sep 10, 2023
-</div>
-<div class="listing-author">
-Oliver Zingg
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-listing-date-sort="1694296800000" data-listing-file-modified-sort="1709330285036" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1644">
-<div class="thumbnail">
-<p><a href="./posts/Learning_R/index.html" class="no-external"></a></p><a href="./posts/Learning_R/index.html" class="no-external">
-<p><img src="./posts/Learning_R/bird.jpg" class="thumbnail-image"></p>
-</a><p><a href="./posts/Learning_R/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/Learning_R/index.html" class="no-external">Learning R with R for Data Science</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/Learning_R/index.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/Learning_R/index.html" class="no-external">Dieses Projekt dient dazu mein Wissen über die Programmiersprache R zu vertiefen. Dazu verwende ich R for Data Science</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/Learning_R/index.html" class="no-external">
-<div class="listing-date">
-Sep 10, 2023
-</div>
-<div class="listing-author">
-Oliver Zingg
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-listing-date-sort="1693951200000" data-listing-file-modified-sort="1709330285047" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="722">
-<div class="thumbnail">
-<p><a href="./posts/confidence_intervals/index.html" class="no-external"></a></p><a href="./posts/confidence_intervals/index.html" class="no-external">
-<p><img src="./posts/confidence_intervals/ci.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/confidence_intervals/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/confidence_intervals/index.html" class="no-external">Confidence Intervals</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/confidence_intervals/index.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/confidence_intervals/index.html" class="no-external">The following example simulates the process of finding the <strong>mean age value</strong> of a population of voters.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/confidence_intervals/index.html" class="no-external">
-<div class="listing-date">
-Sep 6, 2023
-</div>
-<div class="listing-author">
-Oliver Zingg
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="Linear Mixed Effects,Statistics,Random Effects" data-listing-date-sort="1693864800000" data-listing-file-modified-sort="1732023063846" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="730">
-<div class="thumbnail">
-<p><a href="./posts/Simpsons_Paradox/index.html" class="no-external"></a></p><a href="./posts/Simpsons_Paradox/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/Simpsons_Paradox/index_files/figure-html/unnamed-chunk-3-1.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/Simpsons_Paradox/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/Simpsons_Paradox/index.html" class="no-external">Simpson’s Paradox</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/Simpsons_Paradox/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Linear Mixed Effects'); return false;">
-Linear Mixed Effects
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Statistics'); return false;">
-Statistics
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Random Effects'); return false;">
-Random Effects
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/Simpsons_Paradox/index.html" class="no-external">Simpson’s Paradox bezeichnet ein statistische Phänomen, in dem die Daten eine hierarchisch angeordnete Struktur aufweisen. Die Analyse der Daten kann deshalb auf…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/Simpsons_Paradox/index.html" class="no-external">
-<div class="listing-date">
-Sep 5, 2023
-</div>
-<div class="listing-author">
-Oliver Zingg
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-categories="Data Analysis,Mixed-Effects Model,EEG,Psychiatric Disorders,Masterarbeit" data-listing-date-sort="1685570400000" data-listing-file-modified-sort="1709330285042" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="317">
-<div class="thumbnail">
-<p><a href="./posts/Masterarbeit/index.html" class="no-external"></a></p><a href="./posts/Masterarbeit/index.html" class="no-external">
-<p><img src="./posts/Masterarbeit/MA.jpg" class="thumbnail-image"></p>
-</a><p><a href="./posts/Masterarbeit/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/Masterarbeit/index.html" class="no-external">Masterarbeit</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/Masterarbeit/index.html" class="no-external"></a>
-</div>
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-categories="Data Analysis,Mixed-Effects Model,EEG,Psychiatric Disorders,Masterarbeit" data-listing-date-sort="1685570400000" data-listing-file-modified-sort="1732142272432" data-listing-date-modified-sort="1732057200000" data-listing-reading-time-sort="2" data-listing-word-count-sort="317">
+<a href="./posts/Masterarbeit/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./posts/Masterarbeit/MA.jpg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Masterarbeit
+</h5>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Data Analysis'); return false;">
 Data Analysis
@@ -469,59 +242,31 @@ Psychiatric Disorders
 Masterarbeit
 </div>
 </div>
-<div class="listing-description">
-<a href="./posts/Masterarbeit/index.html" class="no-external">My master thesis <strong>“Investigating the Neuronal Basis of Learning Processes and Memory Formation in Children and Adolescents with Various Psychiatric Disorders”</strong> can be found on …</a>
+<div class="card-text listing-description">
+My master thesis <strong>“Investigating the Neuronal Basis of Learning Processes and Memory Formation in Children and Adolescents with Various Psychiatric Disorders”</strong> can be found on …
 </div>
-</div>
-<div class="metadata">
-<a href="./posts/Masterarbeit/index.html" class="no-external">
-<div class="listing-date">
-Jun 1, 2023
-</div>
+<div class="card-attribution card-text-small justify">
 <div class="listing-author">
 Oliver Zingg
 </div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="7" data-listing-date-sort="1665352800000" data-listing-file-modified-sort="1730900584809" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="997">
-<div class="thumbnail">
-<p><a href="./posts/variable_selection/index.html" class="no-external"></a></p><a href="./posts/variable_selection/index.html" class="no-external">
-<p><img src="./posts/variable_selection/jacksonj.jpg" class="thumbnail-image"></p>
-</a><p><a href="./posts/variable_selection/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/variable_selection/index.html" class="no-external">Accuracy of selected predictors per sample size</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/variable_selection/index.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/variable_selection/index.html" class="no-external">Foto von Jackson Jost auf Unsplash</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/variable_selection/index.html" class="no-external">
 <div class="listing-date">
-Oct 10, 2022
+Jun 1, 2023
+</div>
+</div>
+</div>
 </div>
 </a>
 </div>
-</div>
-<div class="quarto-post image-right" data-index="8" data-categories="Machine Learning,Systematic literature review,MRI,Bachelorarbeit" data-listing-date-sort="1622498400000" data-listing-file-modified-sort="1709330285029" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="181">
-<div class="thumbnail">
-<p><a href="./posts/Bachelorarbeit/index.html" class="no-external"></a></p><a href="./posts/Bachelorarbeit/index.html" class="no-external">
-<p><img src="./posts/Bachelorarbeit/BA.jpg" class="thumbnail-image"></p>
-</a><p><a href="./posts/Bachelorarbeit/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/Bachelorarbeit/index.html" class="no-external">Bachelorarbeit</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/Bachelorarbeit/index.html" class="no-external"></a>
-</div>
+<div class="g-col-1" data-index="1" data-categories="Machine Learning,Systematic literature review,MRI,Bachelorarbeit" data-listing-date-sort="1622498400000" data-listing-file-modified-sort="1732142428613" data-listing-date-modified-sort="1731970800000" data-listing-reading-time-sort="1" data-listing-word-count-sort="181">
+<a href="./posts/Bachelorarbeit/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./posts/Bachelorarbeit/BA.jpg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Bachelorarbeit
+</h5>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Machine Learning'); return false;">
 Machine Learning
@@ -536,20 +281,245 @@ MRI
 Bachelorarbeit
 </div>
 </div>
-<div class="listing-description">
-<a href="./posts/Bachelorarbeit/index.html" class="no-external">My bachelor thesis <strong>“Comparison between Support Vector Machine and Convolutional Neural Network for Alzheimer’s Disease Classification”</strong> can be found on GitHub.</a>
+<div class="card-text listing-description">
+My bachelor thesis <strong>“Comparison between Support Vector Machine and Convolutional Neural Network for Alzheimer’s Disease Classification”</strong> can be found on GitHub.
 </div>
-</div>
-<div class="metadata">
-<a href="./posts/Bachelorarbeit/index.html" class="no-external">
-<div class="listing-date">
-Jun 1, 2021
-</div>
+<div class="card-attribution card-text-small justify">
 <div class="listing-author">
 Oliver Zingg
 </div>
+<div class="listing-date">
+Jun 1, 2021
+</div>
+</div>
+</div>
+</div>
 </a>
 </div>
+<div class="g-col-1" data-index="2" data-categories="Headlines,Google,Python,Sentiment Analysis" data-listing-date-sort="1700434800000" data-listing-file-modified-sort="1732056496038" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="150">
+<a href="./posts/Google Headlines Sentiment Analysis/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Google Headlines Analysis
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Headlines'); return false;">
+Headlines
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Google'); return false;">
+Google
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Python'); return false;">
+Python
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Sentiment Analysis'); return false;">
+Sentiment Analysis
+</div>
+</div>
+<div class="card-text listing-description">
+…
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Oliver Zingg
+</div>
+<div class="listing-date">
+Nov 20, 2023
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="3" data-listing-date-sort="1693951200000" data-listing-file-modified-sort="1709330285047" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="722">
+<a href="./posts/confidence_intervals/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./posts/confidence_intervals/ci.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Confidence Intervals
+</h5>
+<div class="card-text listing-description">
+The following example simulates the process of finding the <strong>mean age value</strong> of a population of voters.
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Oliver Zingg
+</div>
+<div class="listing-date">
+Sep 6, 2023
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="4" data-categories="ggplot2,Visualization,Boxplot,Company Theme" data-listing-date-sort="1698793200000" data-listing-file-modified-sort="1732142500203" data-listing-date-modified-sort="1732057200000" data-listing-reading-time-sort="5" data-listing-word-count-sort="938">
+<a href="./posts/Theme/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img src="posts/Theme/index_files/figure-html/unnamed-chunk-2-1.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Own Theme
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('ggplot2'); return false;">
+ggplot2
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Visualization'); return false;">
+Visualization
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Boxplot'); return false;">
+Boxplot
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Company Theme'); return false;">
+Company Theme
+</div>
+</div>
+<div class="card-text listing-description">
+Experimenting with own themes
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Oliver Zingg
+</div>
+<div class="listing-date">
+Nov 1, 2023
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="5" data-categories="Quarto,Presentation,Echarts4r,Interactive,HMTL" data-listing-date-sort="1731970800000" data-listing-file-modified-sort="1732142502957" data-listing-date-modified-sort="1732057200000" data-listing-reading-time-sort="1" data-listing-word-count-sort="140">
+<a href="./posts/Presentation using Quarto/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./posts/Presentation using Quarto/quarto.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Using Quarto for interactive Presentations
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Quarto'); return false;">
+Quarto
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Presentation'); return false;">
+Presentation
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Echarts4r'); return false;">
+Echarts4r
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Interactive'); return false;">
+Interactive
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('HMTL'); return false;">
+HMTL
+</div>
+</div>
+<div class="card-text listing-description">
+A simple demonstration of how to use R, Revealjs and Echarts4r to create interactive Presentations. HTML file can be easily sent to other and opened with different browsers.…
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Oliver Zingg
+</div>
+<div class="listing-date">
+Nov 19, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="6" data-listing-date-sort="1694296800000" data-listing-file-modified-sort="1709330285029" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="18" data-listing-word-count-sort="3468">
+<a href="./posts/Data Visualization with R/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./posts/Data Visualization with R/pic.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Themes for Data Visualization with R
+</h5>
+<div class="card-text listing-description">
+Annotionations can be great to highlight information that gets lost otherwise. For example we see that South Africa increases its GDP per capita from 2002 to 2007 but life…
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Oliver Zingg
+</div>
+<div class="listing-date">
+Sep 10, 2023
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="7" data-categories="Linear Mixed Effects,Statistics,Random Effects" data-listing-date-sort="1693864800000" data-listing-file-modified-sort="1732023063846" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="730">
+<a href="./posts/Simpsons_Paradox/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img src="posts/Simpsons_Paradox/index_files/figure-html/unnamed-chunk-3-1.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Simpson’s Paradox
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Linear Mixed Effects'); return false;">
+Linear Mixed Effects
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Statistics'); return false;">
+Statistics
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Random Effects'); return false;">
+Random Effects
+</div>
+</div>
+<div class="card-text listing-description">
+Simpson’s Paradox bezeichnet ein statistische Phänomen, in dem die Daten eine hierarchisch angeordnete Struktur aufweisen. Die Analyse der Daten kann deshalb auf…
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Oliver Zingg
+</div>
+<div class="listing-date">
+Sep 5, 2023
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="8" data-listing-date-sort="1665352800000" data-listing-file-modified-sort="1732142482629" data-listing-date-modified-sort="1732057200000" data-listing-reading-time-sort="5" data-listing-word-count-sort="997">
+<a href="./posts/variable_selection/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./posts/variable_selection/jacksonj.jpg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Accuracy of selected predictors per sample size
+</h5>
+<div class="card-text listing-description">
+With this exercise we want to inspect how <strong>lm function</strong> and <strong>step function</strong> vary when it comes to selection of correct variables depending on sample size.
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+
+</div>
+<div class="listing-date">
+Oct 10, 2022
+</div>
+</div>
+</div>
+</div>
+</a>
 </div>
 </div>
 <div class="listing-no-matching d-none">

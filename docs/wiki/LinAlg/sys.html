@@ -69,6 +69,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -219,7 +248,18 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#process-optimization" id="toc-process-optimization" class="nav-link active" data-scroll-target="#process-optimization">Process optimization</a>
+  <ul class="collapse">
+  <li><a href="#form-linear-system-of-equations" id="toc-form-linear-system-of-equations" class="nav-link" data-scroll-target="#form-linear-system-of-equations">Form linear system of equations</a></li>
+  <li><a href="#solving-the-system" id="toc-solving-the-system" class="nav-link" data-scroll-target="#solving-the-system">Solving the system</a></li>
+  </ul></li>
+  <li><a href="#three-types-of-echelon-form" id="toc-three-types-of-echelon-form" class="nav-link" data-scroll-target="#three-types-of-echelon-form">Three Types of Echelon Form</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -243,8 +283,97 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>Many problem can be formulated as system of linear equations:</p>
+<section id="process-optimization" class="level2">
+<h2 class="anchored" data-anchor-id="process-optimization">Process optimization</h2>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example: Chemieproduktion
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Chemikalien: A,B,C</li>
+<li>Maschinen: <span class="math inline">\(M_1,M_2\)</span></li>
+<li>Menge an A,B,C in Tonnen: <span class="math inline">\(x_A,x_B,x_C\)</span></li>
+<li>Zeitbudget in Stunden: <span class="math inline">\(M_1 = 65, M_2 = 110\)</span></li>
+<li>Verhältnis in Stunden wie lang werden welche Chemikalien in den Maschinen verarbeitet werden</li>
+</ul>
+</div>
+</div>
+<span class="math display">\[\begin{pmatrix}
+&amp;|&amp; A&amp;B&amp;C&amp;| &amp;Zeitbudget/h \\
+
+M_1&amp;|&amp;2&amp;1&amp;1&amp;|&amp;65\\
+
+M_2&amp;|&amp;2&amp;3&amp;4&amp;|&amp;110
+\end{pmatrix}\]</span>
+<section id="form-linear-system-of-equations" class="level3">
+<h3 class="anchored" data-anchor-id="form-linear-system-of-equations">Form linear system of equations</h3>
+<p><span class="math display">\[\begin{align*}
+2*x_A + 1*x_B + 1*x_C = 65\\
+2*x_A + 3*x_B + 4*x_C = 110
+
+\end{align*}\]</span></p>
+<p>Looking at the equation we make following observations:</p>
+<ul>
+<li>we want to find <span class="math inline">\(x_A,x_B,x_C\)</span> that fits the equations as a solution.</li>
+<li>we add the terms because the individuel maschines can’t process the chemicals in parallel so we have to add the time</li>
+<li>the coefficients of the unknown show a relationship of time per ton</li>
+<li><span class="math inline">\(\frac{time}{tone}*time = time\)</span></li>
+<li>we have three unknown but only 2 equations: 1 free parameter -&gt; infinitive solutions</li>
+<li><span class="math inline">\(x_A,x_B,x_C\)</span> can only be positive since you can’t produce negative tones.</li>
+</ul>
+</section>
+<section id="solving-the-system" class="level3">
+<h3 class="anchored" data-anchor-id="solving-the-system">Solving the system</h3>
+<p>Solving the linear system will end up with a general solution:</p>
+<p><span class="math display">\[\begin{align*}
+x_A = \frac{85}{4} + \frac{1}{4}x_C\\
+x_B =\frac{45}{2} - \frac{3}{2}x_C \\
+\end{align*}\]</span></p>
+<p>and since the unknown can’t be negative we have to see for which range of <span class="math inline">\(x_C\)</span> <span class="math inline">\(x_A\)</span> and <span class="math inline">\(x_B\)</span> are not negative:</p>
+<p><span class="math display">\[\begin{align*}
+x_B ≥ 0 \\
+\frac{45}{2}-\frac{3}{2}x_C ≥0\\
+15≥ x_C\\
+\\
+0≤x_C≤15
+\end{align*}\]</span></p>
+<p>we can chose any tonne of <span class="math inline">\(x_C\)</span> between 0 and 15.</p>
+</section>
+</section>
+<section id="three-types-of-echelon-form" class="level1">
+<h1>Three Types of Echelon Form</h1>
+<ol type="1">
+<li>Pivot element in every row and column.
+<ul>
+<li>Squared form only possible when <span class="math inline">\(r=c\)</span></li>
+<li>Last pivot is isolated and can be substituted</li>
+<li><strong>unique solution</strong></li>
+</ul></li>
+<li>Pivot in every row but not in every column.
+<ul>
+<li>more unknown than equations: <span class="math inline">\(r&lt;c\)</span></li>
+<li>free parameter (the column without pivot)</li>
+<li>infinitive solutions</li>
+</ul></li>
+<li>Rows without pivot.
+<ul>
+<li><span class="math inline">\(0=b\)</span>
+<ul>
+<li>if <span class="math inline">\(b \not= 0\)</span> no solution since not consistent</li>
+<li>if <span class="math inline">\(b = 0\)</span> no information. We can end up with form 1 or 2.</li>
+</ul></li>
+</ul></li>
+</ol>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

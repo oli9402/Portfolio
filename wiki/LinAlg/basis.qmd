@@ -25,3 +25,39 @@ If the vectors are colinear/parallel or consists of points
 :::{.callout-note}
 The set of all linear independent vectors that span a vector space
 :::
+
+
+## When are vectors linear independent?
+
+### Example
+
+$s_1*v_1 + ...+ s_3*v_3 = 0$
+
+
+\begin{pmatrix}
+
+-2 & 1 & 4 & |& 0 \\
+6 & 1 & -12 &|& 0 \\
+1 & 1 & -2 &| & 0
+
+\end{pmatrix}
+
+
+
+
+
+
+If we only have trivial solution to $s_1*v_1 + ...+ s_3*v_3 = 0$ than the vectors are linearly independent.
+So we solve with gaussian elimination and get the following echelon form:
+
+\begin{pmatrix}
+-2 & 1 & 4 & |& 0 \\
+0 & 4 & 0 & | & 0 \\
+0 & 0 & 0 & | & 0 
+\end{pmatrix}
+
+  - we se that we have a free parameter t in the $s_3$ because there is no pivot.
+  - $s_3 = t$
+  - $s_2 = 0$
+  - $s_1 = 2t$
+  

@@ -375,5 +375,53 @@
       "Wiki",
       "Linear Algebra"
     ]
+  },
+  {
+    "objectID": "wiki/LinAlg/sys.html",
+    "href": "wiki/LinAlg/sys.html",
+    "title": "Systems of Linear Equations",
+    "section": "",
+    "text": "Many problem can be formulated as system of linear equations:",
+    "crumbs": [
+      "Wiki",
+      "Linear Algebra",
+      "Systems of Linear Equations"
+    ]
+  },
+  {
+    "objectID": "wiki/LinAlg/sys.html#optimal-production-plan",
+    "href": "wiki/LinAlg/sys.html#optimal-production-plan",
+    "title": "Systems of Linear Equations",
+    "section": "Optimal Production Plan",
+    "text": "Optimal Production Plan\n\n\n\n\n\n\nNote\n\n\n\nCompany produces: - products \\(N_1,...N_n\\) with - resources \\(R_1,...R_m\\) - each product \\(N_j\\) uses \\(a_ij\\) units of \\(R_i\\) where \\(i=1,...m\\) and \\(j=1,...n\\).",
+    "crumbs": [
+      "Wiki",
+      "Linear Algebra",
+      "Systems of Linear Equations"
+    ]
+  },
+  {
+    "objectID": "wiki/LinAlg/sys.html#process-optimization",
+    "href": "wiki/LinAlg/sys.html#process-optimization",
+    "title": "Systems of Linear Equations",
+    "section": "Process optimization",
+    "text": "Process optimization\n\n\n\n\n\n\nExample: Chemieproduktion\n\n\n\n\nChemikalien: A,B,C\nMaschinen: \\(M_1,M_2\\)\nMenge an A,B,C in Tonnen: \\(x_A,x_B,x_C\\)\nZeitbudget in Stunden: \\(M_1 = 65, M_2 = 110\\)\nVerhältnis in Stunden wie lang werden welche Chemikalien in den Maschinen verarbeitet werden\n\n\n\n\\[\\begin{pmatrix}\n&|& A&B&C&| &Zeitbudget/h \\\\\n\nM_1&|&2&1&1&|&65\\\\\n\nM_2&|&2&3&4&|&110\n\\end{pmatrix}\\]\n\nForm linear system of equations\n\\[\\begin{align*}\n2*x_A + 1*x_B + 1*x_C = 65\\\\\n2*x_A + 3*x_B + 4*x_C = 110\n\n\\end{align*}\\]\nLooking at the equation we make following observations:\n\nwe want to find \\(x_A,x_B,x_C\\) that fits the equations as a solution.\nwe add the terms because the individuel maschines can’t process the chemicals in parallel so we have to add the time\nthe coefficients of the unknown show a relationship of time per ton\n\\(\\frac{time}{tone}*time = time\\)\nwe have three unknown but only 2 equations: 1 free parameter -&gt; infinitive solutions\n\\(x_A,x_B,x_C\\) can only be positive since you can’t produce negative tones.\n\n\n\nSolving the system\nSolving the linear system will end up with a general solution:\n\\[\\begin{align*}\nx_A = \\frac{85}{4} + \\frac{1}{4}x_C\\\\\nx_B =\\frac{45}{2} - \\frac{3}{2}x_C \\\\\n\\end{align*}\\]\nand since the unknown can’t be negative we have to see for which range of \\(x_C\\) \\(x_A\\) and \\(x_B\\) are not negative:\n\\[\\begin{align*}\nx_B ≥ 0 \\\\\n\\frac{45}{2}-\\frac{3}{2}x_C ≥0\\\\\n15≥ x_C\\\\\n\\\\\n0≤x_C≤15\n\\end{align*}\\]\nwe can chose any tonne of \\(x_C\\) between 0 and 15.",
+    "crumbs": [
+      "Wiki",
+      "Linear Algebra",
+      "Systems of Linear Equations"
+    ]
+  },
+  {
+    "objectID": "wiki/LinAlg/basis.html#when-are-vectors-linear-independent",
+    "href": "wiki/LinAlg/basis.html#when-are-vectors-linear-independent",
+    "title": "Basis, Span, Dimensions",
+    "section": "When are vectors linear independent?",
+    "text": "When are vectors linear independent?\n\nExample\n\\(s_1*v_1 + ...+ s_3*v_3 = 0\\)\n\\[\\begin{pmatrix}\n\n-2 & 1 & 4 & |& 0 \\\\\n6 & 1 & -12 &|& 0 \\\\\n1 & 1 & -2 &| & 0\n\n\\end{pmatrix}\\]\nIf we only have trivial solution to \\(s_1*v_1 + ...+ s_3*v_3 = 0\\) than the vectors are linearly independent. So we solve with gaussian elimination and get the following echelon form:\n\\[\\begin{pmatrix}\n-2 & 1 & 4 & |& 0 \\\\\n0 & 4 & 0 & | & 0 \\\\\n0 & 0 & 0 & | & 0\n\\end{pmatrix}\\]\n\nwe se that we have a free parameter t in the \\(s_3\\).\n\\(s_3 = t\\)\n\\(s_2 = 0\\)\n\\(s_1 = 2t\\)",
+    "crumbs": [
+      "Wiki",
+      "Linear Algebra",
+      "Basis"
+    ]
   }
 ]

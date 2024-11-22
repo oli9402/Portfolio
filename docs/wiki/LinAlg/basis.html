@@ -253,6 +253,10 @@ window.Quarto = {
   <ul>
   <li><a href="#span" id="toc-span" class="nav-link active" data-scroll-target="#span">Span</a></li>
   <li><a href="#basis" id="toc-basis" class="nav-link" data-scroll-target="#basis">Basis</a></li>
+  <li><a href="#when-are-vectors-linear-independent" id="toc-when-are-vectors-linear-independent" class="nav-link" data-scroll-target="#when-are-vectors-linear-independent">When are vectors linear independent?</a>
+  <ul class="collapse">
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -314,8 +318,34 @@ Note
 <p>The set of all linear independent vectors that span a vector space</p>
 </div>
 </div>
+</section>
+<section id="when-are-vectors-linear-independent" class="level2">
+<h2 class="anchored" data-anchor-id="when-are-vectors-linear-independent">When are vectors linear independent?</h2>
+<section id="example" class="level3">
+<h3 class="anchored" data-anchor-id="example">Example</h3>
+<p><span class="math inline">\(s_1*v_1 + ...+ s_3*v_3 = 0\)</span></p>
+<span class="math display">\[\begin{pmatrix}
+
+-2 &amp; 1 &amp; 4 &amp; |&amp; 0 \\
+6 &amp; 1 &amp; -12 &amp;|&amp; 0 \\
+1 &amp; 1 &amp; -2 &amp;| &amp; 0
+
+\end{pmatrix}\]</span>
+<p>If we only have trivial solution to <span class="math inline">\(s_1*v_1 + ...+ s_3*v_3 = 0\)</span> than the vectors are linearly independent. So we solve with gaussian elimination and get the following echelon form:</p>
+<span class="math display">\[\begin{pmatrix}
+-2 &amp; 1 &amp; 4 &amp; |&amp; 0 \\
+0 &amp; 4 &amp; 0 &amp; | &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; | &amp; 0
+\end{pmatrix}\]</span>
+<ul>
+<li>we se that we have a free parameter t in the <span class="math inline">\(s_3\)</span>.</li>
+<li><span class="math inline">\(s_3 = t\)</span></li>
+<li><span class="math inline">\(s_2 = 0\)</span></li>
+<li><span class="math inline">\(s_1 = 2t\)</span></li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

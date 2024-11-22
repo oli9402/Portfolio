@@ -1,3 +1,90 @@
 ---
 title: 'Systems of Linear Equations'
 ---
+
+Many problem can be formulated as system of linear equations:
+
+## Process optimization 
+
+:::{.callout-note appearance="simple"}
+## Example: Chemieproduktion
+
+  - Chemikalien: A,B,C
+  - Maschinen: $M_1,M_2$
+  - Menge an A,B,C in Tonnen: $x_A,x_B,x_C$
+  - Zeitbudget in Stunden: $M_1 = 65, M_2 = 110$
+  - Verhältnis in Stunden wie lang werden welche Chemikalien in den Maschinen verarbeitet werden
+:::
+
+
+
+\begin{pmatrix} 
+&|& A&B&C&| &Zeitbudget/h \\
+
+M_1&|&2&1&1&|&65\\
+
+M_2&|&2&3&4&|&110
+\end{pmatrix}
+
+
+### Form linear system of equations
+
+
+\begin{align*} 
+2*x_A + 1*x_B + 1*x_C = 65\\
+2*x_A + 3*x_B + 4*x_C = 110
+
+\end{align*}
+
+
+
+Looking at the equation we make following observations:
+
+  - we want to find $x_A,x_B,x_C$ that fits the equations as a solution.
+  - we add the terms because the individuel maschines can't process the chemicals in parallel so we have to add the time
+  - the coefficients of the unknown show a relationship of time per ton
+  - $\frac{time}{tone}*time = time$
+  - we have three unknown but only 2 equations: 1 free parameter -> infinitive solutions
+  - $x_A,x_B,x_C$ can only be positive since you can't produce negative tones.
+  
+  
+### Solving the system
+
+Solving the linear system will end up with a general solution:
+
+\begin{align*}
+x_A = \frac{85}{4} + \frac{1}{4}x_C\\
+x_B =\frac{45}{2} - \frac{3}{2}x_C \\
+\end{align*}
+
+
+and since the unknown can't be negative we have to see for which range of $x_C$ $x_A$ and $x_B$ are not negative:
+
+\begin{align*}
+x_B ≥ 0 \\
+\frac{45}{2}-\frac{3}{2}x_C ≥0\\
+15≥ x_C\\
+\\
+0≤x_C≤15
+\end{align*}
+
+we can chose any tonne of $x_C$ between 0 and 15.
+
+# Three Types of Echelon Form
+
+1. Pivot element in every row and column.
+    - Squared form only possible when $r=c$
+    - Last pivot is isolated and can be substituted 
+    - **unique solution**
+    
+2. Pivot in every row but not in every column.
+    - more unknown than equations: $r<c$
+    - free parameter (the column without pivot)
+    - infinitive solutions
+
+3. Rows without pivot.
+    - $0=b$
+      - if $b \not= 0$ no solution since not consistent
+      - if $b = 0$ no information. We can end up with form 1 or 2.
+  
+

@@ -333,5 +333,47 @@
       "Linear Algebra",
       "Things to remember"
     ]
+  },
+  {
+    "objectID": "wiki/LinAlg/basis.html",
+    "href": "wiki/LinAlg/basis.html",
+    "title": "Basis, Span, Dimensions",
+    "section": "",
+    "text": "The span of two vectors \\(\\overline v\\) and \\(\\overline w\\) is the set of all linear combinations with \\(a*\\overline v + b * \\overline w\\) with \\(a,b \\in R\\). So two operations are used: vector scaling and vector addition.\nGiven two vectors:\n\n\n\n\n\n\nWhen can’t you reach all vectors in a plane?\n\n\n\n\n\nIf the vectors are colinear/parallel or consists of points"
+  },
+  {
+    "objectID": "wiki/LinAlg/basis.html#span",
+    "href": "wiki/LinAlg/basis.html#span",
+    "title": "Basis, Span, Dimensions",
+    "section": "Span",
+    "text": "Span\nThe span of two vectors \\(\\overline v\\) and \\(\\overline w\\) is the set of all linear combinations with \\(a*\\overline v + b * \\overline w\\) with \\(a,b \\in R\\). So two operations are used: vector scaling and vector addition.\n\n\n\n\n\n\nGiven two vectors: When can’t you reach all vectors in a plane?\n\n\n\n\n\nIf the vectors are colinear/parallel or consists of points",
+    "crumbs": [
+      "Wiki",
+      "Linear Algebra",
+      "Basis"
+    ]
+  },
+  {
+    "objectID": "wiki/LinAlg/basis.html#basis",
+    "href": "wiki/LinAlg/basis.html#basis",
+    "title": "Basis, Span, Dimensions",
+    "section": "Basis",
+    "text": "Basis\n\n\n\n\n\n\nNote\n\n\n\nThe set of all linear independent vectors that span a vector space",
+    "crumbs": [
+      "Wiki",
+      "Linear Algebra",
+      "Basis"
+    ]
+  },
+  {
+    "objectID": "wiki/LinAlg/linalg_start.html",
+    "href": "wiki/LinAlg/linalg_start.html",
+    "title": "Linear Algebra",
+    "section": "",
+    "text": "Mind Map of Concepts",
+    "crumbs": [
+      "Wiki",
+      "Linear Algebra"
+    ]
   }
 ]

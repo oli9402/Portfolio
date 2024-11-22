@@ -1,0 +1,27 @@
+---
+title: 'Basis, Span, Dimensions'
+---
+
+
+
+{{< video https://www.youtube.com/watch?v=k7RM-ot2NWY&ab_channel=3Blue1Brown >}}
+
+## Span
+
+The **span** of two vectors $\overline v$ and $\overline w$ is the set of all linear combinations with $a*\overline v + b * \overline w$ with $a,b \in R$. 
+So two operations are used: *vector scaling* and *vector addition*. 
+
+
+
+::: {.callout-caution collapse="true"}
+## Given two vectors: When can't you reach all vectors in a plane?
+
+If the vectors are colinear/parallel or consists of points
+:::
+
+
+## Basis
+
+:::{.callout-note}
+The set of all linear independent vectors that span a vector space
+:::

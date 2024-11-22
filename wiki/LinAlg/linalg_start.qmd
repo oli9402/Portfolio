@@ -2,4 +2,5 @@
 title: 'Linear Algebra' 
 ---
 
+![Mind Map of Concepts](images/mm.png)
 

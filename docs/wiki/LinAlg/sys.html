@@ -68,6 +68,10 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<meta name="mermaid-theme" content="default">
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -252,12 +256,13 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#process-optimization" id="toc-process-optimization" class="nav-link active" data-scroll-target="#process-optimization">Process optimization</a>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#three-types-of-echelon-form" id="toc-three-types-of-echelon-form" class="nav-link" data-scroll-target="#three-types-of-echelon-form">Three Types of Echelon Form</a></li>
+  <li><a href="#applied-problems-process-optimization" id="toc-applied-problems-process-optimization" class="nav-link" data-scroll-target="#applied-problems-process-optimization">Applied Problems: Process optimization</a>
   <ul class="collapse">
   <li><a href="#form-linear-system-of-equations" id="toc-form-linear-system-of-equations" class="nav-link" data-scroll-target="#form-linear-system-of-equations">Form linear system of equations</a></li>
   <li><a href="#solving-the-system" id="toc-solving-the-system" class="nav-link" data-scroll-target="#solving-the-system">Solving the system</a></li>
   </ul></li>
-  <li><a href="#three-types-of-echelon-form" id="toc-three-types-of-echelon-form" class="nav-link" data-scroll-target="#three-types-of-echelon-form">Three Types of Echelon Form</a></li>
   </ul>
 </nav>
     </div>
@@ -283,9 +288,77 @@ window.Quarto = {
 </header>
 
 
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<div class="cell" data-fig-width="6" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-mermaid" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mermaid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-mermaid">flowchart TD
+    A[Linear Equation System] --&gt; B(Solving for unknown &lt;br/&gt;variables)
+    B --&gt; |Echelon Form| C[3 different types of EF&lt;br/&gt; consistent vs. inconsistent?]
+    C --&gt;|consistent if| D[Rank Criterion &lt;br/&gt; rkA = rk A,b &lt;br/&gt; for Ax=b]
+    D --&gt; K[Rank = #Pivots &lt;br/&gt; Nullity = #FREEparameter]
+    A --&gt; E[Inhomogeneous Linear System &lt;br/&gt; Ax=b]
+    E --&gt; F[Solution Set: Particular + &lt;br/&gt; Homogenous System]
+    A --&gt; G[Matrix Form &lt;br/&gt; Vector Form]
+    A --&gt; H[Square System]
+    H --&gt; |check with &lt;br/&gt; determinants| HA[invertible,regular &lt;br/&gt; non-singular &lt;br/&gt; if AX=I]
+    HA --&gt; |if no inverse|HB[singular &lt;br/&gt; non-invertible]
+    HA --&gt; |double-augmented &lt;br/&gt; matirx|HC[calculate with LSE]
+    HA --&gt; |Corollary|HE[if A and B invertible &lt;br/&gt; AB invertible]
+    HC --&gt; HD[if no pivot]
+    HD --&gt; HB
+    H --&gt; I[Unique Solution. &lt;br/&gt; Hom.S. only trivial sol]
+    I --&gt; J[except if any zero rows]
+    A --&gt; L[vectors linear independent]
+
+
+    
+
+
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mermaid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: A flow chart displaying for what to use linear system equations and<br>
+gaussian elimination for solving the system. Only lecture relevant use cases are mentioned.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="three-types-of-echelon-form" class="level2">
+<h2 class="anchored" data-anchor-id="three-types-of-echelon-form">Three Types of Echelon Form</h2>
+<ol type="1">
+<li>Pivot element in every row and column.
+<ul>
+<li>Squared form only possible when <span class="math inline">\(r=c\)</span></li>
+<li>Last pivot is isolated and can be substituted</li>
+<li><strong>unique solution</strong></li>
+</ul></li>
+<li>Pivot in every row but not in every column.
+<ul>
+<li>more unknown than equations: <span class="math inline">\(r&lt;c\)</span></li>
+<li>free parameter (the column without pivot)</li>
+<li>infinitive solutions</li>
+</ul></li>
+<li>Rows without pivot.
+<ul>
+<li><span class="math inline">\(0=b\)</span>
+<ul>
+<li>if <span class="math inline">\(b \not= 0\)</span> no solution since not consistent</li>
+<li>if <span class="math inline">\(b = 0\)</span> no information. We can end up with form 1 or 2.</li>
+</ul></li>
+</ul></li>
+</ol>
+</section>
+<section id="applied-problems-process-optimization" class="level2">
+<h2 class="anchored" data-anchor-id="applied-problems-process-optimization">Applied Problems: Process optimization</h2>
 <p>Many problem can be formulated as system of linear equations:</p>
-<section id="process-optimization" class="level2">
-<h2 class="anchored" data-anchor-id="process-optimization">Process optimization</h2>
 <div class="callout callout-style-simple callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -345,34 +418,9 @@ x_B ≥ 0 \\
 0≤x_C≤15
 \end{align*}\]</span></p>
 <p>we can chose any tonne of <span class="math inline">\(x_C\)</span> between 0 and 15.</p>
-</section>
-</section>
-<section id="three-types-of-echelon-form" class="level1">
-<h1>Three Types of Echelon Form</h1>
-<ol type="1">
-<li>Pivot element in every row and column.
-<ul>
-<li>Squared form only possible when <span class="math inline">\(r=c\)</span></li>
-<li>Last pivot is isolated and can be substituted</li>
-<li><strong>unique solution</strong></li>
-</ul></li>
-<li>Pivot in every row but not in every column.
-<ul>
-<li>more unknown than equations: <span class="math inline">\(r&lt;c\)</span></li>
-<li>free parameter (the column without pivot)</li>
-<li>infinitive solutions</li>
-</ul></li>
-<li>Rows without pivot.
-<ul>
-<li><span class="math inline">\(0=b\)</span>
-<ul>
-<li>if <span class="math inline">\(b \not= 0\)</span> no solution since not consistent</li>
-<li>if <span class="math inline">\(b = 0\)</span> no information. We can end up with form 1 or 2.</li>
-</ul></li>
-</ul></li>
-</ol>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

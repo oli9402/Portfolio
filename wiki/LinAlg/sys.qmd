@@ -1,10 +1,67 @@
 ---
 title: 'Systems of Linear Equations'
+format:
+  html:
+    mermaid:
+      theme: default
 ---
+## Overview
 
+```{mermaid}
+%%| label: fig-mermaid
+%%| fig-width: 6
+%%| fig-cap: |
+%%|   A flow chart displaying for what to use linear system equations and  
+%%|   gaussian elimination for solving the system. Only lecture relevant 
+%%|   use cases are mentioned. 
+
+flowchart TD
+    A[Linear Equation System] --> B(Solving for unknown <br/>variables)
+    B --> |Echelon Form| C[3 different types of EF<br/> consistent vs. inconsistent?]
+    C -->|consistent if| D[Rank Criterion <br/> rkA = rk A,b <br/> for Ax=b]
+    D --> K[Rank = #Pivots <br/> Nullity = #FREEparameter]
+    A --> E[Inhomogeneous Linear System <br/> Ax=b]
+    E --> F[Solution Set: Particular + <br/> Homogenous System]
+    A --> G[Matrix Form <br/> Vector Form]
+    A --> H[Square System]
+    H --> |check with <br/> determinants| HA[invertible,regular <br/> non-singular <br/> if AX=I]
+    HA --> |if no inverse|HB[singular <br/> non-invertible]
+    HA --> |double-augmented <br/> matirx|HC[calculate with LSE]
+    HA --> |Corollary|HE[if A and B invertible <br/> AB invertible]
+    HC --> HD[if no pivot]
+    HD --> HB
+    H --> I[Unique Solution. <br/> Hom.S. only trivial sol]
+    I --> J[except if any zero rows]
+    A --> L[vectors linear independent]
+
+
+    
+
+
+```
+
+## Three Types of Echelon Form
+
+1. Pivot element in every row and column.
+    - Squared form only possible when $r=c$
+    - Last pivot is isolated and can be substituted 
+    - **unique solution**
+    
+2. Pivot in every row but not in every column.
+    - more unknown than equations: $r<c$
+    - free parameter (the column without pivot)
+    - infinitive solutions
+
+3. Rows without pivot.
+    - $0=b$
+      - if $b \not= 0$ no solution since not consistent
+      - if $b = 0$ no information. We can end up with form 1 or 2.
+  
+
+
+
+## Applied Problems: Process optimization 
 Many problem can be formulated as system of linear equations:
-
-## Process optimization 
 
 :::{.callout-note appearance="simple"}
 ## Example: Chemieproduktion
@@ -69,22 +126,4 @@ x_B ≥ 0 \\
 \end{align*}
 
 we can chose any tonne of $x_C$ between 0 and 15.
-
-# Three Types of Echelon Form
-
-1. Pivot element in every row and column.
-    - Squared form only possible when $r=c$
-    - Last pivot is isolated and can be substituted 
-    - **unique solution**
-    
-2. Pivot in every row but not in every column.
-    - more unknown than equations: $r<c$
-    - free parameter (the column without pivot)
-    - infinitive solutions
-
-3. Rows without pivot.
-    - $0=b$
-      - if $b \not= 0$ no solution since not consistent
-      - if $b = 0$ no information. We can end up with form 1 or 2.
-  
 

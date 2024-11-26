@@ -68,6 +68,10 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<meta name="mermaid-theme" content="default">
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
@@ -132,7 +136,7 @@ ul.task-list li input[type="checkbox"] {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
@@ -218,11 +222,11 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
         
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-page-right" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -231,7 +235,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-page-right">
 
     
   
@@ -243,11 +247,45 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/mm.png" class="img-fluid figure-img"></p>
-<figcaption>Mind Map of Concepts</figcaption>
+<div class="cell" data-fig-width="6" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-mermaid" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mermaid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-mermaid">flowchart TD
+    A[Linear Equation System] --&gt; B(Solving for unknown &lt;br/&gt;variables)
+    B --&gt; |Echelon Form| C[3 different types of EF&lt;br/&gt; consistent vs. inconsistent?]
+    C --&gt;|consistent if| D[Rank Criterion &lt;br/&gt; rkA = rk A,b &lt;br/&gt; for Ax=b]
+    D --&gt; K[Rank = #Pivots &lt;br/&gt; Nullity = #FREEparameter]
+    A --&gt; E[Inhomogeneous Linear System &lt;br/&gt; Ax=b]
+    E --&gt; F[Solution Set: Particular + &lt;br/&gt; Homogenous System]
+    A --&gt; G[Matrix Form &lt;br/&gt; Vector Form]
+    A --&gt; H[Square System]
+    H --&gt; |check with &lt;br/&gt; determinants| HA[invertible,regular &lt;br/&gt; non-singular &lt;br/&gt; if AX=I]
+    HA --&gt; |if no inverse|HB[singular &lt;br/&gt; non-invertible]
+    HA --&gt; |double-augmented &lt;br/&gt; matirx|HC[calculate with LSE]
+    HA --&gt; |Corollary|HE[if A and B invertible &lt;br/&gt; AB invertible]
+    HC --&gt; HD[if no pivot]
+    HD --&gt; HB
+    H --&gt; I[Unique Solution. &lt;br/&gt; Hom.S. only trivial sol]
+    I --&gt; J[except if any zero rows]
+    A --&gt; L[vectors linear independent]
+
+
+    
+
+
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mermaid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: A flow chart displaying for what to use linear system equations and<br>
+gaussian elimination for solving the system. Only lecture relevant use cases are mentioned.
+</figcaption>
 </figure>
+</div>
+</div>
 </div>
 
 
@@ -640,7 +678,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
+<nav class="page-navigation column-page-right">
   <div class="nav-page nav-page-previous">
       <a href="../../wiki/Statistics/ci.html" class="pagination-link" aria-label="Confidence Intervals">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Confidence Intervals</span>

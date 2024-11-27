@@ -71,6 +71,10 @@ website:
               href: wiki/LinAlg/sys.qmd
             - text: 'Basis'
               href: wiki/LinAlg/basis.qmd
+            - text: 'Linear Maps'
+              href: wiki/LinAlg/linear-maps.qmd
+         - section: 'Design of Experiments' 
+           href: wiki/DOE/doe.qmd
         
 format:
   html:

@@ -1,0 +1,28 @@
+---
+title: 'Design of Experiments'
+---
+
+
+# Introduction
+
+
+
+## Research Design
+
+
+![Decision Tree](tree.png)
+
+### Analytical study 
+
+- Identification and quantification of effects / verification of relationships
+- *Not* fully suitable for hypothesis testing 
+
+#### Example: Cohort Study
+
+Multiple cohorts (group of people with comparable inital conditions) are observed. One cohort is exposed to certain factors. Cohorts are compared after 
+
+- Smoking and Alzheimers
+
+![Cohort Study](cohort.png){width=50%}
+
+#### Case Control Study 

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Oliver Zingg - Linear Algebra</title>
+<title>Oliver Zingg - Design of Experiments</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,8 +29,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../wiki/LinAlg/ttr.html" rel="next">
-<link href="../../wiki/Statistics/ci.html" rel="prev">
+<link href="../../wiki/LinAlg/basis.html" rel="prev">
 <link href="../../oli.jpg" rel="icon" type="image/jpeg">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -68,10 +67,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<meta name="mermaid-theme" content="default">
-<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
@@ -129,14 +124,14 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../wiki/LinAlg/linalg_start.html">Linear Algebra</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../wiki/DOE/doe.html">Design of Experiments</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
@@ -190,7 +185,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../wiki/LinAlg/linalg_start.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../wiki/LinAlg/linalg_start.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Linear Algebra</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -226,20 +221,32 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#research-design" id="toc-research-design" class="nav-link" data-scroll-target="#research-design">Research Design</a>
+  <ul class="collapse">
+  <li><a href="#analytical-study" id="toc-analytical-study" class="nav-link" data-scroll-target="#analytical-study">Analytical study</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content column-page-right" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Linear Algebra</h1>
+<h1 class="title">Design of Experiments</h1>
 </div>
 
 
 
-<div class="quarto-title-meta column-page-right">
+<div class="quarto-title-meta">
 
     
   
@@ -251,51 +258,43 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="cell" data-fig-width="6" data-layout-align="default">
-<div class="cell-output-display">
-<div id="fig-mermaid" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-mermaid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div>
-<pre class="mermaid mermaid-js" data-label="fig-mermaid">flowchart TD
-    A[Linear Equation System] --&gt; B(Solving for unknown &lt;br/&gt;variables)
-    B --&gt; |Echelon Form| C[3 different types of EF&lt;br/&gt; consistent vs. inconsistent?]
-    C --&gt;|consistent if| D[Rank Criterion &lt;br/&gt; rkA = rk A,b &lt;br/&gt; for Ax=b]
-    D --&gt; K[Rank = #Pivots &lt;br/&gt; Nullity = #FREEparameter]
-    A --&gt; E[Inhomogeneous Linear System &lt;br/&gt; Ax=b]
-    E --&gt; F[Solution Set: Particular + &lt;br/&gt; Homogenous System]
-    A --&gt; G[Matrix Form &lt;br/&gt; Vector Form]
-    A --&gt; H[Square System]
-    H --&gt; |check with &lt;br/&gt; determinants| HA[invertible,regular &lt;br/&gt; non-singular &lt;br/&gt; if AX=I]
-    HA --&gt; |if no inverse|HB[singular &lt;br/&gt; non-invertible]
-    HA --&gt; |double-augmented &lt;br/&gt; matirx|HC[calculate with LSE]
-    HA --&gt; |Corollary|HE[if A and B invertible &lt;br/&gt; AB invertible]
-    HC --&gt; HD[if no pivot]
-    HD --&gt; HB
-    H --&gt; I[Unique Solution. &lt;br/&gt; Hom.S. only trivial sol]
-    I --&gt; J[except if any zero rows]
-    A --&gt; L[vectors linear independent?]
-    A --&gt; M[Linear transformation &lt;br/&gt; with non-standard basis &lt;br/&gt; and mapping rule L]
-    M --&gt; |to find:|MA[Coordinates of &lt;br/&gt;images vector L: v_j]
-    MA --&gt; |each image basis &lt;br/&gt;has own LSE|MAA[find linear combination of &lt;br/&gt; basis that form &lt;br/&gt; image of basis. &lt;br/&gt; Coefficients = coordinates]
-
-
-    
-
-
-</pre>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mermaid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: A flow chart displaying for what to use linear system equations and<br>
-gaussian elimination for solving the system. Only lecture relevant use cases are mentioned.
-</figcaption>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<section id="research-design" class="level2">
+<h2 class="anchored" data-anchor-id="research-design">Research Design</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="tree.png" class="img-fluid figure-img"></p>
+<figcaption>Decision Tree</figcaption>
 </figure>
 </div>
+<section id="analytical-study" class="level3">
+<h3 class="anchored" data-anchor-id="analytical-study">Analytical study</h3>
+<ul>
+<li>Identification and quantification of effects / verification of relationships</li>
+<li><em>Not</em> fully suitable for hypothesis testing</li>
+</ul>
+<section id="example-cohort-study" class="level4">
+<h4 class="anchored" data-anchor-id="example-cohort-study">Example: Cohort Study</h4>
+<p>Multiple cohorts (group of people with comparable inital conditions) are observed. One cohort is exposed to certain factors. Cohorts are compared after</p>
+<ul>
+<li>Smoking and Alzheimers</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="cohort.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>Cohort Study</figcaption>
+</figure>
 </div>
-</div>
+</section>
+<section id="case-control-study" class="level4">
+<h4 class="anchored" data-anchor-id="case-control-study">Case Control Study</h4>
 
 
+</section>
+</section>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -685,16 +684,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation column-page-right">
+<nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../wiki/Statistics/ci.html" class="pagination-link" aria-label="Confidence Intervals">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Confidence Intervals</span>
+      <a href="../../wiki/LinAlg/basis.html" class="pagination-link" aria-label="Basis">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Basis</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../wiki/LinAlg/ttr.html" class="pagination-link" aria-label="Things to remember">
-        <span class="nav-page-text">Things to remember</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

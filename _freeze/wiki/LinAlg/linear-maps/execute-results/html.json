@@ -1,0 +1,12 @@
+{
+  "hash": "bbf992ca856e71f9989dd8282d9ba094",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: 'Linear Maps'\nformat:\n  html:\n    mermaid:\n      theme: default\n---\n\n## Overview\n\n\n```{mermaid}\n%%| label: fig-mermaid\n%%| fig-width: 6\n%%| fig-cap: |\n%%|   A flow chart displaying for what to use linear system equations and  \n \nflowchart TD\n    A(Linear Maps <br/> linear transformation) --> C[Domain,Codomain]\n    \n    A --> B[Mapping Rule: L]\n    B --> BA[Linear mapping?]\n    BA --> |check with|BAA[Linearity rules] \n    BA --> |quick check|BAB[Zero vector <br/>L0=0]\n    \n    B --> BB[Matrix w.r.t. <br/> Standard Basis]\n    B --> BC[Matrix w.r.t. <br/>Non-Standard Basis]\n    BC --> |how to <br/>calculate map S <br/> w.r.t. basis:|BCA[Image of Basis <br/> using L]\n    BCA --> |use decomposition <br/> or LSE|BCB[to find coordinates. <br/> coefficients = coordinate. <br/> linear combination]\n    BCB --> |use coordinates <br/> vectors for|BCBA[Map S w.r.t <br/> new basis and insight <br/>about linear transformation]\n\n\n\n\n\n\n    \n\n\n```\n\n\n\n### Python for calculating Coordinates \n\nPress on triangle to show Code.\n\n::: {#1d84b6ac .cell execution_count=1}\n``` {.python .cell-code}\nimport numpy as np\nimport scipy.linalg as la\n\n\n\nA = np.array([\n  [-3,2,2],\n  [-3,1,3],\n  [-1,2,0]\n  ])\n\n#-----------Example first vector-------#\nv_1 = np.array([\n  [2],\n  [1],\n  [2]\n])\n\n#---------Calculate Image of basis v_1---#\nr_1 = A@v_1\n\n#--------After repeating for all basis--#\nS = np.hstack([v_1, v_2, v_3])\n#' This gives us the coefficient matrix that is used as \n#' LSE to calculate coordinates\n\n#-------Solve each system----- #\n\n#LSE of image of v_1\na_1 = la.solve(S, r_1)\n\n\n#--------Final Matrix------#\nB = np.hstack([a_1, a_2, a_3])\n```\n:::\n\n\n### Mapping\n\nWhat matrix size do we need if we want to map $\\mathbb{R}^2\\rightarrow \\mathbb{R}^3$?\n\n- we would need a (3 x 2) matrix \n\n",
+    "supporting": [
+      "linear-maps_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

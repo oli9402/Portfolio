@@ -370,7 +370,7 @@
     "href": "wiki/LinAlg/linalg_start.html",
     "title": "Linear Algebra",
     "section": "",
-    "text": "flowchart TD\n    A[Linear Equation System] --&gt; B(Solving for unknown &lt;br/&gt;variables)\n    B --&gt; |Echelon Form| C[3 different types of EF&lt;br/&gt; consistent vs. inconsistent?]\n    C --&gt;|consistent if| D[Rank Criterion &lt;br/&gt; rkA = rk A,b &lt;br/&gt; for Ax=b]\n    D --&gt; K[Rank = #Pivots &lt;br/&gt; Nullity = #FREEparameter]\n    A --&gt; E[Inhomogeneous Linear System &lt;br/&gt; Ax=b]\n    E --&gt; F[Solution Set: Particular + &lt;br/&gt; Homogenous System]\n    A --&gt; G[Matrix Form &lt;br/&gt; Vector Form]\n    A --&gt; H[Square System]\n    H --&gt; |check with &lt;br/&gt; determinants| HA[invertible,regular &lt;br/&gt; non-singular &lt;br/&gt; if AX=I]\n    HA --&gt; |if no inverse|HB[singular &lt;br/&gt; non-invertible]\n    HA --&gt; |double-augmented &lt;br/&gt; matirx|HC[calculate with LSE]\n    HA --&gt; |Corollary|HE[if A and B invertible &lt;br/&gt; AB invertible]\n    HC --&gt; HD[if no pivot]\n    HD --&gt; HB\n    H --&gt; I[Unique Solution. &lt;br/&gt; Hom.S. only trivial sol]\n    I --&gt; J[except if any zero rows]\n    A --&gt; L[vectors linear independent]\n\n\n    \n\n\n\n\n\n\nFigure 1: A flow chart displaying for what to use linear system equations and\ngaussian elimination for solving the system. Only lecture relevant use cases are mentioned.",
+    "text": "flowchart TD\n    A[Linear Equation System] --&gt; B(Solving for unknown &lt;br/&gt;variables)\n    B --&gt; |Echelon Form| C[3 different types of EF&lt;br/&gt; consistent vs. inconsistent?]\n    C --&gt;|consistent if| D[Rank Criterion &lt;br/&gt; rkA = rk A,b &lt;br/&gt; for Ax=b]\n    D --&gt; K[Rank = #Pivots &lt;br/&gt; Nullity = #FREEparameter]\n    A --&gt; E[Inhomogeneous Linear System &lt;br/&gt; Ax=b]\n    E --&gt; F[Solution Set: Particular + &lt;br/&gt; Homogenous System]\n    A --&gt; G[Matrix Form &lt;br/&gt; Vector Form]\n    A --&gt; H[Square System]\n    H --&gt; |check with &lt;br/&gt; determinants| HA[invertible,regular &lt;br/&gt; non-singular &lt;br/&gt; if AX=I]\n    HA --&gt; |if no inverse|HB[singular &lt;br/&gt; non-invertible]\n    HA --&gt; |double-augmented &lt;br/&gt; matirx|HC[calculate with LSE]\n    HA --&gt; |Corollary|HE[if A and B invertible &lt;br/&gt; AB invertible]\n    HC --&gt; HD[if no pivot]\n    HD --&gt; HB\n    H --&gt; I[Unique Solution. &lt;br/&gt; Hom.S. only trivial sol]\n    I --&gt; J[except if any zero rows]\n    A --&gt; L[vectors linear independent?]\n    A --&gt; M[Linear transformation &lt;br/&gt; with non-standard basis &lt;br/&gt; and mapping rule L]\n    M --&gt; |to find:|MA[Coordinates of &lt;br/&gt;images vector L: v_j]\n    MA --&gt; |each image basis &lt;br/&gt;has own LSE|MAA[find linear combination of &lt;br/&gt; basis that form &lt;br/&gt; image of basis. &lt;br/&gt; Coefficients = coordinates]\n\n\n    \n\n\n\n\n\n\nFigure 1: A flow chart displaying for what to use linear system equations and\ngaussian elimination for solving the system. Only lecture relevant use cases are mentioned.",
     "crumbs": [
       "Wiki",
       "Linear Algebra"
@@ -491,6 +491,52 @@
     "crumbs": [
       "Wiki",
       "Linear Algebra"
+    ]
+  },
+  {
+    "objectID": "wiki/LinAlg/linear-maps.html",
+    "href": "wiki/LinAlg/linear-maps.html",
+    "title": "Linear Maps",
+    "section": "",
+    "text": "flowchart TD\n    A(Linear Maps &lt;br/&gt; linear transformation) --&gt; C[Domain,Codomain]\n    \n    A --&gt; B[Mapping Rule: L]\n    B --&gt; BA[Linear mapping?]\n    BA --&gt; |check with|BAA[Linearity rules] \n    BA --&gt; |quick check|BAB[Zero vector &lt;br/&gt;L0=0]\n    \n    B --&gt; BB[Matrix w.r.t. &lt;br/&gt; Standard Basis]\n    B --&gt; BC[Matrix w.r.t. &lt;br/&gt;Non-Standard Basis]\n    BC --&gt; |how to &lt;br/&gt;calculate map S &lt;br/&gt; w.r.t. basis:|BCA[Image of Basis &lt;br/&gt; using L]\n    BCA --&gt; |use decomposition &lt;br/&gt; or LSE|BCB[to find coordinates. &lt;br/&gt; coefficients = coordinate. &lt;br/&gt; linear combination]\n    BCB --&gt; |use coordinates &lt;br/&gt; vectors for|BCBA[Map S w.r.t &lt;br/&gt; new basis and insight &lt;br/&gt;about linear transformation]\n\n\n\n\n\n\n    \n\n\n\n\n\n\nFigure 1: A flow chart displaying for what to use linear system equations and\n\n\n\n\n\n\n\nPress on triangle to show Code.\n\n\nCode\nimport numpy as np\nimport scipy.linalg as la\n\n\n\nA = np.array([\n  [-3,2,2],\n  [-3,1,3],\n  [-1,2,0]\n  ])\n\n#-----------Example first vector-------#\nv_1 = np.array([\n  [2],\n  [1],\n  [2]\n])\n\n#---------Calculate Image of basis v_1---#\nr_1 = A@v_1\n\n#--------After repeating for all basis--#\nS = np.hstack([v_1, v_2, v_3])\n#' This gives us the coefficient matrix that is used as \n#' LSE to calculate coordinates\n\n#-------Solve each system----- #\n\n#LSE of image of v_1\na_1 = la.solve(S, r_1)\n\n\n#--------Final Matrix------#\nB = np.hstack([a_1, a_2, a_3])\n\n\n\n\n\nWhat matrix size do we need if we want to map \\(\\mathbb{R}^2\\rightarrow \\mathbb{R}^3\\)?\n\nwe would need a (3 x 2) matrix",
+    "crumbs": [
+      "Wiki",
+      "Linear Algebra",
+      "Linear Maps"
+    ]
+  },
+  {
+    "objectID": "wiki/LinAlg/linear-maps.html#overview",
+    "href": "wiki/LinAlg/linear-maps.html#overview",
+    "title": "Linear Maps",
+    "section": "",
+    "text": "flowchart TD\n    A(Linear Maps &lt;br/&gt; linear transformation) --&gt; C[Domain,Codomain]\n    \n    A --&gt; B[Mapping Rule: L]\n    B --&gt; BA[Linear mapping?]\n    BA --&gt; |check with|BAA[Linearity rules] \n    BA --&gt; |quick check|BAB[Zero vector &lt;br/&gt;L0=0]\n    \n    B --&gt; BB[Matrix w.r.t. &lt;br/&gt; Standard Basis]\n    B --&gt; BC[Matrix w.r.t. &lt;br/&gt;Non-Standard Basis]\n    BC --&gt; |how to &lt;br/&gt;calculate map S &lt;br/&gt; w.r.t. basis:|BCA[Image of Basis &lt;br/&gt; using L]\n    BCA --&gt; |use decomposition &lt;br/&gt; or LSE|BCB[to find coordinates. &lt;br/&gt; coefficients = coordinate. &lt;br/&gt; linear combination]\n    BCB --&gt; |use coordinates &lt;br/&gt; vectors for|BCBA[Map S w.r.t &lt;br/&gt; new basis and insight &lt;br/&gt;about linear transformation]\n\n\n\n\n\n\n    \n\n\n\n\n\n\nFigure 1: A flow chart displaying for what to use linear system equations and\n\n\n\n\n\n\n\nPress on triangle to show Code.\n\n\nCode\nimport numpy as np\nimport scipy.linalg as la\n\n\n\nA = np.array([\n  [-3,2,2],\n  [-3,1,3],\n  [-1,2,0]\n  ])\n\n#-----------Example first vector-------#\nv_1 = np.array([\n  [2],\n  [1],\n  [2]\n])\n\n#---------Calculate Image of basis v_1---#\nr_1 = A@v_1\n\n#--------After repeating for all basis--#\nS = np.hstack([v_1, v_2, v_3])\n#' This gives us the coefficient matrix that is used as \n#' LSE to calculate coordinates\n\n#-------Solve each system----- #\n\n#LSE of image of v_1\na_1 = la.solve(S, r_1)\n\n\n#--------Final Matrix------#\nB = np.hstack([a_1, a_2, a_3])\n\n\n\n\n\nWhat matrix size do we need if we want to map \\(\\mathbb{R}^2\\rightarrow \\mathbb{R}^3\\)?\n\nwe would need a (3 x 2) matrix",
+    "crumbs": [
+      "Wiki",
+      "Linear Algebra",
+      "Linear Maps"
+    ]
+  },
+  {
+    "objectID": "wiki/DOE/doe.html",
+    "href": "wiki/DOE/doe.html",
+    "title": "Design of Experiments",
+    "section": "",
+    "text": "Decision Tree\n\n\n\n\n\nIdentification and quantification of effects / verification of relationships\nNot fully suitable for hypothesis testing\n\n\n\nMultiple cohorts (group of people with comparable inital conditions) are observed. One cohort is exposed to certain factors. Cohorts are compared after\n\nSmoking and Alzheimers\n\n\n\n\nCohort Study",
+    "crumbs": [
+      "Wiki",
+      "Design of Experiments"
+    ]
+  },
+  {
+    "objectID": "wiki/DOE/doe.html#research-design",
+    "href": "wiki/DOE/doe.html#research-design",
+    "title": "Design of Experiments",
+    "section": "",
+    "text": "Decision Tree\n\n\n\n\n\nIdentification and quantification of effects / verification of relationships\nNot fully suitable for hypothesis testing\n\n\n\nMultiple cohorts (group of people with comparable inital conditions) are observed. One cohort is exposed to certain factors. Cohorts are compared after\n\nSmoking and Alzheimers\n\n\n\n\nCohort Study",
+    "crumbs": [
+      "Wiki",
+      "Design of Experiments"
     ]
   }
 ]

@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -211,7 +245,17 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Basis</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../wiki/LinAlg/linear-maps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linear Maps</span></a>
+  </div>
+</li>
       </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Design of Experiments</span></span>
   </li>
     </ul>
     </div>
@@ -219,7 +263,30 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#namespace" id="toc-namespace" class="nav-link active" data-scroll-target="#namespace">Namespace</a></li>
+  <li><a href="#scope" id="toc-scope" class="nav-link" data-scroll-target="#scope">Scope</a></li>
+  <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions">Functions</a>
+  <ul class="collapse">
+  <li><a href="#function-chaining" id="toc-function-chaining" class="nav-link" data-scroll-target="#function-chaining">Function chaining:</a></li>
+  <li><a href="#function-arguments" id="toc-function-arguments" class="nav-link" data-scroll-target="#function-arguments">Function Arguments</a></li>
+  <li><a href="#else-after-function" id="toc-else-after-function" class="nav-link" data-scroll-target="#else-after-function">Else after Function</a></li>
+  </ul></li>
+  <li><a href="#list" id="toc-list" class="nav-link" data-scroll-target="#list">List</a></li>
+  <li><a href="#string-formating" id="toc-string-formating" class="nav-link" data-scroll-target="#string-formating">String formating</a>
+  <ul class="collapse">
+  <li><a href="#formatted-string-literals" id="toc-formatted-string-literals" class="nav-link" data-scroll-target="#formatted-string-literals">Formatted String Literals</a></li>
+  <li><a href="#format-method" id="toc-format-method" class="nav-link" data-scroll-target="#format-method">Format() Method</a></li>
+  </ul></li>
+  <li><a href="#file-handling" id="toc-file-handling" class="nav-link" data-scroll-target="#file-handling">File Handling</a>
+  <ul class="collapse">
+  <li><a href="#read" id="toc-read" class="nav-link" data-scroll-target="#read">Read</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -243,8 +310,146 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="namespace" class="level2">
+<h2 class="anchored" data-anchor-id="namespace">Namespace</h2>
+<ul>
+<li><em>built-in</em>: all objects provided by python</li>
+<li><em>global</em>: programmer defined objects across whole script</li>
+<li><em>local</em>: programmer defined objects in function blocks</li>
+</ul>
+<p>Object name must only be unique <strong>within a given namespace</strong>:</p>
+<div id="46fd2532" class="cell" data-execution_count="1">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> my_function(x):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> x<span class="op">+</span><span class="dv">10</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_function(x):</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> my_function(y):</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> y <span class="op">+</span> <span class="dv">20</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  x <span class="op">=</span> my_function(<span class="dv">2</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> x </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="scope" class="level2">
+<h2 class="anchored" data-anchor-id="scope">Scope</h2>
+<p>Scope of an object refers to the code section from which an object is accessible. ***</p>
+</section>
+<section id="functions" class="level2">
+<h2 class="anchored" data-anchor-id="functions">Functions</h2>
+<p>Functions can only return one reference to a storage location. So returning multiple references must be saved in a list:</p>
+<div id="760b427d" class="cell" data-execution_count="2">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> function(a,b):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="bu">list</span>(a,b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Learning material for python functions (e.g., str.split()): <a href="https://github.com/TheAlgorithms/Python/blob/master/strings/split.py">here</a></p>
+<section id="function-chaining" class="level3">
+<h3 class="anchored" data-anchor-id="function-chaining">Function chaining:</h3>
+<div id="2f3e0469" class="cell" data-execution_count="3">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>function_1(function_2(a)) <span class="op">=</span> function_2(a).function_1()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="function-arguments" class="level3">
+<h3 class="anchored" data-anchor-id="function-arguments">Function Arguments</h3>
+</section>
+<section id="else-after-function" class="level3">
+<h3 class="anchored" data-anchor-id="else-after-function">Else after Function</h3>
+<p>If for example we search a list for a flag item we can use else for the case that the flag item is not in the list.</p>
+<div id="6c61873e" class="cell" data-execution_count="4">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> mylist:</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">==</span> theflag:</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    process(i)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"List argument missing terminal flag."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<hr>
+</section>
+</section>
+<section id="list" class="level2">
+<h2 class="anchored" data-anchor-id="list">List</h2>
+<p>Append new element to list</p>
+<div id="d9290afa" class="cell" data-execution_count="5">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>li <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">3</span>]</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>li.append(<span class="dv">4</span>) </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>li <span class="op">+=</span> [<span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<hr>
+</section>
+<section id="string-formating" class="level2">
+<h2 class="anchored" data-anchor-id="string-formating">String formating</h2>
+<p>There are multiple ways here are two:</p>
+<section id="formatted-string-literals" class="level3">
+<h3 class="anchored" data-anchor-id="formatted-string-literals">Formatted String Literals</h3>
+<p>Start with an f or F. Allows including variable names with {}.</p>
+<p>Example: right align and use 5 spaces including var1</p>
+<div id="fd49b562" class="cell" data-execution_count="6">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>var1<span class="sc">:&gt;5}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Example: self documentation and debugging: returns var name and what is stored <code>var1= -&gt; var1=7</code></p>
+<div id="45c9b041" class="cell" data-execution_count="7">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>var1<span class="op">=</span><span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="format-method" class="level3">
+<h3 class="anchored" data-anchor-id="format-method">Format() Method</h3>
+<p>String objects provides methods/functions and apply it to string object</p>
+<p>More flexible way to string literals: {} only placeholders, must be specified in format()</p>
+<div id="a910ce94" class="cell" data-execution_count="8">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>var1 <span class="op">=</span><span class="st">'world'</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>var2 <span class="op">=</span> <span class="dv">7</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"hello </span><span class="sc">{}</span><span class="st"> </span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(var1, var2))</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"hello </span><span class="sc">{1}</span><span class="st"> </span><span class="sc">{0}</span><span class="st">"</span>.<span class="bu">format</span>(var2, var1))</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="bu">dict</span> <span class="op">=</span> {<span class="st">'num'</span>: <span class="dv">7</span>, <span class="st">'txt'</span>: <span class="st">'world'</span>}</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"hello </span><span class="sc">{0[txt]}</span><span class="st"> </span><span class="sc">{0[num]}</span><span class="st">"</span>.<span class="bu">format</span>(<span class="bu">dict</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<hr>
+</section>
+</section>
+<section id="file-handling" class="level2">
+<h2 class="anchored" data-anchor-id="file-handling">File Handling</h2>
+<p><code>open(file_name, mode)</code> creates file object in python. It opens a pipe stream of the file that must be closed again <code>close()</code>.</p>
+<p>Python provides a way to handle close with the function <code>with</code>. As soon as the block is left, the file is closed.</p>
+<div id="62ca3516" class="cell" data-execution_count="9">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(file_name, mode) <span class="im">as</span> file_object: </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  ...</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  ...</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<section id="read" class="level3">
+<h3 class="anchored" data-anchor-id="read">Read</h3>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

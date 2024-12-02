@@ -30,3 +30,9 @@ This kind of plot is useful if the main interest is the difference in size betwe
 
 See [github](https://github.com/oli9402/visualisation/blob/main/likert_plots/likert_vis.qmd)
 
+
+# Second version
+
+<img src="https://github.com/oli9402/visualisation/blob/main/likert_plots/output_images/likert_quote.svg">
+
+![Image Caption](https://github.com/oli9402/visualisation/blob/main/likert_plots/output_images/likert_quote.svg)

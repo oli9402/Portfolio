@@ -11,7 +11,7 @@
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "Visualizing Likert Scales\n\n\n\nlikert\n\n\nggplot2\n\n\nbar plot\n\n\n\nDiverging Bar Plots for visualizing positive vs. negative opinions\n\n\n\nOliver Zingg\n\n\nNov 21, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUsing Quarto for interactive Presentations\n\n\n\nQuarto\n\n\nPresentation\n\n\nEcharts4r\n\n\nInteractive\n\n\nHMTL\n\n\n\nA simple demonstration of how to use R, Revealjs and Echarts4r to create interactive Presentations. HTML file can be easily sent to other and opened with different browsers.…\n\n\n\nOliver Zingg\n\n\nNov 19, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMasterarbeit\n\n\n\nData Analysis\n\n\nMixed-Effects Model\n\n\nEEG\n\n\nPsychiatric Disorders\n\n\nMasterarbeit\n\n\n\n\n\n\n\nOliver Zingg\n\n\nJun 1, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nOwn Theme\n\n\n\nggplot2\n\n\nVisualization\n\n\nBoxplot\n\n\nCompany Theme\n\n\n\nExperimenting with own themes\n\n\n\nOliver Zingg\n\n\nNov 1, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAccuracy of selected predictors per sample size\n\n\n\n\n\n\n\n\n\nOct 10, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBachelorarbeit\n\n\n\nMachine Learning\n\n\nSystematic literature review\n\n\nMRI\n\n\nBachelorarbeit\n\n\n\n\n\n\n\nOliver Zingg\n\n\nJun 1, 2021\n\n\n\n\n\n\n\n\n\n\n\n\nGoogle Headlines Analysis\n\n\n\nHeadlines\n\n\nGoogle\n\n\nPython\n\n\nSentiment Analysis\n\n\n\n…\n\n\n\nOliver Zingg\n\n\nNov 20, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConfidence Intervals\n\n\n\n\n\n\nOliver Zingg\n\n\nSep 6, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThemes for Data Visualization with R\n\n\n\n\n\n\nOliver Zingg\n\n\nSep 10, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nSimpson’s Paradox\n\n\n\nLinear Mixed Effects\n\n\nStatistics\n\n\nRandom Effects\n\n\n\n\n\n\n\nOliver Zingg\n\n\nSep 5, 2023\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Visualizing Semantic Difference Scales\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nVisualizing Likert Scales\n\n\n\nlikert\n\n\nggplot2\n\n\nbar plot\n\n\n\nDiverging Bar Plots for visualizing positive vs. negative opinions\n\n\n\nOliver Zingg\n\n\nNov 21, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUsing Quarto for interactive Presentations\n\n\n\nQuarto\n\n\nPresentation\n\n\nEcharts4r\n\n\nInteractive\n\n\nHMTL\n\n\n\nA simple demonstration of how to use R, Revealjs and Echarts4r to create interactive Presentations. HTML file can be easily sent to other and opened with different browsers.…\n\n\n\nOliver Zingg\n\n\nNov 19, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMasterarbeit\n\n\n\nData Analysis\n\n\nMixed-Effects Model\n\n\nEEG\n\n\nPsychiatric Disorders\n\n\nMasterarbeit\n\n\n\n\n\n\n\nOliver Zingg\n\n\nJun 1, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nOwn Theme\n\n\n\nggplot2\n\n\nVisualization\n\n\nBoxplot\n\n\nCompany Theme\n\n\n\nExperimenting with own themes\n\n\n\nOliver Zingg\n\n\nNov 1, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAccuracy of selected predictors per sample size\n\n\n\n\n\n\n\n\n\nOct 10, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBachelorarbeit\n\n\n\nMachine Learning\n\n\nSystematic literature review\n\n\nMRI\n\n\nBachelorarbeit\n\n\n\n\n\n\n\nOliver Zingg\n\n\nJun 1, 2021\n\n\n\n\n\n\n\n\n\n\n\n\nGoogle Headlines Analysis\n\n\n\nHeadlines\n\n\nGoogle\n\n\nPython\n\n\nSentiment Analysis\n\n\n\n…\n\n\n\nOliver Zingg\n\n\nNov 20, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConfidence Intervals\n\n\n\n\n\n\nOliver Zingg\n\n\nSep 6, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThemes for Data Visualization with R\n\n\n\n\n\n\nOliver Zingg\n\n\nSep 10, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nSimpson’s Paradox\n\n\n\nLinear Mixed Effects\n\n\nStatistics\n\n\nRandom Effects\n\n\n\n\n\n\n\nOliver Zingg\n\n\nSep 5, 2023\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/Theme/index.html",
@@ -538,5 +538,117 @@
       "Wiki",
       "Design of Experiments"
     ]
+  },
+  {
+    "objectID": "wiki/Python/basics.html",
+    "href": "wiki/Python/basics.html",
+    "title": "Learning the Basics",
+    "section": "",
+    "text": "built-in: all objects provided by python\nglobal: programmer defined objects across whole script\nlocal: programmer defined objects in function blocks\n\nObject name must only be unique within a given namespace:\n\n\nCode\ndef my_function(x):\n  return x+10\n\ndef test_function(x):\n  def my_function(y):\n    return y + 20\n  x = my_function(2)\n  return x",
+    "crumbs": [
+      "Wiki",
+      "Python",
+      "Basics"
+    ]
+  },
+  {
+    "objectID": "wiki/Python/basics.html#functions",
+    "href": "wiki/Python/basics.html#functions",
+    "title": "Learning the Basics",
+    "section": "Functions",
+    "text": "Functions\nFunctions can only return one reference to a storage location. So returning multiple references must be saved in a list:\n\n\nCode\ndef function(a,b):\n  return list(a,b)\n\n\nLearning material for python functions (e.g., str.split()): here\n\nFunction chaining:\n\n\nCode\nfunction_1(function_2(a)) = function_2(a).function_1()\n\n\n\n\nFunction Arguments\n\n\nElse after Function\nIf for example we search a list for a flag item we can use else for the case that the flag item is not in the list.\n\n\nCode\nfor i in mylist:\n    if i == theflag:\n        break\n    process(i)\nelse:\n    raise ValueError(\"List argument missing terminal flag.\")",
+    "crumbs": [
+      "Wiki",
+      "Python",
+      "Basics"
+    ]
+  },
+  {
+    "objectID": "wiki/Python/basics.html#list",
+    "href": "wiki/Python/basics.html#list",
+    "title": "Learning the Basics",
+    "section": "List",
+    "text": "List\nAppend new element to list\n\n\nCode\nli = [1,2,2,3]\n\nli.append(4) \nli += [4]",
+    "crumbs": [
+      "Wiki",
+      "Python",
+      "Basics"
+    ]
+  },
+  {
+    "objectID": "wiki/Python/basics.html#string-formating",
+    "href": "wiki/Python/basics.html#string-formating",
+    "title": "Learning the Basics",
+    "section": "String formating",
+    "text": "String formating\nThere are multiple ways here are two:\n\nFormatted String Literals\nStart with an f or F. Allows including variable names with {}.\nExample: right align and use 5 spaces including var1\n\n\nCode\nprint(f\"{var1:&gt;5}\")\n\n\nExample: self documentation and debugging: returns var name and what is stored var1= -&gt; var1=7\n\n\nCode\nprint(f\"{var1=}\")\n\n\n\n\nFormat() Method\nString objects provides methods/functions and apply it to string object\nMore flexible way to string literals: {} only placeholders, must be specified in format()\n\n\nCode\nvar1 ='world'\nvar2 = 7\n\nprint(\"hello {} {}\".format(var1, var2))\nprint(\"hello {1} {0}\".format(var2, var1))\n\ndict = {'num': 7, 'txt': 'world'}\nprint(\"hello {0[txt]} {0[num]}\".format(dict))",
+    "crumbs": [
+      "Wiki",
+      "Python",
+      "Basics"
+    ]
+  },
+  {
+    "objectID": "wiki/Python/basics.html#file-handling",
+    "href": "wiki/Python/basics.html#file-handling",
+    "title": "Learning the Basics",
+    "section": "File Handling",
+    "text": "File Handling\nopen(file_name, mode) creates file object in python. It opens a pipe stream of the file that must be closed again close().\nPython provides a way to handle close with the function with. As soon as the block is left, the file is closed.\n\n\nCode\nwith open(file_name, mode) as file_object: \n  ...\n  ...\n  ...\n\n\n\nRead",
+    "crumbs": [
+      "Wiki",
+      "Python",
+      "Basics"
+    ]
+  },
+  {
+    "objectID": "wiki/Python/basics.html#namespace",
+    "href": "wiki/Python/basics.html#namespace",
+    "title": "Learning the Basics",
+    "section": "",
+    "text": "built-in: all objects provided by python\nglobal: programmer defined objects across whole script\nlocal: programmer defined objects in function blocks\n\nObject name must only be unique within a given namespace:\n\n\nCode\ndef my_function(x):\n  return x+10\n\ndef test_function(x):\n  def my_function(y):\n    return y + 20\n  x = my_function(2)\n  return x",
+    "crumbs": [
+      "Wiki",
+      "Python",
+      "Basics"
+    ]
+  },
+  {
+    "objectID": "posts/Semdif/index.html",
+    "href": "posts/Semdif/index.html",
+    "title": "Visualizing Semantic Difference Scales",
+    "section": "",
+    "text": "A common way to test user experience of a product of app is to use semantic difference scales where adjectives of for example opposite meaning are placed compared. The customer must chose to what degree one of the certain adjectives is more suited.\n\n\nUser Experience Questionnaire is a typical questionnaire used for this purpose.\n\nLaugwitz, B., Held, T., & Schrepp, M. (2008). Construction and evaluation of a user experience questionnaire. In HCI and Usability for Education and &gt;Work: 4th Symposium of the Workgroup Human-Computer Interaction and Usability Engineering of the Austrian Computer Society, USAB 2008, Graz, Austria, &gt;November 20-21, 2008. Proceedings 4 (pp. 63-76). Springer Berlin Heidelberg.\n\n\n\n\nExample Questionnaire: UEQ\n\n\n\n\n\n\n\n\nSemantic Difference with 95% Confidence intervalls\n\n\nCode here"
+  },
+  {
+    "objectID": "posts/Semdif/index.html#example",
+    "href": "posts/Semdif/index.html#example",
+    "title": "Visualizing Semantic Difference Scales",
+    "section": "",
+    "text": "User Experience Questionnaire is a typical questionnaire used for this purpose.\n\nLaugwitz, B., Held, T., & Schrepp, M. (2008). Construction and evaluation of a user experience questionnaire. In HCI and Usability for Education and &gt;Work: 4th Symposium of the Workgroup Human-Computer Interaction and Usability Engineering of the Austrian Computer Society, USAB 2008, Graz, Austria, &gt;November 20-21, 2008. Proceedings 4 (pp. 63-76). Springer Berlin Heidelberg.\n\n\n\n\nExample Questionnaire: UEQ"
+  },
+  {
+    "objectID": "posts/Semdif/index.html#visualization-using-ggplot2",
+    "href": "posts/Semdif/index.html#visualization-using-ggplot2",
+    "title": "Visualizing Semantic Difference Scales",
+    "section": "",
+    "text": "Semantic Difference with 95% Confidence intervalls\n\n\nCode here"
+  },
+  {
+    "objectID": "wiki/Python/basics.html#scope",
+    "href": "wiki/Python/basics.html#scope",
+    "title": "Learning the Basics",
+    "section": "Scope",
+    "text": "Scope\nScope of an object refers to the code section from which an object is accessible. ***",
+    "crumbs": [
+      "Wiki",
+      "Python",
+      "Basics"
+    ]
+  },
+  {
+    "objectID": "index.html#latest-content",
+    "href": "index.html#latest-content",
+    "title": "Willkommen auf meiner Webseite",
+    "section": "Latest content",
+    "text": "Latest content"
   }
 ]

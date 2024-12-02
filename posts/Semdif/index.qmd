@@ -1,0 +1,23 @@
+---
+title: 'Visualizing Semantic Difference Scales'
+image: sem_dif2.svg
+---
+
+
+# User Experience
+
+A common way to test user experience of a product of app is to use semantic difference scales where adjectives of for example opposite meaning are placed compared. The customer must chose to what degree one of the certain adjectives is more suited. 
+
+## Example
+ 
+[User Experience Questionnaire](https://www.ueq-online.org) is a typical questionnaire used for this purpose.
+
+> Laugwitz, B., Held, T., & Schrepp, M. (2008). Construction and evaluation of a user experience questionnaire. In HCI and Usability for Education and >Work: 4th Symposium of the Workgroup Human-Computer Interaction and Usability Engineering of the Austrian Computer Society, USAB 2008, Graz, Austria, >November 20-21, 2008. Proceedings 4 (pp. 63-76). Springer Berlin Heidelberg.
+
+![Example Questionnaire: UEQ ](sem.png)
+
+## Visualization using ggplot2
+
+![Semantic Difference with 95% Confidence intervalls](sem_dif2.svg)
+
+[Code here](https://github.com/oli9402/visualisation/tree/main/semantic_diff)

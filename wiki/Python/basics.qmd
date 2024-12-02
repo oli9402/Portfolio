@@ -1,3 +1,143 @@
 ---
 title: 'Learning the Basics'
+code-fold: show
 ---
+## Namespace
+
+- *built-in*: all objects provided by python
+- *global*: programmer defined objects across whole script
+- *local*: programmer defined objects in function blocks
+
+Object name must only be unique **within a given namespace**:
+
+```{python}
+#| eval: false
+
+def my_function(x):
+  return x+10
+
+def test_function(x):
+  def my_function(y):
+    return y + 20
+  x = my_function(2)
+  return x 
+```
+
+## Scope 
+Scope of an object refers to the code section from which an object is accessible.
+***
+
+## Functions
+
+Functions can only return one reference to a storage location. So returning multiple references must be saved in a list:
+
+```{python}
+#| eval: false
+
+def function(a,b):
+  return list(a,b)
+    
+```
+
+Learning material for python functions (e.g., str.split()): [here](https://github.com/TheAlgorithms/Python/blob/master/strings/split.py) 
+
+
+### Function chaining:
+
+```{python}
+#| eval: false
+
+function_1(function_2(a)) = function_2(a).function_1()
+```
+
+### Function Arguments
+
+### Else after Function
+
+If for example we search a list for a flag item we can use else for the case that the flag item is not in the list.
+```{python}
+#| eval: false
+for i in mylist:
+    if i == theflag:
+        break
+    process(i)
+else:
+    raise ValueError("List argument missing terminal flag.")
+```
+
+***
+
+## List
+
+Append new element to list 
+
+```{python}
+#| eval: false
+
+li = [1,2,2,3]
+
+li.append(4) 
+li += [4]
+```
+
+***
+
+## String formating
+There are multiple ways here are two: 
+
+### Formatted String Literals
+Start with an f or F. Allows including variable names with {}. 
+
+Example: right align and use 5 spaces including var1
+
+```{python}
+#| eval: false
+
+print(f"{var1:>5}")
+```
+
+Example: self documentation and debugging: returns var name and what is stored
+`var1= -> var1=7`
+```{python}
+#| eval: false
+
+print(f"{var1=}")
+```
+
+### Format() Method
+String objects provides methods/functions and apply it to string object
+
+More flexible way to string literals: {} only placeholders, must be specified in format()
+
+```{python}
+#| eval: false
+var1 ='world'
+var2 = 7
+
+print("hello {} {}".format(var1, var2))
+print("hello {1} {0}".format(var2, var1))
+
+dict = {'num': 7, 'txt': 'world'}
+print("hello {0[txt]} {0[num]}".format(dict))
+
+
+```
+
+***
+
+## File Handling
+
+`open(file_name, mode)` creates file object in python. It opens a pipe stream of the file that must be closed again `close()`.
+
+Python provides a way to handle close with the function `with`. As soon as the block is left, the file is closed. 
+
+```{python}
+#| eval: false
+
+with open(file_name, mode) as file_object: 
+  ...
+  ...
+  ...
+```
+
+### Read

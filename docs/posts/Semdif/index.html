@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Oliver Zingg - Design of Experiments</title>
+<title>Oliver Zingg - Visualizing Semantic Difference Scales</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,7 +29,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../wiki/LinAlg/linear-maps.html" rel="prev">
 <link href="../../oli.jpg" rel="icon" type="image/jpeg">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -71,10 +70,10 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-sidebar docked nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -109,7 +108,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">CV</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../../wiki.html" aria-current="page"> <i class="bi bi-book-half" role="img">
+    <a class="nav-link" href="../../wiki.html"> <i class="bi bi-book-half" role="img">
 </i> 
 <span class="menu-text">Wiki</span></a>
   </li>  
@@ -119,186 +118,74 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../wiki/DOE/doe.html">Design of Experiments</a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
-<!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../wiki.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Personal Wiki</span></a>
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Visualizing Semantic Difference Scales</h1>
+                      </div>
   </div>
-</li>
-        <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../wiki/Python/python_start.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Python</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../wiki/Python/basics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Basics</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../wiki/Python/wrangling.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Wrangling</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../wiki/Statistics/stats_start.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Statistics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../wiki/Statistics/ci.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Confidence Intervals</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../wiki/LinAlg/linalg_start.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Linear Algebra</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../wiki/LinAlg/ttr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Things to remember</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../wiki/LinAlg/sys.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Systems of Linear Equations</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../wiki/LinAlg/basis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Basis</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../wiki/LinAlg/linear-maps.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Linear Maps</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Design of Experiments</span></span>
-  </li>
-    </ul>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
     </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <li><a href="#user-experience" id="toc-user-experience" class="nav-link active" data-scroll-target="#user-experience">User Experience</a>
   <ul class="collapse">
-  <li><a href="#research-design" id="toc-research-design" class="nav-link" data-scroll-target="#research-design">Research Design</a>
-  <ul class="collapse">
-  <li><a href="#analytical-study" id="toc-analytical-study" class="nav-link" data-scroll-target="#analytical-study">Analytical study</a></li>
-  </ul></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
+  <li><a href="#visualization-using-ggplot2" id="toc-visualization-using-ggplot2" class="nav-link" data-scroll-target="#visualization-using-ggplot2">Visualization using ggplot2</a></li>
   </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Design of Experiments</h1>
-</div>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
 
 
-</header>
-
-
-<section id="introduction" class="level1">
-<h1>Introduction</h1>
-<section id="research-design" class="level2">
-<h2 class="anchored" data-anchor-id="research-design">Research Design</h2>
+<section id="user-experience" class="level1">
+<h1>User Experience</h1>
+<p>A common way to test user experience of a product of app is to use semantic difference scales where adjectives of for example opposite meaning are placed compared. The customer must chose to what degree one of the certain adjectives is more suited.</p>
+<section id="example" class="level2">
+<h2 class="anchored" data-anchor-id="example">Example</h2>
+<p><a href="https://www.ueq-online.org">User Experience Questionnaire</a> is a typical questionnaire used for this purpose.</p>
+<blockquote class="blockquote">
+<p>Laugwitz, B., Held, T., &amp; Schrepp, M. (2008). Construction and evaluation of a user experience questionnaire. In HCI and Usability for Education and &gt;Work: 4th Symposium of the Workgroup Human-Computer Interaction and Usability Engineering of the Austrian Computer Society, USAB 2008, Graz, Austria, &gt;November 20-21, 2008. Proceedings 4 (pp.&nbsp;63-76). Springer Berlin Heidelberg.</p>
+</blockquote>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="tree.png" class="img-fluid figure-img"></p>
-<figcaption>Decision Tree</figcaption>
-</figure>
-</div>
-<section id="analytical-study" class="level3">
-<h3 class="anchored" data-anchor-id="analytical-study">Analytical study</h3>
-<ul>
-<li>Identification and quantification of effects / verification of relationships</li>
-<li><em>Not</em> fully suitable for hypothesis testing</li>
-</ul>
-<section id="example-cohort-study" class="level4">
-<h4 class="anchored" data-anchor-id="example-cohort-study">Example: Cohort Study</h4>
-<p>Multiple cohorts (group of people with comparable inital conditions) are observed. One cohort is exposed to certain factors. Cohorts are compared after</p>
-<ul>
-<li>Smoking and Alzheimers</li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="cohort.png" class="img-fluid figure-img" style="width:50.0%"></p>
-<figcaption>Cohort Study</figcaption>
+<p><img src="sem.png" class="img-fluid figure-img"></p>
+<figcaption>Example Questionnaire: UEQ</figcaption>
 </figure>
 </div>
 </section>
-<section id="case-control-study" class="level4">
-<h4 class="anchored" data-anchor-id="case-control-study">Case Control Study</h4>
+<section id="visualization-using-ggplot2" class="level2">
+<h2 class="anchored" data-anchor-id="visualization-using-ggplot2">Visualization using ggplot2</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="sem_dif2.svg" class="img-fluid figure-img"></p>
+<figcaption>Semantic Difference with 95% Confidence intervalls</figcaption>
+</figure>
+</div>
+<p><a href="https://github.com/oli9402/visualisation/tree/main/semantic_diff">Code here</a></p>
 
 
-</section>
-</section>
 </section>
 </section>
 
@@ -690,15 +577,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../../wiki/LinAlg/linear-maps.html" class="pagination-link" aria-label="Linear Maps">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Linear Maps</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

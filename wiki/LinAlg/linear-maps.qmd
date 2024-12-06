@@ -1,5 +1,6 @@
 ---
 title: 'Linear Maps'
+toc: false
 format:
   html:
     mermaid:
@@ -13,10 +14,10 @@ format:
 %%| label: fig-mermaid
 %%| fig-width: 6
 %%| fig-cap: |
-%%|   A flow chart displaying for what to use linear system equations and  
+%%|   A flow chart of concepts in linear maps   
  
 flowchart TD
-    A(Linear Maps <br/> linear transformation) --> C[Domain,Codomain]
+    A(Linear Maps <br/> linear transformation) --> D[Domain,Codomain]
     
     A --> B[Mapping Rule: L]
     B --> BA[Linear mapping?]
@@ -28,7 +29,16 @@ flowchart TD
     BC --> |how to <br/>calculate map S <br/> w.r.t. basis:|BCA[Image of Basis <br/> using L]
     BCA --> |use decomposition <br/> or LSE|BCB[to find coordinates. <br/> coefficients = coordinate. <br/> linear combination]
     BCB --> |use coordinates <br/> vectors for|BCBA[Map S w.r.t <br/> new basis and insight <br/>about linear transformation]
+    
+    B --> BD[Invertible Mapping]
+    BD --> |only possible <br/> if same dimension|BDA[inverse map of L: L^-1 <br/> = is unique and linear]
+    BDA --> |every reflection <br/>is invertibale|BDAA[L = L <br/> self-inverse]
+    BDA --> |if 2 x 2 matrix|BDAB[Use formular below]
 
+    A --> C[Affine Linear Maps]
+    C --> |Linear + shift|CA[Linear map + <br/>displacement vector w <br/> every linear map is <br/>affine map with w = 0 ]
+    CA --> |Image of zero vector|CB[displacement vector]
+    CA --> |used for example|CC[rotation around point other than origin]
 
 
 
@@ -88,3 +98,10 @@ What matrix size do we need if we want to map $\mathbb{R}^2\rightarrow \mathbb{R
 
 - we would need a (3 x 2) matrix 
 
+### Inverse of 2 x 2 Matrix
+
+$A^{-1} = \frac{1}{ad-bc}*\begin{pmatrix}d & -b \\ -c & a\end{pmatrix}$
+
+The denominator is the determinant of A.
+
+### Excerise 4.4 

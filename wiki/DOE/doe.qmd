@@ -1,5 +1,5 @@
 ---
-title: 'Design of Experiments'
+title: 'Research Design'
 ---
 
 

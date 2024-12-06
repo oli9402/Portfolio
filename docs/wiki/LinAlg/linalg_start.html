@@ -68,10 +68,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<meta name="mermaid-theme" content="default">
-<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
@@ -257,49 +253,6 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="cell" data-fig-width="6" data-layout-align="default">
-<div class="cell-output-display">
-<div id="fig-mermaid" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-mermaid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div>
-<pre class="mermaid mermaid-js" data-label="fig-mermaid">flowchart TD
-    A[Linear Equation System] --&gt; B(Solving for unknown &lt;br/&gt;variables)
-    B --&gt; |Echelon Form| C[3 different types of EF&lt;br/&gt; consistent vs. inconsistent?]
-    C --&gt;|consistent if| D[Rank Criterion &lt;br/&gt; rkA = rk A,b &lt;br/&gt; for Ax=b]
-    D --&gt; K[Rank = #Pivots &lt;br/&gt; Nullity = #FREEparameter]
-    A --&gt; E[Inhomogeneous Linear System &lt;br/&gt; Ax=b]
-    E --&gt; F[Solution Set: Particular + &lt;br/&gt; Homogenous System]
-    A --&gt; G[Matrix Form &lt;br/&gt; Vector Form]
-    A --&gt; H[Square System]
-    H --&gt; |check with &lt;br/&gt; determinants| HA[invertible,regular &lt;br/&gt; non-singular &lt;br/&gt; if AX=I]
-    HA --&gt; |if no inverse|HB[singular &lt;br/&gt; non-invertible]
-    HA --&gt; |double-augmented &lt;br/&gt; matirx|HC[calculate with LSE]
-    HA --&gt; |Corollary|HE[if A and B invertible &lt;br/&gt; AB invertible]
-    HC --&gt; HD[if no pivot]
-    HD --&gt; HB
-    H --&gt; I[Unique Solution. &lt;br/&gt; Hom.S. only trivial sol]
-    I --&gt; J[except if any zero rows]
-    A --&gt; L[vectors linear independent?]
-    A --&gt; M[Linear transformation &lt;br/&gt; with non-standard basis &lt;br/&gt; and mapping rule L]
-    M --&gt; |to find:|MA[Coordinates of &lt;br/&gt;images vector L: v_j]
-    MA --&gt; |each image basis &lt;br/&gt;has own LSE|MAA[find linear combination of &lt;br/&gt; basis that form &lt;br/&gt; image of basis. &lt;br/&gt; Coefficients = coordinates]
-
-
-    
-
-
-</pre>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mermaid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: A flow chart displaying for what to use linear system equations and<br>
-gaussian elimination for solving the system. Only lecture relevant use cases are mentioned.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
 
 
 

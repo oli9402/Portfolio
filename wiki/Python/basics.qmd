@@ -1,6 +1,6 @@
 ---
 title: 'Learning the Basics'
-code-fold: show
+code-fold: false
 ---
 ## Namespace
 
@@ -17,11 +17,17 @@ def my_function(x):
   return x+10
 
 def test_function(x):
-  def my_function(y):
+  def my_function(y):  # my_function: this is possible since different namespace 
     return y + 20
   x = my_function(2)
   return x 
+
+test_function()(y=10)
 ```
+
+Inside a function you can access a global object via the keyword `global`. You can also increase a global var inside a function for example. But this should be avoided global access.
+
+The keyword `nonlocal` will access a variable in the next higher namespace. 
 
 ## Scope 
 Scope of an object refers to the code section from which an object is accessible.
@@ -52,6 +58,51 @@ function_1(function_2(a)) = function_2(a).function_1()
 
 ### Function Arguments
 
+```{python}
+#| eval: false
+
+a,b,c = 3,4,5
+
+a,b,c = 3,4,5,6 ## Error
+
+a,b,*c = 3,4,5,6 # Works: assign all remaining var to c
+```
+
+`*` packs elements into a list. Use `*` again to unpack:
+```{python}
+#|eval: false
+
+print(a,b,*c)
+```
+
+This can be done in function parameter aswell: 
+```{python}
+#|eval: false
+dic = {'a':1, 'b':3}
+def my_f(a,b):
+    return a+b
+
+my_f(**dic) #Returns  4
+```
+
+`**` unpacks a dictionary. can only be used as parameter input?
+
+Using `*args` in as parameter must be then accessed with a for loop, since  it is provided to the function as tupple. 
+
+```{python}
+#| eval: false
+# print first n letters of words
+
+def strcut(*str, n):
+    for i in str:
+        print(i[:n])
+# or 
+
+def strcut(*str,n):
+    print('\n'.join(i[:n] for i in str))
+
+```
+
 ### Else after Function
 
 If for example we search a list for a flag item we can use else for the case that the flag item is not in the list.
@@ -64,6 +115,20 @@ for i in mylist:
 else:
     raise ValueError("List argument missing terminal flag.")
 ```
+
+### Recursion
+
+Simple recursion of factorial()
+```{python}
+#|eval: false
+
+def fac(n):
+  if n == 1:
+    return 1
+  else: 
+    return n * fac(n-1)
+```
+
 
 ***
 
@@ -78,7 +143,10 @@ li = [1,2,2,3]
 
 li.append(4) 
 li += [4]
+
+[2] + [1] ## -> [2,1]
 ```
+
 
 ***
 
@@ -141,3 +209,67 @@ with open(file_name, mode) as file_object:
 ```
 
 ### Read
+
+## Object Oriented Programming 
+
+
+Variables are references to objects and objects belong to a class.
+
+`x = 99` is a references to storage location of a object of class int
+
+### Class
+Blueprint for what an object should look like and how it should function.
+Has several elements. Functions are called methods (inside a class)
+
+- header: indicates beginning of class
+- __init__(): constructor (build) for objects
+- variables: Class and object
+- self: reference to the object that is created
+
+```{python}
+#| eval: false
+
+class PackageName: 
+  """
+  Description
+  """
+  def __init__(self, name: str, quality: str) -> none:
+      self.name = name
+      self.quality = quality
+# create an object from this class
+
+x: PackageName = PackageName(name = 'ggplot', quality = 'high') #self becomes x
+
+```
+
+{{< video https://www.youtube.com/watch?v=rLyYb7BFgQI&t=323s&ab_channel=Indently >}}
+
+### Dunder Methods 
+
+How should objects of a class behave for certain operations
+
+```{python}
+#|eval: false
+
+class A: 
+  ...
+  
+  def __add__(self,other):
+    return f'{self.name} + {other.name}'
+  
+
+
+x = A()
+y = A()
+
+print(x + y)
+```
+
+
+### Subclass
+
+Inheritance creates a hierarchy of classes
+
+- Animal -> Bird and Cow
+
+test with `issubclass(Bird, Animal)`. Child classes get all properties from parent class. 

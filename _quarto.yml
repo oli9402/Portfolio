@@ -9,8 +9,6 @@ website:
   page-navigation: true
   page-footer:
     background: "#000000"
-    left: |
-      Created by Oliver Zingg with Quarto and RStudio
     center:  
       - href: https://github.com/oli9402
         icon: github
@@ -21,8 +19,6 @@ website:
       - href: https://www.linkedin.com/in/oliver-zingg-321b0228a/
         icon: linkedin
         aria-label: LinkedIn
-    right: |
-      Viel Spass beim durchstöbern meiner Seite
   navbar:
     background: "#f0eeeb"
     title: 'Oliver Zingg'
@@ -74,20 +70,25 @@ website:
             - text: 'Linear Maps'
               href: wiki/LinAlg/linear-maps.qmd
          - section: 'Design of Experiments' 
-           href: wiki/DOE/doe.qmd
+           href: wiki/DOE/int.qmd
+           contents:
+           - text: 'Research Design'
+             href: wiki/DOE/doe.qmd
         
 format:
   html:
     toc: true
     code-link: true
     code-fold: true
-    font-family: monospace
+    mainfont: Poltawski Nowy
     grid:
       sidebar-width: 200px
       body-width: 1000px
       margin-width: 200px
     highlight-style: breeze
-    theme: Yeti
+    theme: [Lux, rwds.scss]
+    smooth-scroll: true
+    anchor-sections: true
 
 
 execute: 

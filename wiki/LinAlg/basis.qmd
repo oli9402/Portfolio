@@ -1,7 +1,28 @@
 ---
 title: 'Basis, Span, Dimensions'
+toc: false
+format:
+  html:
+    mermaid:
+      theme: default
 ---
 
+## Overview
+
+```{mermaid}
+%%| label: fig-mermaid
+%%| fig-width: 6
+%%| fig-cap: |
+%%|   A flow chart of concepts in Basis and Span 
+ 
+flowchart TD
+    A(Basis, Span <br/> Dimensions) --> B[Matrix column span]
+    B-->|echelon form: <br/>columns with pivots|C[= linearly independent. <br/>Original columns (basis)<br/>span the column space]
+    
+
+
+
+```
 
 
 {{< video https://www.youtube.com/watch?v=k7RM-ot2NWY&ab_channel=3Blue1Brown >}}

@@ -1,11 +1,13 @@
 ---
 title: 'Systems of Linear Equations'
+toc: false
 format:
   html:
     mermaid:
       theme: default
 ---
 ## Overview
+
 
 ```{mermaid}
 %%| label: fig-mermaid
@@ -32,7 +34,10 @@ flowchart TD
     HD --> HB
     H --> I[Unique Solution. <br/> Hom.S. only trivial sol]
     I --> J[except if any zero rows]
-    A --> L[vectors linear independent]
+    A --> L[vectors linear independent?]
+    A --> M[Linear transformation <br/> with non-standard basis <br/> and mapping rule L]
+    M --> |to find:|MA[Coordinates of <br/>images vector L: v_j]
+    MA --> |each image basis <br/>has own LSE|MAA[find linear combination of <br/> basis that form <br/> image of basis. <br/> Coefficients = coordinates]
 
 
     
@@ -40,7 +45,12 @@ flowchart TD
 
 ```
 
-## Three Types of Echelon Form
+## Connection to linear maps
+
+- Linear systems of equations can be described by matrices
+- Matrices can be interpreted as linear maps
+
+## Three Types of Echelon Form (EF)
 
 1. Pivot element in every row and column.
     - Squared form only possible when $r=c$
@@ -58,7 +68,29 @@ flowchart TD
       - if $b = 0$ no information. We can end up with form 1 or 2.
   
 
+## General Solution
 
+Typically you have some pivots missing (in EF) and some rows with 0 = 0.
+
+$\begin{align} -x -y + 3z &= 3\\ -y + 4z&=6 \\ 0&=0\end{align}$
+
+You express the pivots columns with the missing pivot column (here z).
+
+- First we use substitution to formulate the solution for the pivot columns (x and y):
+
+$\begin{align} y &= -6+4z \\ x&= 3 -z \\ z&=z\end{align}$
+
+- Now lets determine the solution set:
+
+$$
+\begin{pmatrix} x\\y\\z \end{pmatrix} =
+\begin{pmatrix}3-z \\ -6+4z\\ z\end{pmatrix} = 
+\begin{pmatrix}3\\-6\\0  \end{pmatrix} +
+\begin{pmatrix}-z \\ 4z\\1z\end{pmatrix} =
+\begin{pmatrix}3\\-6\\0  \end{pmatrix} + z
+\begin{pmatrix}-1\\4\\1 \end{pmatrix} 
+$$
+The free parameters are used to describe the kernal of a matrix using homogenous solution.
 
 ## Applied Problems: Process optimization 
 Many problem can be formulated as system of linear equations:
@@ -127,3 +159,28 @@ x_B ≥ 0 \\
 
 we can chose any tonne of $x_C$ between 0 and 15.
 
+
+
+
+## Determinats 
+
+*For 2x2 squared matrices:* 
+
+\begin{pmatrix}
+a&b \\
+c&d
+\end{pmatrix}
+
+a*d - b*c
+
+*For 3x3 squared matrices:* 
+
+Rule of Sarrus 
+
+*Other n x n cases*
+
+bring to upper triangular matrix form by row operations and switching:
+
+- for each switch sign of det changes!
+- if one column with no pivot element: $det(0)$
+- if upper triangular: determinant is product of main diagonal elements 

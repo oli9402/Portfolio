@@ -68,6 +68,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<style>html{ scroll-behavior: smooth; }</style>
 <meta name="mermaid-theme" content="default">
 <script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
 <script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
@@ -105,7 +106,7 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-sidebar docked nav-fixed">
+<body class="nav-sidebar docked nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -253,29 +254,28 @@ window.Quarto = {
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Design of Experiments</span></span>
+      <div class="sidebar-item-container"> 
+            <a href="../../wiki/DOE/int.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Design of Experiments</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../wiki/DOE/doe.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Research Design</span></a>
+  </div>
+</li>
+      </ul>
   </li>
     </ul>
     </div>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#three-types-of-echelon-form" id="toc-three-types-of-echelon-form" class="nav-link" data-scroll-target="#three-types-of-echelon-form">Three Types of Echelon Form</a></li>
-  <li><a href="#applied-problems-process-optimization" id="toc-applied-problems-process-optimization" class="nav-link" data-scroll-target="#applied-problems-process-optimization">Applied Problems: Process optimization</a>
-  <ul class="collapse">
-  <li><a href="#form-linear-system-of-equations" id="toc-form-linear-system-of-equations" class="nav-link" data-scroll-target="#form-linear-system-of-equations">Form linear system of equations</a></li>
-  <li><a href="#solving-the-system" id="toc-solving-the-system" class="nav-link" data-scroll-target="#solving-the-system">Solving the system</a></li>
-  </ul></li>
-  </ul>
-</nav>
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -323,7 +323,10 @@ window.Quarto = {
     HD --&gt; HB
     H --&gt; I[Unique Solution. &lt;br/&gt; Hom.S. only trivial sol]
     I --&gt; J[except if any zero rows]
-    A --&gt; L[vectors linear independent]
+    A --&gt; L[vectors linear independent?]
+    A --&gt; M[Linear transformation &lt;br/&gt; with non-standard basis &lt;br/&gt; and mapping rule L]
+    M --&gt; |to find:|MA[Coordinates of &lt;br/&gt;images vector L: v_j]
+    MA --&gt; |each image basis &lt;br/&gt;has own LSE|MAA[find linear combination of &lt;br/&gt; basis that form &lt;br/&gt; image of basis. &lt;br/&gt; Coefficients = coordinates]
 
 
     
@@ -341,8 +344,15 @@ gaussian elimination for solving the system. Only lecture relevant use cases are
 </div>
 </div>
 </section>
-<section id="three-types-of-echelon-form" class="level2">
-<h2 class="anchored" data-anchor-id="three-types-of-echelon-form">Three Types of Echelon Form</h2>
+<section id="connection-to-linear-maps" class="level2">
+<h2 class="anchored" data-anchor-id="connection-to-linear-maps">Connection to linear maps</h2>
+<ul>
+<li>Linear systems of equations can be described by matrices</li>
+<li>Matrices can be interpreted as linear maps</li>
+</ul>
+</section>
+<section id="three-types-of-echelon-form-ef" class="level2">
+<h2 class="anchored" data-anchor-id="three-types-of-echelon-form-ef">Three Types of Echelon Form (EF)</h2>
 <ol type="1">
 <li>Pivot element in every row and column.
 <ul>
@@ -365,6 +375,27 @@ gaussian elimination for solving the system. Only lecture relevant use cases are
 </ul></li>
 </ul></li>
 </ol>
+</section>
+<section id="general-solution" class="level2">
+<h2 class="anchored" data-anchor-id="general-solution">General Solution</h2>
+<p>Typically you have some pivots missing (in EF) and some rows with 0 = 0.</p>
+<p><span class="math inline">\(\begin{align} -x -y + 3z &amp;= 3\\ -y + 4z&amp;=6 \\ 0&amp;=0\end{align}\)</span></p>
+<p>You express the pivots columns with the missing pivot column (here z).</p>
+<ul>
+<li>First we use substitution to formulate the solution for the pivot columns (x and y):</li>
+</ul>
+<p><span class="math inline">\(\begin{align} y &amp;= -6+4z \\ x&amp;= 3 -z \\ z&amp;=z\end{align}\)</span></p>
+<ul>
+<li>Now lets determine the solution set:</li>
+</ul>
+<p><span class="math display">\[
+\begin{pmatrix} x\\y\\z \end{pmatrix} =
+\begin{pmatrix}3-z \\ -6+4z\\ z\end{pmatrix} =
+\begin{pmatrix}3\\-6\\0  \end{pmatrix} +
+\begin{pmatrix}-z \\ 4z\\1z\end{pmatrix} =
+\begin{pmatrix}3\\-6\\0  \end{pmatrix} + z
+\begin{pmatrix}-1\\4\\1 \end{pmatrix}
+\]</span> The free parameters are used to describe the kernal of a matrix using homogenous solution.</p>
 </section>
 <section id="applied-problems-process-optimization" class="level2">
 <h2 class="anchored" data-anchor-id="applied-problems-process-optimization">Applied Problems: Process optimization</h2>
@@ -428,9 +459,27 @@ x_B ≥ 0 \\
 0≤x_C≤15
 \end{align*}\]</span></p>
 <p>we can chose any tonne of <span class="math inline">\(x_C\)</span> between 0 and 15.</p>
-
-
 </section>
+</section>
+<section id="determinats" class="level2">
+<h2 class="anchored" data-anchor-id="determinats">Determinats</h2>
+<p><em>For 2x2 squared matrices:</em></p>
+<span class="math display">\[\begin{pmatrix}
+a&amp;b \\
+c&amp;d
+\end{pmatrix}\]</span>
+<p>a<em>d - b</em>c</p>
+<p><em>For 3x3 squared matrices:</em></p>
+<p>Rule of Sarrus</p>
+<p><em>Other n x n cases</em></p>
+<p>bring to upper triangular matrix form by row operations and switching:</p>
+<ul>
+<li>for each switch sign of det changes!</li>
+<li>if one column with no pivot element: <span class="math inline">\(det(0)\)</span></li>
+<li>if upper triangular: determinant is product of main diagonal elements</li>
+</ul>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -837,8 +886,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>Created by Oliver Zingg with Quarto and RStudio</p>
-</div>   
+      &nbsp;
+    </div>   
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
@@ -862,12 +911,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </ul>
     </div>
     <div class="nav-footer-right">
-<p>Viel Spass beim durchstöbern meiner Seite</p>
-</div>
+      &nbsp;
+    </div>
   </div>
 </footer>
 
 
 
 
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

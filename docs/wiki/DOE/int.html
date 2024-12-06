@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Oliver Zingg - Linear Maps</title>
+<title>Oliver Zingg - Introduction Design of Experiments</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -63,8 +29,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../wiki/DOE/int.html" rel="next">
-<link href="../../wiki/LinAlg/basis.html" rel="prev">
+<link href="../../wiki/DOE/doe.html" rel="next">
+<link href="../../wiki/LinAlg/linear-maps.html" rel="prev">
 <link href="../../oli.jpg" rel="icon" type="image/jpeg">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -102,45 +68,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<style>html{ scroll-behavior: smooth; }</style>
-<meta name="mermaid-theme" content="default">
-<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
-<body class="nav-sidebar docked nav-fixed fullcontent">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -193,7 +125,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../wiki/LinAlg/linalg_start.html">Linear Algebra</a></li><li class="breadcrumb-item"><a href="../../wiki/LinAlg/linear-maps.html">Linear Maps</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../wiki/DOE/int.html">Design of Experiments</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -281,7 +213,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../wiki/LinAlg/linear-maps.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../wiki/LinAlg/linear-maps.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Linear Maps</span></a>
   </div>
 </li>
@@ -289,7 +221,7 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../wiki/DOE/int.html" class="sidebar-item-text sidebar-link">
+            <a href="../../wiki/DOE/int.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Design of Experiments</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -309,13 +241,15 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../wiki/LinAlg/linalg_start.html">Linear Algebra</a></li><li class="breadcrumb-item"><a href="../../wiki/LinAlg/linear-maps.html">Linear Maps</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Linear Maps</h1>
+<h1 class="title">Introduction Design of Experiments</h1>
 </div>
 
 
@@ -332,117 +266,8 @@ window.Quarto = {
 </header>
 
 
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<div class="cell" data-fig-width="6" data-layout-align="default">
-<div class="cell-output-display">
-<div id="fig-mermaid" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-mermaid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div>
-<pre class="mermaid mermaid-js" data-label="fig-mermaid"> 
-flowchart TD
-    A(Linear Maps &lt;br/&gt; linear transformation) --&gt; D[Domain,Codomain]
-    
-    A --&gt; B[Mapping Rule: L]
-    B --&gt; BA[Linear mapping?]
-    BA --&gt; |check with|BAA[Linearity rules] 
-    BA --&gt; |quick check|BAB[Zero vector &lt;br/&gt;L0=0]
-    
-    B --&gt; BB[Matrix w.r.t. &lt;br/&gt; Standard Basis]
-    B --&gt; BC[Matrix w.r.t. &lt;br/&gt;Non-Standard Basis]
-    BC --&gt; |how to &lt;br/&gt;calculate map S &lt;br/&gt; w.r.t. basis:|BCA[Image of Basis &lt;br/&gt; using L]
-    BCA --&gt; |use decomposition &lt;br/&gt; or LSE|BCB[to find coordinates. &lt;br/&gt; coefficients = coordinate. &lt;br/&gt; linear combination]
-    BCB --&gt; |use coordinates &lt;br/&gt; vectors for|BCBA[Map S w.r.t &lt;br/&gt; new basis and insight &lt;br/&gt;about linear transformation]
-    
-    B --&gt; BD[Invertible Mapping]
-    BD --&gt; |only possible &lt;br/&gt; if same dimension|BDA[inverse map of L: L^-1 &lt;br/&gt; = is unique and linear]
-    BDA --&gt; |every reflection &lt;br/&gt;is invertibale|BDAA[L = L &lt;br/&gt; self-inverse]
-    BDA --&gt; |if 2 x 2 matrix|BDAB[Use formular below]
-
-    A --&gt; C[Affine Linear Maps]
-    C --&gt; |Linear + shift|CA[Linear map + &lt;br/&gt;displacement vector w &lt;br/&gt; every linear map is &lt;br/&gt;affine map with w = 0 ]
-    CA --&gt; |Image of zero vector|CB[displacement vector]
-    CA --&gt; |used for example|CC[rotation around point other than origin]
 
 
-
-
-
-    
-
-
-</pre>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mermaid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: A flow chart of concepts in linear maps
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<section id="python-for-calculating-coordinates" class="level3">
-<h3 class="anchored" data-anchor-id="python-for-calculating-coordinates">Python for calculating Coordinates</h3>
-<p>Press on triangle to show Code.</p>
-<div id="d822bb9c" class="cell" data-execution_count="1">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.linalg <span class="im">as</span> la</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  [<span class="op">-</span><span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">2</span>],</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  [<span class="op">-</span><span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">3</span>],</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  [<span class="op">-</span><span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">0</span>]</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  ])</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">#-----------Example first vector-------#</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>v_1 <span class="op">=</span> np.array([</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  [<span class="dv">2</span>],</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  [<span class="dv">1</span>],</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  [<span class="dv">2</span>]</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>])</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co">#---------Calculate Image of basis v_1---#</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>r_1 <span class="op">=</span> A<span class="op">@</span>v_1</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co">#--------After repeating for all basis--#</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>S <span class="op">=</span> np.hstack([v_1, v_2, v_3])</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co">#' This gives us the coefficient matrix that is used as </span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co">#' LSE to calculate coordinates</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="co">#-------Solve each system----- #</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="co">#LSE of image of v_1</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>a_1 <span class="op">=</span> la.solve(S, r_1)</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="co">#--------Final Matrix------#</span></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> np.hstack([a_1, a_2, a_3])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-</section>
-<section id="mapping" class="level3">
-<h3 class="anchored" data-anchor-id="mapping">Mapping</h3>
-<p>What matrix size do we need if we want to map <span class="math inline">\(\mathbb{R}^2\rightarrow \mathbb{R}^3\)</span>?</p>
-<ul>
-<li>we would need a (3 x 2) matrix</li>
-</ul>
-</section>
-<section id="inverse-of-2-x-2-matrix" class="level3">
-<h3 class="anchored" data-anchor-id="inverse-of-2-x-2-matrix">Inverse of 2 x 2 Matrix</h3>
-<p><span class="math inline">\(A^{-1} = \frac{1}{ad-bc}*\begin{pmatrix}d &amp; -b \\ -c &amp; a\end{pmatrix}\)</span></p>
-<p>The denominator is the determinant of A.</p>
-</section>
-<section id="excerise-4.4" class="level3">
-<h3 class="anchored" data-anchor-id="excerise-4.4">Excerise 4.4</h3>
-
-
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -834,13 +659,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../wiki/LinAlg/basis.html" class="pagination-link" aria-label="Basis">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Basis</span>
+      <a href="../../wiki/LinAlg/linear-maps.html" class="pagination-link" aria-label="Linear Maps">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Linear Maps</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../wiki/DOE/int.html" class="pagination-link" aria-label="Design of Experiments">
-        <span class="nav-page-text">Design of Experiments</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../wiki/DOE/doe.html" class="pagination-link" aria-label="Research Design">
+        <span class="nav-page-text">Research Design</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -848,8 +673,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-      &nbsp;
-    </div>   
+<p>Created by Oliver Zingg with Quarto and RStudio</p>
+</div>   
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
@@ -873,13 +698,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </ul>
     </div>
     <div class="nav-footer-right">
-      &nbsp;
-    </div>
+<p>Viel Spass beim durchstöbern meiner Seite</p>
+</div>
   </div>
 </footer>
 
 
 
 
-<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

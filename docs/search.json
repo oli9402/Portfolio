@@ -339,7 +339,12 @@
     "href": "wiki/LinAlg/basis.html",
     "title": "Basis, Span, Dimensions",
     "section": "",
-    "text": "The span of two vectors \\(\\overline v\\) and \\(\\overline w\\) is the set of all linear combinations with \\(a*\\overline v + b * \\overline w\\) with \\(a,b \\in R\\). So two operations are used: vector scaling and vector addition.\nGiven two vectors:\n\n\n\n\n\n\nWhen can’t you reach all vectors in a plane?\n\n\n\n\n\nIf the vectors are colinear/parallel or consists of points"
+    "text": "flowchart TD\n    A(Basis, Span &lt;br/&gt; Dimensions) --&gt; B[Matrix column span]\n    B--&gt;|echelon form: &lt;br/&gt;columns with pivots|C[= linearly independent. &lt;br/&gt;Original columns (basis)&lt;br/&gt;span the column space]\n    \n\n\n\n\n\n\n\nFigure 1: A flow chart of concepts in Basis and Span",
+    "crumbs": [
+      "Wiki",
+      "Linear Algebra",
+      "Basis"
+    ]
   },
   {
     "objectID": "wiki/LinAlg/basis.html#span",
@@ -381,7 +386,7 @@
     "href": "wiki/LinAlg/sys.html",
     "title": "Systems of Linear Equations",
     "section": "",
-    "text": "flowchart TD\n    A[Linear Equation System] --&gt; B(Solving for unknown &lt;br/&gt;variables)\n    B --&gt; |Echelon Form| C[3 different types of EF&lt;br/&gt; consistent vs. inconsistent?]\n    C --&gt;|consistent if| D[Rank Criterion &lt;br/&gt; rkA = rk A,b &lt;br/&gt; for Ax=b]\n    D --&gt; K[Rank = #Pivots &lt;br/&gt; Nullity = #FREEparameter]\n    A --&gt; E[Inhomogeneous Linear System &lt;br/&gt; Ax=b]\n    E --&gt; F[Solution Set: Particular + &lt;br/&gt; Homogenous System]\n    A --&gt; G[Matrix Form &lt;br/&gt; Vector Form]\n    A --&gt; H[Square System]\n    H --&gt; |check with &lt;br/&gt; determinants| HA[invertible,regular &lt;br/&gt; non-singular &lt;br/&gt; if AX=I]\n    HA --&gt; |if no inverse|HB[singular &lt;br/&gt; non-invertible]\n    HA --&gt; |double-augmented &lt;br/&gt; matirx|HC[calculate with LSE]\n    HA --&gt; |Corollary|HE[if A and B invertible &lt;br/&gt; AB invertible]\n    HC --&gt; HD[if no pivot]\n    HD --&gt; HB\n    H --&gt; I[Unique Solution. &lt;br/&gt; Hom.S. only trivial sol]\n    I --&gt; J[except if any zero rows]\n    A --&gt; L[vectors linear independent]\n\n\n    \n\n\n\n\n\n\nFigure 1: A flow chart displaying for what to use linear system equations and\ngaussian elimination for solving the system. Only lecture relevant use cases are mentioned.",
+    "text": "flowchart TD\n    A[Linear Equation System] --&gt; B(Solving for unknown &lt;br/&gt;variables)\n    B --&gt; |Echelon Form| C[3 different types of EF&lt;br/&gt; consistent vs. inconsistent?]\n    C --&gt;|consistent if| D[Rank Criterion &lt;br/&gt; rkA = rk A,b &lt;br/&gt; for Ax=b]\n    D --&gt; K[Rank = #Pivots &lt;br/&gt; Nullity = #FREEparameter]\n    A --&gt; E[Inhomogeneous Linear System &lt;br/&gt; Ax=b]\n    E --&gt; F[Solution Set: Particular + &lt;br/&gt; Homogenous System]\n    A --&gt; G[Matrix Form &lt;br/&gt; Vector Form]\n    A --&gt; H[Square System]\n    H --&gt; |check with &lt;br/&gt; determinants| HA[invertible,regular &lt;br/&gt; non-singular &lt;br/&gt; if AX=I]\n    HA --&gt; |if no inverse|HB[singular &lt;br/&gt; non-invertible]\n    HA --&gt; |double-augmented &lt;br/&gt; matirx|HC[calculate with LSE]\n    HA --&gt; |Corollary|HE[if A and B invertible &lt;br/&gt; AB invertible]\n    HC --&gt; HD[if no pivot]\n    HD --&gt; HB\n    H --&gt; I[Unique Solution. &lt;br/&gt; Hom.S. only trivial sol]\n    I --&gt; J[except if any zero rows]\n    A --&gt; L[vectors linear independent?]\n    A --&gt; M[Linear transformation &lt;br/&gt; with non-standard basis &lt;br/&gt; and mapping rule L]\n    M --&gt; |to find:|MA[Coordinates of &lt;br/&gt;images vector L: v_j]\n    MA --&gt; |each image basis &lt;br/&gt;has own LSE|MAA[find linear combination of &lt;br/&gt; basis that form &lt;br/&gt; image of basis. &lt;br/&gt; Coefficients = coordinates]\n\n\n    \n\n\n\n\n\n\nFigure 1: A flow chart displaying for what to use linear system equations and\ngaussian elimination for solving the system. Only lecture relevant use cases are mentioned.",
     "crumbs": [
       "Wiki",
       "Linear Algebra",
@@ -475,7 +480,7 @@
     "href": "wiki/LinAlg/sys.html#overview",
     "title": "Systems of Linear Equations",
     "section": "",
-    "text": "flowchart TD\n    A[Linear Equation System] --&gt; B(Solving for unknown &lt;br/&gt;variables)\n    B --&gt; |Echelon Form| C[3 different types of EF&lt;br/&gt; consistent vs. inconsistent?]\n    C --&gt;|consistent if| D[Rank Criterion &lt;br/&gt; rkA = rk A,b &lt;br/&gt; for Ax=b]\n    D --&gt; K[Rank = #Pivots &lt;br/&gt; Nullity = #FREEparameter]\n    A --&gt; E[Inhomogeneous Linear System &lt;br/&gt; Ax=b]\n    E --&gt; F[Solution Set: Particular + &lt;br/&gt; Homogenous System]\n    A --&gt; G[Matrix Form &lt;br/&gt; Vector Form]\n    A --&gt; H[Square System]\n    H --&gt; |check with &lt;br/&gt; determinants| HA[invertible,regular &lt;br/&gt; non-singular &lt;br/&gt; if AX=I]\n    HA --&gt; |if no inverse|HB[singular &lt;br/&gt; non-invertible]\n    HA --&gt; |double-augmented &lt;br/&gt; matirx|HC[calculate with LSE]\n    HA --&gt; |Corollary|HE[if A and B invertible &lt;br/&gt; AB invertible]\n    HC --&gt; HD[if no pivot]\n    HD --&gt; HB\n    H --&gt; I[Unique Solution. &lt;br/&gt; Hom.S. only trivial sol]\n    I --&gt; J[except if any zero rows]\n    A --&gt; L[vectors linear independent]\n\n\n    \n\n\n\n\n\n\nFigure 1: A flow chart displaying for what to use linear system equations and\ngaussian elimination for solving the system. Only lecture relevant use cases are mentioned.",
+    "text": "flowchart TD\n    A[Linear Equation System] --&gt; B(Solving for unknown &lt;br/&gt;variables)\n    B --&gt; |Echelon Form| C[3 different types of EF&lt;br/&gt; consistent vs. inconsistent?]\n    C --&gt;|consistent if| D[Rank Criterion &lt;br/&gt; rkA = rk A,b &lt;br/&gt; for Ax=b]\n    D --&gt; K[Rank = #Pivots &lt;br/&gt; Nullity = #FREEparameter]\n    A --&gt; E[Inhomogeneous Linear System &lt;br/&gt; Ax=b]\n    E --&gt; F[Solution Set: Particular + &lt;br/&gt; Homogenous System]\n    A --&gt; G[Matrix Form &lt;br/&gt; Vector Form]\n    A --&gt; H[Square System]\n    H --&gt; |check with &lt;br/&gt; determinants| HA[invertible,regular &lt;br/&gt; non-singular &lt;br/&gt; if AX=I]\n    HA --&gt; |if no inverse|HB[singular &lt;br/&gt; non-invertible]\n    HA --&gt; |double-augmented &lt;br/&gt; matirx|HC[calculate with LSE]\n    HA --&gt; |Corollary|HE[if A and B invertible &lt;br/&gt; AB invertible]\n    HC --&gt; HD[if no pivot]\n    HD --&gt; HB\n    H --&gt; I[Unique Solution. &lt;br/&gt; Hom.S. only trivial sol]\n    I --&gt; J[except if any zero rows]\n    A --&gt; L[vectors linear independent?]\n    A --&gt; M[Linear transformation &lt;br/&gt; with non-standard basis &lt;br/&gt; and mapping rule L]\n    M --&gt; |to find:|MA[Coordinates of &lt;br/&gt;images vector L: v_j]\n    MA --&gt; |each image basis &lt;br/&gt;has own LSE|MAA[find linear combination of &lt;br/&gt; basis that form &lt;br/&gt; image of basis. &lt;br/&gt; Coefficients = coordinates]\n\n\n    \n\n\n\n\n\n\nFigure 1: A flow chart displaying for what to use linear system equations and\ngaussian elimination for solving the system. Only lecture relevant use cases are mentioned.",
     "crumbs": [
       "Wiki",
       "Linear Algebra",
@@ -498,7 +503,7 @@
     "href": "wiki/LinAlg/linear-maps.html",
     "title": "Linear Maps",
     "section": "",
-    "text": "flowchart TD\n    A(Linear Maps &lt;br/&gt; linear transformation) --&gt; C[Domain,Codomain]\n    \n    A --&gt; B[Mapping Rule: L]\n    B --&gt; BA[Linear mapping?]\n    BA --&gt; |check with|BAA[Linearity rules] \n    BA --&gt; |quick check|BAB[Zero vector &lt;br/&gt;L0=0]\n    \n    B --&gt; BB[Matrix w.r.t. &lt;br/&gt; Standard Basis]\n    B --&gt; BC[Matrix w.r.t. &lt;br/&gt;Non-Standard Basis]\n    BC --&gt; |how to &lt;br/&gt;calculate map S &lt;br/&gt; w.r.t. basis:|BCA[Image of Basis &lt;br/&gt; using L]\n    BCA --&gt; |use decomposition &lt;br/&gt; or LSE|BCB[to find coordinates. &lt;br/&gt; coefficients = coordinate. &lt;br/&gt; linear combination]\n    BCB --&gt; |use coordinates &lt;br/&gt; vectors for|BCBA[Map S w.r.t &lt;br/&gt; new basis and insight &lt;br/&gt;about linear transformation]\n\n\n\n\n\n\n    \n\n\n\n\n\n\nFigure 1: A flow chart displaying for what to use linear system equations and\n\n\n\n\n\n\n\nPress on triangle to show Code.\n\n\nCode\nimport numpy as np\nimport scipy.linalg as la\n\n\n\nA = np.array([\n  [-3,2,2],\n  [-3,1,3],\n  [-1,2,0]\n  ])\n\n#-----------Example first vector-------#\nv_1 = np.array([\n  [2],\n  [1],\n  [2]\n])\n\n#---------Calculate Image of basis v_1---#\nr_1 = A@v_1\n\n#--------After repeating for all basis--#\nS = np.hstack([v_1, v_2, v_3])\n#' This gives us the coefficient matrix that is used as \n#' LSE to calculate coordinates\n\n#-------Solve each system----- #\n\n#LSE of image of v_1\na_1 = la.solve(S, r_1)\n\n\n#--------Final Matrix------#\nB = np.hstack([a_1, a_2, a_3])\n\n\n\n\n\nWhat matrix size do we need if we want to map \\(\\mathbb{R}^2\\rightarrow \\mathbb{R}^3\\)?\n\nwe would need a (3 x 2) matrix",
+    "text": "flowchart TD\n    A(Linear Maps &lt;br/&gt; linear transformation) --&gt; D[Domain,Codomain]\n    \n    A --&gt; B[Mapping Rule: L]\n    B --&gt; BA[Linear mapping?]\n    BA --&gt; |check with|BAA[Linearity rules] \n    BA --&gt; |quick check|BAB[Zero vector &lt;br/&gt;L0=0]\n    \n    B --&gt; BB[Matrix w.r.t. &lt;br/&gt; Standard Basis]\n    B --&gt; BC[Matrix w.r.t. &lt;br/&gt;Non-Standard Basis]\n    BC --&gt; |how to &lt;br/&gt;calculate map S &lt;br/&gt; w.r.t. basis:|BCA[Image of Basis &lt;br/&gt; using L]\n    BCA --&gt; |use decomposition &lt;br/&gt; or LSE|BCB[to find coordinates. &lt;br/&gt; coefficients = coordinate. &lt;br/&gt; linear combination]\n    BCB --&gt; |use coordinates &lt;br/&gt; vectors for|BCBA[Map S w.r.t &lt;br/&gt; new basis and insight &lt;br/&gt;about linear transformation]\n    \n    B --&gt; BD[Invertible Mapping]\n    BD --&gt; |only possible &lt;br/&gt; if same dimension|BDA[inverse map of L: L^-1 &lt;br/&gt; = is unique and linear]\n    BDA --&gt; |every reflection &lt;br/&gt;is invertibale|BDAA[L = L &lt;br/&gt; self-inverse]\n    BDA --&gt; |if 2 x 2 matrix|BDAB[Use formular below]\n\n    A --&gt; C[Affine Linear Maps]\n    C --&gt; |Linear + shift|CA[Linear map + &lt;br/&gt;displacement vector w &lt;br/&gt; every linear map is &lt;br/&gt;affine map with w = 0 ]\n    CA --&gt; |Image of zero vector|CB[displacement vector]\n    CA --&gt; |used for example|CC[rotation around point other than origin]\n\n\n\n\n\n    \n\n\n\n\n\n\nFigure 1: A flow chart of concepts in linear maps\n\n\n\n\n\n\n\nPress on triangle to show Code.\n\n\nCode\nimport numpy as np\nimport scipy.linalg as la\n\n\n\nA = np.array([\n  [-3,2,2],\n  [-3,1,3],\n  [-1,2,0]\n  ])\n\n#-----------Example first vector-------#\nv_1 = np.array([\n  [2],\n  [1],\n  [2]\n])\n\n#---------Calculate Image of basis v_1---#\nr_1 = A@v_1\n\n#--------After repeating for all basis--#\nS = np.hstack([v_1, v_2, v_3])\n#' This gives us the coefficient matrix that is used as \n#' LSE to calculate coordinates\n\n#-------Solve each system----- #\n\n#LSE of image of v_1\na_1 = la.solve(S, r_1)\n\n\n#--------Final Matrix------#\nB = np.hstack([a_1, a_2, a_3])\n\n\n\n\n\nWhat matrix size do we need if we want to map \\(\\mathbb{R}^2\\rightarrow \\mathbb{R}^3\\)?\n\nwe would need a (3 x 2) matrix\n\n\n\n\n\\(A^{-1} = \\frac{1}{ad-bc}*\\begin{pmatrix}d & -b \\\\ -c & a\\end{pmatrix}\\)\nThe denominator is the determinant of A.",
     "crumbs": [
       "Wiki",
       "Linear Algebra",
@@ -510,7 +515,7 @@
     "href": "wiki/LinAlg/linear-maps.html#overview",
     "title": "Linear Maps",
     "section": "",
-    "text": "flowchart TD\n    A(Linear Maps &lt;br/&gt; linear transformation) --&gt; C[Domain,Codomain]\n    \n    A --&gt; B[Mapping Rule: L]\n    B --&gt; BA[Linear mapping?]\n    BA --&gt; |check with|BAA[Linearity rules] \n    BA --&gt; |quick check|BAB[Zero vector &lt;br/&gt;L0=0]\n    \n    B --&gt; BB[Matrix w.r.t. &lt;br/&gt; Standard Basis]\n    B --&gt; BC[Matrix w.r.t. &lt;br/&gt;Non-Standard Basis]\n    BC --&gt; |how to &lt;br/&gt;calculate map S &lt;br/&gt; w.r.t. basis:|BCA[Image of Basis &lt;br/&gt; using L]\n    BCA --&gt; |use decomposition &lt;br/&gt; or LSE|BCB[to find coordinates. &lt;br/&gt; coefficients = coordinate. &lt;br/&gt; linear combination]\n    BCB --&gt; |use coordinates &lt;br/&gt; vectors for|BCBA[Map S w.r.t &lt;br/&gt; new basis and insight &lt;br/&gt;about linear transformation]\n\n\n\n\n\n\n    \n\n\n\n\n\n\nFigure 1: A flow chart displaying for what to use linear system equations and\n\n\n\n\n\n\n\nPress on triangle to show Code.\n\n\nCode\nimport numpy as np\nimport scipy.linalg as la\n\n\n\nA = np.array([\n  [-3,2,2],\n  [-3,1,3],\n  [-1,2,0]\n  ])\n\n#-----------Example first vector-------#\nv_1 = np.array([\n  [2],\n  [1],\n  [2]\n])\n\n#---------Calculate Image of basis v_1---#\nr_1 = A@v_1\n\n#--------After repeating for all basis--#\nS = np.hstack([v_1, v_2, v_3])\n#' This gives us the coefficient matrix that is used as \n#' LSE to calculate coordinates\n\n#-------Solve each system----- #\n\n#LSE of image of v_1\na_1 = la.solve(S, r_1)\n\n\n#--------Final Matrix------#\nB = np.hstack([a_1, a_2, a_3])\n\n\n\n\n\nWhat matrix size do we need if we want to map \\(\\mathbb{R}^2\\rightarrow \\mathbb{R}^3\\)?\n\nwe would need a (3 x 2) matrix",
+    "text": "flowchart TD\n    A(Linear Maps &lt;br/&gt; linear transformation) --&gt; D[Domain,Codomain]\n    \n    A --&gt; B[Mapping Rule: L]\n    B --&gt; BA[Linear mapping?]\n    BA --&gt; |check with|BAA[Linearity rules] \n    BA --&gt; |quick check|BAB[Zero vector &lt;br/&gt;L0=0]\n    \n    B --&gt; BB[Matrix w.r.t. &lt;br/&gt; Standard Basis]\n    B --&gt; BC[Matrix w.r.t. &lt;br/&gt;Non-Standard Basis]\n    BC --&gt; |how to &lt;br/&gt;calculate map S &lt;br/&gt; w.r.t. basis:|BCA[Image of Basis &lt;br/&gt; using L]\n    BCA --&gt; |use decomposition &lt;br/&gt; or LSE|BCB[to find coordinates. &lt;br/&gt; coefficients = coordinate. &lt;br/&gt; linear combination]\n    BCB --&gt; |use coordinates &lt;br/&gt; vectors for|BCBA[Map S w.r.t &lt;br/&gt; new basis and insight &lt;br/&gt;about linear transformation]\n    \n    B --&gt; BD[Invertible Mapping]\n    BD --&gt; |only possible &lt;br/&gt; if same dimension|BDA[inverse map of L: L^-1 &lt;br/&gt; = is unique and linear]\n    BDA --&gt; |every reflection &lt;br/&gt;is invertibale|BDAA[L = L &lt;br/&gt; self-inverse]\n    BDA --&gt; |if 2 x 2 matrix|BDAB[Use formular below]\n\n    A --&gt; C[Affine Linear Maps]\n    C --&gt; |Linear + shift|CA[Linear map + &lt;br/&gt;displacement vector w &lt;br/&gt; every linear map is &lt;br/&gt;affine map with w = 0 ]\n    CA --&gt; |Image of zero vector|CB[displacement vector]\n    CA --&gt; |used for example|CC[rotation around point other than origin]\n\n\n\n\n\n    \n\n\n\n\n\n\nFigure 1: A flow chart of concepts in linear maps\n\n\n\n\n\n\n\nPress on triangle to show Code.\n\n\nCode\nimport numpy as np\nimport scipy.linalg as la\n\n\n\nA = np.array([\n  [-3,2,2],\n  [-3,1,3],\n  [-1,2,0]\n  ])\n\n#-----------Example first vector-------#\nv_1 = np.array([\n  [2],\n  [1],\n  [2]\n])\n\n#---------Calculate Image of basis v_1---#\nr_1 = A@v_1\n\n#--------After repeating for all basis--#\nS = np.hstack([v_1, v_2, v_3])\n#' This gives us the coefficient matrix that is used as \n#' LSE to calculate coordinates\n\n#-------Solve each system----- #\n\n#LSE of image of v_1\na_1 = la.solve(S, r_1)\n\n\n#--------Final Matrix------#\nB = np.hstack([a_1, a_2, a_3])\n\n\n\n\n\nWhat matrix size do we need if we want to map \\(\\mathbb{R}^2\\rightarrow \\mathbb{R}^3\\)?\n\nwe would need a (3 x 2) matrix\n\n\n\n\n\\(A^{-1} = \\frac{1}{ad-bc}*\\begin{pmatrix}d & -b \\\\ -c & a\\end{pmatrix}\\)\nThe denominator is the determinant of A.",
     "crumbs": [
       "Wiki",
       "Linear Algebra",
@@ -520,23 +525,25 @@
   {
     "objectID": "wiki/DOE/doe.html",
     "href": "wiki/DOE/doe.html",
-    "title": "Design of Experiments",
+    "title": "Research Design",
     "section": "",
     "text": "Decision Tree\n\n\n\n\n\nIdentification and quantification of effects / verification of relationships\nNot fully suitable for hypothesis testing\n\n\n\nMultiple cohorts (group of people with comparable inital conditions) are observed. One cohort is exposed to certain factors. Cohorts are compared after\n\nSmoking and Alzheimers\n\n\n\n\nCohort Study",
     "crumbs": [
       "Wiki",
-      "Design of Experiments"
+      "Design of Experiments",
+      "Research Design"
     ]
   },
   {
     "objectID": "wiki/DOE/doe.html#research-design",
     "href": "wiki/DOE/doe.html#research-design",
-    "title": "Design of Experiments",
+    "title": "Research Design",
     "section": "",
     "text": "Decision Tree\n\n\n\n\n\nIdentification and quantification of effects / verification of relationships\nNot fully suitable for hypothesis testing\n\n\n\nMultiple cohorts (group of people with comparable inital conditions) are observed. One cohort is exposed to certain factors. Cohorts are compared after\n\nSmoking and Alzheimers\n\n\n\n\nCohort Study",
     "crumbs": [
       "Wiki",
-      "Design of Experiments"
+      "Design of Experiments",
+      "Research Design"
     ]
   },
   {
@@ -544,7 +551,7 @@
     "href": "wiki/Python/basics.html",
     "title": "Learning the Basics",
     "section": "",
-    "text": "built-in: all objects provided by python\nglobal: programmer defined objects across whole script\nlocal: programmer defined objects in function blocks\n\nObject name must only be unique within a given namespace:\n\n\nCode\ndef my_function(x):\n  return x+10\n\ndef test_function(x):\n  def my_function(y):\n    return y + 20\n  x = my_function(2)\n  return x",
+    "text": "built-in: all objects provided by python\nglobal: programmer defined objects across whole script\nlocal: programmer defined objects in function blocks\n\nObject name must only be unique within a given namespace:\n\ndef my_function(x):\n  return x+10\n\ndef test_function(x):\n  def my_function(y):  # my_function: this is possible since different namespace \n    return y + 20\n  x = my_function(2)\n  return x \n\ntest_function()(y=10)\n\nInside a function you can access a global object via the keyword global. You can also increase a global var inside a function for example. But this should be avoided global access.\nThe keyword nonlocal will access a variable in the next higher namespace.",
     "crumbs": [
       "Wiki",
       "Python",
@@ -556,7 +563,7 @@
     "href": "wiki/Python/basics.html#functions",
     "title": "Learning the Basics",
     "section": "Functions",
-    "text": "Functions\nFunctions can only return one reference to a storage location. So returning multiple references must be saved in a list:\n\n\nCode\ndef function(a,b):\n  return list(a,b)\n\n\nLearning material for python functions (e.g., str.split()): here\n\nFunction chaining:\n\n\nCode\nfunction_1(function_2(a)) = function_2(a).function_1()\n\n\n\n\nFunction Arguments\n\n\nElse after Function\nIf for example we search a list for a flag item we can use else for the case that the flag item is not in the list.\n\n\nCode\nfor i in mylist:\n    if i == theflag:\n        break\n    process(i)\nelse:\n    raise ValueError(\"List argument missing terminal flag.\")",
+    "text": "Functions\nFunctions can only return one reference to a storage location. So returning multiple references must be saved in a list:\n\ndef function(a,b):\n  return list(a,b)\n\nLearning material for python functions (e.g., str.split()): here\n\nFunction chaining:\n\nfunction_1(function_2(a)) = function_2(a).function_1()\n\n\n\nFunction Arguments\n\na,b,c = 3,4,5\n\na,b,c = 3,4,5,6 ## Error\n\na,b,*c = 3,4,5,6 # Works: assign all remaining var to c\n\n* packs elements into a list. Use * again to unpack:\n\nprint(a,b,*c)\n\nThis can be done in function parameter aswell:\n\ndic = {'a':1, 'b':3}\ndef my_f(a,b):\n    return a+b\n\nmy_f(**dic) #Returns  4\n\n** unpacks a dictionary. can only be used as parameter input?\nUsing *args in as parameter must be then accessed with a for loop, since it is provided to the function as tupple.\n\n# print first n letters of words\n\ndef strcut(*str, n):\n    for i in str:\n        print(i[:n])\n# or \n\ndef strcut(*str,n):\n    print('\\n'.join(i[:n] for i in str))\n\n\n\nElse after Function\nIf for example we search a list for a flag item we can use else for the case that the flag item is not in the list.\n\nfor i in mylist:\n    if i == theflag:\n        break\n    process(i)\nelse:\n    raise ValueError(\"List argument missing terminal flag.\")\n\n\n\nRecursion\nSimple recursion of factorial()\n\ndef fac(n):\n  if n == 1:\n    return 1\n  else: \n    return n * fac(n-1)",
     "crumbs": [
       "Wiki",
       "Python",
@@ -568,7 +575,7 @@
     "href": "wiki/Python/basics.html#list",
     "title": "Learning the Basics",
     "section": "List",
-    "text": "List\nAppend new element to list\n\n\nCode\nli = [1,2,2,3]\n\nli.append(4) \nli += [4]",
+    "text": "List\nAppend new element to list\n\nli = [1,2,2,3]\n\nli.append(4) \nli += [4]\n\n[2] + [1] ## -&gt; [2,1]",
     "crumbs": [
       "Wiki",
       "Python",
@@ -580,7 +587,7 @@
     "href": "wiki/Python/basics.html#string-formating",
     "title": "Learning the Basics",
     "section": "String formating",
-    "text": "String formating\nThere are multiple ways here are two:\n\nFormatted String Literals\nStart with an f or F. Allows including variable names with {}.\nExample: right align and use 5 spaces including var1\n\n\nCode\nprint(f\"{var1:&gt;5}\")\n\n\nExample: self documentation and debugging: returns var name and what is stored var1= -&gt; var1=7\n\n\nCode\nprint(f\"{var1=}\")\n\n\n\n\nFormat() Method\nString objects provides methods/functions and apply it to string object\nMore flexible way to string literals: {} only placeholders, must be specified in format()\n\n\nCode\nvar1 ='world'\nvar2 = 7\n\nprint(\"hello {} {}\".format(var1, var2))\nprint(\"hello {1} {0}\".format(var2, var1))\n\ndict = {'num': 7, 'txt': 'world'}\nprint(\"hello {0[txt]} {0[num]}\".format(dict))",
+    "text": "String formating\nThere are multiple ways here are two:\n\nFormatted String Literals\nStart with an f or F. Allows including variable names with {}.\nExample: right align and use 5 spaces including var1\n\nprint(f\"{var1:&gt;5}\")\n\nExample: self documentation and debugging: returns var name and what is stored var1= -&gt; var1=7\n\nprint(f\"{var1=}\")\n\n\n\nFormat() Method\nString objects provides methods/functions and apply it to string object\nMore flexible way to string literals: {} only placeholders, must be specified in format()\n\nvar1 ='world'\nvar2 = 7\n\nprint(\"hello {} {}\".format(var1, var2))\nprint(\"hello {1} {0}\".format(var2, var1))\n\ndict = {'num': 7, 'txt': 'world'}\nprint(\"hello {0[txt]} {0[num]}\".format(dict))",
     "crumbs": [
       "Wiki",
       "Python",
@@ -592,7 +599,7 @@
     "href": "wiki/Python/basics.html#file-handling",
     "title": "Learning the Basics",
     "section": "File Handling",
-    "text": "File Handling\nopen(file_name, mode) creates file object in python. It opens a pipe stream of the file that must be closed again close().\nPython provides a way to handle close with the function with. As soon as the block is left, the file is closed.\n\n\nCode\nwith open(file_name, mode) as file_object: \n  ...\n  ...\n  ...\n\n\n\nRead",
+    "text": "File Handling\nopen(file_name, mode) creates file object in python. It opens a pipe stream of the file that must be closed again close().\nPython provides a way to handle close with the function with. As soon as the block is left, the file is closed.\n\nwith open(file_name, mode) as file_object: \n  ...\n  ...\n  ...\n\n\nRead",
     "crumbs": [
       "Wiki",
       "Python",
@@ -604,7 +611,7 @@
     "href": "wiki/Python/basics.html#namespace",
     "title": "Learning the Basics",
     "section": "",
-    "text": "built-in: all objects provided by python\nglobal: programmer defined objects across whole script\nlocal: programmer defined objects in function blocks\n\nObject name must only be unique within a given namespace:\n\n\nCode\ndef my_function(x):\n  return x+10\n\ndef test_function(x):\n  def my_function(y):\n    return y + 20\n  x = my_function(2)\n  return x",
+    "text": "built-in: all objects provided by python\nglobal: programmer defined objects across whole script\nlocal: programmer defined objects in function blocks\n\nObject name must only be unique within a given namespace:\n\ndef my_function(x):\n  return x+10\n\ndef test_function(x):\n  def my_function(y):  # my_function: this is possible since different namespace \n    return y + 20\n  x = my_function(2)\n  return x \n\ntest_function()(y=10)\n\nInside a function you can access a global object via the keyword global. You can also increase a global var inside a function for example. But this should be avoided global access.\nThe keyword nonlocal will access a variable in the next higher namespace.",
     "crumbs": [
       "Wiki",
       "Python",
@@ -650,5 +657,77 @@
     "title": "Willkommen auf meiner Webseite",
     "section": "Latest content",
     "text": "Latest content"
+  },
+  {
+    "objectID": "wiki/Python/basics.html#object-oriented-programming",
+    "href": "wiki/Python/basics.html#object-oriented-programming",
+    "title": "Learning the Basics",
+    "section": "Object Oriented Programming",
+    "text": "Object Oriented Programming\nVariables are references to objects and objects belong to a class.\nx = 99 is a references to storage location of a object of class int\n\nClass\nBlueprint for what an object should look like and how it should function. Has several elements. Functions are called methods (inside a class)\n\nheader: indicates beginning of class\ninit(): constructor (build) for objects\nvariables: Class and object\nself: reference to the object that is created\n\n\nclass PackageName: \n  \"\"\"\n  Description\n  \"\"\"\n  def __init__(self, name: str, quality: str) -&gt; none:\n      self.name = name\n      self.quality = quality\n# create an object from this class\n\nx: PackageName = PackageName(name = 'ggplot', quality = 'high') #self becomes x\n\n\n\n\nDunder Methods\nHow should objects of a class behave for certain operations\n\nclass A: \n  ...\n  \n  def __add__(self,other):\n    return f'{self.name} + {other.name}'\n  \n\n\nx = A()\ny = A()\n\nprint(x + y)\n\n\n\nSubclass\nInheritance creates a hierarchy of classes\n\nAnimal -&gt; Bird and Cow\n\ntest with issubclass(Bird, Animal). Child classes get all properties from parent class.",
+    "crumbs": [
+      "Wiki",
+      "Python",
+      "Basics"
+    ]
+  },
+  {
+    "objectID": "wiki/LinAlg/sys.html#determinats",
+    "href": "wiki/LinAlg/sys.html#determinats",
+    "title": "Systems of Linear Equations",
+    "section": "Determinats",
+    "text": "Determinats\nFor 2x2 squared matrices:\n\\[\\begin{pmatrix}\na&b \\\\\nc&d\n\\end{pmatrix}\\]\nad - bc\nFor 3x3 squared matrices:\nRule of Sarrus\nOther n x n cases\nbring to upper triangular matrix form by row operations and switching:\n\nfor each switch sign of det changes!\nif one column with no pivot element: \\(det(0)\\)\nif upper triangular: determinant is product of main diagonal elements",
+    "crumbs": [
+      "Wiki",
+      "Linear Algebra",
+      "Systems of Linear Equations"
+    ]
+  },
+  {
+    "objectID": "wiki/LinAlg/basis.html#overview",
+    "href": "wiki/LinAlg/basis.html#overview",
+    "title": "Basis, Span, Dimensions",
+    "section": "",
+    "text": "flowchart TD\n    A(Basis, Span &lt;br/&gt; Dimensions) --&gt; B[Matrix column span]\n    B--&gt;|echelon form: &lt;br/&gt;columns with pivots|C[= linearly independent. &lt;br/&gt;Original columns (basis)&lt;br/&gt;span the column space]\n    \n\n\n\n\n\n\n\nFigure 1: A flow chart of concepts in Basis and Span",
+    "crumbs": [
+      "Wiki",
+      "Linear Algebra",
+      "Basis"
+    ]
+  },
+  {
+    "objectID": "wiki/LinAlg/sys.html#connection-to-linear-maps",
+    "href": "wiki/LinAlg/sys.html#connection-to-linear-maps",
+    "title": "Systems of Linear Equations",
+    "section": "Connection to linear maps",
+    "text": "Connection to linear maps\n\nLinear systems of equations can be described by matrices\nMatrices can be interpreted as linear maps",
+    "crumbs": [
+      "Wiki",
+      "Linear Algebra",
+      "Systems of Linear Equations"
+    ]
+  },
+  {
+    "objectID": "wiki/LinAlg/sys.html#three-types-of-echelon-form-ef",
+    "href": "wiki/LinAlg/sys.html#three-types-of-echelon-form-ef",
+    "title": "Systems of Linear Equations",
+    "section": "Three Types of Echelon Form (EF)",
+    "text": "Three Types of Echelon Form (EF)\n\nPivot element in every row and column.\n\nSquared form only possible when \\(r=c\\)\nLast pivot is isolated and can be substituted\nunique solution\n\nPivot in every row but not in every column.\n\nmore unknown than equations: \\(r&lt;c\\)\nfree parameter (the column without pivot)\ninfinitive solutions\n\nRows without pivot.\n\n\\(0=b\\)\n\nif \\(b \\not= 0\\) no solution since not consistent\nif \\(b = 0\\) no information. We can end up with form 1 or 2.",
+    "crumbs": [
+      "Wiki",
+      "Linear Algebra",
+      "Systems of Linear Equations"
+    ]
+  },
+  {
+    "objectID": "wiki/LinAlg/sys.html#general-solution",
+    "href": "wiki/LinAlg/sys.html#general-solution",
+    "title": "Systems of Linear Equations",
+    "section": "General Solution",
+    "text": "General Solution\nTypically you have some pivots missing (in EF) and some rows with 0 = 0.\n\\(\\begin{align} -x -y + 3z &= 3\\\\ -y + 4z&=6 \\\\ 0&=0\\end{align}\\)\nYou express the pivots columns with the missing pivot column (here z).\n\nFirst we use substitution to formulate the solution for the pivot columns (x and y):\n\n\\(\\begin{align} y &= -6+4z \\\\ x&= 3 -z \\\\ z&=z\\end{align}\\)\n\nNow lets determine the solution set:\n\n\\[\n\\begin{pmatrix} x\\\\y\\\\z \\end{pmatrix} =\n\\begin{pmatrix}3-z \\\\ -6+4z\\\\ z\\end{pmatrix} =\n\\begin{pmatrix}3\\\\-6\\\\0  \\end{pmatrix} +\n\\begin{pmatrix}-z \\\\ 4z\\\\1z\\end{pmatrix} =\n\\begin{pmatrix}3\\\\-6\\\\0  \\end{pmatrix} + z\n\\begin{pmatrix}-1\\\\4\\\\1 \\end{pmatrix}\n\\] The free parameters are used to describe the kernal of a matrix using homogenous solution.",
+    "crumbs": [
+      "Wiki",
+      "Linear Algebra",
+      "Systems of Linear Equations"
+    ]
   }
 ]

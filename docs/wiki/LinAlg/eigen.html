@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Oliver Zingg - Wrangling In Python</title>
+<title>Oliver Zingg - Eigenvalues and Eigenvectors</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,8 +29,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../wiki/Statistics/stats_start.html" rel="next">
-<link href="../../wiki/Python/basics.html" rel="prev">
+<link href="../../wiki/DOE/int.html" rel="next">
+<link href="../../wiki/LinAlg/linear-maps.html" rel="prev">
 <link href="../../oli.jpg" rel="icon" type="image/jpeg">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -70,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -126,7 +155,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../wiki/Python/python_start.html">Python</a></li><li class="breadcrumb-item"><a href="../../wiki/Python/wrangling.html">Wrangling</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../wiki/LinAlg/linalg_start.html">Linear Algebra</a></li><li class="breadcrumb-item"><a href="../../wiki/LinAlg/eigen.html">Eigenvalues and -vectors</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -162,7 +191,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../wiki/Python/wrangling.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../wiki/Python/wrangling.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Wrangling</span></a>
   </div>
 </li>
@@ -220,7 +249,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../wiki/LinAlg/eigen.html" class="sidebar-item-text sidebar-link">
+  <a href="../../wiki/LinAlg/eigen.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Eigenvalues and -vectors</span></a>
   </div>
 </li>
@@ -249,14 +278,27 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#rotation-dont-have-eigenvalues" id="toc-rotation-dont-have-eigenvalues" class="nav-link active" data-scroll-target="#rotation-dont-have-eigenvalues">Rotation don’t have Eigenvalues</a></li>
+  <li><a href="#scaled-matrices" id="toc-scaled-matrices" class="nav-link" data-scroll-target="#scaled-matrices">Scaled matrices</a></li>
+  <li><a href="#diagonal-matrix" id="toc-diagonal-matrix" class="nav-link" data-scroll-target="#diagonal-matrix">Diagonal matrix</a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
+  <li><a href="#diagonalizable" id="toc-diagonalizable" class="nav-link" data-scroll-target="#diagonalizable">Diagonalizable</a></li>
+  <li><a href="#eigenspace" id="toc-eigenspace" class="nav-link" data-scroll-target="#eigenspace">Eigenspace</a></li>
+  <li><a href="#determination-of-eigenvalues-and-eigenvectors" id="toc-determination-of-eigenvalues-and-eigenvectors" class="nav-link" data-scroll-target="#determination-of-eigenvalues-and-eigenvectors">Determination of Eigenvalues and Eigenvectors</a></li>
+  <li><a href="#eigendecompostion" id="toc-eigendecompostion" class="nav-link" data-scroll-target="#eigendecompostion">Eigendecompostion</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../wiki/Python/python_start.html">Python</a></li><li class="breadcrumb-item"><a href="../../wiki/Python/wrangling.html">Wrangling</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../wiki/LinAlg/linalg_start.html">Linear Algebra</a></li><li class="breadcrumb-item"><a href="../../wiki/LinAlg/eigen.html">Eigenvalues and -vectors</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Wrangling In Python</h1>
+<h1 class="title">Eigenvalues and Eigenvectors</h1>
 </div>
 
 
@@ -273,8 +315,199 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>Some vectors remain on their span after transformation. Because of linear transformation any vector on that same span remains on that span. These vectors are the eigenvalues with corresponding eigenvalues (scalar).</p>
+<p>Since linear transformation of an eigenvector <span class="math inline">\(\overline v\)</span> just scales it, it follows:</p>
+<p><span class="math display">\[
+A \overline v = \lambda \overline v
+= (\lambda I) \overline v
+= (A-\lambda I)\overline v = \overline 0
+\]</span> This expression is always true for <span class="math inline">\(\overline v = 0\)</span> but this is not allowed. So the only way a multiplication of a matrix with a non-zero vector to be zero is with <span class="math inline">\(det(A-\lambda I)=0\)</span>. Transformation associated with that matrix squishes space into a lower dimension? (chapter 5/6)</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Find a value of lambda so that the determinant is zero</p>
+</div>
+</div>
+<p><em>Exmaple</em></p>
+<p><span class="math display">\[
+\begin{pmatrix}
+3-\lambda &amp; 1 \\
+0 &amp; 2-\lambda
+\end{pmatrix}
+= (3-\lambda)(2-\lambda) = 0
+\]</span> After finding eigenvalue, we need eigenvectors associated with eigenvalue (<span class="math inline">\(\lambda = 2 \space or \space \lambda = 3\)</span>)</p>
+<ul>
+<li>Change matrix A and solve linear system for 0 (homogeneous)</li>
+</ul>
+<section id="rotation-dont-have-eigenvalues" class="level3">
+<h3 class="anchored" data-anchor-id="rotation-dont-have-eigenvalues">Rotation don’t have Eigenvalues</h3>
+<p><span class="math display">\[
+\begin{pmatrix}
+0&amp; -1 \\
+1 &amp; 0
+\end{pmatrix}
+\]</span> ### Shear</p>
+<p>Fixes <span class="math inline">\(î\)</span> and moves <span class="math inline">\(\hat j\)</span> one over</p>
+<p><span class="math display">\[
+\begin{pmatrix}
+1&amp; 1 \\
+0 &amp; 1
+\end{pmatrix}
+\]</span> Only eigenvector are all vectors on <span class="math inline">\(î\)</span> with eigenvalue 1.</p>
+</section>
+<section id="scaled-matrices" class="level3">
+<h3 class="anchored" data-anchor-id="scaled-matrices">Scaled matrices</h3>
+<p><span class="math display">\[
+\begin{pmatrix}
+2&amp; 0 \\
+0 &amp; 2
+\end{pmatrix}
+\]</span> All vectors are eigenvectors with eigenvallue 2.</p>
+</section>
+<section id="diagonal-matrix" class="level3">
+<h3 class="anchored" data-anchor-id="diagonal-matrix">Diagonal matrix</h3>
+<p>All basis are eigenvectors with the values being their eigenvalues</p>
+</section>
+<section id="examples" class="level3">
+<h3 class="anchored" data-anchor-id="examples">Examples</h3>
+<section id="is-vector-an-eigenvector-of-matrix-b" class="level4">
+<h4 class="anchored" data-anchor-id="is-vector-an-eigenvector-of-matrix-b">Is vector an eigenvector of matrix B?</h4>
+<p>check with: <span class="math inline">\(Matrix*vector = scaled \space vector\)</span></p>
+<p><span class="math display">\[
+\begin{pmatrix}
+    1&amp; 1 \\
+    1 &amp; 1
+\end{pmatrix} *
+\begin{pmatrix}
+    1 \\
+    1
+\end{pmatrix}=
+\begin{pmatrix}
+    2 \\
+    2
+\end{pmatrix}=2*
+\begin{pmatrix}
+    1 \\
+    1
+\end{pmatrix} =2v
+\]</span> So <span class="math inline">\(v\)</span> is an eigenvector with eigenvalue of 2, since transformation only scales v.</p>
+<p>The associated eigenspace is the solution set of the linear system <span class="math inline">\(B-2I_2=0\)</span>.</p>
+<p><span class="math display">\[
+B-2I_2=
+\begin{pmatrix}
+    1&amp; 1 \\
+    1 &amp; 1
+\end{pmatrix} -2*
+\begin{pmatrix}
+    1&amp; 0 \\
+    0 &amp; 1
+\end{pmatrix}=
+\begin{pmatrix}
+    -1&amp; 1 \\
+    1 &amp; -1
+\end{pmatrix}
+\]</span> We solve the linear system and the resulting solution set is the eigenspace of the eigenvalue 2.</p>
+<p><strong>But how to find all eigenvalues?</strong></p>
+<p>The following must be true <span class="math inline">\(det(A-\lambda I_n)= 0\)</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>At most n eigenvalues</p>
+</div>
+</div>
+<p>Solve: <span class="math inline">\(det(A-\lambda I_n)= (1-\lambda)^2 = \lambda^2-2\lambda = \lambda(\lambda-2)=0\)</span></p>
+<p>The two eigenvalues are 2 and 0, now solve both linear systems with eigenvalues</p>
+<p><strong>Eigenvalues Upper triangular matrices?</strong> <span class="math display">\[
+\begin{pmatrix}
+    2-\lambda&amp; 2&amp;0 \\
+    0 &amp; \frac{3}{4}-\lambda &amp; 5 \\
+    0&amp;0&amp;-3-\lambda
+\end{pmatrix} = (2-\lambda)(\frac{3}{4}-\lambda)(-3-\lambda)
+\]</span> Eigenvalues: <span class="math inline">\(2,\frac{3}{4},-3\)</span>, this works for all upper matrices. Eigenvalues are its diagonal entries.</p>
+<p><strong>quadratic formular</strong></p>
+<p><span class="math display">\[
+x_{1,2} = \frac{-b \pm \sqrt(b^2-4ac)}{2a}
+\]</span></p>
+</section>
+</section>
+<section id="diagonalizable" class="level2">
+<h2 class="anchored" data-anchor-id="diagonalizable">Diagonalizable</h2>
+<p>Diagonal matrices have nice properties so it’s convenient to describe a linear mapping by a diagonal matrix.</p>
+<p><span class="math display">\[
+\begin{pmatrix}
+a &amp; 0 \\
+0 &amp; d
+\end{pmatrix}
+\]</span></p>
+<p>Desribes the scaling by factor a in <span class="math inline">\(x_1\)</span> direction and by factor d in <span class="math inline">\(x_2\)</span>-direction. If a or d is negative then this reflects a reflection.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We want to find new basis (not zero-vector) for which the new linear mapping matrix D is diagonal. Thus reflecting a simple scalar multiple of the new basis. These new basis are call <em>eigenvectors</em> and the scalars (can be zero) are called <em>eigenvalues</em> of the original matrix L.</p>
+<p><strong>Only for (n x n) matrices: domain and codomain coincide</strong></p>
+</div>
+</div>
+<p>Linear Mapping that use rotations don’t have eigenvectors</p>
+</section>
+<section id="eigenspace" class="level2">
+<h2 class="anchored" data-anchor-id="eigenspace">Eigenspace</h2>
+<p>Eigenspace L is a subspace of <span class="math inline">\(R^n\)</span> associated to the eigenvalue. Since an eigenvalue has infinite eigenvectors associated with the same eigenvalue.</p>
+</section>
+<section id="determination-of-eigenvalues-and-eigenvectors" class="level2">
+<h2 class="anchored" data-anchor-id="determination-of-eigenvalues-and-eigenvectors">Determination of Eigenvalues and Eigenvectors</h2>
+<p><span class="math display">\[
+\begin{pmatrix}
+1 &amp; 1 \\
+1 &amp; 1
+\end{pmatrix}
+\]</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The eigenvalues of a square matrix A are the zeros of the characteristic polynomial <span class="math inline">\(p_A(\lambda)\)</span>. (n x n)-matrix has at most n eigenvalues</p>
+</div>
+</div>
+</section>
+<section id="eigendecompostion" class="level2">
+<h2 class="anchored" data-anchor-id="eigendecompostion">Eigendecompostion</h2>
+<p>Sometimes it is very useful to write a matrix 𝐴 as a product of other matrices, say</p>
+<p><span class="math inline">\(A=PDP^{-1}\)</span></p>
+<p>such a matrix is called a matrix <strong>dececomposition</strong> of matrix A. This holds for a linear map described by A and D w.r.t different bases. Goal is to find basis for which matrix D is a <strong>diagonal matrix</strong>. The matrix <span class="math inline">\(P\)</span> is called <strong>transformation matrix</strong>. The <em>process</em> of obtaining <span class="math inline">\(P\)</span> and <span class="math inline">\(D\)</span> is called <strong>diagonalization</strong>.</p>
+<ul>
+<li><span class="math inline">\(D\)</span> is composed of eigenvalues of <span class="math inline">\(A\)</span></li>
+<li><span class="math inline">\(P\)</span> is composed of eigenvectors of <span class="math inline">\(A\)</span> and are not unique</li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -666,13 +899,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../wiki/Python/basics.html" class="pagination-link" aria-label="Basics">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Basics</span>
+      <a href="../../wiki/LinAlg/linear-maps.html" class="pagination-link" aria-label="Linear Maps">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Linear Maps</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../wiki/Statistics/stats_start.html" class="pagination-link" aria-label="Statistics">
-        <span class="nav-page-text">Statistics</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../wiki/DOE/int.html" class="pagination-link" aria-label="Design of Experiments">
+        <span class="nav-page-text">Design of Experiments</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -339,7 +339,7 @@
     "href": "wiki/LinAlg/basis.html",
     "title": "Basis, Span, Dimensions",
     "section": "",
-    "text": "flowchart TD\n    A(Basis, Span &lt;br/&gt; Dimensions) --&gt; B[Matrix column span]\n    B--&gt;|echelon form: &lt;br/&gt;columns with pivots|C[= linearly independent. &lt;br/&gt;Original columns (basis)&lt;br/&gt;span the column space]\n    \n\n\n\n\n\n\n\nFigure 1: A flow chart of concepts in Basis and Span",
+    "text": "flowchart TD\n    A(Basis, Span &lt;br/&gt; Dimensions) --&gt; B[Matrix column span]\n    B--&gt;|echelon form: &lt;br/&gt;columns with pivots|C[= linearly independent. &lt;br/&gt;Original columns basis&lt;br/&gt;span the column space]\n    \n\n\n\n\n\n\n\nFigure 1: A flow chart of concepts in Basis and Span",
     "crumbs": [
       "Wiki",
       "Linear Algebra",
@@ -527,7 +527,7 @@
     "href": "wiki/DOE/doe.html",
     "title": "Research Design",
     "section": "",
-    "text": "Decision Tree\n\n\n\n\n\nIdentification and quantification of effects / verification of relationships\nNot fully suitable for hypothesis testing\n\n\n\nMultiple cohorts (group of people with comparable inital conditions) are observed. One cohort is exposed to certain factors. Cohorts are compared after\n\nSmoking and Alzheimers\n\n\n\n\nCohort Study",
+    "text": "Quantitative methods with hypothesis testing are designed around the principles of critical rationalism (Karl Popper). This philosophical position states that theory can never be finally verified but only falsified.\nDescriptive statistics can only describe the sample as a subset of the population. Inferential statistics draws conclusions about the population based on the sample.",
     "crumbs": [
       "Wiki",
       "Design of Experiments",
@@ -663,7 +663,7 @@
     "href": "wiki/Python/basics.html#object-oriented-programming",
     "title": "Learning the Basics",
     "section": "Object Oriented Programming",
-    "text": "Object Oriented Programming\nVariables are references to objects and objects belong to a class.\nx = 99 is a references to storage location of a object of class int\n\nClass\nBlueprint for what an object should look like and how it should function. Has several elements. Functions are called methods (inside a class)\n\nheader: indicates beginning of class\ninit(): constructor (build) for objects\nvariables: Class and object\nself: reference to the object that is created\n\n\nclass PackageName: \n  \"\"\"\n  Description\n  \"\"\"\n  def __init__(self, name: str, quality: str) -&gt; none:\n      self.name = name\n      self.quality = quality\n# create an object from this class\n\nx: PackageName = PackageName(name = 'ggplot', quality = 'high') #self becomes x\n\n\n\n\nDunder Methods\nHow should objects of a class behave for certain operations\n\nclass A: \n  ...\n  \n  def __add__(self,other):\n    return f'{self.name} + {other.name}'\n  \n\n\nx = A()\ny = A()\n\nprint(x + y)\n\n\n\nSubclass\nInheritance creates a hierarchy of classes\n\nAnimal -&gt; Bird and Cow\n\ntest with issubclass(Bird, Animal). Child classes get all properties from parent class.",
+    "text": "Object Oriented Programming\nVariables are references to objects and objects belong to a class.\nx = 99 is a references to storage location of a object of class int\n\nClass\nBlueprint for what an object should look like and how it should function. Has several elements. Functions are called methods (inside a class)\n\nheader: indicates beginning of class\ninit(): constructor (build) for objects\nvariables: Class and object\nself: reference to the object that is created\n\n\n\nClass Methods\n\n\nStatic Methods\nSame as regular function but defined in a class. Still they are rather independent of the class but are accessed with class.function. No self is needed.\n\nclass A:\n  def __init__(self):\n    ...\n    \n  @staticmethods\n  def function(str):\n    return function(str)\n  \nclass.function\n\n\n\nObject Methods\n\nclass PackageName: \n  \"\"\"\n  Description\n  \"\"\"\n  def __init__(self, name: str, quality: str) -&gt; none:\n      self.name = name\n      self.quality = quality\n# create an object from this class\n\nx: PackageName = PackageName(name = 'ggplot', quality = 'high') #self becomes x\n\n\n\n\nDunder Methods\nHow should objects of a class behave for certain operations\n\nclass A: \n  ...\n  \n  def __add__(self,other):\n    return f'{self.name} + {other.name}'\n  \n\n\nx = A()\ny = A()\n\nprint(x + y)\n\n\n\nSubclass\nInheritance creates a hierarchy of classes\n\nAnimal -&gt; Bird and Cow\n\ntest with issubclass(Bird, Animal). Child classes get all properties from parent class. #### Inheritance\nWe can use super() to refer to the upper level class (parent class in this case) If we first create a class, the function of the object class if inhereted to our created object.\n\nclass Animal(object class): \n  def __init__(self, weight):\n    self.weight = weight\n    \nclass Bird(Animal):\n  def _init__(self, weight): #override\n    super().__init__(weight)\n    # or Animal.__init__(self, weight)\n\n\nInheritance: Override\nWe don’t want all methods or variables from parent class. The interpreter first checks methods and objects in the subclass before it checks the parents, so we can just overwrite the objects in the subclass (or extend functionality). We have to use the same name for the method or other objects!\n\n\n\nAccess Modifiers\n\npublic: access through object\nprotected: only in subclass accessible\nprivate: only in declaration of own class accessible",
     "crumbs": [
       "Wiki",
       "Python",
@@ -687,7 +687,7 @@
     "href": "wiki/LinAlg/basis.html#overview",
     "title": "Basis, Span, Dimensions",
     "section": "",
-    "text": "flowchart TD\n    A(Basis, Span &lt;br/&gt; Dimensions) --&gt; B[Matrix column span]\n    B--&gt;|echelon form: &lt;br/&gt;columns with pivots|C[= linearly independent. &lt;br/&gt;Original columns (basis)&lt;br/&gt;span the column space]\n    \n\n\n\n\n\n\n\nFigure 1: A flow chart of concepts in Basis and Span",
+    "text": "flowchart TD\n    A(Basis, Span &lt;br/&gt; Dimensions) --&gt; B[Matrix column span]\n    B--&gt;|echelon form: &lt;br/&gt;columns with pivots|C[= linearly independent. &lt;br/&gt;Original columns basis&lt;br/&gt;span the column space]\n    \n\n\n\n\n\n\n\nFigure 1: A flow chart of concepts in Basis and Span",
     "crumbs": [
       "Wiki",
       "Linear Algebra",
@@ -729,5 +729,284 @@
       "Linear Algebra",
       "Systems of Linear Equations"
     ]
+  },
+  {
+    "objectID": "wiki/Python/basics.html#mulitple-inheritance",
+    "href": "wiki/Python/basics.html#mulitple-inheritance",
+    "title": "Learning the Basics",
+    "section": "Mulitple inheritance",
+    "text": "Mulitple inheritance\nMultiple parents. Can cause problems for the interpreter if same methods twice.\nSolved with Method Resolution Order (MRO): tries to find a linearization of all classes and depends on the order of inheritance. It doesn’t find a feasible solution every time. Sometimes it helps to swap order.",
+    "crumbs": [
+      "Wiki",
+      "Python",
+      "Basics"
+    ]
+  },
+  {
+    "objectID": "wiki/DOE/doe.html#other-forms",
+    "href": "wiki/DOE/doe.html#other-forms",
+    "title": "Research Design",
+    "section": "Other Forms",
+    "text": "Other Forms\n\nCross-over design: during study treatment and control switches\n\nused in randomized and non-ramdomized (quasi)\n\nBefore / After comparison\nLongitudinal studies:\n\nTrend study: different times with diff. samples\nPanel study: different times with same sample",
+    "crumbs": [
+      "Wiki",
+      "Design of Experiments",
+      "Research Design"
+    ]
+  },
+  {
+    "objectID": "wiki/DOE/doe.html#one-factor-at-a-time-ofat",
+    "href": "wiki/DOE/doe.html#one-factor-at-a-time-ofat",
+    "title": "Research Design",
+    "section": "One-Factor-at-a-time (OFAT)",
+    "text": "One-Factor-at-a-time (OFAT)",
+    "crumbs": [
+      "Wiki",
+      "Design of Experiments",
+      "Research Design"
+    ]
+  },
+  {
+    "objectID": "wiki/DOE/doe.html#full-factorial-designs",
+    "href": "wiki/DOE/doe.html#full-factorial-designs",
+    "title": "Research Design",
+    "section": "Full factorial designs",
+    "text": "Full factorial designs",
+    "crumbs": [
+      "Wiki",
+      "Design of Experiments",
+      "Research Design"
+    ]
+  },
+  {
+    "objectID": "wiki/DOE/doe.html#fractional-factorial-designs",
+    "href": "wiki/DOE/doe.html#fractional-factorial-designs",
+    "title": "Research Design",
+    "section": "Fractional factorial designs",
+    "text": "Fractional factorial designs",
+    "crumbs": [
+      "Wiki",
+      "Design of Experiments",
+      "Research Design"
+    ]
+  },
+  {
+    "objectID": "wiki/DOE/doe.html#internal-validity",
+    "href": "wiki/DOE/doe.html#internal-validity",
+    "title": "Research Design",
+    "section": "Internal Validity",
+    "text": "Internal Validity\n\nis essential condition for external validity.\nChanges in dependent variable clearly attributable to changes in independent variables.\nIncreases with decreasing impact of nuisance variables (Quasi-Exp -&gt; Experiment).",
+    "crumbs": [
+      "Wiki",
+      "Design of Experiments",
+      "Research Design"
+    ]
+  },
+  {
+    "objectID": "wiki/DOE/doe.html#external-validity",
+    "href": "wiki/DOE/doe.html#external-validity",
+    "title": "Research Design",
+    "section": "External validity",
+    "text": "External validity\n\nResults of experiment can be generalized to population\nincreases with increasing naturalness (laboratory -&gt; field)\nhigh internal validity can be problematic for external validity (labor vs. field)\n\n\nPopulation validity\n\nselection of representative sample\n\n\n\nSituation validity\n\ngeneralizable to situations deviating from experiment (ecological validity)\n\n\n\nConstruct validity\n\nadequate operationalization of latent variable (construct)",
+    "crumbs": [
+      "Wiki",
+      "Design of Experiments",
+      "Research Design"
+    ]
+  },
+  {
+    "objectID": "wiki/Python/basics.html#if-name-main",
+    "href": "wiki/Python/basics.html#if-name-main",
+    "title": "Learning the Basics",
+    "section": "If name = main",
+    "text": "If name = main\nthe name of the script is only main if it’s the root script.\nSo if you add:\n\nif __name__ = \"main\":\n  ...tests\n\nyou can code functionality that only runs when the script is the root and doesn’t run when the file has been imported into a different script.",
+    "crumbs": [
+      "Wiki",
+      "Python",
+      "Basics"
+    ]
+  },
+  {
+    "objectID": "wiki/Python/basics.html#indexing",
+    "href": "wiki/Python/basics.html#indexing",
+    "title": "Learning the Basics",
+    "section": "Indexing",
+    "text": "Indexing\nLast index is not included:\n\na = [1,2,3,4,5]\n\n# Full list\na[:5]\n\na[-1:] #equal to a[-1:5]\n\na[-1:1:-1] #2 is index 2 but not included\n\n#full list in reverse\na[-1::-1]   #equal to a[::-1]\na[:-2] #-2 is index of 4 but not included\n\na[:-2:-1]\n\n[5]\n\n\n2D Lists return first line\n\ndata = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]\n[row[0] for row in data]\n\n[1, 4, 7]\n\n\nModify index\n\nnumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]\nnumbers[1:4] = [10, 20, 30]\n\nFor loops\n\nnumbers = [12, 32, 34, 4,25, 6, 72, 8, 19] #9 elements\n\nlen(numbers) #returns 9\nprint('')\n\ni = range(6) #returns 0-5\nfor idx in i: \n  print(idx, end= ' ')\n  \nprint('\\n')\ni = range(len(numbers)) #0-8 -&gt; 9 elements\nfor idx in i: \n  print(idx, end= ' ')\n\nprint('\\n')\ni = range(1,len(numbers)) #1-8 -&gt; 8 elements\nfor idx in i: \n  print(idx, end= ' ')\n\n\n0 1 2 3 4 5 \n\n0 1 2 3 4 5 6 7 8 \n\n1 2 3 4 5 6 7 8 \n\n\nEnumerate returns index and value\n\nnumbers = [12, 32, 34, 4,25, 6, 72, 8, 19] #9 elements\n\nfor i in enumerate(numbers):\n  print(i, end = ', ')\n  print(i[0], end = ', ')\n  print(i[1])\n\nprint('----')\n# we can also save both values individuel\nfor idx, value in enumerate(numbers):\n  print(idx , value)\n\n(0, 12), 0, 12\n(1, 32), 1, 32\n(2, 34), 2, 34\n(3, 4), 3, 4\n(4, 25), 4, 25\n(5, 6), 5, 6\n(6, 72), 6, 72\n(7, 8), 7, 8\n(8, 19), 8, 19\n----\n0 12\n1 32\n2 34\n3 4\n4 25\n5 6\n6 72\n7 8\n8 19",
+    "crumbs": [
+      "Wiki",
+      "Python",
+      "Basics"
+    ]
+  },
+  {
+    "objectID": "wiki/Python/basics.html#deep-vs.-shallow-copy",
+    "href": "wiki/Python/basics.html#deep-vs.-shallow-copy",
+    "title": "Learning the Basics",
+    "section": "Deep vs. Shallow Copy",
+    "text": "Deep vs. Shallow Copy\nVariable stores references to an object that is stored in one or more(string, lists, tuples..) storage cells. So copying a variable, copies the reference:\n\nx = 99.23\ny = x # copy of reference\n\nid(x) == id(y) \n\nx = 43.12\nid(x) == id(y)\n\n# But..\na = 19.2\nb = 19.2\n\nid(a) == id(b) #two different instances of object int\n\nFalse\n\n\nAssigning a new value creates a new instance of object int by calling: b = int.__new__(value).\nLists are mutable objects: x only refers to the first element of list.\n\nx = [1,2,3,4,5]\n\ny = x  #copy\ny[2] = 6 #change 3 element, doesnt' create a new object!!\n\nprint(x)\n\ny[0] = 9\nid(x) == id(y)\n\n[1, 2, 6, 4, 5]\n\n\nTrue\n\n\nThis is a side effect. So we can create a real copy with the copy() function. Only available for mutable objects (sequences), so not for tuples.\n\nx = [1,2,3,4,5]\n\ny = x.copy()\n\nid(x) == id(y)\n\nstr_text = 'hello'\n\n#str_copy = str_text.copy() doens't work since string gernally not mutable\n\nNested Lists = special case. copy() returns a shallow copy!: Nested lists are references to new storage location\n\nnested_list = [1,2,3,[4,5]]\n\ny = nested_list.copy()\n\ny[-1][0] = 99\n\nprint(y)\nprint(f'not desired change: {nested_list=}')\n\nprint(f'{id(y) == id(nested_list)=}')\n\n[1, 2, 3, [99, 5]]\nnot desired change: nested_list=[1, 2, 3, [99, 5]]\nid(y) == id(nested_list)=False\n\n\n\n#import copy\nnested_list = [1,2,3,[4,5]]\n\n#y = nested_list.copy.deepcopy(nested_list)\ny[-1][0] = 99\n\nprint(f'didn\\'t change: {nested_list=}')",
+    "crumbs": [
+      "Wiki",
+      "Python",
+      "Basics"
+    ]
+  },
+  {
+    "objectID": "wiki/Python/basics.html#lambda-function",
+    "href": "wiki/Python/basics.html#lambda-function",
+    "title": "Learning the Basics",
+    "section": "Lambda Function",
+    "text": "Lambda Function\nKeep in mind:\n\ndef my_fun():\n  def inner_fun(x):\n    return x \n  return inner_fun\n\nmy_if = my_fun() #reference to inner function\nprint(my_if('hello'))\n\n#is the same as \n\nmy_if = my_fun #reference to outer function\nprint(my_if()('hello'))\n\nLambda: No header. Only body of function. Only one expression.\n\nx = lambda a,b: a + b\n\nprint('x: ', x(3,5))\n\nx:  8\n\n\n\ndef fun():\n  return 'hello' \n  \nx = lambda: fun()\n\nprint('x: ', x())\n\nx = lambda a: a()\nprint('x: ', x(fun))\n\nx:  hello\nx:  hello\n\n\nWe can use lambda for generic methods example:\n\ndef fun_ii(f, a, b):\n  return f(a,b)\n\nprint('fun_ii: ' , fun_ii(lambda x,y: x + y, 2, 3))\nprint('fun_ii: ' , fun_ii(lambda x,y: x - y, 2, 3))\n\nfun_ii:  5\nfun_ii:  -1\n\n\nUsually combined with other functions like map() or sort().\nmap(): applies a function to every single item of an iterable. Same as for loop.\n\nnumbers = [1,2,3,4]\ntest = map(lambda element: element-1,numbers) #we get a map object back\n\ntest = list(map(lambda element: element-1,numbers)) #create a list. List(test)\ntest\n\n[0, 1, 2, 3]\n\n\nsort(): sorts an iterable based on a given comparator\n\n#sorts based on remains after modulo\nnumbers = [1,2,3,4,6]\n\nnumbers.sort(key= lambda element: element %3)\nprint(numbers)\n\n[3, 6, 1, 4, 2]",
+    "crumbs": [
+      "Wiki",
+      "Python",
+      "Basics"
+    ]
+  },
+  {
+    "objectID": "wiki/Python/basics.html#list-comprehension",
+    "href": "wiki/Python/basics.html#list-comprehension",
+    "title": "Learning the Basics",
+    "section": "List Comprehension",
+    "text": "List Comprehension\nSingle expression of for loop:\n\nx = [1,2,3,4,5,6]\nprint(x)\n\nx2 =[i**2 for i in x]\nprint(x2)\n\nx = [i**2 for i in x]\nprint(x)\n\n[1, 2, 3, 4, 5, 6]\n[1, 4, 9, 16, 25, 36]\n[1, 4, 9, 16, 25, 36]\n\n\nAdd conditions\n\nx = [1,2,3,4,5,6]\n\nx2 = [i**2 for i in x if i%2] #unequal numbers (&gt;0 equals true)\nprint(x2)\n\nx3 = [i**2 for i in x if not i%2] #equal numbers !(&gt;0 equals true)\nprint(x3)\n\nx4 = [i**2 if not i%2 else i-10 for i in x] #if else short-hand\nprint(x4)\n\n[1, 9, 25]\n[4, 16, 36]\n[-9, 4, -7, 16, -5, 36]\n\n\nNested Looops\n\nli = [[1,2,3],[22,33]]\n\nres = [element*2 for row in li for element in row] #simple list return\nres2 = [[element*2 for element in row] for row in li] #nested list return\nprint(res)\nprint('\\n')\nprint(res2)\n\n[2, 4, 6, 44, 66]\n\n\n[[2, 4, 6], [44, 66]]\n\n\nComprehension with tuples returns a generator but you can use unpacker *.\nDictionairy comprehension\nzip() returns list of tuples\n\n#turn into dict\nx = [1,2,4,5]\n\nd = {i:i for i in x}\nprint(d)\nd1 = {k:v for (k,v) in enumerate(x)}\nprint(d1)\n\nd2 = {k:v for (k,v) in zip(['a','b','c'],x)}\nprint(d2)\n\n{1: 1, 2: 2, 4: 4, 5: 5}\n{0: 1, 1: 2, 2: 4, 3: 5}\n{'a': 1, 'b': 2, 'c': 4}",
+    "crumbs": [
+      "Wiki",
+      "Python",
+      "Basics"
+    ]
+  },
+  {
+    "objectID": "wiki/Python/basics.html#type-annotations",
+    "href": "wiki/Python/basics.html#type-annotations",
+    "title": "Learning the Basics",
+    "section": "Type Annotations",
+    "text": "Type Annotations",
+    "crumbs": [
+      "Wiki",
+      "Python",
+      "Basics"
+    ]
+  },
+  {
+    "objectID": "wiki/LinAlg/eigen.html",
+    "href": "wiki/LinAlg/eigen.html",
+    "title": "Eigenvalues and Eigenvectors",
+    "section": "",
+    "text": "Some vectors remain on their span after transformation. Because of linear transformation any vector on that same span remains on that span. These vectors are the eigenvalues with corresponding eigenvalues (scalar).\nSince linear transformation of an eigenvector \\(\\overline v\\) just scales it, it follows:\n\\[\nA \\overline v = \\lambda \\overline v\n= (\\lambda I) \\overline v\n= (A-\\lambda I)\\overline v = \\overline 0\n\\] This expression is always true for \\(\\overline v = 0\\) but this is not allowed. So the only way a multiplication of a matrix with a non-zero vector to be zero is with \\(det(A-\\lambda I)=0\\). Transformation associated with that matrix squishes space into a lower dimension? (chapter 5/6)\nExmaple\n\\[\n\\begin{pmatrix}\n3-\\lambda & 1 \\\\\n0 & 2-\\lambda\n\\end{pmatrix}\n= (3-\\lambda)(2-\\lambda) = 0\n\\] After finding eigenvalue, we need eigenvectors associated with eigenvalue (\\(\\lambda = 2 \\space or \\space \\lambda = 3\\))",
+    "crumbs": [
+      "Wiki",
+      "Linear Algebra",
+      "Eigenvalues and -vectors"
+    ]
+  },
+  {
+    "objectID": "wiki/LinAlg/eigen.html#diagonalizable",
+    "href": "wiki/LinAlg/eigen.html#diagonalizable",
+    "title": "Eigenvalues and Eigenvectors",
+    "section": "Diagonalizable",
+    "text": "Diagonalizable\nDiagonal matrices have nice properties so it’s convenient to describe a linear mapping by a diagonal matrix.\n\\[\n\\begin{pmatrix}\na & 0 \\\\\n0 & d\n\\end{pmatrix}\n\\]\nDesribes the scaling by factor a in \\(x_1\\) direction and by factor d in \\(x_2\\)-direction. If a or d is negative then this reflects a reflection.\n\n\n\n\n\n\nNote\n\n\n\nWe want to find new basis (not zero-vector) for which the new linear mapping matrix D is diagonal. Thus reflecting a simple scalar multiple of the new basis. These new basis are call eigenvectors and the scalars (can be zero) are called eigenvalues of the original matrix L.\nOnly for (n x n) matrices: domain and codomain coincide\n\n\nLinear Mapping that use rotations don’t have eigenvectors",
+    "crumbs": [
+      "Wiki",
+      "Linear Algebra",
+      "Eigenvalues and -vectors"
+    ]
+  },
+  {
+    "objectID": "wiki/LinAlg/eigen.html#eigenspace",
+    "href": "wiki/LinAlg/eigen.html#eigenspace",
+    "title": "Eigenvalues and Eigenvectors",
+    "section": "Eigenspace",
+    "text": "Eigenspace\nEigenspace L is a subspace of \\(R^n\\) associated to the eigenvalue. Since an eigenvalue has infinite eigenvectors associated with the same eigenvalue.",
+    "crumbs": [
+      "Wiki",
+      "Linear Algebra",
+      "Eigenvalues and -vectors"
+    ]
+  },
+  {
+    "objectID": "wiki/LinAlg/eigen.html#determination-of-eigenvalues-and-eigenvectors",
+    "href": "wiki/LinAlg/eigen.html#determination-of-eigenvalues-and-eigenvectors",
+    "title": "Eigenvalues and Eigenvectors",
+    "section": "Determination of Eigenvalues and Eigenvectors",
+    "text": "Determination of Eigenvalues and Eigenvectors\n\\[\n\\begin{pmatrix}\n1 & 1 \\\\\n1 & 1\n\\end{pmatrix}\n\\]\n\n\n\n\n\n\nNote\n\n\n\nThe eigenvalues of a square matrix A are the zeros of the characteristic polynomial \\(p_A(\\lambda)\\). (n x n)-matrix has at most n eigenvalues",
+    "crumbs": [
+      "Wiki",
+      "Linear Algebra",
+      "Eigenvalues and -vectors"
+    ]
+  },
+  {
+    "objectID": "wiki/CS/terminal.html",
+    "href": "wiki/CS/terminal.html",
+    "title": "Convert Excel File into textfile",
+    "section": "",
+    "text": "Convert Excel File into textfile\nWe are using following dataset and MAC terminal.\nNext we convert the excel file into a csv file\n\nChange directory in terminal the folder containing excel file\n\nssconvert Schweizer_Nahrwertdatenbank.xlsx newfile.csv\nWe check the first three lines of s_nw.csv with\n\n$ head -n 3 newfile.csv\n\nSince the first two lines are not needed we delete them for further processing\n\nsed -i '' '1,2d' newfile.csv (’’ after i is for mac terminal)\n\nWith excel we explore which column we need for our dashboard:\n\n4: name of product\n6: category of product\n8: unit\n9: energy (kJ)\n12: energy, calories (kcal)\n15: fett, total(g)\n18: fettsäure, gesättigt(g)\n21: fettsäure, einfach ungesättigt(g)\n24: fettsäure, mehrfach ungesättigt(g)\n27: cholesterin (mg)\n30: kohlenhydrate, verfügbar(g)\n33: zucker(g)\n36: stärke (g)\n39: nahrungsfasern(g)\n42: Protein (g)\n45: salz (g)\n48: alkohol(g)\n51: wasser (g)\n54: Vitamin A-Aktivität, RE (µg-RE)\n57: Vitamin A-Aktivität, RAE (µg-RE)\n60: Retinol (µg)\n63: Betacarotin-Aktivität (µg-BCE)\n66: Betacarotin (µg)\n69: Vitamin B1 (Thiamin) (mg)\n72: Vitamin B2 (Riboflavin) (mg)\n75: Vitamin B6 (Pyridoxin) (mg)\n78: Vitamin B12 (Cobalamin) (µg)\n81: Niacin (mg)\n84: Folat (µg)\n87: Pantothensäure (mg)\n90: Vitamin C (Ascorbinsäure) (mg)\n93: Vitamin D (Calciferol) (µg)\n96: Vitamin E (α-Tocopherol) (mg)\n99: Kalium (K) (mg)\n102: Natrium (Na) (mg)\n105: Chlorid (Cl) (mg)\n108: Calcium (Ca) (mg)\n111: Magnesium (Mg) (mg)\n114: Phosphor (P) (mg)\n117: Eisen (Fe) (mg)\n120: Jod (I) (µg)\n123: Zink (Zn) (mg)\n126: Selen (Se) (µg)\n\nSince we have some columns with format “…,…” (e.g, energy, calories(csv)) cut command would lead to problems so we use csvcut\ncsvcut -c 4,6,8,9,12,15,18,21,24,27,30,33,36,39,42,45,48,51,54,57,60,63,66,69,72,75,78,81,84,87,90,93,96,99,102,105,108,111,114,117,120,123,126 newfile.csv &gt; newfile_cut.csv\nNext we want to replace all occurencs of str k.a. (keine Angaben) and Sp. with NULL so tableau doesn’t confuse such coloumns as string columns\nsed -E  's/n\\.d\\./NULL/g' swiss_food_cut.csv &gt; final.csv\nsed -E 's/tr\\./0/g' final_cut_k_test.csv &gt; final_cut_k_test2.csv\nsed -E -i '' 's/[&lt;&gt;]//g' final_cut_k_test2.csv\nsed 's/\"\\([0-9]*\\),\\([0-9]*\\)\"/\\1.\\2/g' final_3.csv &gt; output_1.csv"
+  },
+  {
+    "objectID": "wiki/LinAlg/eigen.html#eigendecompostion",
+    "href": "wiki/LinAlg/eigen.html#eigendecompostion",
+    "title": "Eigenvalues and Eigenvectors",
+    "section": "Eigendecompostion",
+    "text": "Eigendecompostion\nSometimes it is very useful to write a matrix 𝐴 as a product of other matrices, say\n\\(A=PDP^{-1}\\)\nsuch a matrix is called a matrix dececomposition of matrix A. This holds for a linear map described by A and D w.r.t different bases. Goal is to find basis for which matrix D is a diagonal matrix. The matrix \\(P\\) is called transformation matrix. The process of obtaining \\(P\\) and \\(D\\) is called diagonalization.\n\n\\(D\\) is composed of eigenvalues of \\(A\\)\n\\(P\\) is composed of eigenvectors of \\(A\\) and are not unique",
+    "crumbs": [
+      "Wiki",
+      "Linear Algebra",
+      "Eigenvalues and -vectors"
+    ]
+  },
+  {
+    "objectID": "wiki/Statistics/anova.html",
+    "href": "wiki/Statistics/anova.html",
+    "title": "Anova - Analysis of Variance",
+    "section": "",
+    "text": "F-test"
+  },
+  {
+    "objectID": "wiki/Statistics/Glossary.html",
+    "href": "wiki/Statistics/Glossary.html",
+    "title": "Glossary",
+    "section": "",
+    "text": "test"
+  },
+  {
+    "objectID": "wiki/Statistics/Glossary.html#f-test",
+    "href": "wiki/Statistics/Glossary.html#f-test",
+    "title": "Glossary",
+    "section": "",
+    "text": "test"
+  },
+  {
+    "objectID": "wiki/LinAlg/norm.html",
+    "href": "wiki/LinAlg/norm.html",
+    "title": "Norm",
+    "section": "",
+    "text": "Used in matrix multiplication. For two vectors use 1D array in python\n\nimport numpy as np\nv = np.array([1,2,3])\ng = np.array([3,2,1])\n\n#dot product\nnp.dot(v,g)\n#or\nv@g\n\nDefinition:\n\\[\n\\mathbf{x} \\bullet \\mathbf{y} =\n\\begin{bmatrix}\nx_1 \\\\\n\\vdots \\\\\nx_n\n\\end{bmatrix}\n\\bullet\n\\begin{bmatrix}\ny_1 \\\\\n\\vdots \\\\\ny_n\n\\end{bmatrix}\n= x_1 y_1 + \\cdots + x_n y_n = \\sum_{i=1}^n x_i y_i\n\\]\n\n\n\n\n\n\n\n\nExpand \\((x+y) \\bullet (x+y)\\) (can we express with norm?)\n\n\n\n\n\n\\((x+y) \\bullet (x+y) = x \\bullet x + 2(x\\bullet y)+y \\bullet y\\)\nExpress with norm if x and y are orthogonal because dot product is zero:\n\\(\\left\\|x\\right\\|^2 +\\left\\|y\\right\\|^2\\)\n\n\n\n\n\n\n\n\n\nExpand \\((x+y) \\bullet (x-y)\\) (can we express with norm?)\n\n\n\n\n\n\\((x+y) \\bullet (x-y) = x \\bullet x - y \\bullet y\\)\nWe can express with norm\n\\(\\left\\|x\\right\\|^2 - \\left\\|y\\right\\|^2\\)"
+  },
+  {
+    "objectID": "wiki/LinAlg/norm.html#orthogonal-projection",
+    "href": "wiki/LinAlg/norm.html#orthogonal-projection",
+    "title": "Norm",
+    "section": "Orthogonal Projection",
+    "text": "Orthogonal Projection\n Orthogonal Projection onto a line spanned by vector v.\n\\[\nprojection = \\frac{u \\bullet v}{\\left\\|v\\right\\|^2}*v\n\\] Find orthogonal vector w:\n\\[\nw = u-p\n\\] we can write w as \\(u = p + w\\) and yields a decomposition of u as sum of two vectors which are orthogonal."
+  },
+  {
+    "objectID": "wiki/LinAlg/norm.html#exercise-6.1.",
+    "href": "wiki/LinAlg/norm.html#exercise-6.1.",
+    "title": "Norm",
+    "section": "",
+    "text": "Expand \\((x+y) \\bullet (x+y)\\) (can we express with norm?)\n\n\n\n\n\n\\((x+y) \\bullet (x+y) = x \\bullet x + 2(x\\bullet y)+y \\bullet y\\)\nExpress with norm if x and y are orthogonal because dot product is zero:\n\\(\\left\\|x\\right\\|^2 +\\left\\|y\\right\\|^2\\)\n\n\n\n\n\n\n\n\n\nExpand \\((x+y) \\bullet (x-y)\\) (can we express with norm?)\n\n\n\n\n\n\\((x+y) \\bullet (x-y) = x \\bullet x - y \\bullet y\\)\nWe can express with norm\n\\(\\left\\|x\\right\\|^2 - \\left\\|y\\right\\|^2\\)"
+  },
+  {
+    "objectID": "wiki/LinAlg/norm.html#angles-between-vectors",
+    "href": "wiki/LinAlg/norm.html#angles-between-vectors",
+    "title": "Norm",
+    "section": "Angles between vectors",
+    "text": "Angles between vectors"
+  },
+  {
+    "objectID": "wiki/LinAlg/norm.html#orthonormal",
+    "href": "wiki/LinAlg/norm.html#orthonormal",
+    "title": "Norm",
+    "section": "Orthonormal",
+    "text": "Orthonormal\nA set is orthogonal if any two vectors in that set are orthogonal (i.e., linear independent: \\(dot \\space product = 0\\) or \\(u\\bullet v = 0\\)).\nA set is orthonormal if any two vectors in that set are orthogonal and each vector is normalized (i.e., \\(norm = 1\\) or \\(u\\bullet u = 1\\)).\n\nAn orthonormal set is also called orthonormal system (ONS for short).\nNormalize vectors by diving each components with the norm (\\(\\left\\|vector\\right\\|\\)) of vector.\nOrthonormal basis span a vector space:\n\neach vector \\(v\\) in that space can be formulated as linear transformation of those basis \\(b_1,b_2\\). Finding the coordinates \\(a_1,a_2\\) can be done by \\(a_1 = v\\bullet b_1\\) and \\(a_2=v \\bullet b_2\\)."
   }
 ]

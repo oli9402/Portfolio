@@ -69,6 +69,10 @@ website:
               href: wiki/LinAlg/basis.qmd
             - text: 'Linear Maps'
               href: wiki/LinAlg/linear-maps.qmd
+            - text: 'Eigenvalues and -vectors'
+              href: wiki/LinAlg/eigen.qmd
+            - text: 'Orthonormal Basis'
+              href: wiki/LinAlg/norm.qmd
          - section: 'Design of Experiments' 
            href: wiki/DOE/int.qmd
            contents:

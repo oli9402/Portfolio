@@ -33,6 +33,84 @@ The keyword `nonlocal` will access a variable in the next higher namespace.
 Scope of an object refers to the code section from which an object is accessible.
 ***
 
+## Indexing
+
+Last index is not included:
+
+```{python}
+
+
+a = [1,2,3,4,5]
+
+# Full list
+a[:5]
+
+a[-1:] #equal to a[-1:5]
+
+a[-1:1:-1] #2 is index 2 but not included
+
+#full list in reverse
+a[-1::-1]   #equal to a[::-1]
+a[:-2] #-2 is index of 4 but not included
+
+a[:-2:-1]
+```
+
+2D Lists return first line
+
+```{python}
+data = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+[row[0] for row in data]
+```
+
+Modify index 
+
+```{python}
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+numbers[1:4] = [10, 20, 30]
+```
+
+For loops
+
+```{python}
+
+numbers = [12, 32, 34, 4,25, 6, 72, 8, 19] #9 elements
+
+len(numbers) #returns 9
+print('')
+
+i = range(6) #returns 0-5
+for idx in i: 
+  print(idx, end= ' ')
+  
+print('\n')
+i = range(len(numbers)) #0-8 -> 9 elements
+for idx in i: 
+  print(idx, end= ' ')
+
+print('\n')
+i = range(1,len(numbers)) #1-8 -> 8 elements
+for idx in i: 
+  print(idx, end= ' ')
+```
+Enumerate returns index and value
+
+```{python}
+numbers = [12, 32, 34, 4,25, 6, 72, 8, 19] #9 elements
+
+for i in enumerate(numbers):
+  print(i, end = ', ')
+  print(i[0], end = ', ')
+  print(i[1])
+
+print('----')
+# we can also save both values individuel
+for idx, value in enumerate(numbers):
+  print(idx , value)
+
+```
+
+----
 ## Functions
 
 Functions can only return one reference to a storage location. So returning multiple references must be saved in a list:
@@ -226,6 +304,27 @@ Has several elements. Functions are called methods (inside a class)
 - variables: Class and object
 - self: reference to the object that is created
 
+### Class Methods 
+
+### Static Methods 
+Same as regular function but defined in a class. Still they are rather independent of the class but are accessed with class.function. No self is needed.
+ 
+```{python}
+#| eval: false
+
+class A:
+  def __init__(self):
+    ...
+    
+  @staticmethods
+  def function(str):
+    return function(str)
+  
+class.function
+```
+
+### Object Methods
+
 ```{python}
 #| eval: false
 
@@ -273,3 +372,277 @@ Inheritance creates a hierarchy of classes
 - Animal -> Bird and Cow
 
 test with `issubclass(Bird, Animal)`. Child classes get all properties from parent class. 
+#### Inheritance
+
+We can use `super()` to refer to the upper level class (parent class in this case)
+If we first create a class, the function of the object class if inhereted to our created object. 
+```{python}
+#|eval: false
+
+class Animal(object class): 
+  def __init__(self, weight):
+    self.weight = weight
+    
+class Bird(Animal):
+  def _init__(self, weight): #override
+    super().__init__(weight)
+    # or Animal.__init__(self, weight)
+```
+
+#### Inheritance: Override 
+
+We don't want all methods or variables from parent class.
+The interpreter first checks methods and objects in the subclass before it checks the parents, so we can just overwrite the objects in the subclass (or extend functionality). We have to use the same name for the method or other objects! 
+
+
+### Access Modifiers 
+
+- public: access through object
+- protected: only in subclass accessible
+- private: only in declaration of own class accessible
+
+
+## Mulitple inheritance
+
+Multiple parents. Can cause problems for the interpreter if same methods twice.
+
+Solved with Method Resolution Order (MRO): tries to find a linearization of all classes and depends on the order of inheritance. It doesn't find a feasible solution every time. Sometimes it helps to swap order. 
+
+
+# Modules
+
+paths when import: 
+
+- the current script sets the root for the ide but not for the terminal.
+- with `..` you can move up in the folder hierarchy. 
+- instead of / or \\ python uses . 
+- `from math import *` importes everything and you can refer to the function without `math.`
+  - not a good style since it can cause problems
+  
+## If name = main
+
+the name of the script is only *main* if it's the root script.
+
+So if you add: 
+
+```{python}
+#| eval: false
+
+if __name__ = "main":
+  ...tests
+```
+
+you can code functionality that only runs when the script is the root and doesn't run when the file has been imported into a different script. 
+
+## Deep vs. Shallow Copy
+
+Variable stores references to an object that is stored in *one or more(string, lists, tuples..)* storage cells. So copying a variable, copies the reference:
+
+```{python}
+x = 99.23
+y = x # copy of reference
+
+id(x) == id(y) 
+
+x = 43.12
+id(x) == id(y)
+
+# But..
+a = 19.2
+b = 19.2
+
+id(a) == id(b) #two different instances of object int
+```
+
+Assigning a new value creates a new instance of object int by calling: `b = int.__new__(value)`.
+
+Lists are mutable objects: x only refers to the first element of list. 
+```{python}
+x = [1,2,3,4,5]
+
+y = x  #copy
+y[2] = 6 #change 3 element, doesnt' create a new object!!
+
+print(x)
+
+y[0] = 9
+id(x) == id(y)
+```
+
+This is a side effect. So we can create a real copy with the `copy()` function. Only available for mutable objects (sequences), so not for tuples.
+
+```{python}
+x = [1,2,3,4,5]
+
+y = x.copy()
+
+id(x) == id(y)
+
+str_text = 'hello'
+
+#str_copy = str_text.copy() doens't work since string gernally not mutable
+```
+Nested Lists = special case. `copy()` *returns a shallow copy!*:
+Nested lists are references to new storage location
+
+```{python}
+nested_list = [1,2,3,[4,5]]
+
+y = nested_list.copy()
+
+y[-1][0] = 99
+
+print(y)
+print(f'not desired change: {nested_list=}')
+
+print(f'{id(y) == id(nested_list)=}')
+
+```
+```{python}
+#|eval: false
+#|
+#import copy
+nested_list = [1,2,3,[4,5]]
+
+#y = nested_list.copy.deepcopy(nested_list)
+y[-1][0] = 99
+
+print(f'didn\'t change: {nested_list=}')
+
+```
+
+## Lambda Function
+
+Keep in mind:
+```{python}
+#| eval: false
+
+def my_fun():
+  def inner_fun(x):
+    return x 
+  return inner_fun
+
+my_if = my_fun() #reference to inner function
+print(my_if('hello'))
+
+#is the same as 
+
+my_if = my_fun #reference to outer function
+print(my_if()('hello'))
+
+```
+
+Lambda: No header. Only body of function. Only one expression.
+
+```{python}
+x = lambda a,b: a + b
+
+print('x: ', x(3,5))
+```
+```{python}
+
+def fun():
+  return 'hello' 
+  
+x = lambda: fun()
+
+print('x: ', x())
+
+x = lambda a: a()
+print('x: ', x(fun))
+
+```
+
+We can use lambda for generic methods example: 
+
+```{python}
+def fun_ii(f, a, b):
+  return f(a,b)
+
+print('fun_ii: ' , fun_ii(lambda x,y: x + y, 2, 3))
+print('fun_ii: ' , fun_ii(lambda x,y: x - y, 2, 3))
+
+```
+
+Usually combined with other functions like `map()` or `sort()`.
+
+`map()`: applies a function to every single item of an iterable. Same as for loop.
+```{python}
+numbers = [1,2,3,4]
+test = map(lambda element: element-1,numbers) #we get a map object back
+
+test = list(map(lambda element: element-1,numbers)) #create a list. List(test)
+test
+
+```
+
+`sort()`: sorts an iterable based on a given comparator
+```{python}
+#sorts based on remains after modulo
+numbers = [1,2,3,4,6]
+
+numbers.sort(key= lambda element: element %3)
+print(numbers)
+```
+
+## List Comprehension
+
+Single expression of for loop:
+
+```{python}
+x = [1,2,3,4,5,6]
+print(x)
+
+x2 =[i**2 for i in x]
+print(x2)
+
+x = [i**2 for i in x]
+print(x)
+
+```
+
+Add conditions
+```{python}
+x = [1,2,3,4,5,6]
+
+x2 = [i**2 for i in x if i%2] #unequal numbers (>0 equals true)
+print(x2)
+
+x3 = [i**2 for i in x if not i%2] #equal numbers !(>0 equals true)
+print(x3)
+
+x4 = [i**2 if not i%2 else i-10 for i in x] #if else short-hand
+print(x4)
+```
+
+Nested Looops
+```{python}
+li = [[1,2,3],[22,33]]
+
+res = [element*2 for row in li for element in row] #simple list return
+res2 = [[element*2 for element in row] for row in li] #nested list return
+print(res)
+print('\n')
+print(res2)
+```
+Comprehension with tuples returns a generator but you can use unpacker `*`. 
+
+Dictionairy comprehension
+
+`zip()` returns list of tuples
+```{python}
+#turn into dict
+x = [1,2,4,5]
+
+d = {i:i for i in x}
+print(d)
+d1 = {k:v for (k,v) in enumerate(x)}
+print(d1)
+
+d2 = {k:v for (k,v) in zip(['a','b','c'],x)}
+print(d2)
+```
+
+## Type Annotations
+
+

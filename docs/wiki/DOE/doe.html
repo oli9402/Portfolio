@@ -217,6 +217,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Linear Maps</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../wiki/LinAlg/eigen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Eigenvalues and -vectors</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -246,13 +252,29 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
-  <ul class="collapse">
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#research-design" id="toc-research-design" class="nav-link" data-scroll-target="#research-design">Research Design</a>
   <ul class="collapse">
+  <li><a href="#cross-sectional-study-e.g.-survey" id="toc-cross-sectional-study-e.g.-survey" class="nav-link" data-scroll-target="#cross-sectional-study-e.g.-survey">Cross Sectional Study (e.g.&nbsp;Survey)</a></li>
+  <li><a href="#correlational-study" id="toc-correlational-study" class="nav-link" data-scroll-target="#correlational-study">Correlational Study</a></li>
   <li><a href="#analytical-study" id="toc-analytical-study" class="nav-link" data-scroll-target="#analytical-study">Analytical study</a></li>
+  <li><a href="#other-forms" id="toc-other-forms" class="nav-link" data-scroll-target="#other-forms">Other Forms</a></li>
   </ul></li>
+  <li><a href="#variance-as-basic-concept" id="toc-variance-as-basic-concept" class="nav-link" data-scroll-target="#variance-as-basic-concept">Variance as basic concept</a></li>
+  <li><a href="#experimental-design" id="toc-experimental-design" class="nav-link" data-scroll-target="#experimental-design">Experimental Design</a>
+  <ul class="collapse">
+  <li><a href="#one-factor-at-a-time-ofat" id="toc-one-factor-at-a-time-ofat" class="nav-link" data-scroll-target="#one-factor-at-a-time-ofat">One-Factor-at-a-time (OFAT)</a></li>
+  <li><a href="#full-factorial-designs" id="toc-full-factorial-designs" class="nav-link" data-scroll-target="#full-factorial-designs">Full factorial designs</a></li>
+  <li><a href="#fractional-factorial-designs" id="toc-fractional-factorial-designs" class="nav-link" data-scroll-target="#fractional-factorial-designs">Fractional factorial designs</a></li>
   </ul></li>
+  <li><a href="#quality-criteria-of-experiments" id="toc-quality-criteria-of-experiments" class="nav-link" data-scroll-target="#quality-criteria-of-experiments">Quality criteria of experiments</a>
+  <ul class="collapse">
+  <li><a href="#internal-validity" id="toc-internal-validity" class="nav-link" data-scroll-target="#internal-validity">Internal Validity</a></li>
+  <li><a href="#external-validity" id="toc-external-validity" class="nav-link" data-scroll-target="#external-validity">External validity</a></li>
+  </ul></li>
+  <li><a href="#sampling" id="toc-sampling" class="nav-link" data-scroll-target="#sampling">Sampling</a></li>
+  <li><a href="#sample-size-power-effect-size" id="toc-sample-size-power-effect-size" class="nav-link" data-scroll-target="#sample-size-power-effect-size">Sample Size, Power, Effect Size</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
   </ul>
 </nav>
     </div>
@@ -280,17 +302,31 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
-<section id="research-design" class="level2">
-<h2 class="anchored" data-anchor-id="research-design">Research Design</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="tree.png" class="img-fluid figure-img"></p>
-<figcaption>Decision Tree</figcaption>
-</figure>
-</div>
+<p>Quantitative methods with hypothesis testing are designed around the principles of critical rationalism (Karl Popper). This philosophical position states that <em>theory can never be finally verified but only falsified.</em></p>
+<p>Descriptive statistics can only describe the sample as a subset of the population. Inferential statistics draws conclusions about the population based on the sample.</p>
+</section>
+<section id="research-design" class="level1">
+<h1>Research Design</h1>
+<p><img src="tree.png" class="img-fluid" alt="Decision Tree"> ## Observational</p>
+<p><em>Descriptive</em> character, suitable for <em>forming hypotheses</em> (but not optimal for testing a hypothesis)</p>
+<section id="cross-sectional-study-e.g.-survey" class="level3">
+<h3 class="anchored" data-anchor-id="cross-sectional-study-e.g.-survey">Cross Sectional Study (e.g.&nbsp;Survey)</h3>
+<ul>
+<li>no group comparison</li>
+<li>e.g.&nbsp;“Quality of Life of Master Students”</li>
+</ul>
+</section>
+<section id="correlational-study" class="level3">
+<h3 class="anchored" data-anchor-id="correlational-study">Correlational Study</h3>
+<ul>
+<li>no group comparison</li>
+<li>e.g.&nbsp;“Time spent on self-study and general quality of life correlate.”</li>
+</ul>
+</section>
 <section id="analytical-study" class="level3">
 <h3 class="anchored" data-anchor-id="analytical-study">Analytical study</h3>
 <ul>
+<li>group comparison</li>
 <li>Identification and quantification of effects / verification of relationships</li>
 <li><em>Not</em> fully suitable for hypothesis testing</li>
 </ul>
@@ -309,11 +345,118 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="case-control-study" class="level4">
 <h4 class="anchored" data-anchor-id="case-control-study">Case Control Study</h4>
+<ul>
+<li>Retrospective comparing cases with controls (self-reports?)</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="case.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>Case Control</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="other-forms" class="level2">
+<h2 class="anchored" data-anchor-id="other-forms">Other Forms</h2>
+<ul>
+<li>Cross-over design: during study treatment and control switches
+<ul>
+<li>used in randomized and non-ramdomized (quasi)</li>
+</ul></li>
+<li>Before / After comparison</li>
+<li>Longitudinal studies:
+<ul>
+<li>Trend study: different times with diff. samples</li>
+<li>Panel study: different times with same sample</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="variance-as-basic-concept" class="level1">
+<h1>Variance as basic concept</h1>
+<ul>
+<li>Primary variance:
+<ul>
+<li>Impact of (experimental) factors on the change / variantion of the output</li>
+</ul></li>
+<li>Secondary variance:
+<ul>
+<li>Variation of output caused by nuisance variables</li>
+</ul></li>
+<li>Error variance:
+<ul>
+<li>caused by measurement errors and random processes</li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="variance.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>Variance</figcaption>
+</figure>
+</div>
+</section>
+<section id="experimental-design" class="level1">
+<h1>Experimental Design</h1>
+<p>Example: determine which variables have an influence on petrol consumption.</p>
+<section id="one-factor-at-a-time-ofat" class="level2">
+<h2 class="anchored" data-anchor-id="one-factor-at-a-time-ofat">One-Factor-at-a-time (OFAT)</h2>
+</section>
+<section id="full-factorial-designs" class="level2">
+<h2 class="anchored" data-anchor-id="full-factorial-designs">Full factorial designs</h2>
+</section>
+<section id="fractional-factorial-designs" class="level2">
+<h2 class="anchored" data-anchor-id="fractional-factorial-designs">Fractional factorial designs</h2>
+</section>
+</section>
+<section id="quality-criteria-of-experiments" class="level1">
+<h1>Quality criteria of experiments</h1>
+<section id="internal-validity" class="level2">
+<h2 class="anchored" data-anchor-id="internal-validity">Internal Validity</h2>
+<ul>
+<li>is <em>essential condition</em> for external validity.</li>
+<li>Changes in dependent variable clearly attributable to changes in independent variables.</li>
+<li>Increases with decreasing impact of nuisance variables (Quasi-Exp -&gt; Experiment).</li>
+</ul>
+</section>
+<section id="external-validity" class="level2">
+<h2 class="anchored" data-anchor-id="external-validity">External validity</h2>
+<ul>
+<li>Results of experiment can be generalized to population</li>
+<li>increases with increasing naturalness (laboratory -&gt; field)</li>
+<li>high internal validity can be problematic for external validity (labor vs.&nbsp;field)</li>
+</ul>
+<section id="population-validity" class="level4">
+<h4 class="anchored" data-anchor-id="population-validity">Population validity</h4>
+<ul>
+<li>selection of representative sample</li>
+</ul>
+</section>
+<section id="situation-validity" class="level4">
+<h4 class="anchored" data-anchor-id="situation-validity">Situation validity</h4>
+<ul>
+<li>generalizable to situations deviating from experiment (ecological validity)</li>
+</ul>
+</section>
+<section id="construct-validity" class="level4">
+<h4 class="anchored" data-anchor-id="construct-validity">Construct validity</h4>
+<ul>
+<li>adequate operationalization of latent variable (construct)</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="sampling" class="level1">
+<h1>Sampling</h1>
+<p>Lecture 05</p>
+</section>
+<section id="sample-size-power-effect-size" class="level1">
+<h1>Sample Size, Power, Effect Size</h1>
+<p>Lecture 06</p>
+</section>
+<section id="section" class="level1">
+<h1></h1>
 
 
-</section>
-</section>
-</section>
 </section>
 
 </main> <!-- /main -->

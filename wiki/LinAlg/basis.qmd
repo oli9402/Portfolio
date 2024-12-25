@@ -17,7 +17,7 @@ format:
  
 flowchart TD
     A(Basis, Span <br/> Dimensions) --> B[Matrix column span]
-    B-->|echelon form: <br/>columns with pivots|C[= linearly independent. <br/>Original columns (basis)<br/>span the column space]
+    B-->|echelon form: <br/>columns with pivots|C[ linearly independent. <br/>Original columns basis<br/>span the column space]
     
 
 
@@ -44,7 +44,7 @@ If the vectors are colinear/parallel or consists of points
 ## Basis
 
 :::{.callout-note}
-The set of all linear independent vectors that span a vector space
+The set of all linear independent vectors that span a vector space. There are an infinite amount of different basis for a vector space but the number is fixed to the dimension.
 :::
 
 

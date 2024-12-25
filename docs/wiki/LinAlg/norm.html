@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Oliver Zingg - Wrangling In Python</title>
+<title>Oliver Zingg - Norm</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -29,8 +63,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../wiki/Statistics/stats_start.html" rel="next">
-<link href="../../wiki/Python/basics.html" rel="prev">
 <link href="../../oli.jpg" rel="icon" type="image/jpeg">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -70,10 +102,39 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
-<body class="nav-sidebar docked nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -111,7 +172,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">CV</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../../wiki.html" aria-current="page"> <i class="bi bi-book-half" role="img">
+    <a class="nav-link" href="../../wiki.html"> <i class="bi bi-book-half" role="img">
 </i> 
 <span class="menu-text">Wiki</span></a>
   </li>  
@@ -121,142 +182,38 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../wiki/Python/python_start.html">Python</a></li><li class="breadcrumb-item"><a href="../../wiki/Python/wrangling.html">Wrangling</a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../wiki.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Personal Wiki</span></a>
-  </div>
-</li>
-        <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../wiki/Python/python_start.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Python</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../wiki/Python/basics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Basics</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../wiki/Python/wrangling.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Wrangling</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../wiki/Statistics/stats_start.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Statistics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../wiki/Statistics/ci.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Confidence Intervals</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../wiki/LinAlg/linalg_start.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Linear Algebra</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../wiki/LinAlg/ttr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Things to remember</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../wiki/LinAlg/sys.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Systems of Linear Equations</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../wiki/LinAlg/basis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Basis</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../wiki/LinAlg/linear-maps.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Linear Maps</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../wiki/LinAlg/eigen.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Eigenvalues and -vectors</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../wiki/DOE/int.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Design of Experiments</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../wiki/DOE/doe.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Research Design</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#dot-product" id="toc-dot-product" class="nav-link active" data-scroll-target="#dot-product">Dot Product</a>
+  <ul class="collapse">
+  <li><a href="#exercise-6.1." id="toc-exercise-6.1." class="nav-link" data-scroll-target="#exercise-6.1.">Exercise 6.1.</a></li>
+  </ul></li>
+  <li><a href="#norm" id="toc-norm" class="nav-link" data-scroll-target="#norm">Norm</a>
+  <ul class="collapse">
+  <li><a href="#manhattan-norm" id="toc-manhattan-norm" class="nav-link" data-scroll-target="#manhattan-norm">Manhattan norm</a></li>
+  <li><a href="#norm-1" id="toc-norm-1" class="nav-link" data-scroll-target="#norm-1">Norm</a></li>
+  <li><a href="#metric" id="toc-metric" class="nav-link" data-scroll-target="#metric">Metric</a></li>
+  <li><a href="#orthogonal-projection" id="toc-orthogonal-projection" class="nav-link" data-scroll-target="#orthogonal-projection">Orthogonal Projection</a></li>
+  <li><a href="#orthonormal" id="toc-orthonormal" class="nav-link" data-scroll-target="#orthonormal">Orthonormal</a></li>
+  </ul></li>
+  <li><a href="#angles-between-vectors" id="toc-angles-between-vectors" class="nav-link" data-scroll-target="#angles-between-vectors">Angles between vectors</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../wiki/Python/python_start.html">Python</a></li><li class="breadcrumb-item"><a href="../../wiki/Python/wrangling.html">Wrangling</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Wrangling In Python</h1>
+<h1 class="title">Norm</h1>
 </div>
 
 
@@ -273,8 +230,138 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="dot-product" class="level1">
+<h1>Dot Product</h1>
+<p>Used in matrix multiplication. For two vectors use 1D array in python</p>
+<div id="4b774b7f" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> np.array([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>])</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> np.array([<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>])</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#dot product</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>np.dot(v,g)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">#or</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>v<span class="op">@</span>g</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Definition</strong>:</p>
+<p><span class="math display">\[
+\mathbf{x} \bullet \mathbf{y} =
+\begin{bmatrix}
+x_1 \\
+\vdots \\
+x_n
+\end{bmatrix}
+\bullet
+\begin{bmatrix}
+y_1 \\
+\vdots \\
+y_n
+\end{bmatrix}
+= x_1 y_1 + \cdots + x_n y_n = \sum_{i=1}^n x_i y_i
+\]</span></p>
+<section id="exercise-6.1." class="level2">
+<h2 class="anchored" data-anchor-id="exercise-6.1.">Exercise 6.1.</h2>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Expand <span class="math inline">\((x+y) \bullet (x+y)\)</span> (can we express with norm?)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\((x+y) \bullet (x+y) = x \bullet x + 2(x\bullet y)+y \bullet y\)</span></p>
+<p>Express with norm if x and y are orthogonal because dot product is zero:</p>
+<p><span class="math inline">\(\left\|x\right\|^2 +\left\|y\right\|^2\)</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Expand <span class="math inline">\((x+y) \bullet (x-y)\)</span> (can we express with norm?)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\((x+y) \bullet (x-y) = x \bullet x - y \bullet y\)</span></p>
+<p>We can express with norm</p>
+<p><span class="math inline">\(\left\|x\right\|^2 - \left\|y\right\|^2\)</span></p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="norm" class="level1">
+<h1>Norm</h1>
+<p><strong>Euclidean Norm</strong> is has a geometrical interpretation. Using pythagorean theorem as often as <span class="math inline">\(\mathbb{R}^2-1\)</span> we get the norm or length of a vector</p>
+<p><span class="math display">\[
+\|x\| = \left\| \begin{bmatrix}
+x_1 \\
+x_2 \\
+\vdots \\
+x_n
+\end{bmatrix} \right\| = \sqrt{x_1^2 + \cdots + x_n^2}
+\]</span></p>
+<p>Linearity of the Euclidean norm doesn’t hold:</p>
+<p><span class="math display">\[
+\left\|x + y \right\| \not= \left\|x\right\|+ \left\|y\right\|
+\]</span></p>
+<p>In fact:</p>
+<p><span class="math display">\[
+\left\|x + y \right\| &lt; \left\|x\right\|+ \left\|y\right\|
+\]</span></p>
+<p>Since geometrically x+y represents the fast way (Triangle inequality).</p>
+<p>The dot product of a vector with itself is the squared Euclidean norm:</p>
+<p><span class="math display">\[
+x \bullet x = \left\| x\right\|^2
+\]</span></p>
+<section id="manhattan-norm" class="level3">
+<h3 class="anchored" data-anchor-id="manhattan-norm">Manhattan norm</h3>
+<p>Defined by: <span class="math inline">\(\left\| x \right\|_1 = |x_1|+\cdots+|x_n|\)</span></p>
+</section>
+<section id="norm-1" class="level3">
+<h3 class="anchored" data-anchor-id="norm-1">Norm</h3>
+</section>
+<section id="metric" class="level3">
+<h3 class="anchored" data-anchor-id="metric">Metric</h3>
+</section>
+<section id="orthogonal-projection" class="level2">
+<h2 class="anchored" data-anchor-id="orthogonal-projection">Orthogonal Projection</h2>
+<p><img src="images/w.png" class="img-fluid" alt="Orthogonal Projection onto a line spanned by vector v"> Orthogonal Projection onto a line spanned by vector v.</p>
+<p><span class="math display">\[
+projection = \frac{u \bullet v}{\left\|v\right\|^2}*v
+\]</span> Find orthogonal vector w:</p>
+<p><span class="math display">\[
+w = u-p
+\]</span> we can write w as <span class="math inline">\(u = p + w\)</span> and yields a decomposition of <em>u</em> as sum of two vectors which are orthogonal.</p>
+</section>
+<section id="orthonormal" class="level2">
+<h2 class="anchored" data-anchor-id="orthonormal">Orthonormal</h2>
+<p>A set is <strong>orthogonal</strong> if any two vectors in that set are orthogonal (i.e., linear independent: <span class="math inline">\(dot \space product = 0\)</span> or <span class="math inline">\(u\bullet v = 0\)</span>).</p>
+<p>A set is <strong>orthonormal</strong> if any two vectors in that set are orthogonal and each vector is normalized (i.e., <span class="math inline">\(norm = 1\)</span> or <span class="math inline">\(u\bullet u = 1\)</span>).</p>
+<ul>
+<li>An orthonormal set is also called <em>orthonormal system</em> (<strong>ONS</strong> for short).</li>
+<li>Normalize vectors by diving each components with the norm (<span class="math inline">\(\left\|vector\right\|\)</span>) of vector.</li>
+<li>Orthonormal basis span a vector space:
+<ul>
+<li>each vector <span class="math inline">\(v\)</span> in that space can be formulated as linear transformation of those basis <span class="math inline">\(b_1,b_2\)</span>. Finding the coordinates <span class="math inline">\(a_1,a_2\)</span> can be done by <span class="math inline">\(a_1 = v\bullet b_1\)</span> and <span class="math inline">\(a_2=v \bullet b_2\)</span>.</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="angles-between-vectors" class="level1">
+<h1>Angles between vectors</h1>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -664,18 +751,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../../wiki/Python/basics.html" class="pagination-link" aria-label="Basics">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Basics</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../../wiki/Statistics/stats_start.html" class="pagination-link" aria-label="Statistics">
-        <span class="nav-page-text">Statistics</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

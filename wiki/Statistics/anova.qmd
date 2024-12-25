@@ -1,0 +1,7 @@
+---
+title: 'Anova - Analysis of Variance'
+crossrefs-hover: true
+---
+
+
+[F-test](Glossary.qmd#f-test)

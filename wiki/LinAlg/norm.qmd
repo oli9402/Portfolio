@@ -1,0 +1,141 @@
+---
+title: 'Norm'
+code-fold: false
+---
+
+# Dot Product 
+Used in matrix multiplication.
+For two vectors use 1D array in python 
+
+```{python}
+#| eval: false
+import numpy as np
+v = np.array([1,2,3])
+g = np.array([3,2,1])
+
+#dot product
+np.dot(v,g)
+#or
+v@g
+```
+
+**Definition**:
+
+$$
+\mathbf{x} \bullet \mathbf{y} = 
+\begin{bmatrix}
+x_1 \\
+\vdots \\
+x_n
+\end{bmatrix}
+\bullet
+\begin{bmatrix}
+y_1 \\
+\vdots \\
+y_n
+\end{bmatrix}
+= x_1 y_1 + \cdots + x_n y_n = \sum_{i=1}^n x_i y_i
+$$
+
+
+## Exercise 6.1.
+
+
+
+::: {.callout-caution collapse="true"}
+## Expand $(x+y) \bullet (x+y)$ (can we express with norm?)
+
+$(x+y) \bullet (x+y) = x \bullet x + 2(x\bullet y)+y \bullet y$
+
+Express with norm if x and y are orthogonal because dot product is zero:
+
+$\left\|x\right\|^2 +\left\|y\right\|^2$
+
+:::
+
+::: {.callout-caution collapse="true"}
+## Expand $(x+y) \bullet (x-y)$ (can we express with norm?)
+
+$(x+y) \bullet (x-y) = x \bullet x - y \bullet y$
+
+We can express with norm
+
+$\left\|x\right\|^2 - \left\|y\right\|^2$
+:::
+
+# Norm
+
+**Euclidean Norm** is has a geometrical interpretation. Using pythagorean theorem as often as $\mathbb{R}^2-1$ we get the norm or length of a vector
+
+$$
+\|x\| = \left\| \begin{bmatrix} 
+x_1 \\
+x_2 \\
+\vdots \\
+x_n 
+\end{bmatrix} \right\| = \sqrt{x_1^2 + \cdots + x_n^2}
+$$
+
+Linearity of the Euclidean norm doesn't hold:
+
+$$
+\left\|x + y \right\| \not= \left\|x\right\|+ \left\|y\right\|
+$$
+
+In fact: 
+
+$$
+\left\|x + y \right\| < \left\|x\right\|+ \left\|y\right\|
+$$
+
+Since geometrically x+y represents the fast way (Triangle inequality).
+
+The dot product of a vector with itself is the squared  Euclidean norm:
+
+$$
+x \bullet x = \left\| x\right\|^2
+$$ 
+
+### Manhattan norm
+
+Defined by: $\left\| x \right\|_1 = |x_1|+\cdots+|x_n|$
+
+### Norm
+
+### Metric
+
+## Orthogonal Projection
+
+
+![Orthogonal Projection onto a line spanned by vector v](images/w.png)
+Orthogonal Projection onto a line spanned by vector v. 
+
+$$
+projection = \frac{u \bullet v}{\left\|v\right\|^2}*v 
+$$
+Find orthogonal vector w: 
+
+$$
+w = u-p
+$$
+we can write w as $u = p + w$ and yields a decomposition of *u* as sum of two vectors which are orthogonal.
+
+## Orthonormal
+
+A set is **orthogonal** if any two vectors in that set are orthogonal (i.e., linear independent: $dot \space product = 0$ or $u\bullet v = 0$).
+
+A set is **orthonormal** if any two vectors in that set are orthogonal and each vector is normalized (i.e., $norm = 1$ or $u\bullet u = 1^2$).
+
+- An orthonormal set is also called *orthonormal system* (**ONS** for short). 
+- Normalize vectors by diving each components with the norm ($\left\|vector\right\|$) of vector.
+- Orthonormal basis span a vector space:
+  - each vector $v$ in that space can be formulated as linear transformation of those basis $b_1,b_2$. 
+  -  Finding the coordinates $a_1,a_2$ can be done by $a_1 = v\bullet b_1$ and $a_2=v \bullet b_2$. 
+
+$$
+v = (v\bullet b_1)*b_1 + (v\bullet b_2)*b_2
+$$
+note: $(v\bullet b_1)*b_1$ is the orthogonal projection of v  onto the line span($b_i$).
+
+# Angles between vectors
+

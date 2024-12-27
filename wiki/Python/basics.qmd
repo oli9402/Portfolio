@@ -1,6 +1,7 @@
 ---
 title: 'Learning the Basics'
 code-fold: false
+
 ---
 ## Namespace
 
@@ -38,8 +39,7 @@ Scope of an object refers to the code section from which an object is accessible
 Last index is not included:
 
 ```{python}
-
-
+#| eval: false
 a = [1,2,3,4,5]
 
 # Full list
@@ -59,6 +59,7 @@ a[:-2:-1]
 2D Lists return first line
 
 ```{python}
+#| eval: false
 data = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 [row[0] for row in data]
 ```
@@ -66,6 +67,7 @@ data = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 Modify index 
 
 ```{python}
+#| eval: false
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 numbers[1:4] = [10, 20, 30]
 ```
@@ -73,7 +75,7 @@ numbers[1:4] = [10, 20, 30]
 For loops
 
 ```{python}
-
+#| eval: false
 numbers = [12, 32, 34, 4,25, 6, 72, 8, 19] #9 elements
 
 len(numbers) #returns 9
@@ -96,6 +98,7 @@ for idx in i:
 Enumerate returns index and value
 
 ```{python}
+#| eval: false
 numbers = [12, 32, 34, 4,25, 6, 72, 8, 19] #9 elements
 
 for i in enumerate(numbers):
@@ -111,6 +114,7 @@ for idx, value in enumerate(numbers):
 ```
 
 ----
+
 ## Functions
 
 Functions can only return one reference to a storage location. So returning multiple references must be saved in a list:
@@ -183,9 +187,17 @@ def strcut(*str,n):
 
 ### Else after Function
 
+Else is executed after the for loop is over (more specific after the StopIteration is raised by the iterator) but if we use break (the loop doesn't come to and end: else is not executed.) The else keyword in try-except works similar but if try reaches it's end.  
+
 If for example we search a list for a flag item we can use else for the case that the flag item is not in the list.
 ```{python}
 #| eval: false
+mylist = [1,2,3,4]
+theflag = 5
+
+def process(i):
+    return i + 0.5
+
 for i in mylist:
     if i == theflag:
         break
@@ -643,6 +655,158 @@ d2 = {k:v for (k,v) in zip(['a','b','c'],x)}
 print(d2)
 ```
 
-## Type Annotations
+## Try-Except
+
+Strict order:
+
+- try:
+- except: (optional if there is finally)
+- else: (optional, *executed only if no exception is raised.*)
+- finally: (optional if there is except, is executed always no matter what)
+  - finally still breaks code if there is an error so everything after finally is not executed (if no exception is given).
+  - finally is good for garbarge collection: delete used variable in try, close files etc. or to give message why something went wrong
+
+
+```{python}
+#|eval: false
+try:
+  num = input('Enter a number: ')
+  frac = 1/int(num)
+except ValueError as e:
+  print('no number given:', e)
+except ZeroDivisionError:
+  print('can not divide by 0')
+except:
+  print('any other error happend')
+else:
+  print(f'the fraction is: {frac}')
+finally:
+  print('leaving try-except clause')
+
+```
+
+Exceptions are handled in order and once one is executed the reset is skipt including else statement.
+For example the second ZeroDivisionError will not be executed.
+```{python}
+try:
+  num = input('Enter a number: ')
+  frac = 1/int(num)
+except (ValueError,ZeroDivisionError) as e:
+  print('no number given:', e)
+except ZeroDivisionError:
+  print('can not divide by 0')
+except:
+  print('any other error happend')
+else:
+  print(f'the fraction is: {frac}')
+finally:
+  print('leaving try-except clause')
+
+```
+
+These examples are explicit Exceptions since we specifiy the excat error. If we use `except Exception as e` then this is implicit.
+
+### Customize and Raise Errors
+
+Using the keyword `raise` we can raise an error:
+
+If creating an own CustError class don't inheritage from BaseException.
+```{python}
+#|eval: false
+
+class CustError(Exception):
+  def __init__(self,message):
+    super().__init__(message)
+    
+    # customize error code..
+    self.errors = "custom error"
+
+if input('enter number: ') == '0': 
+  raise CustError('customized error message')
+
+def invert_value(val):
+  if type(val) != int:
+    raise ValueError('the given value is not of type integer.')
+  
+  return 1/val
+
+try: 
+  invert_value(19.2)
+except ValueError as e:
+  print(e)
+  
+  #returns our custome message
+```
+
+
+
+## Generator
+
+*Iterator: *
+
+In `for i in li:` the keyword `for` creates an iterator and passes the provided list. The iterator points to the first element of the list and the object is returned. The we call the `__next__()` method of this object to get the second object in li until `__next__()` raises an *StopIteration* exception
+
+
+
+```{python}
+#| echo: true
+x = list(range(9))
+
+
+itr = iter(x)
+
+itr.__next__()
+itr.__next__()
+print('-'*10)
+# Iterator remembers current position so for loop will only print remaining i's
+for i in itr: 
+  print(i)
+
+# raises error
+#itr.__next__()
+
+```
+
+### Concept of Generator 
+
+Each iteration is called on demand and not at the start: saving memory (lazy evaluation)
+
+- Uses yield keyword instead of return and returns a generator iterator. 
+- Breaks at each yield but remembers where it was and can be continuied until StopIterator is raised
+- can be written as generator expression without yield: `(x**2 for x in range(4))` 
+- 
+```{python}
+def my_sum(x):
+  
+  return x + 2
+
+def my_sum_gen(x):
+  
+  y = x 
+  while True:
+    
+    yield y + 2 
+    yield y + 5
+    
+
+r2 = my_sum_gen(7)
+
+print(next(r2))
+print(next(r2))
+
+```
+Example
+
+"In ordered large list are there values smaller than 0?"
+
+```{python}
+k = range(1_000_000)
+any(x < 0 for x in k)
+```
+
+
+## Decorator (not in exam) 2:20:00
+
+
 
 

@@ -29,7 +29,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../wiki/DOE/int.html" rel="next">
+<link href="../../wiki/LinAlg/norm.html" rel="next">
 <link href="../../wiki/LinAlg/linear-maps.html" rel="prev">
 <link href="../../oli.jpg" rel="icon" type="image/jpeg">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
@@ -253,6 +253,12 @@ window.Quarto = {
  <span class="menu-text">Eigenvalues and -vectors</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../wiki/LinAlg/norm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Orthonormal Basis</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -283,9 +289,10 @@ window.Quarto = {
    
   <ul>
   <li><a href="#rotation-dont-have-eigenvalues" id="toc-rotation-dont-have-eigenvalues" class="nav-link active" data-scroll-target="#rotation-dont-have-eigenvalues">Rotation don’t have Eigenvalues</a></li>
+  <li><a href="#shear" id="toc-shear" class="nav-link" data-scroll-target="#shear">Shear</a></li>
   <li><a href="#scaled-matrices" id="toc-scaled-matrices" class="nav-link" data-scroll-target="#scaled-matrices">Scaled matrices</a></li>
   <li><a href="#diagonal-matrix" id="toc-diagonal-matrix" class="nav-link" data-scroll-target="#diagonal-matrix">Diagonal matrix</a></li>
-  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
+  <li><a href="#rectabgular-matrices" id="toc-rectabgular-matrices" class="nav-link" data-scroll-target="#rectabgular-matrices">Rectabgular matrices</a></li>
   <li><a href="#diagonalizable" id="toc-diagonalizable" class="nav-link" data-scroll-target="#diagonalizable">Diagonalizable</a></li>
   <li><a href="#eigenspace" id="toc-eigenspace" class="nav-link" data-scroll-target="#eigenspace">Eigenspace</a></li>
   <li><a href="#determination-of-eigenvalues-and-eigenvectors" id="toc-determination-of-eigenvalues-and-eigenvectors" class="nav-link" data-scroll-target="#determination-of-eigenvalues-and-eigenvectors">Determination of Eigenvalues and Eigenvectors</a></li>
@@ -353,7 +360,10 @@ Note
 0&amp; -1 \\
 1 &amp; 0
 \end{pmatrix}
-\]</span> ### Shear</p>
+\]</span></p>
+</section>
+<section id="shear" class="level3">
+<h3 class="anchored" data-anchor-id="shear">Shear</h3>
 <p>Fixes <span class="math inline">\(î\)</span> and moves <span class="math inline">\(\hat j\)</span> one over</p>
 <p><span class="math display">\[
 \begin{pmatrix}
@@ -369,14 +379,15 @@ Note
 2&amp; 0 \\
 0 &amp; 2
 \end{pmatrix}
-\]</span> All vectors are eigenvectors with eigenvallue 2.</p>
+\]</span> All vectors are eigenvectors with eigenvalue 2.</p>
 </section>
 <section id="diagonal-matrix" class="level3">
 <h3 class="anchored" data-anchor-id="diagonal-matrix">Diagonal matrix</h3>
-<p>All basis are eigenvectors with the values being their eigenvalues</p>
+<p>All basis are eigenvectors with the values being their eigenvalues (here: 2 and 2)</p>
 </section>
-<section id="examples" class="level3">
-<h3 class="anchored" data-anchor-id="examples">Examples</h3>
+<section id="rectabgular-matrices" class="level3">
+<h3 class="anchored" data-anchor-id="rectabgular-matrices">Rectabgular matrices</h3>
+<p>Cant have eigenvalues because not diagonizable</p>
 <section id="is-vector-an-eigenvector-of-matrix-b" class="level4">
 <h4 class="anchored" data-anchor-id="is-vector-an-eigenvector-of-matrix-b">Is vector an eigenvector of matrix B?</h4>
 <p>check with: <span class="math inline">\(Matrix*vector = scaled \space vector\)</span></p>
@@ -904,8 +915,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../wiki/DOE/int.html" class="pagination-link" aria-label="Design of Experiments">
-        <span class="nav-page-text">Design of Experiments</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../wiki/LinAlg/norm.html" class="pagination-link" aria-label="Orthonormal Basis">
+        <span class="nav-page-text">Orthonormal Basis</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

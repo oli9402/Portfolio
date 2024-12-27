@@ -103,6 +103,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<style>html{ scroll-behavior: smooth; }</style>
 
 
 </head>
@@ -223,7 +224,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Why news headlines? One reason may be that news headlines are easier to analyse since they are often grammatically correct and….</p>
 <section id="fetch-news-headlines" class="level2">
 <h2 class="anchored" data-anchor-id="fetch-news-headlines">Fetch News Headlines</h2>
-<div id="b1535d93" class="cell" data-execution_count="1">
+<div id="d0e13e90" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
@@ -255,7 +256,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Error: </span><span class="sc">{</span>response<span class="sc">.</span>status_code<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="bf9d0a40" class="cell" data-execution_count="2">
+<div id="3f76fb8a" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> germansentiment</span>
@@ -274,304 +275,304 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(text, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>, prediction, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>, <span class="st">"-"</span><span class="op">*</span><span class="dv">50</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>SpaceX: Nächster Testflug des Starship gelungen, Booster aber nicht eingefangen 
+<pre><code>Meta-Chef Zuckerberg trifft Donald Trump in Mar-a-Lago 
  neutral 
  --------------------------------------------------
-Trumps Technologiepolitik: Der große Bruch 
+Donald T. hat ein Herz für Tiktok 
  neutral 
  --------------------------------------------------
-Nach Kursrallye: Trumps Truth Social ist jetzt mehr wert als X von Elon Musk 
+Internetunternehmer Sriram Krishnan wird Trumps Top-Berater für KI 
+ neutral 
+ --------------------------------------------------
+Akkus für E-Audis: Montagewerk entsteht in Mexiko 
+ neutral 
+ --------------------------------------------------
+Trump will Musk-Berater mit KI und Kryptowährungen betrauen 
+ neutral 
+ --------------------------------------------------
+US-Berufungsgericht lehnt TikTok-Antrag auf Aufschub des Verbots ab 
+ neutral 
+ --------------------------------------------------
+Urteil: Verbot von TikTok in den USA kommt näher – Trump könnte intervenieren 
+ neutral 
+ --------------------------------------------------
+Dienstag: Intel-CEO muss unerwartet gehen, Apple soll Mitarbeiter ausspionieren 
+ negative 
+ --------------------------------------------------
+Huawei setzt weiter auf Android-Derivat EMUI 15 für seine Smartphones 
+ neutral 
+ --------------------------------------------------
+Bitcoin überwindet die Schwelle von 100.000 US-Dollar 
+ neutral 
+ --------------------------------------------------
+Weißes Haus: Keine Auffälligkeiten bei Drohnensichtungen 
+ neutral 
+ --------------------------------------------------
+Tiktok-Verbot auf Überholspur zum US Supreme Court 
+ neutral 
+ --------------------------------------------------
+China leitet Kartelluntersuchung gegen Nvidia ein 
+ neutral 
+ --------------------------------------------------
+Bitkom-Umfrage: Unternehmen sorgen sich wegen Abhängigkeiten von den USA 
+ neutral 
+ --------------------------------------------------
+heise+ | Gehaltsreport 2024: Das verdienen IT-Fachkräfte in Deutschland 
+ neutral 
+ --------------------------------------------------
+Missing Link: Grenzsicherung USA made in Germany 
+ negative 
+ --------------------------------------------------
+Threads: 35 Millionen Neuanmeldungen in diesem Monat 
  positive 
  --------------------------------------------------
-Trump entscheidet US-Präsidentschaftswahl klar für sich 
+Nobelpreisträger: Große Technologiesprünge wie KI begünstigen einige Wenige 
  neutral 
  --------------------------------------------------
-Bitcoin legt deutlich zu und klettert auf Rekordhoch 
+Marktmacht "problematisch": FTC leitet Untersuchung gegen Microsoft ein 
  neutral 
  --------------------------------------------------
-Trump will Fracking-Unternehmer zum Energieminister machen 
+SpaceX will texanische Starbase offiziell zu einer Stadt erklären lassen 
  neutral 
  --------------------------------------------------
-Trump will entschiedenen Gegner der großen IT-Konzerne zu FCC-Chef machen 
+Nur noch jede zehnte Desktop-Grafikkarte stammt von AMD 
  neutral 
  --------------------------------------------------
-Über Strava: Bodyguards machen Aufenthaltsorte von Staatschefs publik 
+Groß wie Autos, in Formation: Mysteriöse Drohnen über New Jersey lassen rätseln 
  neutral 
  --------------------------------------------------
-Auf Instagram und Threads: Zahlreiche Accounts zu Promiflügen gesperrt 
+Auf in den Weltraum – Globale Pläne für Reisen ins All 
+ neutral 
+ --------------------------------------------------
+Donnerstag: Cyberversicherung ohne Mail-Spoofing, Platzprobleme in Amazon-Büros 
  negative 
  --------------------------------------------------
-Glück im Unglück für US-Regierung: Krypto-Dieb gibt Millionen zurück 
+Die Top 5 Security-Ereignisse 2024 und was sie bedeuten 
  neutral 
  --------------------------------------------------
-USA und China: KI soll nicht über Einsatz von Atombomben entscheiden dürfen 
+IT-Recht und Regulierung: Was 2025 zu erwarten ist 
  neutral 
  --------------------------------------------------
-Drangsaliert Microsoft seine Cloud-Kunden? FTC plant Untersuchung 
+Treffen mit Donald Trump: Zuckerberg soll "nationale Erneuerung Amerikas" unterstützen 
  neutral 
  --------------------------------------------------
-Nach Rekordzulauf: Bluesky kämpft mit einer Welle von Content-Beschwerden 
+KI und Kryptowährungen: Trump will David Sacks zum Regierungsbeauftragten machen 
  neutral 
  --------------------------------------------------
-Freitag: Volocopter vor chinesischer Übernahme, US-Netzbetreiber ausspioniert 
+Weltraumpolitik: Eine unabhängige Space Force - Trumps unerledigte Aufgabe 
+ neutral 
+ --------------------------------------------------
+Amazon und Blue Origin: Bezos findet Trump gar nicht mehr so schlecht 
  negative 
  --------------------------------------------------
-Nach Monopol-Urteil: US-Regierung will Google und Chrome trennen 
+USA: Trump mischt sich in Drohnen-Spekulationen ein 
  neutral 
  --------------------------------------------------
-Zahlen, bitte! Wie 538 Personen über die US-Präsidentschaft entscheiden 
+Raumfahrt: Ein Milliardär könnte der nächste Nasa-Chef werden 
+ neutral 
+ --------------------------------------------------
+US-Wahlkampf: Musk unterstützte Trump mit mindestens 260 Millionen Dollar 
+ neutral 
+ --------------------------------------------------
+Donald Trump: Kapitalverbrechen 
+ neutral 
+ --------------------------------------------------
+Außenpolitik von Donald Trump: Die Welt verhält sich nicht, wie es Donald Trump gefällt 
+ neutral 
+ --------------------------------------------------
+Donald Trump: Wie gefährlich ist Trump für Europa? 
+ neutral 
+ --------------------------------------------------
+Donald Trump: Der Don und seine Gang 
+ neutral 
+ --------------------------------------------------
+Kabinett von Donald Trump: Wer sind die umstrittensten Köpfe an Donald Trumps Seite? 
+ neutral 
+ --------------------------------------------------
+Donald Trump und Javier Milei: Kampfbrüder gegen den Sozialismus 
+ neutral 
+ --------------------------------------------------
+Nordamerika: Justin Trudeau trifft Donald Trump in Florida 
+ neutral 
+ --------------------------------------------------
+Panama-Kanal: Demonstrationen gegen Donald Trump in Panama 
+ neutral 
+ --------------------------------------------------
+Präsidentschaft von Donald Trump: Wer zynisch wird, schadet sich selbst 
+ neutral 
+ --------------------------------------------------
+USA: Donald Trump und die "Fake-News-Medien" 
  negative 
  --------------------------------------------------
-Donnerstag: Interpol gegen Cyberkriminelle, Beleidigung unabhängig von Zuhörern 
+Donald Trump: US-Hochschulen raten ausländischen Studenten zu rascher Rückkehr 
+ neutral 
+ --------------------------------------------------
+USA: Truth-Social-Chef soll Donald Trump zu Geheimdiensten beraten 
+ neutral 
+ --------------------------------------------------
+USA: Donald Trump dementiert übermäßigen Einfluss von Elon Musk 
+ neutral 
+ --------------------------------------------------
+Schweigegeld-Prozess: Donald Trumps Anwälte fordern Aufhebung von Schuldspruch 
+ neutral 
+ --------------------------------------------------
+Verurteilung wegen Betrug: Trump beantragt Annullierung von Millionen-Geldstrafe 
+ neutral 
+ --------------------------------------------------
+USA: Donald Trump droht erneut mit US-Austritt aus der Nato 
+ neutral 
+ --------------------------------------------------
+Royale Diplomatie: Prinz William trifft Donald Trump vor Notre-Dame-Eröffnung 
+ neutral 
+ --------------------------------------------------
+Dänische Insel: Donald Trump fordert "Besitz und Kontrolle" von Grönland durch die USA 
+ neutral 
+ --------------------------------------------------
+Scott Bessent: Nicht nur Irre 
+ neutral 
+ --------------------------------------------------
+USA: Mexikos Präsidentin Sheinbaum widerspricht Trump bei "Migrationsstopp" 
+ neutral 
+ --------------------------------------------------
+Krieg in der Ukraine: Donald Trump sieht in Syrien die Schwäche Wladimir Putins 
+ neutral 
+ --------------------------------------------------
+Begnadigung von Hunter Biden: Donald Trump wirft Joe Biden "Missbrauch der Justiz" vor 
+ neutral 
+ --------------------------------------------------
+Georgia: Gericht zieht Chefanklägerin von Wahlbetrug-Prozess um Donald Trump ab 
+ neutral 
+ --------------------------------------------------
+USA: Trump ernennt Keith Kellog zum Ukraine-Sondergesandten 
+ neutral 
+ --------------------------------------------------
+Medien: "Time"-Magazin will Trump zur Person des Jahres küren 
+ neutral 
+ --------------------------------------------------
+USA: Trump ernennt TV-Produzenten zum Sondergesandten für Großbritannien 
+ neutral 
+ --------------------------------------------------
+Daniel Ziblatt: "Trump wird so weit gehen wie möglich" 
+ neutral 
+ --------------------------------------------------
+US-Außenpolitik: Donald Trumps Politik kann gut für Europa sein 
+ neutral 
+ --------------------------------------------------
+US-Präsident: Joe Biden begnadigt seinen Sohn Hunter – Trump spricht von "Missbrauch der Justiz" 
+ neutral 
+ --------------------------------------------------
+Notre-Dame: Halleluja! 
  negative 
  --------------------------------------------------
-Dienstag: KI-Funktionen für Ray-Ban Meta-Brille, Millionenstrafe für Whatsapp 
+Frankreich: Macron, Trump und Selenskyj treffen sich zu Gespräch in Paris 
+ neutral 
+ --------------------------------------------------
+Jared Isaacman: Vom Weltraumtouristen zum Nasa-Chef 
+ neutral 
+ --------------------------------------------------
+Kryptowährungen: Siegeszug der Krypto-Brüder 
+ neutral 
+ --------------------------------------------------
+US-Zollpläne: Wie Fentanyl aus China in die USA gelangt 
+ neutral 
+ --------------------------------------------------
+Grönland: Dänemark investiert nach Trumps Anspruch in Grönlands Sicherheit 
+ neutral 
+ --------------------------------------------------
+Leben in Kalifornien: Die Sonne scheint jedenfalls vorerst weiter 
+ neutral 
+ --------------------------------------------------
+David Sacks: Trump ernennt Vertrauten von Musk zum Beauftragten für KI und Krypto 
+ neutral 
+ --------------------------------------------------
+Börse: Dax steigt erstmals auf mehr als 20.000 Punkte 
+ neutral 
+ --------------------------------------------------
+USA: Trump will Amateur-Astronaut Jared Isaacman zum Nasa-Chef machen 
  negative 
  --------------------------------------------------
-Mittwoch: Millionen-Rückzahlung eines Kryptodiebs, Google schlägt die Prognose 
- neutral 
- --------------------------------------------------
-Gesetz: TSMC darf 2-nm-Chips vorerst nur in Taiwan fertigen 
- neutral 
- --------------------------------------------------
-Ukrainekrieg: Musk ist bei Telefonat von Trump und Selenskyj dabei 
- neutral 
- --------------------------------------------------
-US-Wahlen 2024: Was der Wahlsieg Trumps für die IT-Branche bedeutet 
- neutral 
- --------------------------------------------------
-US-Ökonom Eichengreen: Silicon-Valley-Größen werden Trump-Unterstützung bereuen 
- neutral 
- --------------------------------------------------
-Wähler von Donald Trump: "Ich werde Donald Trump mit zugekniffener Nase wählen" 
- negative 
- --------------------------------------------------
-Donald-Trump-Wähler: Das sind die Millionen, die Donald Trump wählen wollen 
- neutral 
- --------------------------------------------------
-Wahlsieg von Donald Trump: Der Albtraum 
- neutral 
- --------------------------------------------------
-Donald Trump: In der Egokratie 
- neutral 
- --------------------------------------------------
-US-Wahlkampf: Donald Trump scherzt über Schüsse auf Journalisten 
- neutral 
- --------------------------------------------------
-US-Wahl: Donald Trump als Hoffnungsträger? 
- neutral 
- --------------------------------------------------
-US-Wahl: Kalifornien will Gesetze vor Donald Trump schützen 
- neutral 
- --------------------------------------------------
-Donald Trump in New York: Eine Beleidigung nach der nächsten 
- neutral 
- --------------------------------------------------
-Donald Trump: Er wäre ein sehr mächtiger Präsident 
- neutral 
- --------------------------------------------------
-Donald-Trump-Wähler: Ist denen denn alles egal? 
- negative 
- --------------------------------------------------
-Andy Warhol und Donald Trump: Kunst und Kommerz 
- neutral 
- --------------------------------------------------
-Donald Trumps Wahlsieg: Trumps Wirtschaftspolitik wird Wohlstand vernichten 
- neutral 
- --------------------------------------------------
-Elon Musk: Erst holt er Pennsylvania, dann kriegt er den Mars 
- neutral 
- --------------------------------------------------
-US-Wahl: Warum wieder Trump? 
- negative 
- --------------------------------------------------
-Regierung von Donald Trump: Doch, es wird wirklich so schlimm 
- negative 
- --------------------------------------------------
-USA: Donald Trump nominiert Robert F. Kennedy Jr. als Gesundheitsminister 
- neutral 
- --------------------------------------------------
-US-Wahl: «Ich habe dort Wurzeln»: Donald Trump und Rheinland-Pfalz 
- neutral 
- --------------------------------------------------
-Folge 34: Oktober 2019: Kampf gegen die Terrormiliz 
- neutral 
- --------------------------------------------------
-Wahlen in den USA: Es ist etwas zerbrochen 
- negative 
- --------------------------------------------------
-US-Wahlkampf: Donald Trump wähnt sich in allen Swing-States in Führung 
- neutral 
- --------------------------------------------------
-US-Wahl: Nato-Chef: «Donald Trump stand und steht hinter der Nato» 
- neutral 
- --------------------------------------------------
-Gala zum Ballon d'Or: Vergleich mit Donald Trump: Hummels kritisiert Real Madrid 
- neutral 
- --------------------------------------------------
-Zweite Amtszeit von Donald Trump: Jetzt kann er machen, was er will 
- neutral 
- --------------------------------------------------
-US-Präsident: Joe Biden äußert sich zum Wahlsieg von Donald Trump 
- neutral 
- --------------------------------------------------
-US-Wahl: Donald Trump wirbt mit Elon Musk in New York um Wählerstimmen 
- neutral 
- --------------------------------------------------
-US-Wahl: Trump kündigt "größtes Deportationsprogramm der Geschichte" an 
- neutral 
- --------------------------------------------------
-Iran: US-Justizministerium zeigt Iraner wegen Mordkomplotts gegen Trump an 
- neutral 
- --------------------------------------------------
-US-Wahlkampf: Donald Trump verklagt TV-Sender CBS wegen Interviews mit Kamala Harris 
- negative 
- --------------------------------------------------
-US-Wahl: "Gemeinsam machen wir Amerika wieder großartig für alle Amerikaner" 
- neutral 
- --------------------------------------------------
-Folge 38: Februar 2020: Amtsenthebung abgelehnt 
- neutral 
- --------------------------------------------------
-US-Präsidentschaft: Trump will Anordnungen von Biden am ersten Amtstag rückgängig machen 
- neutral 
- --------------------------------------------------
-US-Präsidentschaftswahl: "Gratulationen zum größten Comeback der Geschichte" 
- neutral 
- --------------------------------------------------
-Palm Beach in Florida: Die Insel der Reichen und Mächtigen 
- neutral 
- --------------------------------------------------
-Identitätsdiebstahl: Wie es wirklich ist 
- neutral 
- --------------------------------------------------
-Elon Musk: Er hat sich seinen Platz an Trumps Seite erkauft 
- neutral 
- --------------------------------------------------
-Rassismus: Schwarze Amerikaner berichten landesweit von rassistischen SMS 
- negative 
- --------------------------------------------------
-Populismus: "Es läuft ein Staatsstreich in Zeitlupe" 
- neutral 
- --------------------------------------------------
-Zeitungsbericht: Elon Musk soll seit Jahren direkten Kontakt zu Putin haben 
- neutral 
- --------------------------------------------------
-Folge 47: November 2020: Die Lüge vom Wahlbetrug 
- neutral 
- --------------------------------------------------
-US-Wahlkampf: Das Ende eines verrückten Wahlkampfes 
- neutral 
- --------------------------------------------------
-Präsidentschaftswahl in den USA: Laufende Verfahren gegen Trump werden nun wohl ausgesetzt 
- neutral 
- --------------------------------------------------
-US-Wahl: "Alles wird gut werden" 
+Superreiche in den USA: "Die Macht der Oligarchen ist enorm" 
  positive 
  --------------------------------------------------
-US-Präsidentschaft: Trumps Skepsis gegenüber Deutschland 
+Drohender Shutdown in den USA: Trump und Musk fordern Abgeordnete auf, gegen Übergangsfinanzierung zu stimmen 
+ neutral 
+ --------------------------------------------------
+Elon Musk: Die Welt ist nicht genug 
  negative 
  --------------------------------------------------
-US-Notenbank: Der letzte Neinsager 
+US-Haushaltsstreit: Eine riskante Machtdemonstration 
  neutral 
  --------------------------------------------------
-Weltklimakonferenz COP29 in Aserbaidschan: Entwicklungsministerin für Milliardärssteuer gegen Klimawandel 
+Wiedereröffnung von Notre-Dame: Ein Heide in Paris 
  neutral 
  --------------------------------------------------
-Regierungsbildung in den USA: Trump schließt Regierungsposten für Nikki Haley und Mike Pompeo aus 
+Kryptowährungen: Was hinter Trumps Krypto-Deal mit möglichem Islamisten-Helfer steckt 
  neutral 
  --------------------------------------------------
-USA: Born in the USA, Teil 2: Die Spaltung der Vereinigten Staaten 
+Russische Wirtschaft: Wie lange hält Russland das durch? 
  neutral 
  --------------------------------------------------
-Elon Musk: "Er identifiziert sich mit Macht – mit uneingeschränkter Macht" 
+Bürokratieabbau-Beauftragter : Elon Musk will Verbraucherschutz im US-Finanzsektor abschaffen 
  neutral 
  --------------------------------------------------
-Donald Trump und Kamala Harris: Freude verfängt gegen einen Faschisten nicht 
+Großbritannien: Elon Musk will britische Rechtspopulisten unterstützen 
  neutral 
  --------------------------------------------------
-Ampel-Aus: Merz: Europa kann Trump beeindrucken 
+Sozialpolitik in den USA: Wie die Demokraten die Arbeitnehmer im Stich ließen 
  neutral 
  --------------------------------------------------
-Gipfel in Budapest: Europa zwischen Trump und Putin 
+US-Wahl: Mindestens 250 Millionen Dollar von Musk für Trump-Wahlkampf 
  neutral 
  --------------------------------------------------
-US-Wahl: Obamas gratulieren Trump zum Wahlsieg 
+Technologiekonzern: Trump kündigt milliardenschwere Softbank-Investitionen an 
  neutral 
  --------------------------------------------------
-US-Wahlkampf: Harris hält Trump für einen Faschisten 
+USA: Elon Musk ist größter Einzelspender in der Geschichte der US-Politik 
  neutral 
  --------------------------------------------------
-US-Wahlkampf: US-Justizministerium wirft Iran Mordkomplott gegen Trump vor 
- neutral 
- --------------------------------------------------
-Regierungswechsel in den USA: Donald Trump will Minister ohne Senatsvotum einsetzen 
- neutral 
- --------------------------------------------------
-US-Wahl: Söder gratuliert Trump und fordert Reaktion von Deutschland 
- neutral 
- --------------------------------------------------
-Außenpolitik: Kanada bildet eigenen Kabinettsausschuss für Umgang mit Trump 
- neutral 
- --------------------------------------------------
-Wahlkampf: Trump mit Carlson, Harris mit Obama – der Wahlkampfendspurt 
- neutral 
- --------------------------------------------------
-Folge 48: Dezember 2020: Trumps letztes Chaos 
- neutral 
- --------------------------------------------------
-US-Wahl: Podcaster Rogan unterstützt Trump 
+Wirtschaftspodscast: "Ist das eine Blase?": So schlimm haben es nicht mal die Meerschweinchen erwartet 
  negative 
  --------------------------------------------------
-Folge 36: Dezember 2019: Machtmissbrauch und Täuschung 
- neutral 
- --------------------------------------------------
-US-Wahl: Trump macht Wahlkampfmanagerin zur Stabschefin 
- neutral 
- --------------------------------------------------
-Von Washington aufs Backblech: Ein Präsident zum Anbeißen - Trump als Schnitte in der Pfalz 
- neutral 
- --------------------------------------------------
-US-Wahl: Österreichs Kanzler Nehammer gratuliert Trump 
- neutral 
- --------------------------------------------------
-US-Wahl: Prognosen: Trump siegt im US-Staat Georgia 
- neutral 
- --------------------------------------------------
-US-Wahl: Befragungen: Wirtschaft Kernanliegen von Trump-Wählern 
- neutral 
- --------------------------------------------------
-Sänger bestürzt: Wolfgang Niedecken sieht Trump-Sieg als «Katastrophe» 
- neutral 
- --------------------------------------------------
-US-Migrationspolitik: "Sie essen die Hunde" – die Migrationspolitik der Zukunft? 
- neutral 
- --------------------------------------------------
-Diplomatie: Kreml sieht positive Signale von Trump 
- neutral 
- --------------------------------------------------
-Pariser Klimaschutzabkommen: Trump bereitet offenbar Ausstieg aus Klimaschutzabkommen vor 
- neutral 
- --------------------------------------------------
-Texas: SpaceX-Trägerrakete explodiert, während Trump und Musk zuschauen 
- neutral 
- --------------------------------------------------
-US-Regierung: Trump nominiert ehemaligen Rivalen Kennedy als Gesundheitsminister 
- neutral 
- --------------------------------------------------
-USA: Trump macht frühere Wrestling-Managerin McMahon zur Bildungsministerin 
- neutral 
- --------------------------------------------------
-US-Wahlkampf: Trump verklagt US-Sender CBS News auf Schadenersatz 
+Elon Musk: Elon Musk beschimpft Bundeskanzler Olaf Scholz 
  negative 
  --------------------------------------------------
-Trump-Wahlsieg: Habeck: Deutschland muss starke Führung in Europa einnehmen 
+Emmanuel Macron in Polen: Ohne Plan in die Trump-Zeit 
  neutral 
  --------------------------------------------------
-US-Wahl: Trump setzt in letzter Wahlkampfrede auf Beleidigungen 
+Personalien: Trump will Geschäftsmann zum US-Botschafter in London machen 
  neutral 
  --------------------------------------------------
-US-Wahlkampf: Harris verspricht, USA zu einen: Schluss mit Trumps «Drama» 
+Besuch in Frankreich: Trump trifft Prinz William in Paris 
+ neutral 
+ --------------------------------------------------
+Auslandsreise: Trump reist zur Wiedereröffnung von Notre- Dame nach Paris 
+ neutral 
+ --------------------------------------------------
+US-Präsident: Joe Biden wandelt 37 Todesstrafen in lebenslange Haft um 
+ neutral 
+ --------------------------------------------------
+Einwanderung: Mexikos Staatschefin erörtert Migrationspolitik mit Trump 
+ neutral 
+ --------------------------------------------------
+Geschlechtsidentität: Trump will "Transgender-Irrsinn" stoppen 
+ neutral 
+ --------------------------------------------------
+Besuch in Frankreich: Trump, Macron und Selenskyj treffen sich zu dritt in Paris 
+ neutral 
+ --------------------------------------------------
+Künftiger US-Präsident: Trump und Macron planen bilaterales Treffen in Paris 
+ neutral 
+ --------------------------------------------------
+Vereidigung des US-Präsidenten: Trump hat Xi zu Amtseinführung im Januar eingeladen 
+ neutral 
+ --------------------------------------------------
+Höhere Zölle: Volkswirte sehen Deutschland nicht vorbereitet auf Trump 
+ neutral 
+ --------------------------------------------------
+US-Politik: "Time"-Magazin kürt Trump zur "Person des Jahres" 
+ neutral 
+ --------------------------------------------------
+Bundestagswahl: Scholz fühlt sich bei Taurus-Nein von Trump bestärkt 
  neutral 
  --------------------------------------------------</code></pre>
 </div>
@@ -973,8 +974,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>Created by Oliver Zingg with Quarto and RStudio</p>
-</div>   
+      &nbsp;
+    </div>   
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
@@ -998,12 +999,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </ul>
     </div>
     <div class="nav-footer-right">
-<p>Viel Spass beim durchstöbern meiner Seite</p>
-</div>
+      &nbsp;
+    </div>
   </div>
 </footer>
 
 
 
 
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

@@ -37,6 +37,7 @@ $$
 1 & 0
 \end{pmatrix}
 $$
+
 ### Shear
 
 Fixes $î$ and moves $\hat j$ one over
@@ -57,13 +58,15 @@ $$
 0 & 2
 \end{pmatrix}
 $$
-All vectors are eigenvectors with eigenvallue 2. 
+All vectors are eigenvectors with eigenvalue 2. 
 
 ### Diagonal matrix
 
-All basis are eigenvectors with the values being their eigenvalues
+All basis are eigenvectors with the values being their eigenvalues (here: 2 and 2)
 
-### Examples
+### Rectabgular matrices
+
+Cant have eigenvalues because not diagonizable
 
 #### Is vector an eigenvector of matrix B?
 

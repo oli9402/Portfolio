@@ -256,6 +256,7 @@ print(f"{var1:>5}")
 
 Example: self documentation and debugging: returns var name and what is stored
 `var1= -> var1=7`
+
 ```{python}
 #| eval: false
 
@@ -308,6 +309,7 @@ Variables are references to objects and objects belong to a class.
 `x = 99` is a references to storage location of a object of class int
 
 ### Class
+
 Blueprint for what an object should look like and how it should function.
 Has several elements. Functions are called methods (inside a class)
 
@@ -319,6 +321,7 @@ Has several elements. Functions are called methods (inside a class)
 ### Class Methods 
 
 ### Static Methods 
+
 Same as regular function but defined in a class. Still they are rather independent of the class but are accessed with class.function. No self is needed.
  
 ```{python}
@@ -484,6 +487,7 @@ id(x) == id(y)
 This is a side effect. So we can create a real copy with the `copy()` function. Only available for mutable objects (sequences), so not for tuples.
 
 ```{python}
+#| eval: false
 x = [1,2,3,4,5]
 
 y = x.copy()
@@ -579,6 +583,7 @@ print('fun_ii: ' , fun_ii(lambda x,y: x - y, 2, 3))
 Usually combined with other functions like `map()` or `sort()`.
 
 `map()`: applies a function to every single item of an iterable. Same as for loop.
+
 ```{python}
 numbers = [1,2,3,4]
 test = map(lambda element: element-1,numbers) #we get a map object back

@@ -32,8 +32,6 @@ website:
         href: about.qmd
       - icon: list-task
         href: projects.qmd
-      - icon: file-earmark
-        href: CV.qmd
       - icon: book-half
         text: Wiki
         href: wiki.qmd

@@ -4,7 +4,7 @@
     "href": "wiki/Python/basics.html",
     "title": "Learning the Basics",
     "section": "",
-    "text": "built-in: all objects provided by python\nglobal: programmer defined objects across whole script\nlocal: programmer defined objects in function blocks\n\nObject name must only be unique within a given namespace:\n\ndef my_function(x):\n  return x+10\n\ndef test_function(x):\n  def my_function(y):  # my_function: this is possible since different namespace \n    return y + 20\n  x = my_function(2)\n  return x \n\ntest_function()(y=10)\n\nInside a function you can access a global object via the keyword global. You can also increase a global var inside a function for example. But this should be avoided global access.\nThe keyword nonlocal will access a variable in the next higher namespace.",
+    "text": "Use # %% Testto create executable blocks",
     "crumbs": [
       "Wiki",
       "Python",
@@ -15,8 +15,8 @@
     "objectID": "wiki/Python/basics.html#namespace",
     "href": "wiki/Python/basics.html#namespace",
     "title": "Learning the Basics",
-    "section": "",
-    "text": "built-in: all objects provided by python\nglobal: programmer defined objects across whole script\nlocal: programmer defined objects in function blocks\n\nObject name must only be unique within a given namespace:\n\ndef my_function(x):\n  return x+10\n\ndef test_function(x):\n  def my_function(y):  # my_function: this is possible since different namespace \n    return y + 20\n  x = my_function(2)\n  return x \n\ntest_function()(y=10)\n\nInside a function you can access a global object via the keyword global. You can also increase a global var inside a function for example. But this should be avoided global access.\nThe keyword nonlocal will access a variable in the next higher namespace.",
+    "section": "Namespace",
+    "text": "Namespace\n\nbuilt-in: all objects provided by python\nglobal: programmer defined objects across whole script\nlocal: programmer defined objects in function blocks\n\nObject name must only be unique within a given namespace:\n\ndef my_function(x):\n  return x+10\n\ndef test_function(x):\n  def my_function(y):  # my_function: this is possible since different namespace \n    return y + 20\n  x = my_function(2)\n  return x \n\ntest_function()(y=10)\n\nInside a function you can access a global object via the keyword global. You can also increase a global var inside a function for example. But this should be avoided global access.\nThe keyword nonlocal will access a variable in the next higher namespace.",
     "crumbs": [
       "Wiki",
       "Python",
@@ -28,7 +28,7 @@
     "href": "wiki/Python/basics.html#scope",
     "title": "Learning the Basics",
     "section": "Scope",
-    "text": "Scope\nScope of an object refers to the code section from which an object is accessible. ***",
+    "text": "Scope\nScope of an object refers to the code section from which an object is accessible.",
     "crumbs": [
       "Wiki",
       "Python",
@@ -40,7 +40,7 @@
     "href": "wiki/Python/basics.html#indexing",
     "title": "Learning the Basics",
     "section": "Indexing",
-    "text": "Indexing\nLast index is not included:\n\na = [1,2,3,4,5]\n\n# Full list\na[:5]\n\na[-1:] #equal to a[-1:5]\n\na[-1:1:-1] #2 is index 2 but not included\n\n#full list in reverse\na[-1::-1]   #equal to a[::-1]\na[:-2] #-2 is index of 4 but not included\n\na[:-2:-1]\n\n2D Lists return first line\n\ndata = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]\n[row[0] for row in data]\n\nModify index\n\nnumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]\nnumbers[1:4] = [10, 20, 30]\n\nFor loops\n\nnumbers = [12, 32, 34, 4,25, 6, 72, 8, 19] #9 elements\n\nlen(numbers) #returns 9\nprint('')\n\ni = range(6) #returns 0-5\nfor idx in i: \n  print(idx, end= ' ')\n  \nprint('\\n')\ni = range(len(numbers)) #0-8 -&gt; 9 elements\nfor idx in i: \n  print(idx, end= ' ')\n\nprint('\\n')\ni = range(1,len(numbers)) #1-8 -&gt; 8 elements\nfor idx in i: \n  print(idx, end= ' ')\n\nEnumerate returns index and value\n\nnumbers = [12, 32, 34, 4,25, 6, 72, 8, 19] #9 elements\n\nfor i in enumerate(numbers):\n  print(i, end = ', ')\n  print(i[0], end = ', ')\n  print(i[1])\n\nprint('----')\n# we can also save both values individuel\nfor idx, value in enumerate(numbers):\n  print(idx , value)",
+    "text": "Indexing\nLast index is not included:\n\na = [1,2,3,4,5]\n\n# Full list\na[:5]\n\na[-1:] #equal to a[-1:5]\n\na[-1:1:-1] #2 is index 2 but not included\n\n#full list in reverse\na[-1::-1]   #equal to a[::-1]\na[:-2] #-2 is index of 4 but not included\n\na[:-2:-1]\n\n# Print last string of language\nL = [\"Mojo\", \"is\", \"a\", \"language\"]\nprint(L[3][-1:])\n\n# Print up to last string in last element\nL = [\"Mojo\", \"is\", \"a\", \"language\"]\nprint(L[3][:-1])\n\n2D Lists return first line\n\ndata = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]\n[row[0] for row in data]\n\nModify index\n\nnumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]\nnumbers[1:4] = [10, 20, 30]\n\nFor loops\n\nnumbers = [12, 32, 34, 4,25, 6, 72, 8, 19] #9 elements\n\nlen(numbers) #returns 9\nprint('')\n\ni = range(6) #returns 0-5\nfor idx in i: \n  print(idx, end= ' ')\n  \nprint('\\n')\ni = range(len(numbers)) #0-8 -&gt; 9 elements\nfor idx in i: \n  print(idx, end= ' ')\n\nprint('\\n')\ni = range(1,len(numbers)) #1-8 -&gt; 8 elements\nfor idx in i: \n  print(idx, end= ' ')\n\nEnumerate returns index and value\n\nnumbers = [12, 32, 34, 4,25, 6, 72, 8, 19] #9 elements\n\nfor i in enumerate(numbers):\n  print(i, end = ', ')\n  print(i[0], end = ', ')\n  print(i[1])\n\nprint('----')\n# we can also save both values individuel\nfor idx, value in enumerate(numbers):\n  print(idx , value)\n\nUsing range(start, stop, step) in for loop we can reverse the steps with -1.\n\nfor i in range(5,0,-1):\n  print(i)",
     "crumbs": [
       "Wiki",
       "Python",
@@ -696,7 +696,7 @@
     "href": "wiki/Python/basics.html#functions",
     "title": "Learning the Basics",
     "section": "Functions",
-    "text": "Functions\nFunctions can only return one reference to a storage location. So returning multiple references must be saved in a list:\n\ndef function(a,b):\n  return list(a,b)\n\nLearning material for python functions (e.g., str.split()): here\n\nFunction chaining:\n\nfunction_1(function_2(a)) = function_2(a).function_1()\n\n\n\nFunction Arguments\n\na,b,c = 3,4,5\n\na,b,c = 3,4,5,6 ## Error\n\na,b,*c = 3,4,5,6 # Works: assign all remaining var to c\n\n* packs elements into a list. Use * again to unpack:\n\nprint(a,b,*c)\n\nThis can be done in function parameter aswell:\n\ndic = {'a':1, 'b':3}\ndef my_f(a,b):\n    return a+b\n\nmy_f(**dic) #Returns  4\n\n** unpacks a dictionary. can only be used as parameter input?\nUsing *args in as parameter must be then accessed with a for loop, since it is provided to the function as tupple.\n\n# print first n letters of words\n\ndef strcut(*str, n):\n    for i in str:\n        print(i[:n])\n# or \n\ndef strcut(*str,n):\n    print('\\n'.join(i[:n] for i in str))\n\n\n\nElse after Function\nElse is executed after the for loop is over (more specific after the StopIteration is raised by the iterator) but if we use break (the loop doesn’t come to and end: else is not executed.) The else keyword in try-except works similar but if try reaches it’s end.\nIf for example we search a list for a flag item we can use else for the case that the flag item is not in the list.\n\nmylist = [1,2,3,4]\ntheflag = 5\n\ndef process(i):\n    return i + 0.5\n\nfor i in mylist:\n    if i == theflag:\n        break\n    process(i)\nelse:\n    raise ValueError(\"List argument missing terminal flag.\")\n\n\n\nRecursion\nSimple recursion of factorial()\n\ndef fac(n):\n  if n == 1:\n    return 1\n  else: \n    return n * fac(n-1)",
+    "text": "Functions\nFunctions can only return one reference to a storage location. So returning multiple references must be saved in a list:\n\ndef function(a,b):\n  return list(a,b)\n\nLearning material for python functions (e.g., str.split()): here\n\nFunction chaining:\n\nfunction_1(function_2(a)) = function_2(a).function_1()\n\n\n\nFunction Arguments\n\na,b,c = 3,4,5\n\na,b,c = 3,4,5,6 ## Error\n\na,b,*c = 3,4,5,6 # Works: assign all remaining var to c\n\n* packs elements into a list. Use * again to unpack:\n\nprint(a,b,*c)\n\nThis can be done in function parameter aswell:\n\ndic = {'a':1, 'b':3}\ndef my_f(a,b):\n    return a+b\n\nmy_f(**dic) #Returns  4\n\n** unpacks a dictionary. can only be used as parameter input?\nUsing *args in as parameter must be then accessed with a for loop, since it is provided to the function as tupple.\n\n# print first n letters of words\n\ndef strcut(*str, n):\n    for i in str:\n        print(i[:n])\n# or \n\ndef strcut(*str,n):\n    print('\\n'.join(i[:n] for i in str))\n\n\n\nElse after Function\nElse is executed after the for loop is over (more specific after the StopIteration is raised by the iterator) but if we use break (the loop doesn’t come to and end: else is not executed.) The else keyword in try-except works similar but if try reaches it’s end.\nIf for example we search a list for a flag item we can use else for the case that the flag item is not in the list.\n\nmylist = [1,2,3,4]\ntheflag = 5\n\ndef process(i):\n    return i + 0.5\n\nfor i in mylist:\n    if i == theflag:\n        break\n    process(i)\nelse:\n    raise ValueError(\"List argument missing terminal flag.\")\n\n\n\nRecursion\nSimple recursion of factorial()\n\ndef fac(n):\n  if n == 1:\n    return 1\n  else: \n    return n * fac(n-1)\n\n\n\nString split function\n\ndef split(string, delimiter):\n  \n  result_list = []\n  \n  start = 0\n  for index, char in enumerate(string):\n      if char == delimiter:\n          result_list.append(string[start:index])\n          start = index + 1\n  if start == 0:\n      return [string]\n  result_list.append(string[start:index + 1])\n    \n  return result_list\n\n\n\nString join function\ntakes an iterable (list, tuple) and concatenates its elements into a single string. The seperator is provided as string from which join is called\n\nl = ['1','2','3']\nprint('#'.join(l))\n\n1#2#3\n\n\nIf int in list:\n\nl = [1,2,3]\nprint('#'.join(map(str,l)))\n\n1#2#3\n\n\n\n\n*args and **kwargs\nThey allow you to write functions that can accept an arbitrary number of arguments, making your code more flexible.\n*args collects arguments into a tuple:\n\ndef print_numbers(*args):\n    for number in args:\n        print(number)\n\nprint_numbers(1, 2, 3, 4)\n\n**kwargs collects arguments into a dictionary\n\ndef print_student_info(**kwargs):\n    for key, value in kwargs.items():\n        print(f\"{key}: {value}\")\n\nprint_student_info(name=\"Alice\", age=20, grade=\"A\")\n\nname: Alice\nage: 20\ngrade: A\n\n\nCombining both args and kwargs\n\ndef print_info(name, *args, **kwargs):\n    print(f\"Name: {name}\")\n    print(\"Additional info:\", args)\n    print(\"Details:\", kwargs)\n\nprint_info(\"Alice\", 25, \"Engineer\", country=\"USA\", city=\"New York\")",
     "crumbs": [
       "Wiki",
       "Python",
@@ -720,7 +720,7 @@
     "href": "wiki/Python/basics.html#string-formating",
     "title": "Learning the Basics",
     "section": "String formating",
-    "text": "String formating\nThere are multiple ways here are two:\n\nFormatted String Literals\nStart with an f or F. Allows including variable names with {}.\nExample: right align and use 5 spaces including var1\n\nprint(f\"{var1:&gt;5}\")\n\nExample: self documentation and debugging: returns var name and what is stored var1= -&gt; var1=7\n\nprint(f\"{var1=}\")\n\n\n\nFormat() Method\nString objects provides methods/functions and apply it to string object\nMore flexible way to string literals: {} only placeholders, must be specified in format()\n\nvar1 ='world'\nvar2 = 7\n\nprint(\"hello {} {}\".format(var1, var2))\nprint(\"hello {1} {0}\".format(var2, var1))\n\ndict = {'num': 7, 'txt': 'world'}\nprint(\"hello {0[txt]} {0[num]}\".format(dict))",
+    "text": "String formating\nThere are multiple ways here are two:\n\nFormatted String Literals\nStart with an f or F. Allows including variable names with {}.\nExample: right align and use 5 spaces including var1\n\nprint(f\"{var1:&gt;5}\")\n\nExample: self documentation and debugging: returns var name and what is stored var1= -&gt; var1=7\n\nprint(f\"{var1=}\")\n\n\n\nFormat() Method\nString objects provides methods/functions and apply it to string object\nMore flexible way to string literals: {} only placeholders, must be specified in format()\n\nvar1 ='world'\nvar2 = 7\n\nprint(\"hello {} {}\".format(var1, var2))\nprint(\"hello {1} {0}\".format(var2, var1))\n\ndict = {'num': 7, 'txt': 'world'}\nprint(\"hello {0[txt]} {0[num]}\".format(dict))\n\n\n\nC-style string format\n\nfirst_name = input(\"Enter your first name: \") # your input: Anna\nlast_name = input(\"Enter your last name: \") # your input: Meier\nbirth_year = input(\"Enter your birth year: \") # your input: 1998\nusername = \"%s%s%s\" % (first_name[0].lower(), last_name[:3].lower(), birth_year[-2:])\nprint(\"Generated username: %s\" % username)\n\n#output: Generated username: amei98\n\n\n\ntest whether letter of string is digit or str:\nUse string.isdigit() and string.isalpha()\n\n‘.’, ‘(space)’ or ‘,’ are not seen as letters\n\n\nstring = 'Python 3.2'\n\ncnt_digits = 0\ncnt_str = 0\n\nfor s in string:\n  if s.isdigit():\n    cnt_digits += 1 \n  elif s.isalpha():\n    cnt_str + = 1",
     "crumbs": [
       "Wiki",
       "Python",
@@ -744,7 +744,7 @@
     "href": "wiki/Python/basics.html#object-oriented-programming",
     "title": "Learning the Basics",
     "section": "Object Oriented Programming",
-    "text": "Object Oriented Programming\nVariables are references to objects and objects belong to a class.\nx = 99 is a references to storage location of a object of class int\n\nClass\nBlueprint for what an object should look like and how it should function. Has several elements. Functions are called methods (inside a class)\n\nheader: indicates beginning of class\ninit(): constructor (build) for objects\nvariables: Class and object\nself: reference to the object that is created\n\n\n\nClass Methods\n\n\nStatic Methods\nSame as regular function but defined in a class. Still they are rather independent of the class but are accessed with class.function. No self is needed.\n\nclass A:\n  def __init__(self):\n    ...\n    \n  @staticmethods\n  def function(str):\n    return function(str)\n  \nclass.function\n\n\n\nObject Methods\n\nclass PackageName: \n  \"\"\"\n  Description\n  \"\"\"\n  def __init__(self, name: str, quality: str) -&gt; none:\n      self.name = name\n      self.quality = quality\n# create an object from this class\n\nx: PackageName = PackageName(name = 'ggplot', quality = 'high') #self becomes x\n\n\n\n\nDunder Methods\nHow should objects of a class behave for certain operations\n\nclass A: \n  ...\n  \n  def __add__(self,other):\n    return f'{self.name} + {other.name}'\n  \n\n\nx = A()\ny = A()\n\nprint(x + y)\n\n\n\nSubclass\nInheritance creates a hierarchy of classes\n\nAnimal -&gt; Bird and Cow\n\ntest with issubclass(Bird, Animal). Child classes get all properties from parent class. #### Inheritance\nWe can use super() to refer to the upper level class (parent class in this case) If we first create a class, the function of the object class if inhereted to our created object.\n\nclass Animal(object class): \n  def __init__(self, weight):\n    self.weight = weight\n    \nclass Bird(Animal):\n  def _init__(self, weight): #override\n    super().__init__(weight)\n    # or Animal.__init__(self, weight)\n\n\nInheritance: Override\nWe don’t want all methods or variables from parent class. The interpreter first checks methods and objects in the subclass before it checks the parents, so we can just overwrite the objects in the subclass (or extend functionality). We have to use the same name for the method or other objects!\n\n\n\nAccess Modifiers\n\npublic: access through object\nprotected: only in subclass accessible\nprivate: only in declaration of own class accessible",
+    "text": "Object Oriented Programming\nVariables are references to objects and objects belong to a class.\nx = 99 is a references to storage location of a object of class int\n\nClass\nBlueprint for what an object should look like and how it should function. Has several elements. Functions are called methods (inside a class)\n\nheader: indicates beginning of class\ninit(): constructor (build) for objects\nvariables: Class and object\nself: reference to the object that is created\nclass variable: -A class variable in Python is a variable that is shared among all instances of a class. It is defined within the class but outside of any instance methods. Class variables are commonly used when a value needs to be consistent across all instances of a class.\n\nIn methods you can access a class variable with for example: Customer.class_variable_name no self. is needed.\n\n\n\n\nClass Methods\n\n\nStatic Methods\nSame as regular function but defined in a class. Still they are rather independent of the class but are accessed with class.function. No self is needed.\n\nclass A:\n  def __init__(self):\n    ...\n    \n  @staticmethods\n  def function(str):\n    return function(str)\n  \nclass.function\n\n\n\nObject Methods\n\nclass PackageName: \n  \"\"\"\n  Description\n  \"\"\"\n  def __init__(self, name: str, quality: str) -&gt; none:\n      self.name = name\n      self.quality = quality\n# create an object from this class\n\nx: PackageName = PackageName(name = 'ggplot', quality = 'high') #self becomes x\n\n\n\n\nDunder Methods\nHow should objects of a class behave for certain operations\n\nclass A: \n  ...\n  \n  def __add__(self,other):\n    return f'{self.name} + {other.name}'\n  \n\n\nx = A()\ny = A()\n\nprint(x + y)\n\n\n\nSubclass\nInheritance creates a hierarchy of classes\n\nAnimal -&gt; Bird and Cow\n\ntest with issubclass(Bird, Animal). Child classes get all properties from parent class.\n\nInheritance\nWe can use super() to refer to the upper level class (parent class in this case) If we first create a class, the function of the object class if inhereted to our created object.\n\nclass Animal(object class): \n  def __init__(self, weight):\n    self.weight = weight\n    \nclass Bird(Animal):\n  def _init__(self, weight): #override\n    super().__init__(weight)\n    # or Animal.__init__(self, weight)\n\n\n\nInheritance: Override\nWe don’t want all methods or variables from parent class. The interpreter first checks methods and objects in the subclass before it checks the parents, so we can just overwrite the objects in the subclass (or extend functionality). We have to use the same name for the method or other objects!\n\n\n\nAccess Modifiers\n\npublic: access through object\nprotected: only in subclass accessible\n\ncreate with self._name. Is used to mark internal use in class and subclass\n\nprivate: only in declaration of own class accessible\n\ncreate with self.__name. Python internally renames variable. Can’t be accessed in sub classes\n\n\n\nExample private attribute and private method:\n\nclass BankAccount:\n    def __init__(self, balance):\n        self.__balance = balance  # Private attribute\n\n    def __secret_method(self):  # Private method\n        print(\"This is a secret method!\")\n\n    def get_balance(self):\n        return self.__balance  # ✅ Allowed within the class\n\n# Trying to access private members\naccount = BankAccount(1000)\n# print(account.__balance)  # ❌ AttributeError\n# account.__secret_method()  # ❌ AttributeError\n\n# Accessing private members using name mangling (not recommended)\nprint(account._BankAccount__balance)  # ✅ Works, but discouraged\naccount._BankAccount__secret_method()  # ✅ Works, but discouraged\n\n\n\nExample protected attribute and protected method:\n\nclass Car:\n    def __init__(self, brand):\n        self._brand = brand  # Protected attribute\n\n    def _show_brand(self):  # Protected method\n        print(f\"Brand: {self._brand}\")\n\nclass SportsCar(Car):\n    def display(self):\n        print(f\"Sports Car Brand: {self._brand}\")  # ✅ Allowed in subclass\n\n# Accessing protected attributes and methods\nc = Car(\"Tesla\")\nprint(c._brand)  # ⚠️ Allowed but discouraged\nc._show_brand()  # ⚠️ Allowed but discouraged",
     "crumbs": [
       "Wiki",
       "Python",
@@ -804,7 +804,7 @@
     "href": "wiki/Python/basics.html#list-comprehension",
     "title": "Learning the Basics",
     "section": "List Comprehension",
-    "text": "List Comprehension\nSingle expression of for loop:\n\nx = [1,2,3,4,5,6]\nprint(x)\n\nx2 =[i**2 for i in x]\nprint(x2)\n\nx = [i**2 for i in x]\nprint(x)\n\n[1, 2, 3, 4, 5, 6]\n[1, 4, 9, 16, 25, 36]\n[1, 4, 9, 16, 25, 36]\n\n\nAdd conditions\n\nx = [1,2,3,4,5,6]\n\nx2 = [i**2 for i in x if i%2] #unequal numbers (&gt;0 equals true)\nprint(x2)\n\nx3 = [i**2 for i in x if not i%2] #equal numbers !(&gt;0 equals true)\nprint(x3)\n\nx4 = [i**2 if not i%2 else i-10 for i in x] #if else short-hand\nprint(x4)\n\n[1, 9, 25]\n[4, 16, 36]\n[-9, 4, -7, 16, -5, 36]\n\n\nNested Looops\n\nli = [[1,2,3],[22,33]]\n\nres = [element*2 for row in li for element in row] #simple list return\nres2 = [[element*2 for element in row] for row in li] #nested list return\nprint(res)\nprint('\\n')\nprint(res2)\n\n[2, 4, 6, 44, 66]\n\n\n[[2, 4, 6], [44, 66]]\n\n\nComprehension with tuples returns a generator but you can use unpacker *.\nDictionairy comprehension\nzip() returns list of tuples\n\n#turn into dict\nx = [1,2,4,5]\n\nd = {i:i for i in x}\nprint(d)\nd1 = {k:v for (k,v) in enumerate(x)}\nprint(d1)\n\nd2 = {k:v for (k,v) in zip(['a','b','c'],x)}\nprint(d2)\n\n{1: 1, 2: 2, 4: 4, 5: 5}\n{0: 1, 1: 2, 2: 4, 3: 5}\n{'a': 1, 'b': 2, 'c': 4}",
+    "text": "List Comprehension\nSingle expression of for loop:\n\nx = [1,2,3,4,5,6]\nprint(x)\n\nx2 =[i**2 for i in x]\nprint(x2)\n\nx = [i**2 for i in x]\nprint(x)\n\n[1, 2, 3, 4, 5, 6]\n[1, 4, 9, 16, 25, 36]\n[1, 4, 9, 16, 25, 36]\n\n\nAdd conditions\n\nx = [1,2,3,4,5,6]\n\nx2 = [i**2 for i in x if i%2] #unequal numbers (&gt;0 equals true)\nprint(x2)\n\nx3 = [i**2 for i in x if not i%2] #equal numbers !(&gt;0 equals true)\nprint(x3)\n\nx4 = [i**2 if not i%2 else i-10 for i in x] #if else short-hand\nprint(x4)\n\n[1, 9, 25]\n[4, 16, 36]\n[-9, 4, -7, 16, -5, 36]\n\n\nNested Looops\n\nli = [[1,2,3],[22,33]]\n\nres = [element*2 for row in li for element in row] #simple list return\nres2 = [[element*2 for element in row] for row in li] #nested list return\nprint(res)\nprint('\\n')\nprint(res2)\n\n[2, 4, 6, 44, 66]\n\n\n[[2, 4, 6], [44, 66]]\n\n\nComprehension with tuples returns a generator but you can use unpacker *.\n\nword_list = [\"apple\", \"banana\", \"cherry\", \"date\"]\n\n# Use list comprehension to add \"__\" to every entry\nmodified_list = [word + \"__\" for word in word_list]",
     "crumbs": [
       "Wiki",
       "Python",
@@ -816,7 +816,7 @@
     "href": "wiki/Python/basics.html#try-except",
     "title": "Learning the Basics",
     "section": "Try-Except",
-    "text": "Try-Except\nStrict order:\n\ntry:\nexcept: (optional if there is finally)\nelse: (optional, executed only if no exception is raised.)\nfinally: (optional if there is except, is executed always no matter what)\n\nfinally still breaks code if there is an error so everything after finally is not executed (if no exception is given).\nfinally is good for garbarge collection: delete used variable in try, close files etc. or to give message why something went wrong\n\n\n\ntry:\n  num = input('Enter a number: ')\n  frac = 1/int(num)\nexcept ValueError as e:\n  print('no number given:', e)\nexcept ZeroDivisionError:\n  print('can not divide by 0')\nexcept:\n  print('any other error happend')\nelse:\n  print(f'the fraction is: {frac}')\nfinally:\n  print('leaving try-except clause')\n\nExceptions are handled in order and once one is executed the reset is skipt including else statement. For example the second ZeroDivisionError will not be executed.\n\ntry:\n  num = input('Enter a number: ')\n  frac = 1/int(num)\nexcept (ValueError,ZeroDivisionError) as e:\n  print('no number given:', e)\nexcept ZeroDivisionError:\n  print('can not divide by 0')\nexcept:\n  print('any other error happend')\nelse:\n  print(f'the fraction is: {frac}')\nfinally:\n  print('leaving try-except clause')\n\nany other error happend\nleaving try-except clause\n\n\nThese examples are explicit Exceptions since we specifiy the excat error. If we use except Exception as e then this is implicit.\n\nCustomize and Raise Errors\nUsing the keyword raise we can raise an error:\nIf creating an own CustError class don’t inheritage from BaseException.\n\nclass CustError(Exception):\n  def __init__(self,message):\n    super().__init__(message)\n    \n    # customize error code..\n    self.errors = \"custom error\"\n\nif input('enter number: ') == '0': \n  raise CustError('customized error message')\n\ndef invert_value(val):\n  if type(val) != int:\n    raise ValueError('the given value is not of type integer.')\n  \n  return 1/val\n\ntry: \n  invert_value(19.2)\nexcept ValueError as e:\n  print(e)\n  \n  #returns our custome message",
+    "text": "Try-Except\nStrict order:\n\ntry:\nexcept: (optional if there is finally)\nelse: (optional, executed only if no exception is raised.)\nfinally: (optional if there is except, is executed always no matter what)\n\nfinally still breaks code if there is an error so everything after finally is not executed (if no exception is given).\nfinally is good for garbarge collection: delete used variable in try, close files etc. or to give message why something went wrong\n\n\n\ntry:\n  num = input('Enter a number: ')\n  frac = 1/int(num)\nexcept ValueError as e:\n  print('no number given:', e)\nexcept ZeroDivisionError:\n  print('can not divide by 0')\nexcept:\n  print('any other error happend')\nelse:\n  print(f'the fraction is: {frac}')\nfinally:\n  print('leaving try-except clause')\n\nExceptions are handled in order and once one is executed the reset is skipt including else statement. For example the second ZeroDivisionError will not be executed.\n\ntry:\n  num = input('Enter a number: ')\n  frac = 1/int(num)\nexcept (ValueError,ZeroDivisionError) as e:\n  print('no number given:', e)\nexcept ZeroDivisionError:\n  print('can not divide by 0')\nexcept:\n  print('any other error happend')\nelse:\n  print(f'the fraction is: {frac}')\nfinally:\n  print('leaving try-except clause')\n\nany other error happend\nleaving try-except clause\n\n\nThese examples are explicit Exceptions since we specifiy the excat error. If we use except Exception as e then this is implicit.\n\ndef strselect(string,key,p):\n    return_list = []\n    for i in string:\n        try:    \n            if i[p] == key:\n                return_list.append(i)\n        except IndexError as e:\n            print(\"string index out of range\")\n    return return_list\n\n\n#possible function call:\nprint(strselect([\"hello\", \"of\", \"help\", \"world\"], key = \"l\", p = 2))\n\nstring index out of range\n['hello', 'help']\n\n\n\nCustomize and Raise Errors\nUsing the keyword raise we can raise an error:\nIf creating an own CustError class don’t inheritage from BaseException.\n\nclass CustError(Exception):\n  def __init__(self,message):\n    super().__init__(message)\n    \n    # customize error code..\n    self.errors = \"custom error\"\n\nif input('enter number: ') == '0': \n  raise CustError('customized error message')\n\ndef invert_value(val):\n  if type(val) != int:\n    raise ValueError('the given value is not of type integer.')\n  \n  return 1/val\n\ntry: \n  invert_value(19.2)\nexcept ValueError as e:\n  print(e)\n  \n  #returns our custome message",
     "crumbs": [
       "Wiki",
       "Python",
@@ -828,11 +828,171 @@
     "href": "wiki/Python/basics.html#generator",
     "title": "Learning the Basics",
     "section": "Generator",
-    "text": "Generator\nIterator: \nIn for i in li: the keyword for creates an iterator and passes the provided list. The iterator points to the first element of the list and the object is returned. The we call the __next__() method of this object to get the second object in li until __next__() raises an StopIteration exception\n\nx = list(range(9))\n\n\nitr = iter(x)\n\nitr.__next__()\nitr.__next__()\nprint('-'*10)\n# Iterator remembers current position so for loop will only print remaining i's\nfor i in itr: \n  print(i)\n\n# raises error\n#itr.__next__()\n\n----------\n2\n3\n4\n5\n6\n7\n8\n\n\n\nConcept of Generator\nEach iteration is called on demand and not at the start: saving memory (lazy evaluation)\n\nUses yield keyword instead of return and returns a generator iterator.\nBreaks at each yield but remembers where it was and can be continuied until StopIterator is raised\ncan be written as generator expression without yield: (x**2 for x in range(4))\n\n\n\ndef my_sum(x):\n  \n  return x + 2\n\ndef my_sum_gen(x):\n  \n  y = x \n  while True:\n    \n    yield y + 2 \n    yield y + 5\n    \n\nr2 = my_sum_gen(7)\n\nprint(next(r2))\nprint(next(r2))\n\n9\n12\n\n\nExample\n“In ordered large list are there values smaller than 0?”\n\nk = range(1_000_000)\nany(x &lt; 0 for x in k)\n\nFalse",
+    "text": "Generator\nIterable\nObjects that implements the __iter__() method and returns an iterator Examples: lists,tuples, sets, strings\n\n# Iterable object (list)\nmy_list = [1, 2, 3]\n\n# Create an iterator from the iterable\nmy_iterator = iter(my_list)\n\n# Checking if the iterator is an iterable\nprint(isinstance(my_iterator, Iterable))  # True (because an iterator is iterable)\n\n# Iterating through the iterator\nprint(next(my_iterator))  # Output: 1\nprint(next(my_iterator))  # Output: 2\nprint(next(my_iterator))  # Output: 3\n\n# The following call will raise StopIteration as all items are exhausted\n# print(next(my_iterator))  # StopIteration\n\nIterator: \nIn for i in li: the keyword for creates an iterator and passes the provided list (iterable). The iterator points to the first element of the list and the object is returned. The we call the __next__() method of this object to get the second object in li until __next__() raises an StopIteration exception. An iterator is always an iterable but not all iterables are iterators\n\nstr, lists, tuples, sets, dictionaries, ranges, files, generators\n\n\nx = list(range(9))\n\n\nitr = iter(x)\n\nitr.__next__()\nitr.__next__()\nprint('-'*10)\n# Iterator remembers current position so for loop will only print remaining i's\nfor i in itr: \n  print(i)\n\n# raises error\n#itr.__next__()\n\n----------\n2\n3\n4\n5\n6\n7\n8\n\n\n\n# A generator expression\ngen_expr = (x * 2 for x in range(5))\n\nnext(gen_expr)\n\n\nnon-Iterable\na non-iterable object is an object that cannot be looped over:\n\nint, float, bool, complex, none\n\n\n\nConcept of Generator (Generator Function)\nEach iteration is called on demand and not at the start: saving memory (lazy evaluation)\n\nUses yield keyword instead of return and returns a generator iterator.\nBreaks at each yield but remembers where it was and can be continuied until StopIterator is raised\ncan be written as generator expression without yield: (x**2 for x in range(4))\n\n\n\ndef my_sum(x):\n  \n  return x + 2\n\ndef my_sum_gen(x):\n  \n  y = x \n  while True:\n    \n    yield y + 2 \n    yield y + 5\n    \n\nr2 = my_sum_gen(7)\n\nprint(next(r2))\nprint(next(r2))\n\n9\n12\n\n\nExample\n“In ordered large list are there values smaller than 0?”\n\nk = range(1_000_000)\nany(x &lt; 0 for x in k)\n\nFalse\n\n\n\n# A generator function\ndef my_generator():\n    yield 1\n    yield 2\n    yield 3\n\n# Create a generator object\ngen = my_generator()\n\n# Using the generator object in a for loop (iteration)\nfor value in gen:\n    print(value)\n\n1\n2\n3",
     "crumbs": [
       "Wiki",
       "Python",
       "Basics"
     ]
+  },
+  {
+    "objectID": "wiki/Python/basics.html#decorator-not-in-exam-225",
+    "href": "wiki/Python/basics.html#decorator-not-in-exam-225",
+    "title": "Learning the Basics",
+    "section": "Decorator (not in exam) 2:25",
+    "text": "Decorator (not in exam) 2:25\nFunction can be called from other function",
+    "crumbs": [
+      "Wiki",
+      "Python",
+      "Basics"
+    ]
+  },
+  {
+    "objectID": "wiki/Python/basics.html#non-sequence-types",
+    "href": "wiki/Python/basics.html#non-sequence-types",
+    "title": "Learning the Basics",
+    "section": "Non-Sequence Types",
+    "text": "Non-Sequence Types\nIn Python, non-sequence types are objects that do not store elements in a specific order and do not support indexing or slicing.\n\nSet, Dictionary, Numbers(int,float, complex), bool, None",
+    "crumbs": [
+      "Wiki",
+      "Python",
+      "Basics"
+    ]
+  },
+  {
+    "objectID": "wiki/Python/basics.html#dictionnary",
+    "href": "wiki/Python/basics.html#dictionnary",
+    "title": "Learning the Basics",
+    "section": "Dictionnary",
+    "text": "Dictionnary\n\ninfo = {\"name\": \"Alice\", \"age\": 30}\nfor key in info:\n    print(key)  # Output: name, age\n\n# Iterating over keys and values\nfor key, value in info.items():\n    print(key, value)  # Output: name Alice, age 30\n\n\nExam exercise\n\n# Example list\nmy_list = [10, 20, 30, 40, 50]\n\n# Initialize an empty dictionary\nmydict = {}\n\n# Iterate over the list using enumerate\nfor index, value in enumerate(my_list):\n    # Add the index and value to the dictionary\n    mydict[index] = value\n\n# Print the dictionary to verify the result\nprint(mydict)\n\n\nDict comprehension\n\n# Create the dictionary using dictionary comprehension\nmydict = {index: value for index, value in enumerate(my_list)}\n\n\n\n\nexercise illias\n\nq_dict = {'idx': [],'qm':[], 'cat': []}\n\n\nfor idx, value in enumerate(q):\n    q_dict['idx'].append(idx)\n    q_dict['qm'].append(value)\n\n    # you can also use if, elif, else\n    # if value &lt; 0.2\n    # elif value &lt; 0.4\n    # elif &lt; 0.6....\n    match value:\n        case value if 0.2 &gt; value &gt;= 0:\n            q_dict['cat'].append('bad')\n        case value if 0.4 &gt; value &gt;= 0.2:\n            q_dict['cat'].append('weak')\n        case value if 0.6 &gt; value &gt;= 0.4:\n            q_dict['cat'].append('balanced')\n        case value if 0.6 &lt;= value &lt; 0.8:\n            q_dict['cat'].append('good')\n        case value if 0.8 &lt;= value &lt;= 1:\n            q_dict['cat'].append('very good')",
+    "crumbs": [
+      "Wiki",
+      "Python",
+      "Basics"
+    ]
+  },
+  {
+    "objectID": "wiki/Python/basics.html#modules",
+    "href": "wiki/Python/basics.html#modules",
+    "title": "Learning the Basics",
+    "section": "Modules",
+    "text": "Modules\npaths when import:\n\nthe current script sets the root for the ide but not for the terminal.\nwith .. you can move up in the folder hierarchy.\ninstead of / or \\ python uses .\nfrom math import * imports everything and you can refer to the function without math.\n\nnot a good style since it can cause problems",
+    "crumbs": [
+      "Wiki",
+      "Python",
+      "Basics"
+    ]
+  },
+  {
+    "objectID": "wiki/Python/basics.html#pycharm",
+    "href": "wiki/Python/basics.html#pycharm",
+    "title": "Learning the Basics",
+    "section": "",
+    "text": "Use # %% Testto create executable blocks",
+    "crumbs": [
+      "Wiki",
+      "Python",
+      "Basics"
+    ]
+  },
+  {
+    "objectID": "wiki/Python/basics.html#dictionairy-comprehension",
+    "href": "wiki/Python/basics.html#dictionairy-comprehension",
+    "title": "Learning the Basics",
+    "section": "Dictionairy comprehension",
+    "text": "Dictionairy comprehension\nzip() returns list of tuples\n\n#turn into dict\nx = [1,2,4,5]\n\nd = {i:i for i in x}\nprint(d)\nd1 = {k:v for (k,v) in enumerate(x)}\nprint(d1)\n\nd2 = {k:v for (k,v) in zip(['a','b','c'],x)}\nprint(d2)\n\n{1: 1, 2: 2, 4: 4, 5: 5}\n{0: 1, 1: 2, 2: 4, 3: 5}\n{'a': 1, 'b': 2, 'c': 4}\n\n\n\nfrom random import sample\n\nclass Stream:\n    def __init__(self, id):\n        self.my_id = id\n    \n    def __repr__(self):\n        return f\"Stream obj: {self.my_id}\"\n\n# Create 10 stream objects with random IDs (e.g., from 1 to 100)\nstream_objects = [Stream(id) for id in sample(range(1, 101), 10)]\n\n# Print each stream object using unpack operator \nprint(*stream_objects, sep='\\n')\n\nStream obj: 40\nStream obj: 7\nStream obj: 91\nStream obj: 11\nStream obj: 71\nStream obj: 82\nStream obj: 39\nStream obj: 15\nStream obj: 45\nStream obj: 73",
+    "crumbs": [
+      "Wiki",
+      "Python",
+      "Basics"
+    ]
+  },
+  {
+    "objectID": "wiki/Python/basics.html#largest-number-delete-if-in-last-position",
+    "href": "wiki/Python/basics.html#largest-number-delete-if-in-last-position",
+    "title": "Learning the Basics",
+    "section": "Largest number: delete if in last position",
+    "text": "Largest number: delete if in last position\n\nfor i in numbers[:-1]: #go through numbers except last \n    if i == max(numbers):\n        break #exit loop: max number not last position\nelse: #is executed only if for loop comes to end\n    numbers.pop() #removes last number",
+    "crumbs": [
+      "Wiki",
+      "Python",
+      "Basics"
+    ]
+  },
+  {
+    "objectID": "wiki/Python/basics.html#oop-buildings",
+    "href": "wiki/Python/basics.html#oop-buildings",
+    "title": "Learning the Basics",
+    "section": "OOP Buildings",
+    "text": "OOP Buildings\n\nclass Building:\n    # Class variables\n    _counter = 0\n    _id_container = []\n\n    def __init__(self, number_of_floors):\n        # Object variables\n        self._number_of_floors = number_of_floors\n        self._building_id = self._get_new_id()  # Assign building id at creation\n\n    def _get_new_id(self):\n        # Increment counter and create a new building ID\n        Building._counter += 1\n        building_id = Building._counter\n        if building_id in Building._id_container:\n            raise ValueError(f\"Building ID {building_id} is already taken.\")\n        Building._id_container.append(building_id)\n        return building_id\n\n    def get_number_of_floors(self):\n        # Return the number of floors for the building\n        return self._number_of_floors\n\nclass OfficeBuilding(Building):\n    def __init__(self, number_of_floors, number_of_working_places):\n        # Call parent class constructor to initialize number_of_floors and building_id\n        super().__init__(number_of_floors)\n        # Additional object variable for office buildings\n        self._number_of_working_places = number_of_working_places\n\n    def get_number_of_working_places(self):\n        # Return the number of working places for the office building\n        return self._number_of_working_places\n\n# Create a Building object with 10 floors\nbuilding_1 = Building(10)\n# Create an OfficeBuilding object with 15 floors and 200 working places\noffice_building_1 = OfficeBuilding(15, 200)\n\n# Print building IDs and number of floors for both buildings\nprint(f\"Building 1 ID: {building_1._building_id}, Floors: {building_1.get_number_of_floors()}\")\nprint(f\"Office Building 1 ID: {office_building_1._building_id}, Floors: {office_building_1.get_number_of_floors()}, Working Places: {office_building_1.get_number_of_working_places()}\")",
+    "crumbs": [
+      "Wiki",
+      "Python",
+      "Basics"
+    ]
+  },
+  {
+    "objectID": "wiki/Python/basics.html#lambda-divisor-3",
+    "href": "wiki/Python/basics.html#lambda-divisor-3",
+    "title": "Learning the Basics",
+    "section": "Lambda Divisor 3",
+    "text": "Lambda Divisor 3\n\n# Define the lambda function using conditional expression\ndivisible_by_3 = lambda num: True if num % 3 == 0 else False\n\n# Example list (even_list)\neven_list = [2, 3, 6, 8, 9, 12, 15, 20, 21, 24]\n\n# Use the lambda function to filter the numbers divisible by 3\ndivisible_by_3_list = [num for num in even_list if divisible_by_3(num)]\n\n# Print the resulting list\nprint(divisible_by_3_list)",
+    "crumbs": [
+      "Wiki",
+      "Python",
+      "Basics"
+    ]
+  },
+  {
+    "objectID": "wiki/Python/basics.html#lambda-dict",
+    "href": "wiki/Python/basics.html#lambda-dict",
+    "title": "Learning the Basics",
+    "section": "Lambda dict",
+    "text": "Lambda dict\n\n# Example list\neven_list = [2, 3, 6, 8, 9, 12, 15, 20, 21, 24]\n\n# Create dictionary using lambda function and dictionary comprehension\ndivisible_dict = {num: (lambda x: True if 98729 % x == 0 else False)(num) for num in even_list}\n\n# Print the resulting dictionary\nprint(divisible_dict)",
+    "crumbs": [
+      "Wiki",
+      "Python",
+      "Basics"
+    ]
+  },
+  {
+    "objectID": "wiki/Python/basics.html#customer",
+    "href": "wiki/Python/basics.html#customer",
+    "title": "Learning the Basics",
+    "section": "Customer",
+    "text": "Customer\n\n#!/usr/bin/ python\n\nclass Customer():\n\n    custType = 'standard'\n    custNo = 0\n\n    def __init__(self, first_name, last_name, company_name):\n        self.f_name = first_name\n        self.l_name = last_name\n        self.c_name = company_name\n        self.custNo = None                      # customer number\n        self.dist2hub = None                    # distance to storage hub\n        self.avgDelPerYear = None               # average no of deliveries per year\n        self.recCargoWeight = None              # recording (list) of delivery weights\n\n    def load_cust_data(self):\n        '''\n        The method 'load_cust_data()' initializes instance variables that are\n        initialized with none. These numbers have no effect on the program\n        extension, i.e. are irrelevant for the evaluation.\n        '''\n        self.custNo = Customer.custNo\n        self.dist2hub = (self.custNo+15)*15\n        self.avgDelPerYear = 1/self.dist2hub*2250\n        self.recCargoWeight = list(range(self.custNo))\n        Customer.custNo += 1                    # increment customer number\n\n    def correctCargoWeights(self,correction):\n        '''\n        For cargoWeight correction, the passed lambda function from the parameter\n        list is applied on all elements of the cargoWeight instance variable\n        (i.e. the parameter correction points to a lambda function).\n        '''\n        self.recCargoWeight = list(map(correction, self.recCargoWeight))\n\n\nExample of Use\n\n# Create a new Customer object\ncustomer1 = Customer(\"John\", \"Doe\", \"ABC Corp\")\n\n# Load customer data\ncustomer1.load_cust_data()\n\n# Print customer details\nprint(f\"Customer {customer1.f_name} {customer1.l_name} has ID {customer1.custNo}\")\nprint(f\"Distance to Hub: {customer1.dist2hub}\")\nprint(f\"Average Deliveries per Year: {customer1.avgDelPerYear}\")\nprint(f\"Cargo Weights: {customer1.recCargoWeight}\")\n\n# Correct cargo weights using a lambda function (e.g., multiplying each by 2)\ncustomer1.correctCargoWeights(lambda x: x * 2)\n\n# Print corrected cargo weights\nprint(f\"Corrected Cargo Weights: {customer1.recCargoWeight}\")\n\nCustomer John Doe has ID 0 Distance to Hub: 225 Average Deliveries per Year: 10.0 Cargo Weights: [0] Corrected Cargo Weights: [0]\n\n\nSportCustomer in different file\n\n# Assuming that SportCustomer class should inherit from Customer (or any base class)\nfrom customer import Customer\n\nclass SportCustomer(Customer):\n    def __init__(self, first_name, last_name, company_name):\n        # Initialize the parent class (Customer)\n        super().__init__(first_name, last_name, company_name)\n        self.priority = None  # Initialize the priority instance variable\n\n    def setPriority(self, priority):\n        \"\"\"\n        Sets the 'priority' instance variable.\n        Raises a ValueError if the passed priority is greater than 100.\n        \"\"\"\n        if priority &gt; 100:\n            raise ValueError(\"Priority value cannot be greater than 100\")\n        self.priority = priority",
+    "crumbs": [
+      "Wiki",
+      "Python",
+      "Basics"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Willkommen auf meiner Webseite",
+    "section": "",
+    "text": "Willkommen auf meiner Webseite\nHier findest du mehr Infos über mich, wie auch Beschreibungen meiner bisherigen Projekte. Für Fragen bin ich erreichbar per Email."
+  },
+  {
+    "objectID": "posts/Semdif/index.html",
+    "href": "posts/Semdif/index.html",
+    "title": "Visualizing Semantic Difference Scales",
+    "section": "",
+    "text": "A common way to test user experience of a product of app is to use semantic difference scales where adjectives of for example opposite meaning are placed compared. The customer must chose to what degree one of the certain adjectives is more suited.\n\n\nUser Experience Questionnaire is a typical questionnaire used for this purpose.\n\nLaugwitz, B., Held, T., & Schrepp, M. (2008). Construction and evaluation of a user experience questionnaire. In HCI and Usability for Education and &gt;Work: 4th Symposium of the Workgroup Human-Computer Interaction and Usability Engineering of the Austrian Computer Society, USAB 2008, Graz, Austria, &gt;November 20-21, 2008. Proceedings 4 (pp. 63-76). Springer Berlin Heidelberg.\n\n\n\n\nExample Questionnaire: UEQ\n\n\n\n\n\n\n\n\nSemantic Difference with 95% Confidence intervalls\n\n\nCode here"
+  },
+  {
+    "objectID": "posts/Semdif/index.html#example",
+    "href": "posts/Semdif/index.html#example",
+    "title": "Visualizing Semantic Difference Scales",
+    "section": "",
+    "text": "User Experience Questionnaire is a typical questionnaire used for this purpose.\n\nLaugwitz, B., Held, T., & Schrepp, M. (2008). Construction and evaluation of a user experience questionnaire. In HCI and Usability for Education and &gt;Work: 4th Symposium of the Workgroup Human-Computer Interaction and Usability Engineering of the Austrian Computer Society, USAB 2008, Graz, Austria, &gt;November 20-21, 2008. Proceedings 4 (pp. 63-76). Springer Berlin Heidelberg.\n\n\n\n\nExample Questionnaire: UEQ"
+  },
+  {
+    "objectID": "posts/Semdif/index.html#visualization-using-ggplot2",
+    "href": "posts/Semdif/index.html#visualization-using-ggplot2",
+    "title": "Visualizing Semantic Difference Scales",
+    "section": "",
+    "text": "Semantic Difference with 95% Confidence intervalls\n\n\nCode here"
   }
 ]

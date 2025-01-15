@@ -3,6 +3,10 @@ title: 'Learning the Basics'
 code-fold: false
 
 ---
+## Pycharm 
+
+Use `# %% Test `to create executable blocks
+
 ## Namespace
 
 - *built-in*: all objects provided by python
@@ -31,8 +35,9 @@ Inside a function you can access a global object via the keyword `global`. You c
 The keyword `nonlocal` will access a variable in the next higher namespace. 
 
 ## Scope 
+
 Scope of an object refers to the code section from which an object is accessible.
-***
+
 
 ## Indexing
 
@@ -54,6 +59,15 @@ a[-1::-1]   #equal to a[::-1]
 a[:-2] #-2 is index of 4 but not included
 
 a[:-2:-1]
+
+# Print last string of language
+L = ["Mojo", "is", "a", "language"]
+print(L[3][-1:])
+
+# Print up to last string in last element
+L = ["Mojo", "is", "a", "language"]
+print(L[3][:-1])
+
 ```
 
 2D Lists return first line
@@ -113,7 +127,16 @@ for idx, value in enumerate(numbers):
 
 ```
 
-----
+Using `range(start, stop, step)` in for loop we can reverse the steps with -1. 
+
+```{python}
+#| eval: false
+
+for i in range(5,0,-1):
+  print(i)
+```
+
+
 
 ## Functions
 
@@ -151,6 +174,7 @@ a,b,*c = 3,4,5,6 # Works: assign all remaining var to c
 ```
 
 `*` packs elements into a list. Use `*` again to unpack:
+
 ```{python}
 #|eval: false
 
@@ -158,6 +182,7 @@ print(a,b,*c)
 ```
 
 This can be done in function parameter aswell: 
+
 ```{python}
 #|eval: false
 dic = {'a':1, 'b':3}
@@ -190,6 +215,7 @@ def strcut(*str,n):
 Else is executed after the for loop is over (more specific after the StopIteration is raised by the iterator) but if we use break (the loop doesn't come to and end: else is not executed.) The else keyword in try-except works similar but if try reaches it's end.  
 
 If for example we search a list for a flag item we can use else for the case that the flag item is not in the list.
+
 ```{python}
 #| eval: false
 mylist = [1,2,3,4]
@@ -209,6 +235,7 @@ else:
 ### Recursion
 
 Simple recursion of factorial()
+
 ```{python}
 #|eval: false
 
@@ -220,7 +247,85 @@ def fac(n):
 ```
 
 
-***
+### String split function
+
+```{python}
+#| eval: false
+
+def split(string, delimiter):
+  
+  result_list = []
+  
+  start = 0
+  for index, char in enumerate(string):
+      if char == delimiter:
+          result_list.append(string[start:index])
+          start = index + 1
+  if start == 0:
+      return [string]
+  result_list.append(string[start:index + 1])
+    
+  return result_list
+
+```
+
+### String join function
+
+takes an iterable (list, tuple) and concatenates its elements into a single string. The seperator is provided as string from which join is called
+
+```{python}
+l = ['1','2','3']
+print('#'.join(l))
+```
+
+If int in list:
+
+```{python}
+l = [1,2,3]
+print('#'.join(map(str,l)))
+```
+
+### *args and **kwargs
+
+They allow you to write functions that can accept an arbitrary number of arguments, making your code more flexible.
+
+*args collects arguments into a tuple:
+
+```{python}
+#| eval: false
+def print_numbers(*args):
+    for number in args:
+        print(number)
+
+print_numbers(1, 2, 3, 4)
+
+```
+
+**kwargs collects arguments into a dictionary
+
+```{python}
+
+def print_student_info(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+
+print_student_info(name="Alice", age=20, grade="A")
+
+```
+
+Combining both args and kwargs 
+
+```{python}
+#|eval: false
+def print_info(name, *args, **kwargs):
+    print(f"Name: {name}")
+    print("Additional info:", args)
+    print("Details:", kwargs)
+
+print_info("Alice", 25, "Engineer", country="USA", city="New York")
+
+```
+
 
 ## List
 
@@ -237,13 +342,97 @@ li += [4]
 [2] + [1] ## -> [2,1]
 ```
 
+## Non-Sequence Types 
 
-***
+In Python, non-sequence types are objects that do not store elements in a specific order and do not support indexing or slicing.
+
+- Set, Dictionary, Numbers(int,float, complex), bool, None
+
+## Dictionnary 
+
+```{python}
+#| eval: false
+
+info = {"name": "Alice", "age": 30}
+for key in info:
+    print(key)  # Output: name, age
+
+# Iterating over keys and values
+for key, value in info.items():
+    print(key, value)  # Output: name Alice, age 30
+
+```
+
+### Exam exercise
+
+```{python}
+#| eval: false
+
+
+# Example list
+my_list = [10, 20, 30, 40, 50]
+
+# Initialize an empty dictionary
+mydict = {}
+
+# Iterate over the list using enumerate
+for index, value in enumerate(my_list):
+    # Add the index and value to the dictionary
+    mydict[index] = value
+
+# Print the dictionary to verify the result
+print(mydict)
+
+```
+
+#### Dict comprehension
+
+```{python}
+#| eval: false
+
+# Create the dictionary using dictionary comprehension
+mydict = {index: value for index, value in enumerate(my_list)}
+
+```
+
+### exercise illias
+
+```{python}
+#| eval: false
+q_dict = {'idx': [],'qm':[], 'cat': []}
+
+
+for idx, value in enumerate(q):
+    q_dict['idx'].append(idx)
+    q_dict['qm'].append(value)
+
+    # you can also use if, elif, else
+    # if value < 0.2
+    # elif value < 0.4
+    # elif < 0.6....
+    match value:
+        case value if 0.2 > value >= 0:
+            q_dict['cat'].append('bad')
+        case value if 0.4 > value >= 0.2:
+            q_dict['cat'].append('weak')
+        case value if 0.6 > value >= 0.4:
+            q_dict['cat'].append('balanced')
+        case value if 0.6 <= value < 0.8:
+            q_dict['cat'].append('good')
+        case value if 0.8 <= value <= 1:
+            q_dict['cat'].append('very good')
+
+
+
+```
+
 
 ## String formating
+
 There are multiple ways here are two: 
 
 ### Formatted String Literals
+
 Start with an f or F. Allows including variable names with {}. 
 
 Example: right align and use 5 spaces including var1
@@ -282,7 +471,41 @@ print("hello {0[txt]} {0[num]}".format(dict))
 
 ```
 
-***
+### C-style string format
+
+```{python}
+#| eval: false
+
+first_name = input("Enter your first name: ") # your input: Anna
+last_name = input("Enter your last name: ") # your input: Meier
+birth_year = input("Enter your birth year: ") # your input: 1998
+username = "%s%s%s" % (first_name[0].lower(), last_name[:3].lower(), birth_year[-2:])
+print("Generated username: %s" % username)
+
+#output: Generated username: amei98
+```
+
+### test whether letter of string is digit or str:
+
+Use `string.isdigit()` and `string.isalpha()`
+
+- '.', '(space)' or ',' are not seen as letters
+
+```{python}
+#| eval: false
+
+string = 'Python 3.2'
+
+cnt_digits = 0
+cnt_str = 0
+
+for s in string:
+  if s.isdigit():
+    cnt_digits += 1 
+  elif s.isalpha():
+    cnt_str + = 1
+```
+
 
 ## File Handling
 
@@ -317,6 +540,10 @@ Has several elements. Functions are called methods (inside a class)
 - __init__(): constructor (build) for objects
 - variables: Class and object
 - self: reference to the object that is created
+- class variable:
+  -A class variable in Python is a variable that is shared among all instances of a class. It is defined *within the class but outside of any instance methods*. Class variables are commonly used when a value needs to be *consistent across all instances of a class*.
+  - In methods you can access a class variable with for example: `Customer.class_variable_name` no self. is needed.
+
 
 ### Class Methods 
 
@@ -387,10 +614,12 @@ Inheritance creates a hierarchy of classes
 - Animal -> Bird and Cow
 
 test with `issubclass(Bird, Animal)`. Child classes get all properties from parent class. 
+
 #### Inheritance
 
 We can use `super()` to refer to the upper level class (parent class in this case)
 If we first create a class, the function of the object class if inhereted to our created object. 
+
 ```{python}
 #|eval: false
 
@@ -414,7 +643,58 @@ The interpreter first checks methods and objects in the subclass before it check
 
 - public: access through object
 - protected: only in subclass accessible
+  - create with self._name. Is used to mark internal use in class and subclass 
 - private: only in declaration of own class accessible
+  - create with self.__name. Python internally renames variable. Can't be accessed in sub classes
+  
+#### Example private attribute and private method:
+
+```{python}
+#| eval: false
+
+class BankAccount:
+    def __init__(self, balance):
+        self.__balance = balance  # Private attribute
+
+    def __secret_method(self):  # Private method
+        print("This is a secret method!")
+
+    def get_balance(self):
+        return self.__balance  # ✅ Allowed within the class
+
+# Trying to access private members
+account = BankAccount(1000)
+# print(account.__balance)  # ❌ AttributeError
+# account.__secret_method()  # ❌ AttributeError
+
+# Accessing private members using name mangling (not recommended)
+print(account._BankAccount__balance)  # ✅ Works, but discouraged
+account._BankAccount__secret_method()  # ✅ Works, but discouraged
+
+```
+
+#### Example protected attribute and protected method:
+
+```{python}
+#| eval: false
+class Car:
+    def __init__(self, brand):
+        self._brand = brand  # Protected attribute
+
+    def _show_brand(self):  # Protected method
+        print(f"Brand: {self._brand}")
+
+class SportsCar(Car):
+    def display(self):
+        print(f"Sports Car Brand: {self._brand}")  # ✅ Allowed in subclass
+
+# Accessing protected attributes and methods
+c = Car("Tesla")
+print(c._brand)  # ⚠️ Allowed but discouraged
+c._show_brand()  # ⚠️ Allowed but discouraged
+
+```
+
 
 
 ## Mulitple inheritance
@@ -424,14 +704,14 @@ Multiple parents. Can cause problems for the interpreter if same methods twice.
 Solved with Method Resolution Order (MRO): tries to find a linearization of all classes and depends on the order of inheritance. It doesn't find a feasible solution every time. Sometimes it helps to swap order. 
 
 
-# Modules
+## Modules
 
 paths when import: 
 
 - the current script sets the root for the ide but not for the terminal.
 - with `..` you can move up in the folder hierarchy. 
 - instead of / or \\ python uses . 
-- `from math import *` importes everything and you can refer to the function without `math.`
+- `from math import *` imports everything and you can refer to the function without `math.`
   - not a good style since it can cause problems
   
 ## If name = main
@@ -619,6 +899,7 @@ print(x)
 ```
 
 Add conditions
+
 ```{python}
 x = [1,2,3,4,5,6]
 
@@ -633,6 +914,7 @@ print(x4)
 ```
 
 Nested Looops
+
 ```{python}
 li = [[1,2,3],[22,33]]
 
@@ -644,9 +926,19 @@ print(res2)
 ```
 Comprehension with tuples returns a generator but you can use unpacker `*`. 
 
-Dictionairy comprehension
+
+```{python}
+word_list = ["apple", "banana", "cherry", "date"]
+
+# Use list comprehension to add "__" to every entry
+modified_list = [word + "__" for word in word_list]
+```
+
+
+## Dictionairy comprehension
 
 `zip()` returns list of tuples
+
 ```{python}
 #turn into dict
 x = [1,2,4,5]
@@ -658,6 +950,24 @@ print(d1)
 
 d2 = {k:v for (k,v) in zip(['a','b','c'],x)}
 print(d2)
+```
+
+```{python}
+from random import sample
+
+class Stream:
+    def __init__(self, id):
+        self.my_id = id
+    
+    def __repr__(self):
+        return f"Stream obj: {self.my_id}"
+
+# Create 10 stream objects with random IDs (e.g., from 1 to 100)
+stream_objects = [Stream(id) for id in sample(range(1, 101), 10)]
+
+# Print each stream object using unpack operator 
+print(*stream_objects, sep='\n')
+
 ```
 
 ## Try-Except
@@ -692,6 +1002,7 @@ finally:
 
 Exceptions are handled in order and once one is executed the reset is skipt including else statement.
 For example the second ZeroDivisionError will not be executed.
+
 ```{python}
 try:
   num = input('Enter a number: ')
@@ -710,6 +1021,23 @@ finally:
 ```
 
 These examples are explicit Exceptions since we specifiy the excat error. If we use `except Exception as e` then this is implicit.
+
+```{python}
+def strselect(string,key,p):
+    return_list = []
+    for i in string:
+        try:    
+            if i[p] == key:
+                return_list.append(i)
+        except IndexError as e:
+            print("string index out of range")
+    return return_list
+
+
+#possible function call:
+print(strselect(["hello", "of", "help", "world"], key = "l", p = 2))
+
+```
 
 ### Customize and Raise Errors
 
@@ -747,10 +1075,37 @@ except ValueError as e:
 
 ## Generator
 
+*Iterable*
+
+Objects that implements the `__iter__()` method and returns an iterator 
+Examples: lists,tuples, sets, strings
+
+```{python}
+#| eval: false
+#| 
+# Iterable object (list)
+my_list = [1, 2, 3]
+
+# Create an iterator from the iterable
+my_iterator = iter(my_list)
+
+# Checking if the iterator is an iterable
+print(isinstance(my_iterator, Iterable))  # True (because an iterator is iterable)
+
+# Iterating through the iterator
+print(next(my_iterator))  # Output: 1
+print(next(my_iterator))  # Output: 2
+print(next(my_iterator))  # Output: 3
+
+# The following call will raise StopIteration as all items are exhausted
+# print(next(my_iterator))  # StopIteration
+```
+
 *Iterator: *
 
-In `for i in li:` the keyword `for` creates an iterator and passes the provided list. The iterator points to the first element of the list and the object is returned. The we call the `__next__()` method of this object to get the second object in li until `__next__()` raises an *StopIteration* exception
+In `for i in li:` the keyword `for` creates an iterator and passes the provided list (iterable). The iterator points to the first element of the list and the object is returned. The we call the `__next__()` method of this object to get the second object in li until `__next__()` raises an *StopIteration* exception. An iterator is always an iterable but not all iterables are iterators
 
+- str, lists, tuples, sets, dictionaries, ranges, files, generators
 
 
 ```{python}
@@ -772,7 +1127,23 @@ for i in itr:
 
 ```
 
-### Concept of Generator 
+```{python}
+#| eval: false
+
+# A generator expression
+gen_expr = (x * 2 for x in range(5))
+
+next(gen_expr)
+```
+
+### non-Iterable
+
+a non-iterable object is an object that cannot be looped over:
+
+- int, float, bool, complex, none
+
+
+### Concept of Generator (Generator Function)
 
 Each iteration is called on demand and not at the start: saving memory (lazy evaluation)
 
@@ -809,9 +1180,228 @@ k = range(1_000_000)
 any(x < 0 for x in k)
 ```
 
+```{python}
+# A generator function
+def my_generator():
+    yield 1
+    yield 2
+    yield 3
 
-## Decorator (not in exam) 2:20:00
+# Create a generator object
+gen = my_generator()
+
+# Using the generator object in a for loop (iteration)
+for value in gen:
+    print(value)
+
+```
 
 
+
+
+# Exercise Test
+
+## Largest number: delete if in last position
+
+```{python}
+#| eval: false
+
+for i in numbers[:-1]: #go through numbers except last 
+    if i == max(numbers):
+        break #exit loop: max number not last position
+else: #is executed only if for loop comes to end
+    numbers.pop() #removes last number
+
+```
+
+## OOP Buildings
+
+```{python}
+#| eval: false
+
+class Building:
+    # Class variables
+    _counter = 0
+    _id_container = []
+
+    def __init__(self, number_of_floors):
+        # Object variables
+        self._number_of_floors = number_of_floors
+        self._building_id = self._get_new_id()  # Assign building id at creation
+
+    def _get_new_id(self):
+        # Increment counter and create a new building ID
+        Building._counter += 1
+        building_id = Building._counter
+        if building_id in Building._id_container:
+            raise ValueError(f"Building ID {building_id} is already taken.")
+        Building._id_container.append(building_id)
+        return building_id
+
+    def get_number_of_floors(self):
+        # Return the number of floors for the building
+        return self._number_of_floors
+
+class OfficeBuilding(Building):
+    def __init__(self, number_of_floors, number_of_working_places):
+        # Call parent class constructor to initialize number_of_floors and building_id
+        super().__init__(number_of_floors)
+        # Additional object variable for office buildings
+        self._number_of_working_places = number_of_working_places
+
+    def get_number_of_working_places(self):
+        # Return the number of working places for the office building
+        return self._number_of_working_places
+
+# Create a Building object with 10 floors
+building_1 = Building(10)
+# Create an OfficeBuilding object with 15 floors and 200 working places
+office_building_1 = OfficeBuilding(15, 200)
+
+# Print building IDs and number of floors for both buildings
+print(f"Building 1 ID: {building_1._building_id}, Floors: {building_1.get_number_of_floors()}")
+print(f"Office Building 1 ID: {office_building_1._building_id}, Floors: {office_building_1.get_number_of_floors()}, Working Places: {office_building_1.get_number_of_working_places()}")
+
+```
+
+## Lambda Divisor 3 
+
+```{python}
+#| eval: false
+
+# Define the lambda function using conditional expression
+divisible_by_3 = lambda num: True if num % 3 == 0 else False
+
+# Example list (even_list)
+even_list = [2, 3, 6, 8, 9, 12, 15, 20, 21, 24]
+
+# Use the lambda function to filter the numbers divisible by 3
+divisible_by_3_list = [num for num in even_list if divisible_by_3(num)]
+
+# Print the resulting list
+print(divisible_by_3_list)
+
+```
+
+## Lambda dict
+
+```{python}
+#| eval: false
+
+# Example list
+even_list = [2, 3, 6, 8, 9, 12, 15, 20, 21, 24]
+
+# Create dictionary using lambda function and dictionary comprehension
+divisible_dict = {num: (lambda x: True if 98729 % x == 0 else False)(num) for num in even_list}
+
+# Print the resulting dictionary
+print(divisible_dict)
+
+```
+
+
+## Customer
+
+```{python}
+#|eval: false
+
+#!/usr/bin/ python
+
+class Customer():
+
+    custType = 'standard'
+    custNo = 0
+
+    def __init__(self, first_name, last_name, company_name):
+        self.f_name = first_name
+        self.l_name = last_name
+        self.c_name = company_name
+        self.custNo = None                      # customer number
+        self.dist2hub = None                    # distance to storage hub
+        self.avgDelPerYear = None               # average no of deliveries per year
+        self.recCargoWeight = None              # recording (list) of delivery weights
+
+    def load_cust_data(self):
+        '''
+        The method 'load_cust_data()' initializes instance variables that are
+        initialized with none. These numbers have no effect on the program
+        extension, i.e. are irrelevant for the evaluation.
+        '''
+        self.custNo = Customer.custNo
+        self.dist2hub = (self.custNo+15)*15
+        self.avgDelPerYear = 1/self.dist2hub*2250
+        self.recCargoWeight = list(range(self.custNo))
+        Customer.custNo += 1                    # increment customer number
+
+    def correctCargoWeights(self,correction):
+        '''
+        For cargoWeight correction, the passed lambda function from the parameter
+        list is applied on all elements of the cargoWeight instance variable
+        (i.e. the parameter correction points to a lambda function).
+        '''
+        self.recCargoWeight = list(map(correction, self.recCargoWeight))
+
+```
+
+### Example of Use
+
+```{python}
+#| eval: false
+
+# Create a new Customer object
+customer1 = Customer("John", "Doe", "ABC Corp")
+
+# Load customer data
+customer1.load_cust_data()
+
+# Print customer details
+print(f"Customer {customer1.f_name} {customer1.l_name} has ID {customer1.custNo}")
+print(f"Distance to Hub: {customer1.dist2hub}")
+print(f"Average Deliveries per Year: {customer1.avgDelPerYear}")
+print(f"Cargo Weights: {customer1.recCargoWeight}")
+
+# Correct cargo weights using a lambda function (e.g., multiplying each by 2)
+customer1.correctCargoWeights(lambda x: x * 2)
+
+# Print corrected cargo weights
+print(f"Corrected Cargo Weights: {customer1.recCargoWeight}")
+
+
+
+```
+
+Customer John Doe has ID 0
+Distance to Hub: 225
+Average Deliveries per Year: 10.0
+Cargo Weights: [0]
+Corrected Cargo Weights: [0]
+
+
+### SportCustomer in different file
+
+```{python}
+#| eval: false
+
+# Assuming that SportCustomer class should inherit from Customer (or any base class)
+from customer import Customer
+
+class SportCustomer(Customer):
+    def __init__(self, first_name, last_name, company_name):
+        # Initialize the parent class (Customer)
+        super().__init__(first_name, last_name, company_name)
+        self.priority = None  # Initialize the priority instance variable
+
+    def setPriority(self, priority):
+        """
+        Sets the 'priority' instance variable.
+        Raises a ValueError if the passed priority is greater than 100.
+        """
+        if priority > 100:
+            raise ValueError("Priority value cannot be greater than 100")
+        self.priority = priority
+
+
+
+```
 
 

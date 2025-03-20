@@ -51,6 +51,8 @@ website:
                href: wiki/Python/basics.qmd
              - text: 'Wrangling'
                href: wiki/Python/wrangling.qmd
+             - text: 'Retrueval Augmented Generation'
+               href: wiki/Python/rag.qmd
          - section: 'Statistics'
            href: wiki/Statistics/stats_start.qmd
            contents: 

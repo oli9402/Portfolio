@@ -994,5 +994,264 @@
     "title": "Visualizing Semantic Difference Scales",
     "section": "",
     "text": "Semantic Difference with 95% Confidence intervalls\n\n\nCode here"
+  },
+  {
+    "objectID": "posts/Presentation using Quarto/index.html",
+    "href": "posts/Presentation using Quarto/index.html",
+    "title": "Using Quarto for interactive Presentations",
+    "section": "",
+    "text": "In quarto for R environment we can create presentations that runs on revealjs. The rendered quarto file results in a HTML file that can be open in regular browsers and makes it great for sharing. Using scss the presentation can be customized. Using R packages like echarts4r we can use javascript tools for creating interactive plots. Compared to a dashboard this can be helpful to guide an audience through specific plots in a presentation style which can be easier to follow or communicate a certain message.\nAs an example here is a very simple presentation created: Link to fullscreen presentation\nUsing iframes we can incorporate the same presentation into this blog post but certain controls like F for fullscreen doesn’t work.\n\n\n\n\n\n\nControls in Iframe\n\n\n\nPress on the presentation displayed below and use right and left arrow keys to navigate."
+  },
+  {
+    "objectID": "wiki/Python/LLM.html",
+    "href": "wiki/Python/LLM.html",
+    "title": "LLM",
+    "section": "",
+    "text": "Source: Sebastian Raschka"
+  },
+  {
+    "objectID": "wiki/Python/LLM.html#intro",
+    "href": "wiki/Python/LLM.html#intro",
+    "title": "LLM",
+    "section": "Intro",
+    "text": "Intro\n\nLLMs have remarkable capabilities to understand, generate, and interpret human language. However, it’s important to clarify that when we say language models “under- stand,” we mean that they can process and generate text in ways that appear coher- ent and contextually relevant, not that they possess human-like consciousness or comprehension.\n\n\nLLMs have remarkable capabilities to understand, generate, and interpret human language. However, it’s important to clarify that when we say language models “under- stand,” we mean that they can process and generate text in ways that appear coher- ent and contextually relevant, not that they possess human-like consciousness or comprehension."
+  },
+  {
+    "objectID": "wiki/Python/rag.html",
+    "href": "wiki/Python/rag.html",
+    "title": "Retrieval Augmented Generation",
+    "section": "",
+    "text": "Sources:",
+    "crumbs": [
+      "Wiki",
+      "Python",
+      "Retrueval Augmented Generation"
+    ]
+  },
+  {
+    "objectID": "wiki/Python/rag.html#vector-databases",
+    "href": "wiki/Python/rag.html#vector-databases",
+    "title": "Retrieval Augmented Generation",
+    "section": "Vector Databases",
+    "text": "Vector Databases\n\nEfficiently store, index, and search high-dimensional data points (i.e. vectors).\nEach entry is represented as a vector in a multi-dimensional space.\nVector databases excel at retrieving semantically similar data points\nVector databases are computationally intensive but scaleable.\nWith similarity search relevant vectors are retrieved.\n\n\nVector databases, also known as similarity search engines or vector index databases, play a crucial role in the retrieval component of RAG by efficiently storing and retrieving these vector embeddings. They are specialized databases designed for retrieving vectors based on similarity, making them well-suited for scenarios where similarity between data points needs to be calculated quickly and accurately.",
+    "crumbs": [
+      "Wiki",
+      "Python",
+      "Retrueval Augmented Generation"
+    ]
+  },
+  {
+    "objectID": "wiki/Python/rag.html#embedding-model",
+    "href": "wiki/Python/rag.html#embedding-model",
+    "title": "Retrieval Augmented Generation",
+    "section": "Embedding model",
+    "text": "Embedding model\n\noften complex neural network: translating data into high.dimensional numerical vectors and effectively encode the data’s essential characteristics into vector embeddings",
+    "crumbs": [
+      "Wiki",
+      "Python",
+      "Retrueval Augmented Generation"
+    ]
+  },
+  {
+    "objectID": "wiki/Python/rag.html#use-cases",
+    "href": "wiki/Python/rag.html#use-cases",
+    "title": "Retrieval Augmented Generation",
+    "section": "Use Cases",
+    "text": "Use Cases\n\nRecommendation system: similarity search between user behavior (input, etc.) and vector space\nReal-time fraud detection\nMarket research: customer feedback -&gt; text embeddings -&gt; sentiment analysis and trend spotting",
+    "crumbs": [
+      "Wiki",
+      "Python",
+      "Retrueval Augmented Generation"
+    ]
+  },
+  {
+    "objectID": "wiki/Questionnaires/start.html",
+    "href": "wiki/Questionnaires/start.html",
+    "title": "Questionnaires",
+    "section": "",
+    "text": "Definition:\n\nIn theory, not verifiable by external observation or records.\nHas evaluative component\nHow strong agree or disagree\nIn contrast to beliefs (cognitive component): How healthy is a pizza?\nIn contrast to behavioral intentions: In the next 6 months, how likely is it that you will buy a car\n\n\n\nA psychological tendecy that is expressed by evaluating a particular entity with some degree of favor or disfavor\nAttitudes are Pre-existing: - Automatic activation of attitudes (retrievable: “file-drawer”) - stable and predictive of behaviors, resistant to persuasion\n\n\nIn survey big differences are found depending on how question is asked.\n\n\n\n\n“Making it up as you go along”\n\nindividuals do not typically possess true attitudes rather they construct opinion statements on the fly based on whatever considerations are momentarily salient\n\nSchwarz 2007: evaluative judgments formed on the spot rather than as trait-like dispositions\n\n\n\nAttitudes vs. attitude expressions\n\nAny single attitude measure will be an imperfect reflection of the underlying attitude\nAttitudes are unobservable, global evaluations of objects\n\nSome attitude expressions are construced on the spot, some are retrieved almost entirely intact from memory, others are a combination.\n\n\n\nNo attitudes, but contextualized construction of evaluations/judgments on the spot drawing on what is available to Respondent (R)\n\nStable attitudes = similar evalutions arising from R drwaing on similar inputs or the sam chronically accessible information.\nStrong attitudes = R drawing on highly accessible information -Context effects = R drawing on contexutal information when constructing evaluations -Nonattitude = Same number of conflicting information accessible to R at the same time\n\n\n\n\n\nSubject of questionnaire\nInterviewer\nInterview setting\nInstructions\nPictures that accompany the question\nWording of the question\nResponse options\nQuestion order\n\n\n\n\nAssimilation effects: Rs include prior question in interpreting/understanding the current item\nContrast effects: Rs exclude prior questions in interpreting and understanding the current item\n\n\n\n\nContext prompts the accessibility or retrieval of certain considerations (assimilation) or exclude the retrieval of certain considerations (contrast)\n\n\n\nThe inclusion/exclusion model Constructing targets and standards\n\n\n\n\nOnly ask specific question and if general question then asked them first.\n\n\n\n\n\nFast for R Fewer “don’t know” R like these scales\n\n\n\nAcquiesence Bias - R wants to be polite and agreeable - R might defer to higher status (yes sure) - R adopts a satisficing strategy (do just enough)\nMulti-barrled - multi information in statement\nDisagree end is ambigious\n\n\n\n\nHow certain are you of your views on abortion? - Very certain, somewhat certain, not very certain, not certain at all"
+  },
+  {
+    "objectID": "wiki/Questionnaires/start.html#traditional-view-on-attitude",
+    "href": "wiki/Questionnaires/start.html#traditional-view-on-attitude",
+    "title": "Questionnaires",
+    "section": "",
+    "text": "A psychological tendecy that is expressed by evaluating a particular entity with some degree of favor or disfavor\nAttitudes are Pre-existing: - Automatic activation of attitudes (retrievable: “file-drawer”) - stable and predictive of behaviors, resistant to persuasion\n\n\nIn survey big differences are found depending on how question is asked."
+  },
+  {
+    "objectID": "wiki/Questionnaires/start.html#alternative-view",
+    "href": "wiki/Questionnaires/start.html#alternative-view",
+    "title": "Questionnaires",
+    "section": "",
+    "text": "“Making it up as you go along”\n\nindividuals do not typically possess true attitudes rather they construct opinion statements on the fly based on whatever considerations are momentarily salient\n\nSchwarz 2007: evaluative judgments formed on the spot rather than as trait-like dispositions"
+  },
+  {
+    "objectID": "wiki/Questionnaires/start.html#rasinksis-way-resovling-these-divergent-views",
+    "href": "wiki/Questionnaires/start.html#rasinksis-way-resovling-these-divergent-views",
+    "title": "Questionnaires",
+    "section": "",
+    "text": "Attitudes vs. attitude expressions\n\nAny single attitude measure will be an imperfect reflection of the underlying attitude\nAttitudes are unobservable, global evaluations of objects\n\nSome attitude expressions are construced on the spot, some are retrieved almost entirely intact from memory, others are a combination."
+  },
+  {
+    "objectID": "wiki/Questionnaires/start.html#schwarz-resolving",
+    "href": "wiki/Questionnaires/start.html#schwarz-resolving",
+    "title": "Questionnaires",
+    "section": "",
+    "text": "No attitudes, but contextualized construction of evaluations/judgments on the spot drawing on what is available to Respondent (R)\n\nStable attitudes = similar evalutions arising from R drwaing on similar inputs or the sam chronically accessible information.\nStrong attitudes = R drawing on highly accessible information -Context effects = R drawing on contexutal information when constructing evaluations -Nonattitude = Same number of conflicting information accessible to R at the same time"
+  },
+  {
+    "objectID": "wiki/Questionnaires/start.html#context-effects",
+    "href": "wiki/Questionnaires/start.html#context-effects",
+    "title": "Questionnaires",
+    "section": "",
+    "text": "Subject of questionnaire\nInterviewer\nInterview setting\nInstructions\nPictures that accompany the question\nWording of the question\nResponse options\nQuestion order\n\n\n\n\nAssimilation effects: Rs include prior question in interpreting/understanding the current item\nContrast effects: Rs exclude prior questions in interpreting and understanding the current item\n\n\n\n\nContext prompts the accessibility or retrieval of certain considerations (assimilation) or exclude the retrieval of certain considerations (contrast)\n\n\n\nThe inclusion/exclusion model Constructing targets and standards"
+  },
+  {
+    "objectID": "wiki/Questionnaires/start.html#specific-vs.-general-evaluations",
+    "href": "wiki/Questionnaires/start.html#specific-vs.-general-evaluations",
+    "title": "Questionnaires",
+    "section": "",
+    "text": "Only ask specific question and if general question then asked them first."
+  },
+  {
+    "objectID": "wiki/Questionnaires/start.html#agree-disagree-scales-should-be-avoided",
+    "href": "wiki/Questionnaires/start.html#agree-disagree-scales-should-be-avoided",
+    "title": "Questionnaires",
+    "section": "",
+    "text": "Fast for R Fewer “don’t know” R like these scales\n\n\n\nAcquiesence Bias - R wants to be polite and agreeable - R might defer to higher status (yes sure) - R adopts a satisficing strategy (do just enough)\nMulti-barrled - multi information in statement\nDisagree end is ambigious"
+  },
+  {
+    "objectID": "wiki/Questionnaires/start.html#construct-specific-repsonse-choices-recommended",
+    "href": "wiki/Questionnaires/start.html#construct-specific-repsonse-choices-recommended",
+    "title": "Questionnaires",
+    "section": "",
+    "text": "How certain are you of your views on abortion? - Very certain, somewhat certain, not very certain, not certain at all"
+  },
+  {
+    "objectID": "wiki/Python/rag.html#retrieval-component",
+    "href": "wiki/Python/rag.html#retrieval-component",
+    "title": "Retrieval Augmented Generation",
+    "section": "Retrieval Component",
+    "text": "Retrieval Component\nResponsible for searching and retrieving relevant information. Using indexing, ranking and query expansion",
+    "crumbs": [
+      "Wiki",
+      "Python",
+      "Retrueval Augmented Generation"
+    ]
+  },
+  {
+    "objectID": "wiki/Python/rag.html#generation-component",
+    "href": "wiki/Python/rag.html#generation-component",
+    "title": "Retrieval Augmented Generation",
+    "section": "Generation Component",
+    "text": "Generation Component\nAfter relevant information is retrieved LLMs process the retrieved information and generates coherent and contextually accurate response to user queries.",
+    "crumbs": [
+      "Wiki",
+      "Python",
+      "Retrueval Augmented Generation"
+    ]
+  },
+  {
+    "objectID": "wiki/Python/rag.html#interaction-loop",
+    "href": "wiki/Python/rag.html#interaction-loop",
+    "title": "Retrieval Augmented Generation",
+    "section": "Interaction Loop",
+    "text": "Interaction Loop\nRetrieval-Augmented Generation often involves an interaction loop between the retrieval and generation components. The initial retrieval may not always return the perfect answer, so the generation component can refine and enhance the response iteratively by referring back to the retrieval results.",
+    "crumbs": [
+      "Wiki",
+      "Python",
+      "Retrueval Augmented Generation"
+    ]
+  },
+  {
+    "objectID": "wiki/Python/rag.html#fine-tuning",
+    "href": "wiki/Python/rag.html#fine-tuning",
+    "title": "Retrieval Augmented Generation",
+    "section": "Fine-Tuning",
+    "text": "Fine-Tuning\nSuccessful implementation of this approach often requires fine-tuning LLMs on domain-specific data. Fine-tuning adapts the model to understand and generate content relevant to the specific knowledge domain, improving the quality of responses.",
+    "crumbs": [
+      "Wiki",
+      "Python",
+      "Retrueval Augmented Generation"
+    ]
+  },
+  {
+    "objectID": "wiki/Python/rag.html#latent-space-representations",
+    "href": "wiki/Python/rag.html#latent-space-representations",
+    "title": "Retrieval Augmented Generation",
+    "section": "Latent Space Representations",
+    "text": "Latent Space Representations\nRetrieval models often convert documents and queries into latent space representations, making it easier to compare and rank documents based on their relevance to a query. These representations are crucial for efficient retrieval.",
+    "crumbs": [
+      "Wiki",
+      "Python",
+      "Retrueval Augmented Generation"
+    ]
+  },
+  {
+    "objectID": "wiki/Python/rag.html#attention-mechanisms",
+    "href": "wiki/Python/rag.html#attention-mechanisms",
+    "title": "Retrieval Augmented Generation",
+    "section": "Attention Mechanisms",
+    "text": "Attention Mechanisms\nBoth the retrieval and generation components typically employ attention mechanisms. Attention mechanisms help the model focus on the most relevant parts of the input documents and queries, improving the accuracy of responses.",
+    "crumbs": [
+      "Wiki",
+      "Python",
+      "Retrueval Augmented Generation"
+    ]
+  },
+  {
+    "objectID": "wiki/Python/rag.html#vector-embeddings",
+    "href": "wiki/Python/rag.html#vector-embeddings",
+    "title": "Retrieval Augmented Generation",
+    "section": "Vector Embeddings",
+    "text": "Vector Embeddings\n\nVector embeddings represent words, phrases, sentences, or even entire documents as points in a high-dimensional vector space. The key idea is to map each textual element into a vector in such a way that semantically similar elements are located close to each other in this space, while dissimilar elements are further apart. This geometric representation facilitates similarity calculations, clustering, and other operations.\n\n\noften complex neural network: translating data into high.dimensional numerical vectors and effectively encode the data’s essential characteristics into vector embeddings\n\nExamples:\n\nWord Embeddings (Word2Vec, GloVe): Word embeddings represent individual words as vectors. For example, “king” and “queen” may be represented as vectors that are close together in the vector space because they share similar semantic properties.\nDocument Embeddings (Doc2Vec, BERT): Document embeddings map entire documents (such as PDFs) into vectors. Two documents discussing similar topics will have embeddings that are close in the vector space.\n\nhttps://weaviate.io/blog/vector-embeddings-explained\n\nSemantic/similarity search is key. And more advanced compared to common search methods like keyword searhc or synonym search\nThe process of generating a vector for a data object is called vectorization and is done by machine learning models\n\nWord2vec: family of model architectures with “dense” vectors (all values are non-zero). NN model to learn word associations from a large corpus of text. First creates vocabulary -&gt; learns vector representation (typically 300 dimensions). Is context agnostic.\nTransformer models (state-of-the-art, BERT, ELMo)",
+    "crumbs": [
+      "Wiki",
+      "Python",
+      "Retrueval Augmented Generation"
+    ]
+  },
+  {
+    "objectID": "wiki/Python/rag.html#prepare-pdf-extract-text",
+    "href": "wiki/Python/rag.html#prepare-pdf-extract-text",
+    "title": "Retrieval Augmented Generation",
+    "section": "prepare PDF extract text",
+    "text": "prepare PDF extract text\n\ntext extraction tools: pyPDF2, pdf2txt, PDFMiner\nScanned Documents: Optical Character Recognition (OCR) software\nQuality Control",
+    "crumbs": [
+      "Wiki",
+      "Python",
+      "Retrueval Augmented Generation"
+    ]
+  },
+  {
+    "objectID": "wiki/Python/rag.html#multiple-pages",
+    "href": "wiki/Python/rag.html#multiple-pages",
+    "title": "Retrieval Augmented Generation",
+    "section": "Multiple Pages",
+    "text": "Multiple Pages\n\npage segmentation: segment into logical units(paragraphs, section) ensure context is preserved\nmetadata extraction: document titles, authors, page numbers, creation dates.",
+    "crumbs": [
+      "Wiki",
+      "Python",
+      "Retrueval Augmented Generation"
+    ]
+  },
+  {
+    "objectID": "wiki/Python/rag.html#text-cleanup-and-normalization",
+    "href": "wiki/Python/rag.html#text-cleanup-and-normalization",
+    "title": "Retrieval Augmented Generation",
+    "section": "Text Cleanup and Normalization",
+    "text": "Text Cleanup and Normalization\n\nWhitespace and Punctuation\nFormatting removal\nSpellchecking",
+    "crumbs": [
+      "Wiki",
+      "Python",
+      "Retrueval Augmented Generation"
+    ]
+  },
+  {
+    "objectID": "wiki/Python/LLM.html#transfomer",
+    "href": "wiki/Python/LLM.html#transfomer",
+    "title": "LLM",
+    "section": "Transfomer",
+    "text": "Transfomer\n\nTransformer started out to address the limitations of traditional models like RNNs when dealing with variable-length sequences and context. The heart of the Transformer is its self-attention mechanism, allowing the model to focus on different parts of an input sequence. It comprises an encoder and a decoder. The encoder processes the input sequence to create hidden representations, while the decoder generates an output sequence. Each encoder and decoder layer includes multi-head attention and feed-forward neural networks. Multi-head attention, a key component, assigns weights to tokens based on relevance, enhancing the model’s performance in various NLP tasks. The Transformer’s inherent parallelizability minimizes inductive biases, making it ideal for large-scale pre-training and adaptability to different downstream tasks."
   }
 ]

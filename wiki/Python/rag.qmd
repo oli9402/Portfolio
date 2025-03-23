@@ -94,3 +94,34 @@ Examples:
 - Whitespace and Punctuation 
 - Formatting removal
 - Spellchecking
+
+## Generation part
+
+The query from a user is embedded with the same embedding model into the vector space. Next using similarity measures the nearest vectors are retrieved. This information is than passed into a LLM as context to provided an answer to the query. 
+
+## Impact of Text splitting on RAG quality
+
+### Splitting by character 
+
+Advantages:
+
+- Fine-grained context
+
+Challenges:
+
+- Long Sequences, token limitations 
+- Increased Inference time 
+
+### Splitting by Token
+
+Advantages:
+
+- Token Efficiency
+- Balanced Context (meaningful, granularity)
+- Scalability
+
+Challgenges: 
+
+- Contextual information
+
+## Impact of Metadata

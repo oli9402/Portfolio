@@ -1,0 +1,12 @@
+{
+  "hash": "bc1f7b41fb21bd401ac5a3abad65577f",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"git\"\nformat: html\n---\n\nShow an old version of a file\n\nFirst show commit history of a specific file:\n\n```{bash}\ngit log -- follow -- path/to/file\n```\n\n\n\nNext copy commit id of the commit you want to see:\n\n\n```{bash}\ngit checkout <commitid> -- src/foo.py\n```\n\n\nGo back to latest commit version:\n\n```{bash}\ngit checkout HEAD -- src/foo.py\n```\n\n",
+    "supporting": [
+      "git_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

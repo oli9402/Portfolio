@@ -58,6 +58,10 @@ website:
            contents: 
            - text: 'Confidence Intervals'
              href: wiki/Statistics/ci.qmd
+           - text: 'Glossary'
+             href: wiki/Statistics/Glossary.qmd
+           - text: 'General Linear Model'
+             href: wiki/Statistics/glm.qmd
          - section: 'Linear Algebra'
            href: wiki/LinAlg/linalg_start.qmd
            contents:

@@ -1,0 +1,305 @@
+---
+title: "GLM"
+format: 
+  html:
+    code-fold: false
+---
+
+# Generalized Linear Models
+
+Depending on the outcome variable, we can use different types of models.
+For example, if the outcome variable is binary, we can use a logistic
+regression model. If the outcome variable is continuous, we can use a
+linear regression model. If the outcome variable is count data, we can
+use a Poisson regression model.
+
+## Binary and binomial dependet variable
+
+Binary and binomial data naturally fall within the range of 0 to 1 (and
+are mathematically the same: binary = total number of trials is 1).
+Using a linear regression model would there predict values outside of
+this range. This would be a extrapolation which would make sense.
+Furthermore, in the case of logistic regression using a identity link
+function (i.e. linear regression) the predicted values would be heavily
+be influences by extreme values. Therefore, we adapt the linear
+regression based on attributes of the dependent variables. Additionally,
+we can't assume normal distribution of errors for inference. Therefore,
+with this kind of data we assume other distributions as binomial
+distribution.
+
+::: callout-note
+Not all proportions are binomial. Binomial data always refer to a ration
+among two integers. Proportions between conitous variables are not
+binomial data. Binomial data is something that was tested several times
+and has only two possible outcomes. The number of trials is **essential
+to define the precision of each observation**. So we need independent
+trials with outcome 0 or 1.
+:::
+
+::: callout-note
+Proportions between continous variables can be analysed with LM after
+transformation (i.e. arc-sin-square-root)
+:::
+
+::: callout-note
+Binomial distribution is a discrete probability distribution that
+describes the number of successes in a fixed number of independent
+Bernoulli trials, each with the same probability of success. Coin
+tosses.
+:::
+
+For binary and binomial data we use a logit link function that bounds
+the y between 0 and 1. The logit link function is defined as:
+
+$$logit(y) = log(\frac{y}{1-y})$$
+
+We therefore model the logit of y. The model transforms probabilities
+into log-odds so we can use linear modeling
+
+$$ logit(\text{probability of success: p}) = log(\frac{p}{1-p}) = \beta_0 + x_1*\beta_1...$$
+
+$$exp(log(\frac{p}{1-p})) = \frac{p}{1-p} = exp(\beta_0) + exp(\beta_1)$$
+
+::: callout-note
+-   Logit transforms probabilities into something you can model
+    linearly.
+-   Exponentiation converts model coefficients back to a scale you can
+    interpret (odds ratios).
+-   If you want to interpret effects on probability, use the divide by 4
+    rule or predict actual probabilities.
+:::
+
+For binomial data we use `cbind()`, for logistic regression we don't use
+`cbind()`.
+
+```{r}
+#| eval: false
+glm.model <- glm(cbind("nr_of_successes", "nr_of_failures") ~ "predictor1" + "predictor2", 
+                 data = "data", 
+                 family = "binomial")
+```
+
+## Multinomial dependent variable
+
+Is a categorical variable with more than two levels. For example, the
+outcome variable could be a categorical variable with three levels:
+"low", "medium", and "high". In this case, we can use a multinomial
+logistic regression model. The multinomial logistic regression model is
+an extension of the binary logistic regression model that allows for
+more than two categories. The multinomial logistic regression model uses
+a softmax function to model the probabilities of each category. The
+softmax function converts a vector of raw scores (logits) into a
+probability distribution, ensuring the sum of probabilities for all
+classes equals one.
+
+```{r}
+#| eval: false
+library(nnet)
+multinom.model <- multinom("outcome_variable" ~ "predictor1" + "predictor2", 
+                             data = "data")
+```
+
+### Set cutoff
+
+For logistic regression we set a cutoff the classify the outcome
+variable. The cutoff is the probability threshold above which we
+classify the outcome variable as 1 (success) and below which we classify
+the outcome variable as 0 (failure). The default cutoff is 0.5, but we
+can set a different cutoff based on the specific problem and the cost of
+false positives and false negatives.
+
+```{r}
+#| eval: false
+glm.log <- glm("outcome_variable" ~ "predictor1" + "predictor2", 
+                 data = "data", 
+                 family = "binomial")
+classification <- ifelse(fitted(glm.log) > 0.5, 1, 0)
+```
+
+Now let's compare fitted vs. observed (confusion matrix)
+
+```{r}
+#| eval: false
+compare <- data.frame(obs = df$obs,
+                      fitted = classification)
+# absolute
+table(obs = compare$obs,
+      fitted = compare$fitted)
+# percentage
+table(obs = compare$obs,
+      fitted = compare$fitted) %>% 
+  prop.table() %>%
+  round(digits = 2)
+```
+
+Naturally we would continue analysing different cutoff points with ROC
+and AUC.
+
+## Poisson regression
+
+This model handels count data which is often encountered in real life
+situations where y data doens't follow a normal distribution. Using a
+Linear model to model count data can lead to following problems:
+
+-   The predicted values can be negative, which is not possible for
+    count data.
+-   The predicted values are not integers, which is also not possible
+    for count data.
+-   The variance of count data naturally increases with the expected
+    value (i.e. mean)
+
+::: callout-note
+Mean-variance dependence: the variance of the data increases with the
+mean. This is not the case for normal distribution, where the variance
+is constant. Therefore heteroscedasticity is a problem when using linear
+models to model count data.
+:::
+
+### Idea
+
+Change the linear model formular so that we only predict positive
+values:
+
+$$\hat y = exp(\hat \beta_0 + \hat \beta_1*x_1) $$ this is equal to:
+
+$$log(\hat y) = \hat \beta_0 + \hat \beta_1*x_1$$
+
+We see that we can use natural logarithm as a link function. Next, we
+want y to be integer values and that the variance is dependent on the
+mean. Therefore, we use a Poisson distribution. The Poisson distribution
+is a discrete probability distribution that describes the number of
+events occurring in a fixed interval of time or space, given a known
+average rate of occurrence. The Poisson distribution is characterized by
+its mean (λ), which is also equal to its variance.
+
+```{r}
+#| eval: false
+glm.poisson <- glm("outcome_variable" ~ "predictor1" + "predictor2", 
+                     data = "data", 
+                     family = "poisson")
+```
+
+### Overdispersion
+
+*Dispersion parameter for poisson family taken to be 1* refers to the
+assumption that the variance increases linearly with the mean. In real
+life situations this is not the case. The variance is often larger than
+the mean. This is called overdispersion. In this case we can use a
+quasipoisson model.
+
+Compare Residual deviance with the degrees of freedom. If the residual
+deviance is larger than the degrees of freedom, then we have
+overdispersion.
+
+```{r}
+#| eval: false
+glm.poisson <- glm("outcome_variable" ~ "predictor1" + "predictor2", 
+                     data = "data", 
+                     family = "quasipoisson")
+```
+
+This imokies that the variance increases faster than linearly. The
+estimated coefficents are identifical but the standard error change and
+as a consequences the p-values change. \## GAM Extension of Linear Model
+to non-linearity
+
+## Interpretation of Coefficients
+
+### Poisson Model
+
+```{r}
+#| code-fold: true
+#install.packages("faraway")
+library(faraway)
+library(tidyverse)
+```
+
+```{r}
+#| attr-output: "style='color: blue'"
+glm.complaints <- glm(complaints ~ . , data = esdcomp,
+                      family = "poisson")
+
+summary(glm.complaints)
+```
+
+Since we are modelling log(y) we have to exponentiate (inverse
+functions) the coefficients to get the multiplicative effect of a one
+unit increase in the predictor variable on the expected value of y.
+
+#### Factor
+
+```{r}
+exp(coef(glm.complaints)["genderM"]) %>% round(digits = 2)
+```
+
+::: callout-note
+Males get on average 12% more complaints than women doctors
+:::
+
+#### Continous
+
+```{r}
+exp(coef(glm.complaints)["visits"]) %>% round(digits = 5)
+```
+
+::: callout-note
+For a given doctor, increasing its number of visits by one,would results
+in about 0.1% more complaints.
+:::
+
+Increase in visist by one is not really interesting:
+
+```{r}
+range(esdcomp$visits)
+exp(coef(glm.complaints)["visits"]*50) %>% round(digits = 5)
+```
+
+::: callout-note
+For a given doctor, if you were to increase its number of visits by 50,
+then we expect this doctor to get about 4.86% more complaints
+:::
+
+### Binomial Model
+
+```{r}
+#| attr-output: "style='color: blue'"
+glm.insects <- glm(cbind(dead, alive)~ conc,
+                  family = "binomial",
+                  data = bliss)
+
+summary(glm.insects)
+```
+
+#### Continous
+
+```{r}
+exp(coef(glm.insects)["conc"]) %>% round(digits = 2)
+```
+
+::: callout-note
+By increasing the concentration of the insecticide by one unit, we will
+obtain an increased risk in the odds of about 3 times. Where odds are
+the ratio of the probability of success (p) to the probability of
+failure (1-p). In this case success is the death of the insects.
+:::
+
+![Odds of our model](pics/odds.png)
+
+With one unit increase in concentration, the odds of death increase by a
+factor of 3. This means that the odds of death are 3 times higher for
+each unit increase in concentration:
+
+$$1:\frac{1}{3} \rightarrow 1:1 \rightarrow 1:3$$
+
+#### Factors
+
+#### Divide by 4
+
+Quick interpretation of odds as upper bound increase in probability of y
+= 1.
+
+### Overdispersion
+
+You can add quasibinomial to the family argument. This will give you a
+dispersion parameter that is greater than 1. But only works for binomial
+data and not binary.

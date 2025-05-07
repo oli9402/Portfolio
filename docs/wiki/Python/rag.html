@@ -280,6 +280,13 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#prepare-pdf-extract-text" id="toc-prepare-pdf-extract-text" class="nav-link" data-scroll-target="#prepare-pdf-extract-text">prepare PDF extract text</a></li>
   <li><a href="#multiple-pages" id="toc-multiple-pages" class="nav-link" data-scroll-target="#multiple-pages">Multiple Pages</a></li>
   <li><a href="#text-cleanup-and-normalization" id="toc-text-cleanup-and-normalization" class="nav-link" data-scroll-target="#text-cleanup-and-normalization">Text Cleanup and Normalization</a></li>
+  <li><a href="#generation-part" id="toc-generation-part" class="nav-link" data-scroll-target="#generation-part">Generation part</a></li>
+  <li><a href="#impact-of-text-splitting-on-rag-quality" id="toc-impact-of-text-splitting-on-rag-quality" class="nav-link" data-scroll-target="#impact-of-text-splitting-on-rag-quality">Impact of Text splitting on RAG quality</a>
+  <ul class="collapse">
+  <li><a href="#splitting-by-character" id="toc-splitting-by-character" class="nav-link" data-scroll-target="#splitting-by-character">Splitting by character</a></li>
+  <li><a href="#splitting-by-token" id="toc-splitting-by-token" class="nav-link" data-scroll-target="#splitting-by-token">Splitting by Token</a></li>
+  </ul></li>
+  <li><a href="#impact-of-metadata" id="toc-impact-of-metadata" class="nav-link" data-scroll-target="#impact-of-metadata">Impact of Metadata</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -409,6 +416,41 @@ ul.task-list li input[type="checkbox"] {
 <li>Formatting removal</li>
 <li>Spellchecking</li>
 </ul>
+</section>
+<section id="generation-part" class="level2">
+<h2 class="anchored" data-anchor-id="generation-part">Generation part</h2>
+<p>The query from a user is embedded with the same embedding model into the vector space. Next using similarity measures the nearest vectors are retrieved. This information is than passed into a LLM as context to provided an answer to the query.</p>
+</section>
+<section id="impact-of-text-splitting-on-rag-quality" class="level2">
+<h2 class="anchored" data-anchor-id="impact-of-text-splitting-on-rag-quality">Impact of Text splitting on RAG quality</h2>
+<section id="splitting-by-character" class="level3">
+<h3 class="anchored" data-anchor-id="splitting-by-character">Splitting by character</h3>
+<p>Advantages:</p>
+<ul>
+<li>Fine-grained context</li>
+</ul>
+<p>Challenges:</p>
+<ul>
+<li>Long Sequences, token limitations</li>
+<li>Increased Inference time</li>
+</ul>
+</section>
+<section id="splitting-by-token" class="level3">
+<h3 class="anchored" data-anchor-id="splitting-by-token">Splitting by Token</h3>
+<p>Advantages:</p>
+<ul>
+<li>Token Efficiency</li>
+<li>Balanced Context (meaningful, granularity)</li>
+<li>Scalability</li>
+</ul>
+<p>Challgenges:</p>
+<ul>
+<li>Contextual information</li>
+</ul>
+</section>
+</section>
+<section id="impact-of-metadata" class="level2">
+<h2 class="anchored" data-anchor-id="impact-of-metadata">Impact of Metadata</h2>
 
 
 </section>

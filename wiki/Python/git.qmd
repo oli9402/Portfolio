@@ -1,0 +1,26 @@
+---
+title: "git"
+format: html
+---
+
+
+
+Show an old version of a file
+
+First show commit history of a specific file:
+```{bash}
+git log -- follow -- path/to/file
+```
+
+
+Next copy commit id of the commit you want to see:
+
+```{bash}
+git checkout <commitid> -- src/foo.py
+```
+
+Go back to latest commit version:
+```{bash}
+git checkout HEAD -- src/foo.py
+```
+

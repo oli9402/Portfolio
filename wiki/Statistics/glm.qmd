@@ -27,7 +27,7 @@ we can't assume normal distribution of errors for inference. Therefore,
 with this kind of data we assume other distributions as binomial
 distribution.
 
-::: callout-note
+::: {.callout-note}
 Not all proportions are binomial. Binomial data always refer to a ration
 among two integers. Proportions between conitous variables are not
 binomial data. Binomial data is something that was tested several times

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Oliver Zingg - Basis, Span, Dimensions</title>
+<title>Oliver Zingg - modeldiagnostic</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,8 +29,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../wiki/LinAlg/linear-maps.html" rel="next">
-<link href="../../wiki/LinAlg/sys.html" rel="prev">
 <link href="../../oli.jpg" rel="icon" type="image/jpeg">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -69,44 +67,11 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
-<meta name="mermaid-theme" content="default">
-<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
-<body class="nav-sidebar docked nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -139,7 +104,7 @@ window.Quarto = {
 <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../../wiki.html" aria-current="page"> <i class="bi bi-book-half" role="img">
+    <a class="nav-link" href="../../wiki.html"> <i class="bi bi-book-half" role="img">
 </i> 
 <span class="menu-text">Wiki</span></a>
   </li>  
@@ -149,170 +114,32 @@ window.Quarto = {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../wiki/LinAlg/linalg_start.html">Linear Algebra</a></li><li class="breadcrumb-item"><a href="../../wiki/LinAlg/basis.html">Basis</a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../wiki.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Personal Wiki</span></a>
-  </div>
-</li>
-        <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../wiki/Python/python_start.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Python</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../wiki/Python/basics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Basics</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../wiki/Python/wrangling.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Wrangling</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../wiki/Python/rag.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Retrueval Augmented Generation</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../wiki/Statistics/stats_start.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Statistics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../wiki/Statistics/ci.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Confidence Intervals</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../wiki/Statistics/Glossary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Glossary</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../wiki/Statistics/glm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">General Linear Model</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../wiki/Statistics/dl.pdf" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Deep Learning Python</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../wiki/LinAlg/linalg_start.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Linear Algebra</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../wiki/LinAlg/ttr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Things to remember</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../wiki/LinAlg/sys.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Systems of Linear Equations</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../wiki/LinAlg/basis.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Basis</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../wiki/LinAlg/linear-maps.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Linear Maps</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../wiki/LinAlg/eigen.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Eigenvalues and -vectors</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../wiki/LinAlg/norm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Orthonormal Basis</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../wiki/DOE/int.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Design of Experiments</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../wiki/DOE/doe.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Research Design</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#visual-inspection" id="toc-visual-inspection" class="nav-link active" data-scroll-target="#visual-inspection">Visual inspection</a>
+  <ul class="collapse">
+  <li><a href="#residuals-vs-fitted" id="toc-residuals-vs-fitted" class="nav-link" data-scroll-target="#residuals-vs-fitted">Residuals vs Fitted</a></li>
+  <li><a href="#q-q-plot" id="toc-q-q-plot" class="nav-link" data-scroll-target="#q-q-plot">Q-Q Plot</a></li>
+  <li><a href="#scale-location-plot" id="toc-scale-location-plot" class="nav-link" data-scroll-target="#scale-location-plot">Scale-Location Plot</a></li>
+  <li><a href="#residuals-vs-leverage" id="toc-residuals-vs-leverage" class="nav-link" data-scroll-target="#residuals-vs-leverage">Residuals vs Leverage</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../wiki/LinAlg/linalg_start.html">Linear Algebra</a></li><li class="breadcrumb-item"><a href="../../wiki/LinAlg/basis.html">Basis</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Basis, Span, Dimensions</h1>
+<h1 class="title">modeldiagnostic</h1>
 </div>
 
 
@@ -329,93 +156,33 @@ window.Quarto = {
 </header>
 
 
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<div class="cell" data-fig-width="6" data-layout-align="default">
-<div class="cell-output-display">
-<div id="fig-mermaid" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-mermaid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div>
-<pre class="mermaid mermaid-js" data-label="fig-mermaid"> 
-flowchart TD
-    A(Basis, Span &lt;br/&gt; Dimensions) --&gt; B[Matrix column span]
-    B--&gt;|echelon form: &lt;br/&gt;columns with pivots|C[ linearly independent. &lt;br/&gt;Original columns basis&lt;br/&gt;span the column space]
-    
-
-
-
-</pre>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mermaid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: A flow chart of concepts in Basis and Span
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/k7RM-ot2NWY" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-</section>
-<section id="span" class="level2">
-<h2 class="anchored" data-anchor-id="span">Span</h2>
-<p>The <strong>span</strong> of two vectors <span class="math inline">\(\overline v\)</span> and <span class="math inline">\(\overline w\)</span> is the set of all linear combinations with <span class="math inline">\(a*\overline v + b * \overline w\)</span> with <span class="math inline">\(a,b \in R\)</span>. So two operations are used: <em>vector scaling</em> and <em>vector addition</em>.</p>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Given two vectors: When can’t you reach all vectors in a plane?
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>If the vectors are colinear/parallel or consists of points</p>
-</div>
-</div>
-</div>
-</section>
-<section id="basis" class="level2">
-<h2 class="anchored" data-anchor-id="basis">Basis</h2>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The set of all linear independent vectors that span a vector space. There are an infinite amount of different basis for a vector space but the number is fixed to the dimension.</p>
-</div>
-</div>
-</section>
-<section id="when-are-vectors-linear-independent" class="level2">
-<h2 class="anchored" data-anchor-id="when-are-vectors-linear-independent">When are vectors linear independent?</h2>
-<section id="example" class="level3">
-<h3 class="anchored" data-anchor-id="example">Example</h3>
-<p><span class="math inline">\(s_1*v_1 + ...+ s_3*v_3 = 0\)</span></p>
-<span class="math display">\[\begin{pmatrix}
-
--2 &amp; 1 &amp; 4 &amp; |&amp; 0 \\
-6 &amp; 1 &amp; -12 &amp;|&amp; 0 \\
-1 &amp; 1 &amp; -2 &amp;| &amp; 0
-
-\end{pmatrix}\]</span>
-<p>If we only have trivial solution to <span class="math inline">\(s_1*v_1 + ...+ s_3*v_3 = 0\)</span> than the vectors are linearly independent. So we solve with gaussian elimination and get the following echelon form:</p>
-<span class="math display">\[\begin{pmatrix}
--2 &amp; 1 &amp; 4 &amp; |&amp; 0 \\
-0 &amp; 4 &amp; 0 &amp; | &amp; 0 \\
-0 &amp; 0 &amp; 0 &amp; | &amp; 0
-\end{pmatrix}\]</span>
+<section id="visual-inspection" class="level1">
+<h1>Visual inspection</h1>
+<section id="residuals-vs-fitted" class="level2">
+<h2 class="anchored" data-anchor-id="residuals-vs-fitted">Residuals vs Fitted</h2>
 <ul>
-<li>we se that we have a free parameter t in the <span class="math inline">\(s_3\)</span> because there is no pivot.</li>
-<li><span class="math inline">\(s_3 = t\)</span></li>
-<li><span class="math inline">\(s_2 = 0\)</span></li>
-<li><span class="math inline">\(s_1 = 2t\)</span></li>
+<li>Shows whether residuals have non-linear patterns.</li>
+<li>Equal spread of residual around horizontal line without distinct patters indication of non-linear relationship</li>
+</ul>
+</section>
+<section id="q-q-plot" class="level2">
+<h2 class="anchored" data-anchor-id="q-q-plot">Q-Q Plot</h2>
+<ul>
+<li>Shows residuals are normally distributed</li>
+</ul>
+</section>
+<section id="scale-location-plot" class="level2">
+<h2 class="anchored" data-anchor-id="scale-location-plot">Scale-Location Plot</h2>
+<ul>
+<li>Residuals spread eqaully along the ranges of predictors (homoscedasticity)</li>
+<li>Horizontal line with equally randomly spread points</li>
+</ul>
+</section>
+<section id="residuals-vs-leverage" class="level2">
+<h2 class="anchored" data-anchor-id="residuals-vs-leverage">Residuals vs Leverage</h2>
+<ul>
+<li>This plot helps us to find influential cases (i.e., subjects) if there are any.</li>
+<li>We watch out for outlying values at the upper right corner or at the lower right corner. Those spots are the places where cases can be influential against a regression line. Look for cases outside of the dashed lines. When cases are outside of the dashed lines (meaning they have high “Cook’s distance” scores), the cases are influential to the regression results. The regression results will be altered if we exclude those cases.</li>
 </ul>
 
 
@@ -810,18 +577,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../../wiki/LinAlg/sys.html" class="pagination-link" aria-label="Systems of Linear Equations">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Systems of Linear Equations</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../../wiki/LinAlg/linear-maps.html" class="pagination-link" aria-label="Linear Maps">
-        <span class="nav-page-text">Linear Maps</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

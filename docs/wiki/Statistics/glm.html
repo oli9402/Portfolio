@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.4.550">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
 <title>Oliver Zingg - GLM</title>
 <style>
 code{white-space: pre-wrap;}
@@ -56,14 +53,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../wiki/LinAlg/linalg_start.html" rel="next">
+<link href="../../wiki/Statistics/dl.pdf" rel="next">
 <link href="../../wiki/Statistics/Glossary.html" rel="prev">
 <link href="../../oli.jpg" rel="icon" type="image/jpeg">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
@@ -74,8 +70,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -101,13 +96,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-<style>html{ scroll-behavior: smooth; }</style>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
+}</script><style>html{ scroll-behavior: smooth; }</style>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
 const typesetMath = (el) => {
   if (window.MathJax) {
     // MathJax Typeset
@@ -133,15 +123,11 @@ window.Quarto = {
   typesetMath
 };
 </script>
-
 </head>
-
 <body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Oliver Zingg</span>
@@ -153,7 +139,7 @@ window.Quarto = {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../../index.html"> <i class="bi bi-house-door" role="img">
 </i> 
 <span class="menu-text">Home</span></a>
@@ -174,13 +160,11 @@ window.Quarto = {
 <span class="menu-text">Wiki</span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -188,15 +172,11 @@ window.Quarto = {
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="sidebar-menu-container"> 
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../wiki.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Personal Wiki</span></a>
@@ -211,8 +191,8 @@ window.Quarto = {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../wiki/Python/basics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Basics</span></a>
@@ -231,7 +211,7 @@ window.Quarto = {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../../wiki/Statistics/stats_start.html" class="sidebar-item-text sidebar-link">
@@ -240,8 +220,8 @@ window.Quarto = {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../wiki/Statistics/ci.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Confidence Intervals</span></a>
@@ -259,8 +239,14 @@ window.Quarto = {
  <span class="menu-text">General Linear Model</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../wiki/Statistics/dl.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Deep Learning Python</span></a>
+  </div>
+</li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../../wiki/LinAlg/linalg_start.html" class="sidebar-item-text sidebar-link">
@@ -269,8 +255,8 @@ window.Quarto = {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../wiki/LinAlg/ttr.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Things to remember</span></a>
@@ -307,7 +293,7 @@ window.Quarto = {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../../wiki/DOE/int.html" class="sidebar-item-text sidebar-link">
@@ -316,52 +302,54 @@ window.Quarto = {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../wiki/DOE/doe.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Research Design</span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#generalized-linear-models" id="toc-generalized-linear-models" class="nav-link active" data-scroll-target="#generalized-linear-models">Generalized Linear Models</a>
+<li>
+<a href="#generalized-linear-models" id="toc-generalized-linear-models" class="nav-link active" data-scroll-target="#generalized-linear-models">Generalized Linear Models</a>
   <ul class="collapse">
-  <li><a href="#binary-and-binomial-dependet-variable" id="toc-binary-and-binomial-dependet-variable" class="nav-link" data-scroll-target="#binary-and-binomial-dependet-variable">Binary and binomial dependet variable</a></li>
-  <li><a href="#multinomial-dependent-variable" id="toc-multinomial-dependent-variable" class="nav-link" data-scroll-target="#multinomial-dependent-variable">Multinomial dependent variable</a>
+<li><a href="#binary-and-binomial-dependet-variable" id="toc-binary-and-binomial-dependet-variable" class="nav-link" data-scroll-target="#binary-and-binomial-dependet-variable">Binary and binomial dependet variable</a></li>
+  <li>
+<a href="#multinomial-dependent-variable" id="toc-multinomial-dependent-variable" class="nav-link" data-scroll-target="#multinomial-dependent-variable">Multinomial dependent variable</a>
   <ul class="collapse">
-  <li><a href="#set-cutoff" id="toc-set-cutoff" class="nav-link" data-scroll-target="#set-cutoff">Set cutoff</a></li>
-  </ul></li>
-  <li><a href="#poisson-regression" id="toc-poisson-regression" class="nav-link" data-scroll-target="#poisson-regression">Poisson regression</a>
+<li><a href="#set-cutoff" id="toc-set-cutoff" class="nav-link" data-scroll-target="#set-cutoff">Set cutoff</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#poisson-regression" id="toc-poisson-regression" class="nav-link" data-scroll-target="#poisson-regression">Poisson regression</a>
   <ul class="collapse">
-  <li><a href="#idea" id="toc-idea" class="nav-link" data-scroll-target="#idea">Idea</a></li>
+<li><a href="#idea" id="toc-idea" class="nav-link" data-scroll-target="#idea">Idea</a></li>
   <li><a href="#overdispersion" id="toc-overdispersion" class="nav-link" data-scroll-target="#overdispersion">Overdispersion</a></li>
-  </ul></li>
-  <li><a href="#interpretation-of-coefficients" id="toc-interpretation-of-coefficients" class="nav-link" data-scroll-target="#interpretation-of-coefficients">Interpretation of Coefficients</a>
+  </ul>
+</li>
+  <li>
+<a href="#interpretation-of-coefficients" id="toc-interpretation-of-coefficients" class="nav-link" data-scroll-target="#interpretation-of-coefficients">Interpretation of Coefficients</a>
   <ul class="collapse">
-  <li><a href="#poisson-model" id="toc-poisson-model" class="nav-link" data-scroll-target="#poisson-model">Poisson Model</a></li>
+<li><a href="#poisson-model" id="toc-poisson-model" class="nav-link" data-scroll-target="#poisson-model">Poisson Model</a></li>
   <li><a href="#binomial-model" id="toc-binomial-model" class="nav-link" data-scroll-target="#binomial-model">Binomial Model</a></li>
   <li><a href="#overdispersion-1" id="toc-overdispersion-1" class="nav-link" data-scroll-target="#overdispersion-1">Overdispersion</a></li>
-  </ul></li>
-  </ul></li>
   </ul>
-</nav>
+</li>
+  </ul>
+</li>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../wiki/Statistics/stats_start.html">Statistics</a></li><li class="breadcrumb-item"><a href="../../wiki/Statistics/glm.html">General Linear Model</a></li></ol></nav>
-<div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../wiki/Statistics/stats_start.html">Statistics</a></li><li class="breadcrumb-item"><a href="../../wiki/Statistics/glm.html">General Linear Model</a></li></ol></nav><div class="quarto-title">
 <h1 class="title">GLM</h1>
 </div>
 
@@ -376,14 +364,9 @@ window.Quarto = {
   
 
 
-</header>
-
-
-<section id="generalized-linear-models" class="level1">
-<h1>Generalized Linear Models</h1>
+</header><section id="generalized-linear-models" class="level1"><h1>Generalized Linear Models</h1>
 <p>Depending on the outcome variable, we can use different types of models. For example, if the outcome variable is binary, we can use a logistic regression model. If the outcome variable is continuous, we can use a linear regression model. If the outcome variable is count data, we can use a Poisson regression model.</p>
-<section id="binary-and-binomial-dependet-variable" class="level2">
-<h2 class="anchored" data-anchor-id="binary-and-binomial-dependet-variable">Binary and binomial dependet variable</h2>
+<section id="binary-and-binomial-dependet-variable" class="level2"><h2 class="anchored" data-anchor-id="binary-and-binomial-dependet-variable">Binary and binomial dependet variable</h2>
 <p>Binary and binomial data naturally fall within the range of 0 to 1 (and are mathematically the same: binary = total number of trials is 1). Using a linear regression model would there predict values outside of this range. This would be a extrapolation which would make sense. Furthermore, in the case of logistic regression using a identity link function (i.e.&nbsp;linear regression) the predicted values would be heavily be influences by extreme values. Therefore, we adapt the linear regression based on attributes of the dependent variables. Additionally, we can’t assume normal distribution of errors for inference. Therefore, with this kind of data we assume other distributions as binomial distribution.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -446,48 +429,42 @@ Note
 </ul>
 </div>
 </div>
-<p>For binomial data we use <code>cbind()</code>, for logistic regression we don’t use <code>cbind()</code>.</p>
+<p>For binomial data we use <code><a href="https://rdrr.io/r/base/cbind.html">cbind()</a></code>, for logistic regression we don’t use <code><a href="https://rdrr.io/r/base/cbind.html">cbind()</a></code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>glm.model <span class="ot">&lt;-</span> <span class="fu">glm</span>(<span class="fu">cbind</span>(<span class="st">"nr_of_successes"</span>, <span class="st">"nr_of_failures"</span>) <span class="sc">~</span> <span class="st">"predictor1"</span> <span class="sc">+</span> <span class="st">"predictor2"</span>, </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">data =</span> <span class="st">"data"</span>, </span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">family =</span> <span class="st">"binomial"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">glm.model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/glm.html">glm</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="st">"nr_of_successes"</span>, <span class="st">"nr_of_failures"</span><span class="op">)</span> <span class="op">~</span> <span class="st">"predictor1"</span> <span class="op">+</span> <span class="st">"predictor2"</span>, </span>
+<span>                 data <span class="op">=</span> <span class="st">"data"</span>, </span>
+<span>                 family <span class="op">=</span> <span class="st">"binomial"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="multinomial-dependent-variable" class="level2">
-<h2 class="anchored" data-anchor-id="multinomial-dependent-variable">Multinomial dependent variable</h2>
+</section><section id="multinomial-dependent-variable" class="level2"><h2 class="anchored" data-anchor-id="multinomial-dependent-variable">Multinomial dependent variable</h2>
 <p>Is a categorical variable with more than two levels. For example, the outcome variable could be a categorical variable with three levels: “low”, “medium”, and “high”. In this case, we can use a multinomial logistic regression model. The multinomial logistic regression model is an extension of the binary logistic regression model that allows for more than two categories. The multinomial logistic regression model uses a softmax function to model the probabilities of each category. The softmax function converts a vector of raw scores (logits) into a probability distribution, ensuring the sum of probabilities for all classes equals one.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(nnet)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>multinom.model <span class="ot">&lt;-</span> <span class="fu">multinom</span>(<span class="st">"outcome_variable"</span> <span class="sc">~</span> <span class="st">"predictor1"</span> <span class="sc">+</span> <span class="st">"predictor2"</span>, </span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>                             <span class="at">data =</span> <span class="st">"data"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://www.stats.ox.ac.uk/pub/MASS4/">nnet</a></span><span class="op">)</span></span>
+<span><span class="va">multinom.model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/nnet/man/multinom.html">multinom</a></span><span class="op">(</span><span class="st">"outcome_variable"</span> <span class="op">~</span> <span class="st">"predictor1"</span> <span class="op">+</span> <span class="st">"predictor2"</span>, </span>
+<span>                             data <span class="op">=</span> <span class="st">"data"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="set-cutoff" class="level3">
-<h3 class="anchored" data-anchor-id="set-cutoff">Set cutoff</h3>
+<section id="set-cutoff" class="level3"><h3 class="anchored" data-anchor-id="set-cutoff">Set cutoff</h3>
 <p>For logistic regression we set a cutoff the classify the outcome variable. The cutoff is the probability threshold above which we classify the outcome variable as 1 (success) and below which we classify the outcome variable as 0 (failure). The default cutoff is 0.5, but we can set a different cutoff based on the specific problem and the cost of false positives and false negatives.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>glm.log <span class="ot">&lt;-</span> <span class="fu">glm</span>(<span class="st">"outcome_variable"</span> <span class="sc">~</span> <span class="st">"predictor1"</span> <span class="sc">+</span> <span class="st">"predictor2"</span>, </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">data =</span> <span class="st">"data"</span>, </span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">family =</span> <span class="st">"binomial"</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>classification <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">fitted</span>(glm.log) <span class="sc">&gt;</span> <span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">glm.log</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/glm.html">glm</a></span><span class="op">(</span><span class="st">"outcome_variable"</span> <span class="op">~</span> <span class="st">"predictor1"</span> <span class="op">+</span> <span class="st">"predictor2"</span>, </span>
+<span>                 data <span class="op">=</span> <span class="st">"data"</span>, </span>
+<span>                 family <span class="op">=</span> <span class="st">"binomial"</span><span class="op">)</span></span>
+<span><span class="va">classification</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/fitted.values.html">fitted</a></span><span class="op">(</span><span class="va">glm.log</span><span class="op">)</span> <span class="op">&gt;</span> <span class="fl">0.5</span>, <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now let’s compare fitted vs.&nbsp;observed (confusion matrix)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>compare <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">obs =</span> df<span class="sc">$</span>obs,</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">fitted =</span> classification)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># absolute</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(<span class="at">obs =</span> compare<span class="sc">$</span>obs,</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">fitted =</span> compare<span class="sc">$</span>fitted)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># percentage</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(<span class="at">obs =</span> compare<span class="sc">$</span>obs,</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">fitted =</span> compare<span class="sc">$</span>fitted) <span class="sc">%&gt;%</span> </span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prop.table</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">round</span>(<span class="at">digits =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">compare</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>obs <span class="op">=</span> <span class="va">df</span><span class="op">$</span><span class="va">obs</span>,</span>
+<span>                      fitted <span class="op">=</span> <span class="va">classification</span><span class="op">)</span></span>
+<span><span class="co"># absolute</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span>obs <span class="op">=</span> <span class="va">compare</span><span class="op">$</span><span class="va">obs</span>,</span>
+<span>      fitted <span class="op">=</span> <span class="va">compare</span><span class="op">$</span><span class="va">fitted</span><span class="op">)</span></span>
+<span><span class="co"># percentage</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span>obs <span class="op">=</span> <span class="va">compare</span><span class="op">$</span><span class="va">obs</span>,</span>
+<span>      fitted <span class="op">=</span> <span class="va">compare</span><span class="op">$</span><span class="va">fitted</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/proportions.html">prop.table</a></span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span>digits <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Naturally we would continue analysing different cutoff points with ROC and AUC.</p>
-</section>
-</section>
-<section id="poisson-regression" class="level2">
-<h2 class="anchored" data-anchor-id="poisson-regression">Poisson regression</h2>
+</section></section><section id="poisson-regression" class="level2"><h2 class="anchored" data-anchor-id="poisson-regression">Poisson regression</h2>
 <p>This model handels count data which is often encountered in real life situations where y data doens’t follow a normal distribution. Using a Linear model to model count data can lead to following problems:</p>
 <ul>
 <li>The predicted values can be negative, which is not possible for count data.</li>
@@ -507,42 +484,32 @@ Note
 <p>Mean-variance dependence: the variance of the data increases with the mean. This is not the case for normal distribution, where the variance is constant. Therefore heteroscedasticity is a problem when using linear models to model count data.</p>
 </div>
 </div>
-<section id="idea" class="level3">
-<h3 class="anchored" data-anchor-id="idea">Idea</h3>
+<section id="idea" class="level3"><h3 class="anchored" data-anchor-id="idea">Idea</h3>
 <p>Change the linear model formular so that we only predict positive values:</p>
 <p><span class="math display">\[\hat y = exp(\hat \beta_0 + \hat \beta_1*x_1) \]</span> this is equal to:</p>
 <p><span class="math display">\[log(\hat y) = \hat \beta_0 + \hat \beta_1*x_1\]</span></p>
 <p>We see that we can use natural logarithm as a link function. Next, we want y to be integer values and that the variance is dependent on the mean. Therefore, we use a Poisson distribution. The Poisson distribution is a discrete probability distribution that describes the number of events occurring in a fixed interval of time or space, given a known average rate of occurrence. The Poisson distribution is characterized by its mean (λ), which is also equal to its variance.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>glm.poisson <span class="ot">&lt;-</span> <span class="fu">glm</span>(<span class="st">"outcome_variable"</span> <span class="sc">~</span> <span class="st">"predictor1"</span> <span class="sc">+</span> <span class="st">"predictor2"</span>, </span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">data =</span> <span class="st">"data"</span>, </span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">family =</span> <span class="st">"poisson"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">glm.poisson</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/glm.html">glm</a></span><span class="op">(</span><span class="st">"outcome_variable"</span> <span class="op">~</span> <span class="st">"predictor1"</span> <span class="op">+</span> <span class="st">"predictor2"</span>, </span>
+<span>                     data <span class="op">=</span> <span class="st">"data"</span>, </span>
+<span>                     family <span class="op">=</span> <span class="st">"poisson"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="overdispersion" class="level3">
-<h3 class="anchored" data-anchor-id="overdispersion">Overdispersion</h3>
+</section><section id="overdispersion" class="level3"><h3 class="anchored" data-anchor-id="overdispersion">Overdispersion</h3>
 <p><em>Dispersion parameter for poisson family taken to be 1</em> refers to the assumption that the variance increases linearly with the mean. In real life situations this is not the case. The variance is often larger than the mean. This is called overdispersion. In this case we can use a quasipoisson model.</p>
 <p>Compare Residual deviance with the degrees of freedom. If the residual deviance is larger than the degrees of freedom, then we have overdispersion.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>glm.poisson <span class="ot">&lt;-</span> <span class="fu">glm</span>(<span class="st">"outcome_variable"</span> <span class="sc">~</span> <span class="st">"predictor1"</span> <span class="sc">+</span> <span class="st">"predictor2"</span>, </span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">data =</span> <span class="st">"data"</span>, </span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">family =</span> <span class="st">"quasipoisson"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">glm.poisson</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/glm.html">glm</a></span><span class="op">(</span><span class="st">"outcome_variable"</span> <span class="op">~</span> <span class="st">"predictor1"</span> <span class="op">+</span> <span class="st">"predictor2"</span>, </span>
+<span>                     data <span class="op">=</span> <span class="st">"data"</span>, </span>
+<span>                     family <span class="op">=</span> <span class="st">"quasipoisson"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This imokies that the variance increases faster than linearly. The estimated coefficents are identifical but the standard error change and as a consequences the p-values change. ## GAM Extension of Linear Model to non-linearity</p>
-</section>
-</section>
-<section id="interpretation-of-coefficients" class="level2">
-<h2 class="anchored" data-anchor-id="interpretation-of-coefficients">Interpretation of Coefficients</h2>
-<section id="poisson-model" class="level3">
-<h3 class="anchored" data-anchor-id="poisson-model">Poisson Model</h3>
+</section></section><section id="interpretation-of-coefficients" class="level2"><h2 class="anchored" data-anchor-id="interpretation-of-coefficients">Interpretation of Coefficients</h2>
+<section id="poisson-model" class="level3"><h3 class="anchored" data-anchor-id="poisson-model">Poisson Model</h3>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("faraway")</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(faraway)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stderr">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#install.packages("faraway")</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/julianfaraway/faraway">faraway</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stderr">
 <pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
 ✔ dplyr     1.1.4     ✔ readr     2.1.5
 ✔ forcats   1.0.0     ✔ stringr   1.5.1
@@ -556,10 +523,10 @@ Note
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>glm.complaints <span class="ot">&lt;-</span> <span class="fu">glm</span>(complaints <span class="sc">~</span> . , <span class="at">data =</span> esdcomp,</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">family =</span> <span class="st">"poisson"</span>)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(glm.complaints)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">glm.complaints</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/glm.html">glm</a></span><span class="op">(</span><span class="va">complaints</span> <span class="op">~</span> <span class="va">.</span> , data <span class="op">=</span> <span class="va">esdcomp</span>,</span>
+<span>                      family <span class="op">=</span> <span class="st">"poisson"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">glm.complaints</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre style="color: blue"><code>
 Call:
@@ -586,10 +553,9 @@ Number of Fisher Scoring iterations: 5</code></pre>
 </div>
 </div>
 <p>Since we are modelling log(y) we have to exponentiate (inverse functions) the coefficients to get the multiplicative effect of a one unit increase in the predictor variable on the expected value of y.</p>
-<section id="factor" class="level4">
-<h4 class="anchored" data-anchor-id="factor">Factor</h4>
+<section id="factor" class="level4"><h4 class="anchored" data-anchor-id="factor">Factor</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">exp</span>(<span class="fu">coef</span>(glm.complaints)[<span class="st">"genderM"</span>]) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="at">digits =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/coef.html">coef</a></span><span class="op">(</span><span class="va">glm.complaints</span><span class="op">)</span><span class="op">[</span><span class="st">"genderM"</span><span class="op">]</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span>digits <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>genderM 
    1.12 </code></pre>
@@ -608,11 +574,9 @@ Note
 <p>Males get on average 12% more complaints than women doctors</p>
 </div>
 </div>
-</section>
-<section id="continous" class="level4">
-<h4 class="anchored" data-anchor-id="continous">Continous</h4>
+</section><section id="continous" class="level4"><h4 class="anchored" data-anchor-id="continous">Continous</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">exp</span>(<span class="fu">coef</span>(glm.complaints)[<span class="st">"visits"</span>]) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="at">digits =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/coef.html">coef</a></span><span class="op">(</span><span class="va">glm.complaints</span><span class="op">)</span><span class="op">[</span><span class="st">"visits"</span><span class="op">]</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span>digits <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> visits 
 1.00095 </code></pre>
@@ -633,11 +597,11 @@ Note
 </div>
 <p>Increase in visist by one is not really interesting:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(esdcomp<span class="sc">$</span>visits)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/range.html">range</a></span><span class="op">(</span><span class="va">esdcomp</span><span class="op">$</span><span class="va">visits</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1]  879 3763</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">exp</span>(<span class="fu">coef</span>(glm.complaints)[<span class="st">"visits"</span>]<span class="sc">*</span><span class="dv">50</span>) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="at">digits =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/coef.html">coef</a></span><span class="op">(</span><span class="va">glm.complaints</span><span class="op">)</span><span class="op">[</span><span class="st">"visits"</span><span class="op">]</span><span class="op">*</span><span class="fl">50</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span>digits <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> visits 
 1.04864 </code></pre>
@@ -656,16 +620,13 @@ Note
 <p>For a given doctor, if you were to increase its number of visits by 50, then we expect this doctor to get about 4.86% more complaints</p>
 </div>
 </div>
-</section>
-</section>
-<section id="binomial-model" class="level3">
-<h3 class="anchored" data-anchor-id="binomial-model">Binomial Model</h3>
+</section></section><section id="binomial-model" class="level3"><h3 class="anchored" data-anchor-id="binomial-model">Binomial Model</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>glm.insects <span class="ot">&lt;-</span> <span class="fu">glm</span>(<span class="fu">cbind</span>(dead, alive)<span class="sc">~</span> conc,</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">family =</span> <span class="st">"binomial"</span>,</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data =</span> bliss)</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(glm.insects)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">glm.insects</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/glm.html">glm</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">dead</span>, <span class="va">alive</span><span class="op">)</span><span class="op">~</span> <span class="va">conc</span>,</span>
+<span>                  family <span class="op">=</span> <span class="st">"binomial"</span>,</span>
+<span>                  data <span class="op">=</span> <span class="va">bliss</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">glm.insects</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre style="color: blue"><code>
 Call:
@@ -688,10 +649,9 @@ AIC: 20.854
 Number of Fisher Scoring iterations: 4</code></pre>
 </div>
 </div>
-<section id="continous-1" class="level4">
-<h4 class="anchored" data-anchor-id="continous-1">Continous</h4>
+<section id="continous-1" class="level4"><h4 class="anchored" data-anchor-id="continous-1">Continous</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">exp</span>(<span class="fu">coef</span>(glm.insects)[<span class="st">"conc"</span>]) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="at">digits =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/coef.html">coef</a></span><span class="op">(</span><span class="va">glm.insects</span><span class="op">)</span><span class="op">[</span><span class="st">"conc"</span><span class="op">]</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span>digits <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>conc 
  3.2 </code></pre>
@@ -711,33 +671,19 @@ Note
 </div>
 </div>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="pics/odds.png" class="img-fluid figure-img"></p>
-<figcaption>Odds of our model</figcaption>
-</figure>
+<figure class="figure"><p><img src="pics/odds.png" class="img-fluid figure-img"></p>
+<figcaption>Odds of our model</figcaption></figure>
 </div>
 <p>With one unit increase in concentration, the odds of death increase by a factor of 3. This means that the odds of death are 3 times higher for each unit increase in concentration:</p>
 <p><span class="math display">\[1:\frac{1}{3} \rightarrow 1:1 \rightarrow 1:3\]</span></p>
-</section>
-<section id="factors" class="level4">
-<h4 class="anchored" data-anchor-id="factors">Factors</h4>
-</section>
-<section id="divide-by-4" class="level4">
-<h4 class="anchored" data-anchor-id="divide-by-4">Divide by 4</h4>
+</section><section id="factors" class="level4"><h4 class="anchored" data-anchor-id="factors">Factors</h4>
+</section><section id="divide-by-4" class="level4"><h4 class="anchored" data-anchor-id="divide-by-4">Divide by 4</h4>
 <p>Quick interpretation of odds as upper bound increase in probability of y = 1.</p>
-</section>
-</section>
-<section id="overdispersion-1" class="level3">
-<h3 class="anchored" data-anchor-id="overdispersion-1">Overdispersion</h3>
+</section></section><section id="overdispersion-1" class="level3"><h3 class="anchored" data-anchor-id="overdispersion-1">Overdispersion</h3>
 <p>You can add quasibinomial to the family argument. This will give you a dispersion parameter that is greater than 1. But only works for binomial data and not binary.</p>
 
 
-</section>
-</section>
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1123,28 +1069,25 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
+</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="../../wiki/Statistics/Glossary.html" class="pagination-link" aria-label="Glossary">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Glossary</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../wiki/LinAlg/linalg_start.html" class="pagination-link" aria-label="Linear Algebra">
-        <span class="nav-page-text">Linear Algebra</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../wiki/Statistics/dl.pdf" class="pagination-link" aria-label="Deep Learning Python">
+        <span class="nav-page-text">Deep Learning Python</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
       &nbsp;
     </div>   
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
-    <li class="nav-item compact">
+<li class="nav-item compact">
     <a class="nav-link" href="https://github.com/oli9402">
       <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
@@ -1163,14 +1106,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </a>
   </li>  
 </ul>
-    </div>
+</div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
-
-
 
 
 <script src="../../site_libs/quarto-html/zenscroll-min.js"></script>

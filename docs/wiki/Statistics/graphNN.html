@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>graph NN – Oliver Zingg</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../wiki/LinAlg/linalg_start.html" rel="next">
+<link href="../../wiki/Statistics/logitudinal.qmd" rel="prev">
+<link href="../../oli.jpg" rel="icon" type="image/jpeg">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-8d579c7e4cb5e38eaddfdf7e7f03f655.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-f2f2a4d31ae93ce9411d6c9e03acd636.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Oliver Zingg</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../../index.html" aria-current="page"> <i class="bi bi-house-door" role="img">
+</i> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> <i class="bi bi-file-person" role="img">
+</i> 
+<span class="menu-text">About Me</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../projects.html"> <i class="bi bi-list-task" role="img">
+</i> 
+<span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../wiki.html"> <i class="bi bi-book-half" role="img">
+</i> 
+<span class="menu-text">Wiki</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../wiki/Statistics/stats_start.html">Statistics</a></li><li class="breadcrumb-item"><a href="../../wiki/Statistics/graphNN.html">Graph Neural Networks</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../wiki.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Personal Wiki</span></a>
+  </div>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../wiki/Python/python_start.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../wiki/Python/basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Basics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../wiki/Python/wrangling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Wrangling</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../wiki/Python/rag.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Retrueval Augmented Generation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../wiki/Statistics/stats_start.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Statistics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../wiki/Statistics/ci.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Confidence Intervals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../wiki/Statistics/glm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Generalized Linear Models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../wiki/Statistics/dl.pdf" class="sidebar-item-text sidebar-link"><i class="bi bi-Document" role="img">
+</i> 
+ <span class="menu-text">Deep Learning Python Cheatsheet</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../wiki/Statistics/modeldiagnostic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model Diagnostic</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../wiki/Statistics/logitudinal.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Longitudinal Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../wiki/Statistics/graphNN.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Graph Neural Networks</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../wiki/LinAlg/linalg_start.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linear Algebra</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../wiki/LinAlg/sys.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Systems of Linear Equations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../wiki/LinAlg/basis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Basis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../wiki/LinAlg/linear-maps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linear Maps</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../wiki/LinAlg/eigen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Eigenvalues and -vectors</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../wiki/LinAlg/norm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Orthonormal Basis</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../wiki/SQL/start.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SQL</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../wiki/SQL/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SQL Exercises</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#data-characteristics" id="toc-data-characteristics" class="nav-link" data-scroll-target="#data-characteristics">Data characteristics</a>
+  <ul class="collapse">
+  <li><a href="#multi-relational-graphs" id="toc-multi-relational-graphs" class="nav-link" data-scroll-target="#multi-relational-graphs">Multi-relational graphs</a></li>
+  <li><a href="#permutation-invariance" id="toc-permutation-invariance" class="nav-link" data-scroll-target="#permutation-invariance">Permutation invariance</a></li>
+  <li><a href="#gcn-gnn" id="toc-gcn-gnn" class="nav-link" data-scroll-target="#gcn-gnn">GCN /GNN</a>
+  <ul class="collapse">
+  <li><a href="#message-passing-framework" id="toc-message-passing-framework" class="nav-link" data-scroll-target="#message-passing-framework">Message Passing Framework</a></li>
+  <li><a href="#self-supervised" id="toc-self-supervised" class="nav-link" data-scroll-target="#self-supervised">Self-supervised</a></li>
+  <li><a href="#understand-process" id="toc-understand-process" class="nav-link" data-scroll-target="#understand-process">Understand process</a></li>
+  </ul></li>
+  <li><a href="#loss-function-for-gnn" id="toc-loss-function-for-gnn" class="nav-link" data-scroll-target="#loss-function-for-gnn">Loss Function for GNN</a>
+  <ul class="collapse">
+  <li><a href="#node-classification" id="toc-node-classification" class="nav-link" data-scroll-target="#node-classification">Node Classification</a></li>
+  <li><a href="#graph-classification" id="toc-graph-classification" class="nav-link" data-scroll-target="#graph-classification">Graph classification</a></li>
+  </ul></li>
+  <li><a href="#training-and-optimization-of-gnn" id="toc-training-and-optimization-of-gnn" class="nav-link" data-scroll-target="#training-and-optimization-of-gnn">Training and Optimization of GNN</a>
+  <ul class="collapse">
+  <li><a href="#graph-level-implementations" id="toc-graph-level-implementations" class="nav-link" data-scroll-target="#graph-level-implementations">Graph-level implementations</a></li>
+  <li><a href="#parameter-sharing-and-regularization" id="toc-parameter-sharing-and-regularization" class="nav-link" data-scroll-target="#parameter-sharing-and-regularization">Parameter Sharing and Regularization</a></li>
+  </ul></li>
+  <li><a href="#computation-graph" id="toc-computation-graph" class="nav-link" data-scroll-target="#computation-graph">Computation graph</a></li>
+  <li><a href="#gnn-layer-in-practice" id="toc-gnn-layer-in-practice" class="nav-link" data-scroll-target="#gnn-layer-in-practice">GNN layer in practice</a>
+  <ul class="collapse">
+  <li><a href="#batch-normalization-stabilizes-neural-network-training" id="toc-batch-normalization-stabilizes-neural-network-training" class="nav-link" data-scroll-target="#batch-normalization-stabilizes-neural-network-training">Batch Normalization: stabilizes neural network training</a></li>
+  <li><a href="#dropout" id="toc-dropout" class="nav-link" data-scroll-target="#dropout">Dropout</a></li>
+  <li><a href="#training-pipeline" id="toc-training-pipeline" class="nav-link" data-scroll-target="#training-pipeline">Training Pipeline</a></li>
+  <li><a href="#evaluation-metrics" id="toc-evaluation-metrics" class="nav-link" data-scroll-target="#evaluation-metrics">Evaluation metrics</a></li>
+  <li><a href="#data-split" id="toc-data-split" class="nav-link" data-scroll-target="#data-split">Data Split</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#bayesian-networks-and-causal-graphs" id="toc-bayesian-networks-and-causal-graphs" class="nav-link" data-scroll-target="#bayesian-networks-and-causal-graphs">Bayesian Networks and Causal Graphs</a>
+  <ul class="collapse">
+  <li><a href="#causal-story-behind-data" id="toc-causal-story-behind-data" class="nav-link" data-scroll-target="#causal-story-behind-data">Causal story behind data</a>
+  <ul class="collapse">
+  <li><a href="#structural-causal-model-scm---m" id="toc-structural-causal-model-scm---m" class="nav-link" data-scroll-target="#structural-causal-model-scm---m">Structural causal model (SCM) - M</a></li>
+  <li><a href="#bayesian-network" id="toc-bayesian-network" class="nav-link" data-scroll-target="#bayesian-network">Bayesian Network</a></li>
+  </ul></li>
+  <li><a href="#causalality-in-detail" id="toc-causalality-in-detail" class="nav-link" data-scroll-target="#causalality-in-detail">Causalality in Detail</a>
+  <ul class="collapse">
+  <li><a href="#conditioning-seeing-vs.-intervention-doing---pearls-ladder-of-causality" id="toc-conditioning-seeing-vs.-intervention-doing---pearls-ladder-of-causality" class="nav-link" data-scroll-target="#conditioning-seeing-vs.-intervention-doing---pearls-ladder-of-causality">Conditioning (Seeing) vs.&nbsp;Intervention (Doing) - Pearls Ladder of Causality</a></li>
+  </ul></li>
+  <li><a href="#causal-conclusions-form-observational-data" id="toc-causal-conclusions-form-observational-data" class="nav-link" data-scroll-target="#causal-conclusions-form-observational-data">Causal Conclusions form observational data</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../wiki/Statistics/stats_start.html">Statistics</a></li><li class="breadcrumb-item"><a href="../../wiki/Statistics/graphNN.html">Graph Neural Networks</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">graph NN</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>Real world data is often naturally or ideally structured as graphs. Especially, relational data is modeled better with graph compared to tabular form. GNN extends machine learning model to use graph data format as input. The idea is to learn embeddings of feature vectors that caputres infos about individuals nodes but also how nodes are connected. This leads to richer and more comprehensive understanding of the data. GNN is just UPDATE and AGGREGATE functions</p>
+</section>
+<section id="data-characteristics" class="level1">
+<h1>Data characteristics</h1>
+<p>With ML we can pad images (or center crop) or sequences to have same sized input. With graphs it’s a bit different. They have highly irregular structure.</p>
+<section id="multi-relational-graphs" class="level2">
+<h2 class="anchored" data-anchor-id="multi-relational-graphs">Multi-relational graphs</h2>
+<p>There is a distinction between: - undirected - directed - weighted edges - type of edge - one adjacency matrix per edge type</p>
+<p>These types of graphs are called multi-relational graphs and is summarized by 1 adjacency tensor A Two important subset are: - heterogeneous - multiplex</p>
+<p>coordinate list of edges:</p>
+<blockquote class="blockquote">
+<p>edge_index = torch.Size([2, 156]) tensor([[ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 8, 9, 9, 10, 10, 10, 11, 12, 12, 13, 13, 13, 13, 13, 14, 14, 15, 15, 16, 16, 17, 17, 18, 18, 19, 19, 19, 20, 20, 21, 21, 22, 22, 23, 23, 23, 23, 23, 24, 24, 24, 25, 25, 25, 26, 26, 27, 27, 27, 27, 28, 28, 28, 29, 29, 29, 29, 30, 30, 30, 30, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33], [ 1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 17, 19, 21, 31, 0, 2, 3, 7, 13, 17, 19, 21, 30, 0, 1, 3, 7, 8, 9, 13, 27, 28, 32, 0, 1, 2, 7, 12, 13, 0, 6, 10, 0, 6, 10, 16, 0, 4, 5, 16, 0, 1, 2, 3, 0, 2, 30, 32, 33, 2, 33, 0, 4, 5, 0, 0, 3, 0, 1, 2, 3, 33, 32, 33, 32, 33, 5, 6, 0, 1, 32, 33, 0, 1, 33, 32, 33, 0, 1, 32, 33, 25, 27, 29, 32, 33, 25, 27, 31, 23, 24, 31, 29, 33, 2, 23, 24, 33, 2, 31, 33, 23, 26, 32, 33, 1, 8, 32, 33, 0, 24, 25, 28, 32, 33, 2, 8, 14, 15, 18, 20, 22, 23, 29, 30, 31, 33, 8, 9, 13, 14, 15, 18, 19, 20, 22, 23, 26, 27, 28, 29, 30, 31, 32]])</p>
+</blockquote>
+<ul>
+<li>directed graph can be identifiyed by a <em>Non-symetrical adjacency matrix</em></li>
+</ul>
+</section>
+<section id="permutation-invariance" class="level2">
+<h2 class="anchored" data-anchor-id="permutation-invariance">Permutation invariance</h2>
+<p>Traditional data formats = structure of data is fixed and meaningful. With graph there is a lack of natural order and this is refered to as <em>permutation invariance</em></p>
+<p>Embeddings are compact summary of local grpah structure. Thus connected nodes must have similar embeddings.</p>
+<p>Graph convolution networks are most wiedely applied arichtecture.</p>
+</section>
+<section id="gcn-gnn" class="level2">
+<h2 class="anchored" data-anchor-id="gcn-gnn">GCN /GNN</h2>
+<ul>
+<li>Key idea generate representation of a node that depends on the structure of the graph + any feature information of that node</li>
+<li>CNN aggregates features information from spatially defined patches in an image using convolution operations.</li>
+<li>GCN are similar as they aggregate information based on local graph neighborhoods. The idea is that neighboring nodes have information about a node. Aggregating neigbhoors and node gives enhanced features. This agg needs to be normalized since nodes can have drastic different numbers of neighbors and would bias training.</li>
+<li>In traditional data formats like images and text, the order or structure of the data is fixed and meaningful.</li>
+<li>Changing the order of words will change the meaning of the sentence and modeling results.</li>
+<li>In a graph, nodes (representing entities) are connected by edges (representing relationships), and there is no inherent ordering of these nodes. This lack of a natural order leads to the necessary property of the function to be permutation invariant.</li>
+</ul>
+<p>Why not feed each row of concat(adjacency matrix, feature matrix)?:</p>
+<ul>
+<li>it would depend on the arbitrary ordering of nodes that we use in the adjacency matrix</li>
+<li>such a model is not permutation invariant. But it must be permutation invariant.</li>
+<li>Thus, when working with graph data, the model should produce the same output regardless of the order in which the nodes and their neighbors are presented.</li>
+<li>The model must treat these permutations of the input as equivalent.</li>
+<li>Translating nodes (e.g.&nbsp;neighbors) into a vector we have to enforce arbitrary ordering of these nodes. This would produces different outputs in a ML like CNN.</li>
+<li><strong>DEFINING FEATURE OF GNN IS THAT IT USES A FORM OF NEURAL MESSAGE PASSING</strong></li>
+</ul>
+<section id="message-passing-framework" class="level3">
+<h3 class="anchored" data-anchor-id="message-passing-framework">Message Passing Framework</h3>
+<ul>
+<li>there a different message-passing iteration
+<ul>
+<li>where a hidden embedding <span class="math inline">\(h_u^{(k)}\)</span> corresponding to each node <span class="math inline">\(u \in V\)</span> is updated with information aggregated/convoluted from <span class="math inline">\(u\)</span>’s graph neighborhood <span class="math inline">\(N(u)\)</span></li>
+<li>often two hops away considered.</li>
+</ul></li>
+<li>happens in the hidden layer</li>
+</ul>
+<p>steps:</p>
+<ol type="1">
+<li>It looks at its neighbors</li>
+<li>Mixes their features together</li>
+<li>Applies a learnable weight matrix</li>
+<li>Compresses everything down to 3 numbers (if out_channels = 3)</li>
+</ol>
+</section>
+<section id="self-supervised" class="level3">
+<h3 class="anchored" data-anchor-id="self-supervised">Self-supervised</h3>
+<p>This means it only uses graph structure information to train. E.G. negative links.</p>
+</section>
+<section id="understand-process" class="level3">
+<h3 class="anchored" data-anchor-id="understand-process">Understand process</h3>
+<p>GCN takes two input:</p>
+<ul>
+<li>Node feature matrix X
+<ul>
+<li>[num_nodes, num_dimensions]</li>
+</ul></li>
+<li>Adjacency matrix A
+<ul>
+<li>which nodes are connected</li>
+</ul></li>
+</ul>
+<p>Message passing:</p>
+<ul>
+<li>happens in layers</li>
+<li>each node sends “message” (its current features) to its neighbors and receives messages from them</li>
+</ul>
+<p>Conceptual steps per layer:</p>
+<ol type="1">
+<li>collect messages from neighbors</li>
+<li>Aggregate (combine) them</li>
+<li>Transform with a neural network (weight matrix)</li>
+<li>Apply activation (like ReLU)</li>
+</ol>
+<p>How does aggregation work?:</p>
+<p><span class="math inline">\(H^{(l+1)} = \sigma\!\left(\tilde D^{-1/2}\,\tilde A\,\tilde D^{-1/2}\, H^{(l)} W^{(l)}\right)\)</span></p>
+<p>Step 1:</p>
+<p><em>Normalize adjacency matrix:</em></p>
+<p><span class="math inline">\(\tilde A = A+I\)</span></p>
+<p><em>Compute Degree matrix:</em> <span class="math inline">\(\tilde D\)</span></p>
+<ul>
+<li>each diagonal element = number of neighbors of that node</li>
+<li>next normalize:</li>
+</ul>
+<p><span class="math inline">\(\hat A = \tilde D^{1/2}\tilde A\tilde D^{-1/2}\)</span></p>
+<ul>
+<li>this prevents nodes with many neighbors from dominating the aggregation (e.g.&nbsp;weighted averaging of neighbors)</li>
+</ul>
+<p>Step2: Message passing via matrix multiplication</p>
+<p>if:</p>
+<ul>
+<li><span class="math inline">\(H^0 = X\)</span>(initial node features)</li>
+<li><span class="math inline">\(W^(0)\)</span> is a learnable weight matrix</li>
+</ul>
+<p>then one gcn layer is:</p>
+<p><span class="math inline">\(H^{(1)} = \sigma(\hat AXW^{(0)})\)</span></p>
+<p>Breaking this down:</p>
+<ol type="1">
+<li>XW = transform node features</li>
+<li><span class="math inline">\(\hat A(XW)\)</span> = mix information from neighbors</li>
+<li><span class="math inline">\(\sigma (RELU)\)</span> = non-linearity</li>
+</ol>
+<p>How does a node in layer 2 get information from 2 hops?</p>
+<ul>
+<li>By aggregating again its neighbors it receives information from 2 hop because neighbors have aggregated information from their neighbors in layer 1 and this is passed to the node in layer 2.</li>
+<li>k iteration = k hops away</li>
+</ul>
+<p><strong>Major issue with GCN = over-smoothing</strong></p>
+<ul>
+<li>with 10+ layers all nodes start to look the same because they keep averaging over larger neighborhoods</li>
+</ul>
+<p>In GCN layer the two weight matrices are shared for all nodes (parameter matricies: W and B):</p>
+<ul>
+<li>this helps with generalization to unseen nodes</li>
+<li>helps with computation</li>
+<li>model output does not depend on node ordering: GCN is permutation invariant</li>
+<li>a function how to aggregate is learned nothing really tied to a single node</li>
+<li>message passing = local feature-aggregation behaviour (like CNN- convolutional kernels)</li>
+</ul>
+<p>basic message passing is defined as:</p>
+<p><span class="math inline">\(H_u^{(k)} = \sigma(W^{(k)}_{self}h_u^{(k-1)} + W^{(k)}_{neigh} \sum_{v\in N(u)}h_v^{(k-1)}+b^{(k)})\)</span></p>
+<p>where <span class="math inline">\(W_{self'}^{(k)}, W^{(k)}_{neigh}\in R^{d^{(k)}\times d^{(k-1)}}\)</span> are trainable parameter matricies and <span class="math inline">\(\sigma\)</span> denotes an elementwise non-linearity (e.g.&nbsp;tanh /ReLU). Bias term <span class="math inline">\(b^{(k)}\)</span> is omitted for notational simplicity but important for performance.</p>
+<p>Process:</p>
+<ul>
+<li>first sum incoming messages from neighbors</li>
+<li>second, combine with previous embedding using linear combination</li>
+<li>third, elemntwise non-linearity</li>
+</ul>
+<p><span class="math inline">\(h_u^{(k+1)} = UPDATE^{k}(h_u^k,AGGREGATE(h_v^k,\forall v \in N(u)))\)</span></p>
+<p><span class="math inline">\(=UPDATE^k(h_u^k,m_{N(u)}^k)\)</span></p>
+<p>UPDATE and AGGREGATE are arbitrary differentiable function (i.e., neural networks) and <span class="math inline">\(m_{N(u)}\)</span> is the aggregated message.</p>
+<ul>
+<li>At each iteration k of GNN the AGGREGATE function takes as input the set of embeddings of the nodes in <span class="math inline">\(u's\)</span> graph neighborhood N and generates a message.</li>
+<li>Update combines the message <span class="math inline">\(m_{N(u)}^k\)</span> with previous emebdinng <span class="math inline">\(h_u^{(k-1)}\)</span> of node u to generate the updated embedding <span class="math inline">\(h_u^{k}\)</span></li>
+<li>Initial embeddings at <span class="math inline">\(k=0\)</span> are set to the input features for all the nodes: <span class="math inline">\(h_u^0=x_u \forall u \in V\)</span></li>
+<li>after all iteration we can use the output of final layer to define the embeddings for each node: <span class="math inline">\(z_u = h_u^k, \forall u \in V\)</span></li>
+<li>If no node features are available we can use:
+<ul>
+<li>node statistics (how many neighbors, degree)</li>
+<li>identity features</li>
+</ul></li>
+</ul>
+<p><strong>What information can a node hold?</strong></p>
+<ul>
+<li>structural information = degree of a node</li>
+<li>feature-based</li>
+</ul>
+<p><strong>Questions:</strong></p>
+<ul>
+<li>goal embedingt nodes with NN: how many hidden units? as many as nodes?</li>
+<li>why combine messages with previous hidden layer of u?
+<ul>
+<li>at iteration K = 1 we have: <span class="math inline">\(k-1 = 0\)</span> and this is the features of a node</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="loss-function-for-gnn" class="level2">
+<h2 class="anchored" data-anchor-id="loss-function-for-gnn">Loss Function for GNN</h2>
+<p>GNN most often used for 3 tasks:</p>
+<ul>
+<li>node classification (user is a bot in social network)</li>
+<li>graph classification (proterty prediction based on molecular graph structures)</li>
+<li>relation prediction (content recommendation in online platforms)</li>
+</ul>
+<p><span class="math inline">\(z_u, z_G\)</span> are embeddings of final layer (node, and graph). Graph embedding happens via pooling. Gradient of the loss is backpropagated through the parameters of the GNN using stochastic gradient descent.</p>
+<section id="node-classification" class="level3">
+<h3 class="anchored" data-anchor-id="node-classification">Node Classification</h3>
+<p><strong>example, for non-binary classification</strong>:</p>
+<ol type="1">
+<li>Chose output function</li>
+</ol>
+<ul>
+<li>Softmax</li>
+<li>Sigmoid</li>
+</ul>
+<ol start="2" type="1">
+<li>Loss function</li>
+</ol>
+<ul>
+<li>Binary cross-entropy</li>
+<li>Categorical cross-entropy (multiple classes)</li>
+<li>negative log likelihood</li>
+</ul>
+<p><span class="math inline">\(L = \sum_{u \in N_{train}}-log(softmax(z_u,y_u))\)</span> where <span class="math inline">\(z_u\)</span> is embedding of node u. Softmax turns real numbers into probabilities (e emphasises larg number), for numeric stable version we can subract max(z) from each z. Commonly neural networks output logits which are then turned into probabilies with softmax or sigmoid function.<span class="math inline">\(y_u\)</span> is one-hot encodedﬁ⁄</p>
+<p><span class="math inline">\(softmax(z_i)= \frac{e^z_i}{\sum_{j=1}^Ke^{z_j}}\)</span></p>
+<p>Softmax with one-hot encoded class labels just selects the probability of correct class:</p>
+<p><span class="math inline">\(softmax(z_u,y_u) = \sum_{i=1}^cy[i]\frac{exp(z_u^Tw_i)}{\sum_{j=1}^cexp(z_u^Tw_j)}\)</span></p>
+<ul>
+<li>C = classes</li>
+<li>y one-hot encodede class label</li>
+</ul>
+<p><span class="math inline">\(sigmoid(z) = \frac{1}{1+e^{-z}\)</span></p>
+<p><span class="math inline">\(Negativeloglikelihood(\theta) = -\sum_{i=1}^nlog \space p(y_i|x_i,\theta)\)</span> which the goal is to minimize: if model assigns high probability to correct outcome then log probablilty is close to 0 <strong>low loss</strong>. - log goes to + infinity with probability approaching 0.</p>
+<p><strong>Three types of nodes</strong></p>
+<ol type="1">
+<li>set of training nodes, <span class="math inline">\(V_{train}\)</span>: These nodes are included in the GNN message passing operations and for computing loss</li>
+<li>Transductive test nodes, <span class="math inline">\(V_{trans}\)</span>: These nodes are unlabeled and not used in loss computation but nodes are still involved in GNN message passing operations. = GNN generates hidden representations for <span class="math inline">\(h_u^{(k)}\)</span> for the nodes <span class="math inline">\(u\in V_{trans}\)</span> during message passing operations. <strong>But the final layer embeddings of those nodes will not bes used in the loss function computation</strong></li>
+<li>Inductive test nodes, <span class="math inline">\(V_{ind}\)</span>: these nodes are not used in loss computation or message passing during training, meaning these nodes and all their edges are unobserved while training. For example train on subgraph</li>
+</ol>
+<p><strong>Semi-supervised</strong>: transductive test nodes: included in message passing during trainig</p>
+</section>
+<section id="graph-classification" class="level3">
+<h3 class="anchored" data-anchor-id="graph-classification">Graph classification</h3>
+<p>Same as node classification but loss is computed over <span class="math inline">\(z_g\)</span> graph level embeddings</p>
+</section>
+</section>
+<section id="training-and-optimization-of-gnn" class="level2">
+<h2 class="anchored" data-anchor-id="training-and-optimization-of-gnn">Training and Optimization of GNN</h2>
+<section id="graph-level-implementations" class="level3">
+<h3 class="anchored" data-anchor-id="graph-level-implementations">Graph-level implementations</h3>
+<p>to make calculations more efficient graph level implementation of GNN equations are used.</p>
+<p><span class="math inline">\(H^k = \sigma(AH^{(k-1)}W^k_{neigh} + H^{(k-1)}W_{self}^k)\)</span> where <span class="math inline">\(H^k\)</span> is a matrix containing the layer-k embeedings of <strong>all nodes</strong> in the graph. We compute embedding <span class="math inline">\(h_u^k\)</span> exatctly once. Limitation one full batch gradient descent and memory problems.</p>
+<p>==Subsampling and mini batching==</p>
+</section>
+<section id="parameter-sharing-and-regularization" class="level3">
+<h3 class="anchored" data-anchor-id="parameter-sharing-and-regularization">Parameter Sharing and Regularization</h3>
+<ul>
+<li>we can use standard regularization: L2, dropout, layer normalization</li>
+</ul>
+<p>some GNN specific regularizations:</p>
+<ul>
+<li>parameter sharing: use same parameters in all aggregate and update functions (most effective for GNN with more than 6 layers)</li>
+<li>Edge dropout: randomly remove (or mask) edgeds in adjacency matrix during training</li>
+</ul>
+</section>
+</section>
+<section id="computation-graph" class="level2">
+<h2 class="anchored" data-anchor-id="computation-graph">Computation graph</h2>
+<ul>
+<li>node’s neighborhood defines a computation graph</li>
+<li>nodes aggregate information form their neighbors using neural networks</li>
+<li>every node defines a computation graph based on its neighborhood</li>
+<li>so that information of node v doesn’t get lost we include <span class="math inline">\(h_v^{(l-1)}\)</span></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="~/Portfolio/wiki/Statistics/pic/compgraph.png" class="img-fluid figure-img"></p>
+<figcaption>Computational Graph</figcaption>
+</figure>
+</div>
+<p>==Attention scores==</p>
+</section>
+<section id="gnn-layer-in-practice" class="level2">
+<h2 class="anchored" data-anchor-id="gnn-layer-in-practice">GNN layer in practice</h2>
+<section id="batch-normalization-stabilizes-neural-network-training" class="level3">
+<h3 class="anchored" data-anchor-id="batch-normalization-stabilizes-neural-network-training">Batch Normalization: stabilizes neural network training</h3>
+<p>Given a batch of inputs (node embeddings):</p>
+<p>for each batch:</p>
+<ul>
+<li>re-center the node emebeddings into zero mean</li>
+<li>re-scale the variance into unit variance</li>
+<li>apply trainable parameters to normalized feature input: <span class="math inline">\(Y_{i,j} = \gamma X + \beta_\)</span></li>
+</ul>
+</section>
+<section id="dropout" class="level3">
+<h3 class="anchored" data-anchor-id="dropout">Dropout</h3>
+<p>Prevent overfitting:</p>
+<ul>
+<li>during trainnig with some probability p, randomly set neurons to zero (turn off)</li>
+<li>during testing use all the neurons for computation</li>
+<li>in GNN it is applied in the linear layer in the message function</li>
+</ul>
+</section>
+<section id="training-pipeline" class="level3">
+<h3 class="anchored" data-anchor-id="training-pipeline">Training Pipeline</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pic/gnnpipe.png" class="img-fluid figure-img"></p>
+<figcaption>GNN Pipeline</figcaption>
+</figure>
+</div>
+<p>Different Tasks require different prediction heads:</p>
+<ul>
+<li>Node-level prediction: directly make prediction using node embeddings. Classification and Regression</li>
+<li>Edge-level-prediction: prediction using paris of node emebeddings.
+<ul>
+<li>Options are: Concatenation + Linear <span class="math inline">\(\hat y_{uv} = Linear(Concat(h_u,h_v))\)</span></li>
+<li>Or: Dot product <span class="math inline">\(\hat y_{uv} = (h_u)^Th_v\)</span>
+<ul>
+<li>only 1-way prediction (existence of an edge). Can be addapted to k-way prediction using trainable weights for each K</li>
+</ul></li>
+</ul></li>
+<li>Graph-level prediction: prediction using all node embeddings
+<ul>
+<li>Options are:
+<ul>
+<li>Global mean pooling, global max pooling, global sum pooling</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>Unsupervised signals on graphs Page 56</p>
+</section>
+<section id="evaluation-metrics" class="level3">
+<h3 class="anchored" data-anchor-id="evaluation-metrics">Evaluation metrics</h3>
+<ul>
+<li>Root mean square error (RMSE)</li>
+<li>Mean absolute error (MAE)</li>
+<li>Multi-class classification: accuracy (korrekt/total)</li>
+<li>binary classification: accuracy, precision/recall, ROC AUC, F1</li>
+</ul>
+<p>Page 66</p>
+</section>
+<section id="data-split" class="level3">
+<h3 class="anchored" data-anchor-id="data-split">Data Split</h3>
+<p><strong>Fixed</strong>: split once</p>
+<ul>
+<li>training: optimize GNN parameters</li>
+<li>validation: develop model/hyperparameters</li>
+<li>test: held out, test for final performance</li>
+</ul>
+<p><strong>Random</strong>: randomly split and report average across multiple random seeds</p>
+<p>In graph we have problem that nodes are not independent, how to split?</p>
+<p>Solution 1: Transductive setting</p>
+<ul>
+<li>compute embeddings using entire graphs</li>
+<li>train using node labels of 1/3 of nodes</li>
+<li>validation node labels of second third</li>
+<li>tes with last nodes</li>
+</ul>
+<p>Solution 2: Inductive setting</p>
+<ul>
+<li>break edges and split into multiple graves</li>
+</ul>
+<p>s74</p>
+</section>
+</section>
+</section>
+<section id="bayesian-networks-and-causal-graphs" class="level1">
+<h1>Bayesian Networks and Causal Graphs</h1>
+<ul>
+<li>Simple statistics and AI can’t give us answers to causality questions.</li>
+<li>Simposons Paradox is an example where different effects can be found in subpopulation compared to an average effect</li>
+<li>Causal mechanism of the data generating process must be understood</li>
+<li>Common causes (e.g.&nbsp;being a woman has effect on taking the drug and failure to recover) that effects both treatment and outcome is a <strong>confounder</strong></li>
+<li>common causes can cause spurious correlation</li>
+</ul>
+<section id="causal-story-behind-data" class="level2">
+<h2 class="anchored" data-anchor-id="causal-story-behind-data">Causal story behind data</h2>
+<section id="structural-causal-model-scm---m" class="level3">
+<h3 class="anchored" data-anchor-id="structural-causal-model-scm---m">Structural causal model (SCM) - M</h3>
+<ul>
+<li>a way of describing relevant features of the world and how they interact with each other</li>
+<li><strong>edogenous</strong>: variables determined within the causal system
+<ul>
+<li>part of causal mechanism</li>
+<li>influenced by other variables in the model</li>
+<li>is correlated with unobserved factors that affect outcome</li>
+<li>e.g.&nbsp;education/income</li>
+<li>caused by at least one exogenous variable</li>
+</ul></li>
+<li><strong>exogenous</strong>: variables that determined outside the causal system being modeled
+<ul>
+<li>i.e.&nbsp;<em>not caused by any variable inside the model</em></li>
+<li><em>not affected by other variables in the model</em></li>
+<li>often treated as independent inputs</li>
+<li>help identify causal effects because they provide variation that is not influenced by the outcome</li>
+<li>e.g.: completley randomly assigned scholarships</li>
+</ul></li>
+</ul>
+<p><strong>SCM consists of</strong>:</p>
+<ol type="1">
+<li>U: set of exogenous variables</li>
+<li>V: set of endogenous variables</li>
+<li>F: set of functions that assign each variable in V a value based on the values of the other variables in the model</li>
+</ol>
+<p><img src="pic/scm.png" class="img-fluid"> #### Graphical Causal Models</p>
+<p>Every SCM is assocaited with a graphical causal model, and consists of:</p>
+<ol type="1">
+<li>set of nodes representing variables in U and V</li>
+<li>set of edges representing the functions in f</li>
+</ol>
+<ul>
+<li>edges can be directed vs.&nbsp;undirected
+<ul>
+<li>starting node = <strong>parent</strong></li>
+<li>end node = <strong>child</strong></li>
+<li>for multiple connection: starting point == <strong>ancestor</strong> and every node on the path is <strong>descendant</strong></li>
+</ul></li>
+<li>Consequently, every endogenous variable in a model is a <strong>descendant</strong> of at least one exogenous variable</li>
+<li>exogenous variables cannot be descendants of any other variables (root nodes in a graph).</li>
+</ul>
+<p>Graphical definition of causation:</p>
+<blockquote class="blockquote">
+<p>if in graphical model: X is child of Y then Y is direct cause of X. If x is desendant of Y, then Y is potential cause of X. ### DAG: Directed Acyclic Graphs (Bayesian networks)</p>
+</blockquote>
+<p>to be Acyclic:</p>
+<ul>
+<li>no self-lops or cycles</li>
+</ul>
+<section id="explaining-away" class="level4">
+<h4 class="anchored" data-anchor-id="explaining-away">Explaining Away</h4>
+<blockquote class="blockquote">
+<p>Suppose we have two causes for an effect the conditional probability of one cause given effect is larger than conditional probaility of other cause given effect and second cause (even if both causes are independant)</p>
+</blockquote>
+<p><img src="pic/explainingaway.png" class="img-fluid" alt="explaining away"> - conditioning on A = 1 is crucial for explaining away phenomenon</p>
+</section>
+</section>
+<section id="bayesian-network" class="level3">
+<h3 class="anchored" data-anchor-id="bayesian-network">Bayesian Network</h3>
+<p>Let <span class="math inline">\(X=(X_1,...,X_n)\)</span> be random variables. Bayesian network is a DAG that specifies a joint distribution over X as a product of local conditional distributions:</p>
+<p><span class="math inline">\(\mathbb{P} = (X_1 =x_1,...X_n=x_n = \prod _{i=1}^np(x_i|x_{Parents(i)})\)</span></p>
+<ul>
+<li>if no direct connection in a DAG, then they nodes are conditional independent if connecting node is known:</li>
+</ul>
+<p><span class="math inline">\(T \perp F|V\)</span> which implies <span class="math inline">\(p(f|v,t) = p(f|v)\)</span></p>
+</section>
+</section>
+<section id="causalality-in-detail" class="level2">
+<h2 class="anchored" data-anchor-id="causalality-in-detail">Causalality in Detail</h2>
+<section id="conditioning-seeing-vs.-intervention-doing---pearls-ladder-of-causality" class="level3">
+<h3 class="anchored" data-anchor-id="conditioning-seeing-vs.-intervention-doing---pearls-ladder-of-causality">Conditioning (Seeing) vs.&nbsp;Intervention (Doing) - Pearls Ladder of Causality</h3>
+<ul>
+<li>Conditioning: focuses on observed cases where a variable has a certain value (<span class="math inline">\(P(Y|X=x)\)</span>) - <strong>filters</strong> data - Intervention: forces a variable to take certain value, <span class="math inline">\(P(Y|do(X=x)\)</span> <strong>alters</strong> data-generating process</li>
+</ul>
+<p>RCT = doing</p>
+<p>with RCT we eliminate the connection between confouder and Treatment variable but the effect of confonder on Y stays <strong>Average Treatment Effect:</strong></p>
+<p><span class="math inline">\(ATE = \mathbb{E}[y|do(X=x_0)] - \mathbb{E}[Y|do(X=x_1)]\)</span></p>
+</section>
+</section>
+<section id="causal-conclusions-form-observational-data" class="level2">
+<h2 class="anchored" data-anchor-id="causal-conclusions-form-observational-data">Causal Conclusions form observational data</h2>
+<p>Target quantity is causal effect difference or average causal Effect (ACE)</p>
+<p><span class="math inline">\(ACE = P(Y=1|do(X=1))- P(Y=1|do(X=0))\)</span> # Causal Machine Learning (GNN &amp; Causal Graphs)</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../wiki/Statistics/logitudinal.qmd" class="pagination-link" aria-label="Longitudinal Data">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Longitudinal Data</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../wiki/LinAlg/linalg_start.html" class="pagination-link" aria-label="Linear Algebra">
+        <span class="nav-page-text">Linear Algebra</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/oli9402">
+      <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/oliver_zingg">
+      <i class="bi bi-twitter" role="img" aria-label="Twitter">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/oliver-zingg-321b0228a/">
+      <i class="bi bi-linkedin" role="img" aria-label="LinkedIn">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

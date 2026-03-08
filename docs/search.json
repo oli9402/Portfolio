@@ -18,7 +18,7 @@
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "Visualizing Semantic Difference Scales\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nVisualizing Likert Scales\n\n\n\nlikert\n\n\nggplot2\n\n\nbar plot\n\n\n\nDiverging Bar Plots for visualizing positive vs. negative opinions\n\n\n\nOliver Zingg\n\n\nNov 21, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUsing Quarto for interactive Presentations\n\n\n\nQuarto\n\n\nPresentation\n\n\nEcharts4r\n\n\nInteractive\n\n\nHMTL\n\n\n\nA simple demonstration of how to use R, Revealjs and Echarts4r to create interactive Presentations. HTML file can be easily sent to other and opened with different browsers.…\n\n\n\nOliver Zingg\n\n\nNov 19, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMasterarbeit\n\n\n\nData Analysis\n\n\nMixed-Effects Model\n\n\nEEG\n\n\nPsychiatric Disorders\n\n\nMasterarbeit\n\n\n\n\n\n\n\nOliver Zingg\n\n\nJun 1, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nOwn Theme\n\n\n\nggplot2\n\n\nVisualization\n\n\nBoxplot\n\n\nCompany Theme\n\n\n\nExperimenting with own themes\n\n\n\nOliver Zingg\n\n\nNov 1, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAccuracy of selected predictors per sample size\n\n\n\n\n\n\n\n\n\nOct 10, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBachelorarbeit\n\n\n\nMachine Learning\n\n\nSystematic literature review\n\n\nMRI\n\n\nBachelorarbeit\n\n\n\n\n\n\n\nOliver Zingg\n\n\nJun 1, 2021\n\n\n\n\n\n\n\n\n\n\n\n\nGoogle Headlines Analysis\n\n\n\nHeadlines\n\n\nGoogle\n\n\nPython\n\n\nSentiment Analysis\n\n\n\n…\n\n\n\nOliver Zingg\n\n\nNov 20, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConfidence Intervals\n\n\n\n\n\n\nOliver Zingg\n\n\nSep 6, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThemes for Data Visualization with R\n\n\n\n\n\n\nOliver Zingg\n\n\nSep 10, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nSimpson’s Paradox\n\n\n\nLinear Mixed Effects\n\n\nStatistics\n\n\nRandom Effects\n\n\n\n\n\n\n\nOliver Zingg\n\n\nSep 5, 2023\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Visualizing Semantic Difference Scales\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nindex\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nVisualizing Likert Scales\n\n\n\nlikert\n\nggplot2\n\nbar plot\n\n\n\nDiverging Bar Plots for visualizing positive vs. negative opinions\n\n\n\nOliver Zingg\n\n\nNov 21, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nUsing Quarto for interactive Presentations\n\n\n\nQuarto\n\nPresentation\n\nEcharts4r\n\nInteractive\n\nHMTL\n\n\n\nA simple demonstration of how to use R, Revealjs and Echarts4r to create interactive Presentations. HTML file can be easily sent to other and opened with different browsers.…\n\n\n\nOliver Zingg\n\n\nNov 19, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nMasterarbeit\n\n\n\nData Analysis\n\nMixed-Effects Model\n\nEEG\n\nPsychiatric Disorders\n\nMasterarbeit\n\n\n\n\n\n\n\nOliver Zingg\n\n\nJun 1, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\nAccuracy of selected predictors per sample size\n\n\n\n\n\n\n\n\n\nOct 10, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\nBachelorarbeit\n\n\n\nMachine Learning\n\nSystematic literature review\n\nMRI\n\nBachelorarbeit\n\n\n\n\n\n\n\nOliver Zingg\n\n\nJun 1, 2021\n\n\n\n\n\n\n\n\n\n\n\nGoogle Headlines Analysis\n\n\n\nHeadlines\n\nGoogle\n\nPython\n\nSentiment Analysis\n\n\n\n…\n\n\n\nOliver Zingg\n\n\nNov 20, 2023\n\n\n\n\n\n\n\n\n\n\n\nOwn Theme\n\n\n\nggplot2\n\nVisualization\n\nBoxplot\n\nCompany Theme\n\n\n\nExperimenting with own themes\n\n\n\nOliver Zingg\n\n\nNov 1, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\nConfidence Intervals\n\n\n\n\n\n\nOliver Zingg\n\n\nSep 6, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\nThemes for Data Visualization with R\n\n\n\n\n\n\nOliver Zingg\n\n\nSep 10, 2023\n\n\n\n\n\n\n\n\n\n\n\nSimpson’s Paradox\n\n\n\nLinear Mixed Effects\n\nStatistics\n\nRandom Effects\n\n\n\n\n\n\n\nOliver Zingg\n\n\nSep 5, 2023\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "wiki/DOE/doe.html",
@@ -1088,35 +1088,60 @@
     "href": "wiki/Statistics/modeldiagnostic.html",
     "title": "modeldiagnostic",
     "section": "",
-    "text": "Shows whether residuals have non-linear patterns.\nEqual spread of residual around horizontal line without distinct patters indication of non-linear relationship\n\n\n\n\n\nShows residuals are normally distributed\n\n\n\n\n\nResiduals spread eqaully along the ranges of predictors (homoscedasticity)\nHorizontal line with equally randomly spread points\n\n\n\n\n\nThis plot helps us to find influential cases (i.e., subjects) if there are any.\nWe watch out for outlying values at the upper right corner or at the lower right corner. Those spots are the places where cases can be influential against a regression line. Look for cases outside of the dashed lines. When cases are outside of the dashed lines (meaning they have high “Cook’s distance” scores), the cases are influential to the regression results. The regression results will be altered if we exclude those cases."
+    "text": "Shows whether residuals have non-linear patterns.\nEqual spread of residual around horizontal line without distinct patters indication of non-linear relationship\n\n\n\n\n\nShows residuals are normally distributed\n\n\n\n\n\nResiduals spread eqaully along the ranges of predictors (homoscedasticity)\nHorizontal line with equally randomly spread points\n\n\n\n\n\nThis plot helps us to find influential cases (i.e., subjects) if there are any.\nWe watch out for outlying values at the upper right corner or at the lower right corner. Those spots are the places where cases can be influential against a regression line. Look for cases outside of the dashed lines. When cases are outside of the dashed lines (meaning they have high “Cook’s distance” scores), the cases are influential to the regression results. The regression results will be altered if we exclude those cases.",
+    "crumbs": [
+      "Wiki",
+      "Statistics",
+      "Model Diagnostic"
+    ]
   },
   {
     "objectID": "wiki/Statistics/modeldiagnostic.html#residuals-vs-fitted",
     "href": "wiki/Statistics/modeldiagnostic.html#residuals-vs-fitted",
     "title": "modeldiagnostic",
     "section": "",
-    "text": "Shows whether residuals have non-linear patterns.\nEqual spread of residual around horizontal line without distinct patters indication of non-linear relationship"
+    "text": "Shows whether residuals have non-linear patterns.\nEqual spread of residual around horizontal line without distinct patters indication of non-linear relationship",
+    "crumbs": [
+      "Wiki",
+      "Statistics",
+      "Model Diagnostic"
+    ]
   },
   {
     "objectID": "wiki/Statistics/modeldiagnostic.html#q-q-plot",
     "href": "wiki/Statistics/modeldiagnostic.html#q-q-plot",
     "title": "modeldiagnostic",
     "section": "",
-    "text": "Shows residuals are normally distributed"
+    "text": "Shows residuals are normally distributed",
+    "crumbs": [
+      "Wiki",
+      "Statistics",
+      "Model Diagnostic"
+    ]
   },
   {
     "objectID": "wiki/Statistics/modeldiagnostic.html#scale-location-plot",
     "href": "wiki/Statistics/modeldiagnostic.html#scale-location-plot",
     "title": "modeldiagnostic",
     "section": "",
-    "text": "Residuals spread eqaully along the ranges of predictors (homoscedasticity)\nHorizontal line with equally randomly spread points"
+    "text": "Residuals spread eqaully along the ranges of predictors (homoscedasticity)\nHorizontal line with equally randomly spread points",
+    "crumbs": [
+      "Wiki",
+      "Statistics",
+      "Model Diagnostic"
+    ]
   },
   {
     "objectID": "wiki/Statistics/modeldiagnostic.html#residuals-vs-leverage",
     "href": "wiki/Statistics/modeldiagnostic.html#residuals-vs-leverage",
     "title": "modeldiagnostic",
     "section": "",
-    "text": "This plot helps us to find influential cases (i.e., subjects) if there are any.\nWe watch out for outlying values at the upper right corner or at the lower right corner. Those spots are the places where cases can be influential against a regression line. Look for cases outside of the dashed lines. When cases are outside of the dashed lines (meaning they have high “Cook’s distance” scores), the cases are influential to the regression results. The regression results will be altered if we exclude those cases."
+    "text": "This plot helps us to find influential cases (i.e., subjects) if there are any.\nWe watch out for outlying values at the upper right corner or at the lower right corner. Those spots are the places where cases can be influential against a regression line. Look for cases outside of the dashed lines. When cases are outside of the dashed lines (meaning they have high “Cook’s distance” scores), the cases are influential to the regression results. The regression results will be altered if we exclude those cases.",
+    "crumbs": [
+      "Wiki",
+      "Statistics",
+      "Model Diagnostic"
+    ]
   },
   {
     "objectID": "wiki/Statistics/ci.html#interpretation-of-ci",
@@ -1291,14 +1316,14 @@
     "href": "wiki/Questionnaires/start.html",
     "title": "Questionnaires",
     "section": "",
-    "text": "Definition:\n\nIn theory, not verifiable by external observation or records.\nHas evaluative component\nHow strong agree or disagree\nIn contrast to beliefs (cognitive component): How healthy is a pizza?\nIn contrast to behavioral intentions: In the next 6 months, how likely is it that you will buy a car\n\n\n\nA psychological tendecy that is expressed by evaluating a particular entity with some degree of favor or disfavor\nAttitudes are Pre-existing: - Automatic activation of attitudes (retrievable: “file-drawer”) - stable and predictive of behaviors, resistant to persuasion\n\n\nIn survey big differences are found depending on how question is asked.\n\n\n\n\n“Making it up as you go along”\n\nindividuals do not typically possess true attitudes rather they construct opinion statements on the fly based on whatever considerations are momentarily salient\n\nSchwarz 2007: evaluative judgments formed on the spot rather than as trait-like dispositions\n\n\n\nAttitudes vs. attitude expressions\n\nAny single attitude measure will be an imperfect reflection of the underlying attitude\nAttitudes are unobservable, global evaluations of objects\n\nSome attitude expressions are construced on the spot, some are retrieved almost entirely intact from memory, others are a combination.\n\n\n\nNo attitudes, but contextualized construction of evaluations/judgments on the spot drawing on what is available to Respondent (R)\n\nStable attitudes = similar evalutions arising from R drwaing on similar inputs or the sam chronically accessible information.\nStrong attitudes = R drawing on highly accessible information -Context effects = R drawing on contexutal information when constructing evaluations -Nonattitude = Same number of conflicting information accessible to R at the same time\n\n\n\n\n\nSubject of questionnaire\nInterviewer\nInterview setting\nInstructions\nPictures that accompany the question\nWording of the question\nResponse options\nQuestion order\n\n\n\n\nAssimilation effects: Rs include prior question in interpreting/understanding the current item\nContrast effects: Rs exclude prior questions in interpreting and understanding the current item\n\n\n\n\nContext prompts the accessibility or retrieval of certain considerations (assimilation) or exclude the retrieval of certain considerations (contrast)\n\n\n\nThe inclusion/exclusion model Constructing targets and standards\n\n\n\n\nOnly ask specific question and if general question then asked them first.\n\n\n\n\n\nFast for R Fewer “don’t know” R like these scales\n\n\n\nAcquiesence Bias - R wants to be polite and agreeable - R might defer to higher status (yes sure) - R adopts a satisficing strategy (do just enough)\nMulti-barrled - multi information in statement\nDisagree end is ambigious\n\n\n\n\nHow certain are you of your views on abortion? - Very certain, somewhat certain, not very certain, not certain at all"
+    "text": "Definition:\n\nIn theory, not verifiable by external observation or records.\nHas evaluative component\nHow strong agree or disagree\nIn contrast to beliefs (cognitive component): How healthy is a pizza?\nIn contrast to behavioral intentions: In the next 6 months, how likely is it that you will buy a car\n\n\n\nA psychological tendency that is expressed by evaluating a particular entity with some degree of favor or disfavor\nAttitudes are Pre-existing: - Automatic activation of attitudes (retrievable: “file-drawer”) - stable and predictive of behaviors, resistant to persuasion\n\n\nIn survey big differences are found depending on how question is asked.\n\n\n\n\n“Making it up as you go along”\n\nindividuals do not typically possess true attitudes rather they construct opinion statements on the fly based on whatever considerations are momentarily salient\n\nSchwarz 2007: evaluative judgments formed on the spot rather than as trait-like dispositions\n\n\n\nAttitudes vs. attitude expressions\n\nAny single attitude measure will be an imperfect reflection of the underlying attitude\nAttitudes are unobservable, global evaluations of objects\n\nSome attitude expressions are construced on the spot, some are retrieved almost entirely intact from memory, others are a combination.\n\n\n\nNo attitudes, but contextualized construction of evaluations/judgments on the spot drawing on what is available to Respondent (R)\n\nStable attitudes = similar evalutions arising from R drawing on similar inputs or the some chronically accessible information.\nStrong attitudes = R drawing on highly accessible information\nContext effects = R drawing on contextual information when constructing evaluations\nNonattitude = Same number of conflicting information accessible to R at the same time\n\n\n\n\n\nSubject of questionnaire\nInterviewer\nInterview setting\nInstructions\nPictures that accompany the question\nWording of the question\nResponse options\nQuestion order\n\n\n\n\nAssimilation effects: Rs include prior question in interpreting/understanding the current item\nContrast effects: Rs exclude prior questions in interpreting and understanding the current item\n\n\n\n\nContext prompts the accessibility or retrieval of certain considerations (assimilation) or exclude the retrieval of certain considerations (contrast)\n\n\n\nThe inclusion/exclusion model Constructing targets and standards\n\n\n\n\nOnly ask specific question and if general question then asked them first.\n\n\n\n\n\nFast for R Fewer “don’t know” R like these scales\n\n\n\nAcquiesence Bias - R wants to be polite and agreeable - R might defer to higher status (yes sure) - R adopts a satisfying strategy (do just enough)\nMulti-barrled - multi information in statement\nDisagree end is ambigious\n\n\n\n\nHow certain are you of your views on abortion? - Very certain, somewhat certain, not very certain, not certain at all"
   },
   {
     "objectID": "wiki/Questionnaires/start.html#traditional-view-on-attitude",
     "href": "wiki/Questionnaires/start.html#traditional-view-on-attitude",
     "title": "Questionnaires",
     "section": "",
-    "text": "A psychological tendecy that is expressed by evaluating a particular entity with some degree of favor or disfavor\nAttitudes are Pre-existing: - Automatic activation of attitudes (retrievable: “file-drawer”) - stable and predictive of behaviors, resistant to persuasion\n\n\nIn survey big differences are found depending on how question is asked."
+    "text": "A psychological tendency that is expressed by evaluating a particular entity with some degree of favor or disfavor\nAttitudes are Pre-existing: - Automatic activation of attitudes (retrievable: “file-drawer”) - stable and predictive of behaviors, resistant to persuasion\n\n\nIn survey big differences are found depending on how question is asked."
   },
   {
     "objectID": "wiki/Questionnaires/start.html#alternative-view",
@@ -1319,7 +1344,7 @@
     "href": "wiki/Questionnaires/start.html#schwarz-resolving",
     "title": "Questionnaires",
     "section": "",
-    "text": "No attitudes, but contextualized construction of evaluations/judgments on the spot drawing on what is available to Respondent (R)\n\nStable attitudes = similar evalutions arising from R drwaing on similar inputs or the sam chronically accessible information.\nStrong attitudes = R drawing on highly accessible information -Context effects = R drawing on contexutal information when constructing evaluations -Nonattitude = Same number of conflicting information accessible to R at the same time"
+    "text": "No attitudes, but contextualized construction of evaluations/judgments on the spot drawing on what is available to Respondent (R)\n\nStable attitudes = similar evalutions arising from R drawing on similar inputs or the some chronically accessible information.\nStrong attitudes = R drawing on highly accessible information\nContext effects = R drawing on contextual information when constructing evaluations\nNonattitude = Same number of conflicting information accessible to R at the same time"
   },
   {
     "objectID": "wiki/Questionnaires/start.html#context-effects",
@@ -1340,7 +1365,7 @@
     "href": "wiki/Questionnaires/start.html#agree-disagree-scales-should-be-avoided",
     "title": "Questionnaires",
     "section": "",
-    "text": "Fast for R Fewer “don’t know” R like these scales\n\n\n\nAcquiesence Bias - R wants to be polite and agreeable - R might defer to higher status (yes sure) - R adopts a satisficing strategy (do just enough)\nMulti-barrled - multi information in statement\nDisagree end is ambigious"
+    "text": "Fast for R Fewer “don’t know” R like these scales\n\n\n\nAcquiesence Bias - R wants to be polite and agreeable - R might defer to higher status (yes sure) - R adopts a satisfying strategy (do just enough)\nMulti-barrled - multi information in statement\nDisagree end is ambigious"
   },
   {
     "objectID": "wiki/Questionnaires/start.html#construct-specific-repsonse-choices-recommended",
@@ -1401,6 +1426,465 @@
     "crumbs": [
       "Wiki",
       "Personal Wiki"
+    ]
+  },
+  {
+    "objectID": "posts/First R Package/index.html",
+    "href": "posts/First R Package/index.html",
+    "title": "index",
+    "section": "",
+    "text": "Code\ninstall.packages(\"devtools\")\ninstall.packages(\"usethis\")\n\n\n\n\n\n\n\nCode\nlibrary(usethis)\ncreate_package('~/Documents/siliconPackage')\n\n\n\n\n\n\n\nCode\nlibrary(usethis)\nuse_r('silicon')\n\n\n\n\n\nIn normal R Scripts you call libraries but in a package you track dependencies differently with using use_package() which adds the package to the DESCRIPTION file.\n\n\nCode\nuse_package('ggplot2')\n\n\nBy default, r looks for function inside your own package first so we do not explicitly state the package name. But for external packages like ggplot2 we would use ggplot2::function\n\n\nWith an .Rprofile file we can add libraries that should be loaded after opening the Package Project in R\n\n\nCode\nif (!require(devtools)) {\n  install.packages(\"devtools\")\n  library(devtools)\n}\n\n\n\n\n\n\n\n\nCode\ndevtools::check()\n\n\n\n\n\nFirst init git with use_git('init package')\n\n\nCode\nuse_github()\n#or \nuse_github('NameOfOrganization')\n\n\n\n\n\n\n\nCode\ndevtools::install_github('username/packagename')\n\n\n\n\n\nRoxygen2 is a way of documenting function and with @export we tell roxygen2 that this function is ready for export and is accessible for other users that load the package. We can also call the usual ?function the returns our short description. Other function without @export are internal function and can’t be accessed.\n\n\nCode\n#' Title\n#' \n#' Short description of function with *markdown* syntax\n#' \n#' @export\nfunction_name &lt;- function(){\n  \n}\n\n\nTo make the documentation call the following in the console:\n\n\nCode\ndevtools::document()\n\n\n\n\nCode\nuse_mit_license()\n\n\n\n\n\n\n\nCode\nuse_testthat()\n\nuse_test('nameOfRRcript')\n\ntest()\n\n\nAlternatively in RStudio we can use Build to run all tests.\n\n\n\n\n\nCode\nrename_file('old', 'new')\n\n\n\n\n\n\n\nCode\nuse_readme_rmd()\nbuild_readme()"
+  },
+  {
+    "objectID": "posts/First R Package/index.html#installing-packages",
+    "href": "posts/First R Package/index.html#installing-packages",
+    "title": "index",
+    "section": "",
+    "text": "Code\ninstall.packages(\"devtools\")\ninstall.packages(\"usethis\")"
+  },
+  {
+    "objectID": "posts/First R Package/index.html#create-package",
+    "href": "posts/First R Package/index.html#create-package",
+    "title": "index",
+    "section": "",
+    "text": "Code\nlibrary(usethis)\ncreate_package('~/Documents/siliconPackage')"
+  },
+  {
+    "objectID": "posts/First R Package/index.html#create-file",
+    "href": "posts/First R Package/index.html#create-file",
+    "title": "index",
+    "section": "",
+    "text": "Code\nlibrary(usethis)\nuse_r('silicon')"
+  },
+  {
+    "objectID": "posts/First R Package/index.html#package-vs-r-script",
+    "href": "posts/First R Package/index.html#package-vs-r-script",
+    "title": "index",
+    "section": "",
+    "text": "In normal R Scripts you call libraries but in a package you track dependencies differently with using use_package() which adds the package to the DESCRIPTION file.\n\n\nCode\nuse_package('ggplot2')\n\n\nBy default, r looks for function inside your own package first so we do not explicitly state the package name. But for external packages like ggplot2 we would use ggplot2::function\n\n\nWith an .Rprofile file we can add libraries that should be loaded after opening the Package Project in R\n\n\nCode\nif (!require(devtools)) {\n  install.packages(\"devtools\")\n  library(devtools)\n}"
+  },
+  {
+    "objectID": "posts/First R Package/index.html#do-checks",
+    "href": "posts/First R Package/index.html#do-checks",
+    "title": "index",
+    "section": "",
+    "text": "Code\ndevtools::check()"
+  },
+  {
+    "objectID": "posts/First R Package/index.html#publish-on-github",
+    "href": "posts/First R Package/index.html#publish-on-github",
+    "title": "index",
+    "section": "",
+    "text": "First init git with use_git('init package')\n\n\nCode\nuse_github()\n#or \nuse_github('NameOfOrganization')"
+  },
+  {
+    "objectID": "posts/First R Package/index.html#download-package",
+    "href": "posts/First R Package/index.html#download-package",
+    "title": "index",
+    "section": "",
+    "text": "Code\ndevtools::install_github('username/packagename')"
+  },
+  {
+    "objectID": "posts/First R Package/index.html#documentation",
+    "href": "posts/First R Package/index.html#documentation",
+    "title": "index",
+    "section": "",
+    "text": "Roxygen2 is a way of documenting function and with @export we tell roxygen2 that this function is ready for export and is accessible for other users that load the package. We can also call the usual ?function the returns our short description. Other function without @export are internal function and can’t be accessed.\n\n\nCode\n#' Title\n#' \n#' Short description of function with *markdown* syntax\n#' \n#' @export\nfunction_name &lt;- function(){\n  \n}\n\n\nTo make the documentation call the following in the console:\n\n\nCode\ndevtools::document()\n\n\n\n\nCode\nuse_mit_license()"
+  },
+  {
+    "objectID": "posts/First R Package/index.html#test-created-functions",
+    "href": "posts/First R Package/index.html#test-created-functions",
+    "title": "index",
+    "section": "",
+    "text": "Code\nuse_testthat()\n\nuse_test('nameOfRRcript')\n\ntest()\n\n\nAlternatively in RStudio we can use Build to run all tests."
+  },
+  {
+    "objectID": "posts/First R Package/index.html#rename-file",
+    "href": "posts/First R Package/index.html#rename-file",
+    "title": "index",
+    "section": "",
+    "text": "Code\nrename_file('old', 'new')"
+  },
+  {
+    "objectID": "posts/First R Package/index.html#add-readme-for-github",
+    "href": "posts/First R Package/index.html#add-readme-for-github",
+    "title": "index",
+    "section": "",
+    "text": "Code\nuse_readme_rmd()\nbuild_readme()"
+  },
+  {
+    "objectID": "wiki/SQL/index.html",
+    "href": "wiki/SQL/index.html",
+    "title": "SQL Ex",
+    "section": "",
+    "text": "Execution Hierarchie\n✅ SQL Logical Execution Order (most important version)\n\nFROM\nON\nJOIN\nWHERE\nGROUP BY\nHAVING\nSELECT\nDISTINCT\nWINDOW functions (e.g., LAG/LEAD)\nORDER BY\nLIMIT / OFFSET\n\n\n\nEx 1\n\nVisits\n\n\n\n\n\n\nColumn Name\nType\n\n\nvisit_id customer_id\nint int\n\n\n\nvisit_id is the column with unique values for this table. This table contains information about the customers who visited the mall.\n\nTransactions\n\n\n\n\n\n\nColumn Name\nType\n\n\ntransaction_id visit_id amount\nint int int\n\n\n\ntransaction_id is column with unique values for this table. This table contains information about the transactions made during the visit_id.\nWrite a solution to find the IDs of the users who visited without making any transactions and the number of times they made these types of visits.\nReturn the result table sorted in any order.\nThe result format is in the following example.\n\n\nCode\n# Write your MySQL query statement below\nSELECT \n  customer_id, \n  COUNT(visit_id) AS count_no_trans \nFROM \n  Visits \nWHERE \n  visit_id NOT IN (\n    SELECT \n      visit_id \n    FROM \n      Transactions\n  ) \nGROUP BY \n  customer_id\n\n\n\n\nEx 2\n\nWeather\n\n\n\n\n\n\nColumn Name\nType\n\n\nid recordDate temperature\nint date int\n\n\n\nid is the column with unique values for this table. There are no different rows with the same recordDate. This table contains information about the temperature on a certain day.\nWrite a solution to find all dates’ id with higher temperatures compared to its previous dates (yesterday).\n\n\nCode\n# Write your MySQL query statement below\nSELECT id \nFROM\n    (SELECT \n        id, \n        temperature, \n        recordDate, \n        lag(temperature) OVER(ORDER BY recordDate) AS prev_temp \nFROM Weather) t\nWHERE temperature &gt; prev_temp\n\n\n\n\n\n\n\n\nNote\n\n\n\nHere, parentheses define a subquery, and SQL treats the subquery like a temporary table.\nImportant: The entire subquery is executed in its own full logical order, before it participates in the outer query.",
+    "crumbs": [
+      "Wiki",
+      "SQL",
+      "SQL Exercises"
+    ]
+  },
+  {
+    "objectID": "wiki/Statistics/longitudinal.html",
+    "href": "wiki/Statistics/longitudinal.html",
+    "title": "longitudinal",
+    "section": "",
+    "text": "Groups individuals into distinct trajectory classes over time.\nIndividuals in the same class follow a similar longitudinal pattern.\nNo within-class variance (trajectories are homogeneous within each class).\nClear, discrete groups of longitudinal patterns.\nhttps://www.statisticalinnovations.com/wp-content/uploads/Magidson_2020_LatentClassAnalysis.pdf ## Growth Mixture Modeling (GMM)\n\n\n\n\n\nIndividuals transition between latent states over time\nFocus is on state switching, not stable trajectory groups\nGood for behavioral or clinical state changes"
+  },
+  {
+    "objectID": "wiki/Statistics/longitudinal.html#latent-class-growth-analysis",
+    "href": "wiki/Statistics/longitudinal.html#latent-class-growth-analysis",
+    "title": "longitudinal",
+    "section": "",
+    "text": "Groups individuals into distinct trajectory classes over time.\nIndividuals in the same class follow a similar longitudinal pattern.\nNo within-class variance (trajectories are homogeneous within each class).\nClear, discrete groups of longitudinal patterns.\nhttps://www.statisticalinnovations.com/wp-content/uploads/Magidson_2020_LatentClassAnalysis.pdf ## Growth Mixture Modeling (GMM)"
+  },
+  {
+    "objectID": "wiki/Statistics/longitudinal.html#hidden-markov-models-hmms",
+    "href": "wiki/Statistics/longitudinal.html#hidden-markov-models-hmms",
+    "title": "longitudinal",
+    "section": "",
+    "text": "Individuals transition between latent states over time\nFocus is on state switching, not stable trajectory groups\nGood for behavioral or clinical state changes"
+  },
+  {
+    "objectID": "wiki/Statistics/graphNN.html",
+    "href": "wiki/Statistics/graphNN.html",
+    "title": "graph NN",
+    "section": "",
+    "text": "Real world data is often naturally or ideally structured as graphs. Especially, relational data is modeled better with graph compared to tabular form. GNN extends machine learning model to use graph data format as input. The idea is to learn embeddings of feature vectors that caputres infos about individuals nodes but also how nodes are connected. This leads to richer and more comprehensive understanding of the data. GNN is just UPDATE and AGGREGATE functions",
+    "crumbs": [
+      "Wiki",
+      "Statistics",
+      "Graph Neural Networks"
+    ]
+  },
+  {
+    "objectID": "wiki/Statistics/graphNN.html#multi-relational-graphs",
+    "href": "wiki/Statistics/graphNN.html#multi-relational-graphs",
+    "title": "graph NN",
+    "section": "Multi-relational graphs",
+    "text": "Multi-relational graphs\nThere is a distinction between: - undirected - directed - weighted edges - type of edge - one adjacency matrix per edge type\nThese types of graphs are called multi-relational graphs and is summarized by 1 adjacency tensor A Two important subset are: - heterogeneous - multiplex\ncoordinate list of edges:\n\nedge_index = torch.Size([2, 156]) tensor([[ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 8, 9, 9, 10, 10, 10, 11, 12, 12, 13, 13, 13, 13, 13, 14, 14, 15, 15, 16, 16, 17, 17, 18, 18, 19, 19, 19, 20, 20, 21, 21, 22, 22, 23, 23, 23, 23, 23, 24, 24, 24, 25, 25, 25, 26, 26, 27, 27, 27, 27, 28, 28, 28, 29, 29, 29, 29, 30, 30, 30, 30, 31, 31, 31, 31, 31, 31, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33], [ 1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 17, 19, 21, 31, 0, 2, 3, 7, 13, 17, 19, 21, 30, 0, 1, 3, 7, 8, 9, 13, 27, 28, 32, 0, 1, 2, 7, 12, 13, 0, 6, 10, 0, 6, 10, 16, 0, 4, 5, 16, 0, 1, 2, 3, 0, 2, 30, 32, 33, 2, 33, 0, 4, 5, 0, 0, 3, 0, 1, 2, 3, 33, 32, 33, 32, 33, 5, 6, 0, 1, 32, 33, 0, 1, 33, 32, 33, 0, 1, 32, 33, 25, 27, 29, 32, 33, 25, 27, 31, 23, 24, 31, 29, 33, 2, 23, 24, 33, 2, 31, 33, 23, 26, 32, 33, 1, 8, 32, 33, 0, 24, 25, 28, 32, 33, 2, 8, 14, 15, 18, 20, 22, 23, 29, 30, 31, 33, 8, 9, 13, 14, 15, 18, 19, 20, 22, 23, 26, 27, 28, 29, 30, 31, 32]])\n\n\ndirected graph can be identifiyed by a Non-symetrical adjacency matrix",
+    "crumbs": [
+      "Wiki",
+      "Statistics",
+      "Graph Neural Networks"
+    ]
+  },
+  {
+    "objectID": "wiki/Statistics/graphNN.html#permutation-invariance",
+    "href": "wiki/Statistics/graphNN.html#permutation-invariance",
+    "title": "graph NN",
+    "section": "Permutation invariance",
+    "text": "Permutation invariance\nTraditional data formats = structure of data is fixed and meaningful. With graph there is a lack of natural order and this is refered to as permutation invariance\nEmbeddings are compact summary of local grpah structure. Thus connected nodes must have similar embeddings.\nGraph convolution networks are most wiedely applied arichtecture.",
+    "crumbs": [
+      "Wiki",
+      "Statistics",
+      "Graph Neural Networks"
+    ]
+  },
+  {
+    "objectID": "wiki/Statistics/graphNN.html#gcn-gnn",
+    "href": "wiki/Statistics/graphNN.html#gcn-gnn",
+    "title": "graph NN",
+    "section": "GCN /GNN",
+    "text": "GCN /GNN\n\nKey idea generate representation of a node that depends on the structure of the graph + any feature information of that node\nCNN aggregates features information from spatially defined patches in an image using convolution operations.\nGCN are similar as they aggregate information based on local graph neighborhoods. The idea is that neighboring nodes have information about a node. Aggregating neigbhoors and node gives enhanced features. This agg needs to be normalized since nodes can have drastic different numbers of neighbors and would bias training.\nIn traditional data formats like images and text, the order or structure of the data is fixed and meaningful.\nChanging the order of words will change the meaning of the sentence and modeling results.\nIn a graph, nodes (representing entities) are connected by edges (representing relationships), and there is no inherent ordering of these nodes. This lack of a natural order leads to the necessary property of the function to be permutation invariant.\n\nWhy not feed each row of concat(adjacency matrix, feature matrix)?:\n\nit would depend on the arbitrary ordering of nodes that we use in the adjacency matrix\nsuch a model is not permutation invariant. But it must be permutation invariant.\nThus, when working with graph data, the model should produce the same output regardless of the order in which the nodes and their neighbors are presented.\nThe model must treat these permutations of the input as equivalent.\nTranslating nodes (e.g. neighbors) into a vector we have to enforce arbitrary ordering of these nodes. This would produces different outputs in a ML like CNN.\nDEFINING FEATURE OF GNN IS THAT IT USES A FORM OF NEURAL MESSAGE PASSING\n\n\nMessage Passing Framework\n\nthere a different message-passing iteration\n\nwhere a hidden embedding \\(h_u^{(k)}\\) corresponding to each node \\(u \\in V\\) is updated with information aggregated/convoluted from \\(u\\)’s graph neighborhood \\(N(u)\\)\noften two hops away considered.\n\nhappens in the hidden layer\n\nsteps:\n\nIt looks at its neighbors\nMixes their features together\nApplies a learnable weight matrix\nCompresses everything down to 3 numbers (if out_channels = 3)\n\n\n\nSelf-supervised\nThis means it only uses graph structure information to train. E.G. negative links.\n\n\nUnderstand process\nGCN takes two input:\n\nNode feature matrix X\n\n[num_nodes, num_dimensions]\n\nAdjacency matrix A\n\nwhich nodes are connected\n\n\nMessage passing:\n\nhappens in layers\neach node sends “message” (its current features) to its neighbors and receives messages from them\n\nConceptual steps per layer:\n\ncollect messages from neighbors\nAggregate (combine) them\nTransform with a neural network (weight matrix)\nApply activation (like ReLU)\n\nHow does aggregation work?:\n\\(H^{(l+1)} = \\sigma\\!\\left(\\tilde D^{-1/2}\\,\\tilde A\\,\\tilde D^{-1/2}\\, H^{(l)} W^{(l)}\\right)\\)\nStep 1:\nNormalize adjacency matrix:\n\\(\\tilde A = A+I\\)\nCompute Degree matrix: \\(\\tilde D\\)\n\neach diagonal element = number of neighbors of that node\nnext normalize:\n\n\\(\\hat A = \\tilde D^{1/2}\\tilde A\\tilde D^{-1/2}\\)\n\nthis prevents nodes with many neighbors from dominating the aggregation (e.g. weighted averaging of neighbors)\n\nStep2: Message passing via matrix multiplication\nif:\n\n\\(H^0 = X\\)(initial node features)\n\\(W^(0)\\) is a learnable weight matrix\n\nthen one gcn layer is:\n\\(H^{(1)} = \\sigma(\\hat AXW^{(0)})\\)\nBreaking this down:\n\nXW = transform node features\n\\(\\hat A(XW)\\) = mix information from neighbors\n\\(\\sigma (RELU)\\) = non-linearity\n\nHow does a node in layer 2 get information from 2 hops?\n\nBy aggregating again its neighbors it receives information from 2 hop because neighbors have aggregated information from their neighbors in layer 1 and this is passed to the node in layer 2.\nk iteration = k hops away\n\nMajor issue with GCN = over-smoothing\n\nwith 10+ layers all nodes start to look the same because they keep averaging over larger neighborhoods\n\nIn GCN layer the two weight matrices are shared for all nodes (parameter matricies: W and B):\n\nthis helps with generalization to unseen nodes\nhelps with computation\nmodel output does not depend on node ordering: GCN is permutation invariant\na function how to aggregate is learned nothing really tied to a single node\nmessage passing = local feature-aggregation behaviour (like CNN- convolutional kernels)\n\nbasic message passing is defined as:\n\\(H_u^{(k)} = \\sigma(W^{(k)}_{self}h_u^{(k-1)} + W^{(k)}_{neigh} \\sum_{v\\in N(u)}h_v^{(k-1)}+b^{(k)})\\)\nwhere \\(W_{self'}^{(k)}, W^{(k)}_{neigh}\\in R^{d^{(k)}\\times d^{(k-1)}}\\) are trainable parameter matricies and \\(\\sigma\\) denotes an elementwise non-linearity (e.g. tanh /ReLU). Bias term \\(b^{(k)}\\) is omitted for notational simplicity but important for performance.\nProcess:\n\nfirst sum incoming messages from neighbors\nsecond, combine with previous embedding using linear combination\nthird, elemntwise non-linearity\n\n\\(h_u^{(k+1)} = UPDATE^{k}(h_u^k,AGGREGATE(h_v^k,\\forall v \\in N(u)))\\)\n\\(=UPDATE^k(h_u^k,m_{N(u)}^k)\\)\nUPDATE and AGGREGATE are arbitrary differentiable function (i.e., neural networks) and \\(m_{N(u)}\\) is the aggregated message.\n\nAt each iteration k of GNN the AGGREGATE function takes as input the set of embeddings of the nodes in \\(u's\\) graph neighborhood N and generates a message.\nUpdate combines the message \\(m_{N(u)}^k\\) with previous emebdinng \\(h_u^{(k-1)}\\) of node u to generate the updated embedding \\(h_u^{k}\\)\nInitial embeddings at \\(k=0\\) are set to the input features for all the nodes: \\(h_u^0=x_u \\forall u \\in V\\)\nafter all iteration we can use the output of final layer to define the embeddings for each node: \\(z_u = h_u^k, \\forall u \\in V\\)\nIf no node features are available we can use:\n\nnode statistics (how many neighbors, degree)\nidentity features\n\n\nWhat information can a node hold?\n\nstructural information = degree of a node\nfeature-based\n\nQuestions:\n\ngoal embedingt nodes with NN: how many hidden units? as many as nodes?\nwhy combine messages with previous hidden layer of u?\n\nat iteration K = 1 we have: \\(k-1 = 0\\) and this is the features of a node",
+    "crumbs": [
+      "Wiki",
+      "Statistics",
+      "Graph Neural Networks"
+    ]
+  },
+  {
+    "objectID": "wiki/Statistics/dl.html",
+    "href": "wiki/Statistics/dl.html",
+    "title": "",
+    "section": "",
+    "text": "Deep Learning models are differential functions!"
+  },
+  {
+    "objectID": "wiki/Statistics/dl.html#nearest-neighbor-classifier-k-1",
+    "href": "wiki/Statistics/dl.html#nearest-neighbor-classifier-k-1",
+    "title": "",
+    "section": "Nearest Neighbor Classifier (k = 1)",
+    "text": "Nearest Neighbor Classifier (k = 1)\nTakes test image (array) and compares it to every image (array) in training set and takes image label of closest one. It simply remembers all training data\n\nWith k = 1 we create “small islands of liekly incorrect predictions, always use higher k\n\n\nHow compare to arrays A and B?\nL1 distance/norm:\n\nSum of over all absolute pixel differences \\(d_1(A,B) = \\sum_i|A_i-B_i|\\) If \\(A = B\\) than L1 will be zero.\n\n\n\nCode\nclass NearestNeighbor():\n  def __init__(self):\n    pass\n  def train(self, X, y):\n    \"\"\" X is N x D where N is number of examples and D flattend pixel array.\n    Y is 1-dimension of size N.\n    Training is just remembering all data\"\"\"\n    self.X_train = X \n    self.y_train = y\n  \n  def predict(self, X):\n    \"\"\" X is N x D where each row is an example\n    we wish to predict label for \"\"\"\n    num_test = X.shape[0]\n    # lets make sure that the output type\n    # matches the input type\n    Ypred = np.zeros(num_test, dtype = self.y_train.dtype)\n    # loop over all test rows\n    for i in range(num_test):\n      #L1\n      distances = np.sum(np.abs(self.X_train - X[i,:]), axis = 1)\n      # get the index with smallest distance\n      min_index = np.argmin(distances)\n      # predict the label of the nearest example\n      Ypred[i] = self.y_train[min_index]\n    return Ypred\nnn = NearestNeighbor()\nnn.train(X_train, y_train)\ny_test_predict = nn.predict(X_test)\nprint(f'accuracy: {np.mean(y_test_predict == y_test)}')\n\n\nL2 distance/norm: euclidean distance between two vectors. Each pixelwise difference is squared, summed up and finally the square root is taken:\n\\(d_2(A,B) = \\sqrt{\\sum_i(A_i-B_i)^2}\\)\n\n\nCode\n# new distance L2: we could leave out np.sqrt and get the same final output (monotonic function)\ndistances = np.sqrt(np.sum(np.square(self.X_train - X[i,:]), axis = 1))\n\n\nDifference L1 , L2\n\nL2 unforgiving: prefers many medium disagreements to one big one."
+  },
+  {
+    "objectID": "wiki/Statistics/dl.html#k-nearest-neighbor-classifier",
+    "href": "wiki/Statistics/dl.html#k-nearest-neighbor-classifier",
+    "title": "",
+    "section": "k-Nearest Neighbor Classifier",
+    "text": "k-Nearest Neighbor Classifier\nFind top k closets images and take “majority vote” of labels. Higher k-values have a smoothing effect and make classifier more resistant to outliers.\n\nTraining is very fast\nPredicting is slow since it compares x_test to each x_training\nIn practice we want efficient predictions!\nSpace inefficient\n\n\n\nCode\nclass KNearestNeighbor():\n  \"\"\" a kNN classifier with L2 distance \"\"\"\n  \n  def __init__(self):\n    pass\n  \n  def train(self, X, y):\n    \"\"\" same as before \"\"\"\n    \n  def predit(self, X, k = 1):\n    \"\"\" returns output of methods: compute_distances and predict_labels\"\"\" \n    \n    return self.predict_labels(dists, k = k)\n  \n  def compute_distacnes(self, X): \n    \"\"\" L2 Distance: for each image in test set X  calculate the L2 distance to each images in X_train. Return a matrix dists where each row is a test image and each column the L2 of corresponding train image\"\"\" \n    \n    num_test = X.shape[0]\n    num_train = self.X_train.shape[0]\n    dists = np.zeros((num_test, num_train))\n\n    for i in range(num_test):\n      dists[i, :] = np.sqrt(np.sum(np.square(\n                            self.X_train - X[i,:]),\n                            axis = 1))\n    return dists\n  \n  def predict_labels(self, dists, k =1): \n    \"\"\"Returns: array with predicted labels \"\"\"\n    \n    num_test = dists.shape[0]\n    y_pred = np.zeros(num_test)\n    \n    for i in range(num_test):\n\n      closest_y = []\n      # get the k indices with smallest distances\n      min_indices = np.argsort(dists[i,:])[:k]\n      closest_y = np.bincount(self.y_train[min_indices])\n      # predict the label of the nearest example\n      y_pred[i] = np.argmax(closest_y)\n    return y_pred\n\n\n\nWe could speed up with broadcasting rules (see lecture notes)\ngray regions in visualization of results are caused by ties in majority vote\n\n\nk-fold Cross Validation (what k to chose?)\n\nHyperparameters = choiches needed to be made (distances, k, etc.)\nTry out different hyperparameters and use best\nWe further take a small part of training set (e.g. 1000) as validation set which is used as a “fake test set” to tune the hyperparameter\n\n\n\nCode\nX_val = X_train[:1000, :]\ny_val = y_train[:1000]\n\nX_train = X_train[1000:, :]\ny_train = y_train[1000:]\n\nvalidation_accuracies = []\nfor k in [1, 3, 5, 10, 20, 50, 100]:\n  # use a particular value of k and evaluation on validation data\n  nn = NearestNeighbor()\n  nn.train(X_train, y_train)\n  # here we assume a modified NearestNeighbor class that can\n  # take a k as input\n  y_val_predict = nn.predict(X_val, k = k)\n  acc = np.mean(y_val_predict == y_val)\n  print('accuracy: %f' % (acc,))\n  # keep track of what works on the validation set\n  validation_accuracies.append((k, acc))\n\n\nWhen training data is smaller or computation is not heavy\n\niterate over different validiation sets and average the performance across these\n5-fold: split training into 5 parts, iterate 5 times while changing validation part\nIn practice it is cleaner to no include the validation set in the final training of the model after determining the best hyperparameters\n\n\n\nCode\n# k-fold cross validation\nnum_folds = 5\nk_choices = [1, 3, 5, 7, 9, 10, 12, 15, 18, 20, 50, 100]\nX_train_folds = []\ny_train_folds = []\n# Split up the training data into folds. After splitting,\n# X_train_folds and y_train_folds should each be lists of\n# length num_folds, where y_train_folds[i] is the label\n# vector for the points in X_train_folds[i]\nX_train_folds = np.split(X_train, [1000, 2000, 3000, 4000])\ny_train_folds = np.split(y_train, [1000, 2000, 3000, 4000])\n# A dictionary holding the accuracies for different values of\n# k that we find when running cross-validation. After running\n# cross-validation, k_to_accuracies[k] should be a list of\n# length num_folds giving the different accuracy values that\n\n# we found when using that value of k.\nk_to_accuracies = {}\n# We perform k-fold cross validation to find the best value of k.\n# For each possible value of k, run the k-nearest-neighbor algorithm\n# num_folds times, where in each case you use all but one of the folds\n# as training data and the last fold as a validation set. Store the\n# accuracies for all fold and all values of k in the k_to_accuracies\n# dictionary.\n\nfor k in k_choices:\n  \n  k_to_accuracies[k] = []\n  classifier = KNearestNeighbor()\n  for i in range(num_folds):\n    #we use ith fold as validation set  \n    X_cv_training = np.concatenate([x for k, x in\n    enumerate(X_train_folds) if k!=i], axis=0)\n    \n    y_cv_training = np.concatenate([x for k, x in\n      enumerate(y_train_folds) if k!=i], axis=0)\n    \n    classifier.train(X_cv_training, y_cv_training)\n    dists = classifier.compute_distances_one_loop(X_train_folds[i])\n    y_test_pred = classifier.predict_labels(dists, k=k)\n    k_to_accuracies[k].append(np.mean(y_train_folds[i] == y_test_pred))\n\n\n\nin practice on may want to avoid cross-validation in favor of single validation split (computationally expensive)\nSize of single split of training data depends how many hyperparameters\nFor example if the number of hyperparameters is large you may prefer to use bigger validation splits. If the number of examples in the validation set is small (perhaps only a few hundred or so), it is safer to use cross-validation. Typical number of folds you can see in practice would be 3-fold, 5-fold or 10-fold cross-validation."
+  },
+  {
+    "objectID": "wiki/Statistics/dl.html#linear-classificaiton-of-images",
+    "href": "wiki/Statistics/dl.html#linear-classificaiton-of-images",
+    "title": "",
+    "section": "Linear Classificaiton of Images",
+    "text": "Linear Classificaiton of Images\n\nscore function: maps raw data to class scores\nloss function: quantifies agreement between predicted and ground truth\n\n\\(f(x_i, W, b) = Wx_i + b\\)\nParameters:\n\n\\(x_i = D *1\\) vector \\(D=32*32*3\\)\n\\(W = K*D\\) weight matrix where K is number of classes\n\\(b = K*1\\) (bias: influences output without interacting with data)\n\nNote:\n\nEach single matrix multiplication \\(Wx_i\\) evaluates 10 separate classifiers in parallel (each row of W is a classifier)\n\nprovides 10 weighted sum of all image pixels: vector of class scores.\n\nAfter training we only need to save the parameters\nPrediction is just a single matrix multiplication and addition\nThe weights can “like” or “dislike” certain colors at certain positions in the images\n\n“Ship” classifier may have a lot of + weights across blue channels and negative weights in red/green channels: presence of these colors decrease score of ship\n\nEach image can be interpretated as point in D (3072) vector space\n\nEach class score is a linear function over this space, so changing weights of a row in \\(W\\) will rotate linear function in different directions\nBias allows to move line up/down/right/left and lines are not forces to go through origin\n\nOther interpretation of \\(W\\) that each row is a prototpye of class (template matching)\nOften bias in incorporated into weight matrix and x is excdented by a constant 1.\nClass scores can be thought as unnormalized log-probabilities\n\n\n\nCode\nX_train = np.hstack([X_train, np.ones((X_train.shape[0], 1))])"
+  },
+  {
+    "objectID": "wiki/Statistics/dl.html#loss-function-cost-function",
+    "href": "wiki/Statistics/dl.html#loss-function-cost-function",
+    "title": "",
+    "section": "Loss Function /Cost Function",
+    "text": "Loss Function /Cost Function\nMeasures the unhappiness with the output. Loss is high with poor classifying the training data\n\nCross-Entropy Loss of Softmax Classifier\nSoftmax Classifier is generalization of binary logistic Regression classifier to multiple classes:\n\ngives normalized class probabilites\nis applied to every class score\nsoftmax function takes class scores \\(z_j\\) and squashes it to a vector of values between zero and one which sum to one (= probabilites). This can be interpreted as confidence in each class\n\n\\(softmax=\\frac{e^{z_j}}{\\sum_ke^{z_k}}\\)\nCross-entropy loss \\(L_i =-log(\\frac{e^z_{y_i}}{\\sum_je^{z_j}})= -z_{y_i} + log\\sum_je^{z_j} + \\lambda\\sum_k \\sum_lW^2_{k,l}\\)\nwith \\(z_j\\) being the j-th element of vector of class scores \\(z\\) and \\(z_{y_i}\\) score of true class. So we just take \\(-log()\\) of the softmax ouput for true class logit and ignore the other logits/softmax ouputs. The higher the softmax output of true class, the lower the loss.\nFull loss of dataset is the mean of \\(L_i\\) over N training examples: \\(L = \\frac{1}{N}\\sum_iL_i\\)\nNumberic stability: we subract our class scorse by the max score in vector, therefore largest value is zero\n\n\nCode\ndef softmax_loss_vectorized(W, X, y):\n  \"\"\"\n  Softmax loss function, vectorized version.\n  \"\"\"\n  # Initialize the loss\n  loss = 0.0\n  # Compute the softmax loss\n  num_train = X.shape[0]\n  f = X.dot(W)\n  # max of every sample\n  f -= np.max(f, axis=1, keepdims=True)\n  sum_f = np.sum(np.exp(f), axis=1, keepdims=True)\n  p = np.exp(f)/sum_f\n  loss = np.sum(-np.log(p[np.arange(num_train), y]))\n  return loss\n\n\n\nlowest loss is zero.\n\n\n\nHinge Loss Multiclass Support Vector Machine loss (Max Margin loss)\nUsed in SVM. Multiclass Support Vector Machine loss. Takes class scores and summes max of all wrong class scores - class score of correct to determine the loss (end up with N losses):\n\\(L_i = \\sum_{j=y_i}max(0,W_j^T*x_i-W_{y_i}^T*x_i +\\Delta)\\)\nDelta is a hyperparameter which represents a margin that the correct class needs to be higher otherwise we collect loss.\nWithout regularization weight matrix can be multiplied by any number and the same loss would be uptained. Therefore, we add a regularization term (L2 norm) to the loss function (elementwise quadratic penalty over all parameters):\n\\(R(W) = \\sum_k\\sum_lW^2_{k,l}\\)\nGiving the full loss of \\(L = \\frac{1}{N}\\sum_iL_i + \\lambda R(W)\\)\nL2-norm can improve generalization because no single parameter should have large influence. Intuitively, this is because the weights in w2 are smaller and more diffuse. Since the L2 penalty prefers smaller and more diffuse weight vectors, the final classifier is encouraged to take into account all input dimensions to small amounts rather than a few input dimensions and very strongly (e.g. [1,0,0,0] vs [0.25, 0.25, 0.25, 0.25]). With the regularization term we can never have a loss of zero, only if we set all \\(W\\) to zero.\n\nSetting \\(\\Delta\\) is more or less meaningless because weights can shrink or stretch diffferences in margin.\nTherefore only \\(\\lambda\\) reflects the real tradeoff between data loss and regularization loss\nIn practice, however, if the data is noisy or not perfectly separable, a too-large \\(\\Delta\\) can force the model to memorize the data (pushing scores very far apart), leading to overfitting.\n\n\n\nComparison of both Loss\n\nThey are comparable, with the main difference that Softmax loss is never happy\n\nMoreover, in the limit where the weights go towards tiny numbers due to very strong regularization strength \\(\\lambda\\), the output probabilities would be near uniform. Hence, the probabilities computed by the Softmax Classifier are better thought of as confidences where, similar to the SVM, the ordering of the scores is interpretable, but the absolute numbers (or their differences) technically are not. n other words, the Softmax Classifier is never fully happy with the scores it produces: the correct class could always have a higher probability and the incorrect classes always a lower probability and the loss would always get better. However, the SVM is happy once the margins are satisfied and it does not micromanage the exact scores beyond this constraint. This can intuitively be thought of as a feature: For example, a car classifier which is likely spending most of its “effort” on the difficult problem of separating cars from trucks should not be influenced by the frog examples, which it already assigns very low scores to, and which likely cluster around a completely different side of the data cloud."
+  },
+  {
+    "objectID": "wiki/Statistics/dl.html#optimization",
+    "href": "wiki/Statistics/dl.html#optimization",
+    "title": "",
+    "section": "Optimization",
+    "text": "Optimization\n\nFinding parameters \\(W\\) that minimizes loss function\nThis is done using gradient descend in the weight/parameter space\nMathematically guaranteed direction of deepest descent = gradient of the loss function\ngradient is generalization of slope for functions that take vector of numbers and is a vector of slopes (partial derivatives) for each dimension.\nTwo calculations: numerical gradient (slow but easy), analytic gradients (fast but error prone)\nThe gradient tells us the direction in which the function has the steepest rate of increase, but it does not tell us how far along this direction we should step.\nStep size = learning rate (hyperparameter)\nLinear complecity in number of parameters: for single step D evaluations\n\n\nGradient Check\nCompute analytic gradient (faster) and compare to numerical gradien\n\n\nGradient Descent\nis procedure of computing gradient of loss function and repeatedly evaluating gradient and updating parameter\n\n\nMini-batch gradient descent\nComputing loss function only for batch (e.g. 256) to perform weight updates. This works sind data points are often correlated.\n\nStochastic Gradient Descent (SGD): extreme case with only 1 example\nSize of batch is a hyperparameter, set with crossvalidation but often a number to the power of 2 because faster in vectorization"
+  },
+  {
+    "objectID": "wiki/Statistics/dl.html#activation-functions",
+    "href": "wiki/Statistics/dl.html#activation-functions",
+    "title": "",
+    "section": "Activation Functions",
+    "text": "Activation Functions\nSigmoid Function drawbacks:\n\nSigmoid saturate and kill gradients: If saturated (close to 0 or 1) network barely learns during backprogragtion\nSigmoid ouput are not zero-centered: (Page 35)\n\nTanh (squashes values to -1:1):\n\nis zero-centered but same problem with saturation\n\nRectified Linear Unit (ReLUs):\n\\(f(x) = max(0,x)\\)\n\nfast convergence in gradient descent\neasy implementation treshholding a matrix at zero\nbut can be fragile during training and die (if learning rate is set too high)\nLeaky ReLUs helps against dying (has a small negative slope below x = zero)\nMaxout neuron combined best of ReLU and Leaky ReLU but doubles number of parameters"
+  },
+  {
+    "objectID": "wiki/Statistics/dl.html#nn-architectures",
+    "href": "wiki/Statistics/dl.html#nn-architectures",
+    "title": "",
+    "section": "NN Architectures",
+    "text": "NN Architectures\n\nA NN with one hidden layer can represent any continous function but this is of no practicle relevance\nNon-convex function ### Layer-wise organzization\nInput layer is not counted towards arichtecture: so not when taking about layers and not when taking about untis/neurons\nInput layer don’t have weights or biases but output layer does\nFor 2-layer NN(4 units + 2 output) with 3 inputs we have: \\(3 * 4 + 4 *2 = 20\\) weights and 1 bias parameter for each unit/neuron. Total = 26 learnable parameters\n\n\nFeed-Foward Computation\nThe forward pass of a fully-connected layer corresponds to one matrix multiplication followed by a bias offset and an activation function. Matrix form of parameter (e.g. Fully connected 3 * 4 * 4 * 1, with first as input layer):\n\nInput layer 3 * 1\nFirst hidden layer matrix of 4 * 3, where each row are the 3 weights of a neuron. This allows for easy multiplication from left to right\nFirst hidden layer has a bias vector of 4 * 1\nSecond hidden layer: 4 * 4 matrix\nOutput layer: 1 * 4\n\n\n\nCode\n# forward-pass of a 3-layer neural network:\n# activation function (use sigmoid)\nf = lambda x: 1.0/(1.0 + np.exp(-x))\n# random input vector of three numbers (3x1)\nx = np.random.randn(3, 1)\n# calculate first hidden layer activations (4x1)\nh1 = f(np.dot(W1, x) + b1)\n# calculate second hidden layer activations (4x1)\nh2 = f(np.dot(W2, h1) + b2)\n# output neuron (1x1)\nout = np.dot(W3, h2) + b3\n\n\n\noutput layer has no activation function\nx in the input layer could be a batch of data where each example is a column vector and would be evaluted in parallel\nIn practice, it is always better to use these methods to control overfitting instead of the number of neurons.\n\nBecause smaller NN are harder to train with graident descent. Local minima are increased with larger NN and of more value.\nOn the other hand, if you train a large network you’ll start to find many different solutions, but the variance in the final achieved loss will be much smaller. In other words, all solutions are about equally as good, and rely less on the luck of random initialization."
+  },
+  {
+    "objectID": "wiki/Statistics/dl.html#optimization-with-backpropagation",
+    "href": "wiki/Statistics/dl.html#optimization-with-backpropagation",
+    "title": "",
+    "section": "Optimization with Backpropagation",
+    "text": "Optimization with Backpropagation\nComputing gradients through recursive application of chain rule.\n\nwe get gradients for each parameters: weight matrix and bias vector\nMini-batch Gradient Descent: computes average gradient over batch and performs gradient descent after each batch\nSGD: performs gradient descent after each training example\nWe pass gradients backward because each layer’s weights indirectly affect the loss, and the chain rule lets us compute those indirect effects step by step.\nEach layer needs the gradient from the layer after it to compute its own gradient.\noutput layer: gradient loss (“how sensitive is loss to changes in parameter i) \\(\\frac{\\partial L}{\\partial W_i}\\)\n\nif gradient large than small change loss largely\n\nchain rule gives indirect effects of parameter from other layer\n\nYou take a mini-batch of size \\(B\\):\n\\(\\{(x^{(1)}, y^{(1)}), (x^{(2)}, y^{(2)}), \\dots, (x^{(B)}, y^{(B)})\\}\\)\n\nFor each example in the batch Compute the individual loss:\n\n\\(L^{(i)} = \\text{Loss}(f_\\theta(x^{(i)}), y^{(i)})\\)\n\nCompute the individual gradient:\n\n\\(g^{(i)} = \\nabla_\\theta L^{(i)} = \\frac{\\partial L^{(i)}}{\\partial \\theta}\\)\n\nCompute the average loss for the batch:\n\n\\(L_{\\text{batch}} = \\frac{1}{B} \\sum_{i=1}^B L^{(i)}\\)\n\nCompute the average gradient:\n\n\\(g_{\\text{batch}} = \\frac{1}{B} \\sum_{i=1}^B g^{(i)}\\)\nApply gradient descent using the average gradient:\n\\(\\theta \\leftarrow \\theta - \\eta \\cdot g_{\\text{batch}}\\)\nSummary:\n\nYou’re averaging both the losses and the gradients.\nThe update is based on the average gradient across the mini-batch.\nThe global loss landscape is like an average over all examples — mini-batch training gives you a good approximation of that with each step.\n\nIntuition\n\nAveraging losses → smooths out noisy variations across examples.\nAveraging gradients → gives a better estimate of the true direction in weight space.\nLarger batches → more stable (less noisy) updates.\n\n\nKeras\n\n\nCode\nfrom tensorflow import keras\nfrom tensorflow.keras import layers\n\nmodel = keras.Sequential([\nlayers.Dense(500, activation=\"relu\", input_shape=(784,)),\nlayers.Dense(50, activation=\"relu\"),\nlayers.Dense(10, activation=\"softmax\")\n])\n\n\n\nFully connect hidden layer with 500 units, each unit takes input from all 784 units in previous layer\nFully connected hidden layer with 50 units, each unit takes input from all 500 units\nEach unit outpus one value everytime!\nOuput layer: 10 units softmax\n\n\n\nCode\nmodel.compile(optimizer='sgd',\n              loss='categorical_crossentropy',\n              metrics=['accuracy'])\nmodel.summary()\n\n# train model with:\nhistory = model.fit(X_train, y_train_cat, epochs=5, batch_size=128)\n\n# test on new data\ntest_loss, test_acc = model.evaluate(X_test, y_test_cat)\nprint(f\"test_acc: {test_acc}\")\n\n\n\nBatch: During each epoch (one full pass through the data), the model divides the data into mini-batches of 128 examples. (ca. 60000 /128 = 469 batches)\nFor each batch: forward pass, compute loss, backward pass, update weights\n\nAfter all 469 batches, one epoche is complete\n\n\nSequential adding of layers:\n\n\nCode\nmodel = tf.keras.Sequential()\n# From Input to first hidden layer\nmodel.add(tf.keras.layers.Dense(100, activation= \"relu\",\n                                input_shape=(2,)))\n# From first hidden layer to output layer\nmodel.add(tf.keras.layers.Dense(3, activation=\"softmax\"))\n\n\nCompile():\n\nCompiling the Keras model calls the backend Tensorflow and binds the optimizer, loss function, and other parameters required before the model can be run on any input data."
+  },
+  {
+    "objectID": "wiki/Statistics/dl.html#training-and-optimizing",
+    "href": "wiki/Statistics/dl.html#training-and-optimizing",
+    "title": "",
+    "section": "Training and Optimizing",
+    "text": "Training and Optimizing\nPreprocessing a data matrix x with N x D.\n\nMean Subtraction (Zero-Centered)\nSubtracting mean of all features. Centering data around origin\n\n\nCode\nX -= np.mean(X, axis = 0)\n\n# images we could do it for each channel seperatly\nX -= np.mean(X, axis = (0,1,2))\n\n\n\n\nNormalization\nFeatures are same scale. Divide by standard deviation after zero-centered\n\n\nPCA and Whitening\nFirst center. Next covariance matrix (tell us about correlation structure). Then we can compute the SVD factorization of the data covariance matrix. In practice, we mention PCA/Whitening in these notes for completeness, but these transformations are not used with Convolutional Networks However, it is very important to zero-center the data, and it is common to see normalization of every pixel as well. Instead, the mean must be computed only over the training data and then subtracted equally from all splits (train/val/test).\n\n\nData Augmentation\n\nRotate\nShift\nShear\nZoom\nFlip\n\n\n\nCode\ndatagen = ImageDataGenerator(\n  rescale=1./255,\n  rotation_range=40,\n  width_shift_range=0.2,\n  height_shift_range=0.2,\n  shear_range=0.2,\n  zoom_range=0.2,\n  horizontal_flip=True,\n  fill_mode='nearest')\n\n\n\n\nWeight initialization\n\nWe need asymmetry between neurons at initialization: small number close to zero (symmetry breaking)\nAt the start each neuron should be random and unique so they compute dinstinct updates. Multivariate gaussian with m = 0 sd = 1\nto help with uncalibrated variance problem we normalize the output\nbias is typically set to 0\n\n\n\nCode\nw = np.random.randn(n) * sqrt(2.0/n)\n\n\n\n\nBatch Normalization\nInsert a BachtNorm Layer after fully connected layer and before non-linearity - Makes networks much robuster to bad initialization - And can be interpreted as preprocessing at every layer - Machine learning methods tend to work better when their input data consists of uncorrelated features with zero mean and unit variance. -At training time, a batch normalization layer uses a minibatch of data to estimate the mean and standard deviation of each feature. These estimated means and standard deviations are then used to center and normalize the features of the minibatch. A running average of these means and standard deviations is kept during training, and at test time these running averages are used to center and normalize features. - To this end, the batch normalization layer includes learnable shift and scale parameters for each feature dimension: these parameters are learned with the other parameters and restore the representation power of the network."
+  },
+  {
+    "objectID": "wiki/Statistics/dl.html#learning-parameters-and-finding-hyperparameters",
+    "href": "wiki/Statistics/dl.html#learning-parameters-and-finding-hyperparameters",
+    "title": "",
+    "section": "Learning parameters and finding hyperparameters",
+    "text": "Learning parameters and finding hyperparameters\nSantiy checks at the start:\n\ncorrect loss at start (chance): for 10 images loss with regularization = 0 should be softmax: \\(-ln(0.1) = 2.302\\) and svm: loss of 9\nregularization increase = increase in loss\nChoice tiny subsample and overfit: loss of zero (regularization = 0)\n\n\nCheck learning process and Loss\nPlot epoch (1 = every example hase been seen once on average) against loss:\n\nlow learning rate = improvements linear\nvery high learning rates = exponential\nhigh learning rates = fast decay and stuck at not optimal point (unsettled, bouncing)\nif batch size too low: cost can be too noisy\nloss is sometimes plotted in log() form\n\n\n\n\nloss\n\n\n\n\nCheck train/val Accuracy\nShows overfitting. If val acc stops increaseing for two epochs we could interrupt training\n\ngap between training and validation acc indicates amount of overfitting\n\nin practice: increase regularization L2 weight, collect more data, dropout, etc.\n\nif train and val acc too similar = not complex enough, capacity is to low and make model larger (increase number of parameters)\n\n\n\nRatio of weights: updates\nRatio should be around \\(10^{-3}\\)\n\nif lower = learning rate might be too low\nif higher = learning rate likely too high"
+  },
+  {
+    "objectID": "wiki/Statistics/dl.html#regularization-and-more-on-loss-functions",
+    "href": "wiki/Statistics/dl.html#regularization-and-more-on-loss-functions",
+    "title": "",
+    "section": "Regularization and More on Loss Functions",
+    "text": "Regularization and More on Loss Functions\n\nL2 Regularization\n\\(L = L_{original} + \\lambda\\sum_iw^2_i\\)\n\nprefers diffuse weight vectors instead of spikey ones therefore forcing the network to use all neurons\n\n\n\nCode\ntf.keras.layers.Dense(512,\n        kernel_regularizer=tf.keras.regularizers.l2(0.01))\n\n\n\n\nL1 Regularization\n\\(L = L_{orig} + \\lambda\\sum_i|w_i|\\)\n\nadd to each weight \\(w\\) term \\(\\lambda|w|\\)\nhas benefit of weights becoming sparse only using most important input\nis good for feature selection\nbut generally L2 better\n\n\n\nCombination = Elastic net regulariztaion\n\\(\\lambda_1|w|+\\lambda_2w^2\\)\n\n\nMax Norm Constraints\nbounds weights by c: \\(||w||_2 &lt; c\\), with c orders of 3 or 4. Network cant explode even with high learning rates\n\n\nDropout\nduring training neuron is keept active with some probability p (hyperparameter) or set to zero otherwise. “Sampling a neural network from the neural network”\n\nForward and backpropagation and parameter update for that training case are done only on this thinned network.\nif p is set high = less dropout\nat test time not droping anymore but we have to add p to get a comparable result as in training since:\n\na neuron is active \\(px + (1-p)0\\)\nuse inverted dropout to overcome changing test-time code\n\n\n\n\nCode\ntf. keras.layers.Dropout(0.3)\n\n\n\n\nBias regularization\nNot common but doesn’t seem to harm.\n\n\nLoss functions\n\n\nCode\nfrom tf.keras import losses\n# Cross-Entropy Loss Function\nmodel.compile(loss=losses.categorical_crossentropy,\n    optimizer='sgd')\n# SVM Loss aka hinge loss\nmodel.compile(loss=losses.hinge,\n    optimizer='sgd')\n# Squared hinge loss\nmodel.compile(loss=losses.squared_hinge,\n    optimizer='sgd')\n\n\nIf we have many labels e.g. &gt; 1000 use Hierarchical Softmax\n\ndecomposes labels into trees with each label as a branch, softmax can train to distinguish at every node between two labels\n\nIf not one single correct label (e.g. hashtags photos):\n\ntrain classifier for every single attribute"
+  },
+  {
+    "objectID": "wiki/Statistics/dl.html#parameter-updates",
+    "href": "wiki/Statistics/dl.html#parameter-updates",
+    "title": "",
+    "section": "Parameter Updates",
+    "text": "Parameter Updates\n\nVanilla (regular): change parameters along negative gradient direction\nMomentum Update: two additional hyper parameter mu and v with each epoch mu gets increases (build up momentum)\nNesterov Momentum\n\n\n\nCode\ntf.keras.optimizers.SGD(learning_rate=0.01, momentum=0.0, nesterov=False)"
+  },
+  {
+    "objectID": "wiki/Statistics/dl.html#annealing-learning-rate",
+    "href": "wiki/Statistics/dl.html#annealing-learning-rate",
+    "title": "",
+    "section": "Annealing learning Rate",
+    "text": "Annealing learning Rate\nIt’s helpful to anneal lr over time\n\nstep decay: reducing by factor every few epochs (1/2 every 5 ep, 0.1 every 20 ep)\n\nwatch validation error while training, if stuck reduce by constant\n\nexponential decay: \\(\\alpha = \\alpha_0e^{-kt}\\) t is iteration number (can use units of epoch too)\n1/t: \\(\\alpha = \\alpha_0/(1+kt)\\)\nkeras time-base: \\(lr = lr*\\frac{1}{1 + decay * epoch}\\)\nAdam: most common at the moment\n\nIf enough computation budget chose slower decay and train for longer time"
+  },
+  {
+    "objectID": "wiki/Statistics/dl.html#hyperparameter-optimazation",
+    "href": "wiki/Statistics/dl.html#hyperparameter-optimazation",
+    "title": "",
+    "section": "Hyperparameter Optimazation",
+    "text": "Hyperparameter Optimazation\n\ninitial learning rate\nlearning rate decay schedule\nregularization strength (l2, dropout strength)"
+  },
+  {
+    "objectID": "wiki/Statistics/dl.html#model-ensembles",
+    "href": "wiki/Statistics/dl.html#model-ensembles",
+    "title": "",
+    "section": "Model Ensembles",
+    "text": "Model Ensembles\nMultiple different model together often better predictive power. Few approaches forming ensembles:\n\nSame model, different initialization: CV for hyperparameter, different models with diff inti.\nTop models during cv: top 10 models and form ensemlbe\ndifferent checkpoints of single model: very cheap\nRunning average of parameters during training\n\nDisadvantage: take longer at test time"
+  },
+  {
+    "objectID": "wiki/Statistics/dl.html#convolutional-layer",
+    "href": "wiki/Statistics/dl.html#convolutional-layer",
+    "title": "",
+    "section": "Convolutional Layer",
+    "text": "Convolutional Layer\nConvNets can be interpreted as gradually transforming the images into a representation in which the classes are separable by a linear classifier.\nMost computation done. Consists of:\n\nfilters: for example 5 x 5 x 3 (5 x 5 pixel for 3 color channels)\n\nduring forward pass: filters are convolved (slided)\ncomputes dot product of filter parameters and input\nproduces a 2-dimensional acitivation map\nCNN learn filters that activate for certain visual features\nactivation maps are stacked along depth dimension\nneuron has a receptive field same size as filter (and are only connected locally along wight and height (space) but full connected along depth)\n\n\nExample:\n\nInput = [32 x 32 x 3]\nReceptive field = [5 x 5]\neach neuron has weights to a [5 x 5 x 3] region (75 weights + 1 bias)\n\n\n\n\ncnn\n\n\n\nHyperparameter in Conv Layer\n\ndepth: corresponds to number of filters used, the neuron try to look for something different in the same region of input (depth column/fibre)\nstride: sliding filter (1 = 1 pixel at the time)\nsize zero-padding: zeros around the boarder of image\nspatial extent F (receptive field)\ndilation: increases gaps (skips pixel) increases receptive field without increasing number of parameters\n\nOutput volume is calculated with: \\((W-F+2P)/S+1\\) where\n\nW = input volume size\nF = receptive field size\nS = Stride\nP = zero-padding\n(common setting: F = 3, S & P = 1) The ouput gives widght and height, the depth is determined by deph of ConvLayer We can see which strides can be fit neatly when \\((W-F+2P)/stride\\) is dividable. Input and output is same chose zero-padding with gernal formular: \\(P=(F-1)/2\\)\n\nEach of the output volume x output volume x depth of conv, has parameters of F x F x 3(input vector) + 1 bias\n\n\nParameter Sharing\nwe can slice each depth layer into a depth slice (= activation map) each of size output x output:\n\nwe constraint the neuron of a slice to use the same weight and biases\nthe parameter and bias are sometimes refered to as filter (or kernel)\nassumption: if learning horizontal edges is important at location xy than it’s important at all other locations. Each slice learns something different of the image\n\ndoesn’t make sense in the case of images with specific centered structure(e.g. faces) -&gt; use locally-connected layer\n\nWith parameter sharing, it introduces F·F·D1 weights per filter, for a total of (F·F·D1)·K weights and K biases.\n\n\n\nCode\nkeras.layers.Conv2D(filters, kernel_size, strides, padding)"
+  },
+  {
+    "objectID": "wiki/Statistics/dl.html#pooling-layer",
+    "href": "wiki/Statistics/dl.html#pooling-layer",
+    "title": "",
+    "section": "Pooling Layer",
+    "text": "Pooling Layer\nControls overfitting by reducing parameter by taking max value of defined space (often 2x2, with stride 2, depth stays the same, sometimes overlapping pooling with 3x3 and stride = 2)\n\ninstead of max we can use average or L2-norm\nuse same formula \\((W-F+2P)/S+1\\) depth k stays the same\nAnother way to reduce parameter is to only use conv layer but use larger stride once in a while\n\n\n\nCode\nmodel.add(tf.keras.layers.MaxPooling2D(pool_size = (2,2), strides = (2,2))"
+  },
+  {
+    "objectID": "wiki/Statistics/dl.html#normalization-layer",
+    "href": "wiki/Statistics/dl.html#normalization-layer",
+    "title": "",
+    "section": "Normalization Layer",
+    "text": "Normalization Layer\n\nFunction form of fully connected and conv layer are the same (dot products)\nAny FC layer con be converted to conv"
+  },
+  {
+    "objectID": "wiki/Statistics/dl.html#computional-considerations",
+    "href": "wiki/Statistics/dl.html#computional-considerations",
+    "title": "",
+    "section": "Computional considerations",
+    "text": "Computional considerations\nAs is common with Convolutional Networks, notice that most of the memory (and also compute time) is used in the early CONV layers, and that most of the parameters are in the last FC layers. In this particular case, the first FC layer contains 100M weights, out of a total of 140M"
+  },
+  {
+    "objectID": "wiki/Statistics/dl.html#visual-interpreation",
+    "href": "wiki/Statistics/dl.html#visual-interpreation",
+    "title": "",
+    "section": "Visual Interpreation",
+    "text": "Visual Interpreation\n\nviz activation map of some filter (become clearer at later layers)\nviz weights (most interpretable at first layer since uses raw pixel as input)\n\nif Noisy pattern = short training, low regularization, overfitted\n\niteratve over image black out spots and calculate true class probabability which gives us a heatmap with most important area of image\n\nEearlier features of a ConvNet contain more generic features (e.g. edge detectors or color blob detectors) that should be useful to many tasks, but later layers of the ConvNet becomes progressively more specific to the details of the classes contained in the original dataset"
+  },
+  {
+    "objectID": "wiki/Statistics/dl.html#transfer-learning-when-to-fine-tune",
+    "href": "wiki/Statistics/dl.html#transfer-learning-when-to-fine-tune",
+    "title": "",
+    "section": "Transfer Learning, when to fine-tune",
+    "text": "Transfer Learning, when to fine-tune\ncomes down to size of new dataset and similarity\n\nnew dataset small and similar: don’t fine-tune because of overfiting\nnew dataset large and similar: no problem with overfiting\nnew dataset small and very different: use activation from earlier layers\nnew dataset large and very diff: no problem fine-tuning can be done\n\nuse small learning rates since we expect to already have good parameters"
+  },
+  {
+    "objectID": "wiki/Statistics/dl.html#text-preparation",
+    "href": "wiki/Statistics/dl.html#text-preparation",
+    "title": "",
+    "section": "Text preparation",
+    "text": "Text preparation\nvectorizing = turning text into numbers. Steps:\n\nstandardize (i.e. lower case, remove punctiation, convert special character to standard, stemming)\nsplit into units (tokens, tokenization), e.g. characters, words, groups of words\nindexing all tokens in the data\neach token to vector, vector encoding of indices (one-hot encoding or embedding)"
+  },
+  {
+    "objectID": "wiki/Statistics/dl.html#bag-of-words-vs-sequence-models",
+    "href": "wiki/Statistics/dl.html#bag-of-words-vs-sequence-models",
+    "title": "",
+    "section": "Bag of words vs sequence models",
+    "text": "Bag of words vs sequence models\nsequence models care about order of input. Bag of words model treat input words as a set discarding order.\n\nBag-of-words uses n-gram tokenization\nsequence models uses world tokenization (sometimes even split into subwords)\n\nOne-hot-encoding:\n\nAssumption is that the different tokens you’re encoding are all independent from each other: indeed, one-hot vectors are all orthogonal to one another.\n\n\n\n\nembedding\n\n\nSo, word embeddings pack more information into far fewer dimensions. ## TF-IDF Normalization term frequencey, inverse document frequency:\n\nterm frequencey: how often appears in current document\ndocument frequencey: estimates how often appears in dataset\n\n\\(\\frac{term freq}{doc freq}\\)"
+  },
+  {
+    "objectID": "wiki/Statistics/dl.html#word-embedding-layer",
+    "href": "wiki/Statistics/dl.html#word-embedding-layer",
+    "title": "",
+    "section": "Word Embedding Layer",
+    "text": "Word Embedding Layer\nIt’s thus reasonable to learn a new embedding space with every new task."
+  },
+  {
+    "objectID": "wiki/Statistics/dl.html#recurrent-neural-network",
+    "href": "wiki/Statistics/dl.html#recurrent-neural-network",
+    "title": "",
+    "section": "Recurrent neural network",
+    "text": "Recurrent neural network\n\n\n\nRNN\n\n\n\n\n\nrnnstep\n\n\n\nat each time step we have two inputs to the hidden layer: output of previous layer \\(h_{t-1}\\), and input of timestep \\(x_t\\)\nthe previous output is multiplied with weight matrix \\(W^{(hh)}\\)\n\\(x_t\\) is multiplied with \\(W^{(hx)}\\)\noutput is \\(h_t\\) that is multiple with weight matrix \\(W^{(S)}\\) and run through a softmax function over vocabulary which ends with prediction output \\(\\hat y\\) for the next word\n\nHidden Layer (with sigmoid or tanh function: element-wise): \\(h_t = \\sigma((W^{(hh)}h_{t-1}+W^{(hx)}x_t))\\)\nprediction (uses document context score up to now + word vector at time point): \\(\\hat y_t = softmax(W^{(S)}h_t)\\)\nWhat is interesting here is that the same weights W(hh) and W(hx) are applied repeatedly at each timestep. Thus, the number of parameters the model has to learn is less, and most importantly, is independent of the length of the input sequence - thus defeating the curse of dimensionality!\n\n\n\nnotation slightly different in this picture\n\n\nWe can stack multiple RNN on top\n\nTraining / Loss Function (not relevant Exam)\n\n\nExploding and Vanishing Gradient Problems\nGradients are shrinking expoentially and vanish, far away steps don’t contribute to the update. Exploding gradients can be clipped (set back to a small number after reaching treshold. Common problems for RNN are very deep (as deep as input length)\nVanishing Gradient fix:\n\nfirst technique: set \\(W_{hh}\\) not randomly but as identity matrix\nsecond technique: use ReLU instead of sigmoid\nChange architecure to LSTMs\n\n\n\nDisadvantages\n\ncomputation slow since sequential not parallelized\nin practice, problematic getting information from steps back (vanishing/exploding gradients)"
+  },
+  {
+    "objectID": "wiki/Statistics/dl.html#rnn-lstm",
+    "href": "wiki/Statistics/dl.html#rnn-lstm",
+    "title": "",
+    "section": "RNN LSTM",
+    "text": "RNN LSTM\n\nCell state is the core idea of LSTM which runs down the entire chain where information can flow unchanged.\nLSTM can add or remove information from cell state by 3 gates\ngates are sigmoid neural(how much should be let in) net layer with pointwise multiplicaiton operation\n\n\n\n\ncellgate\n\n\n\nGates\nForget Gate Layer\n\nlooks at \\(h_{t-1}\\) and \\(x_t\\) and outputs a number between 0 and 1 for each number in the cell state \\(C_{t-1}\\)\n\n\n\n\nforget gate\n\n\nInput Gate Layer\n\nwhat new information is added:\n\nsigmoid layer decides which values are updated\ntanh layer creates vector with new values \\(C_t\\)\n\n\n\n\n\ninput gate\n\n\nNew Cell Update\n\nUpdate old cell state \\(C_{t-1}\\) into \\(C_t\\)\n\nmultiply with forget gate\nadd \\((i_t * C_t)\\)\n\n\nOutput Gate\n\nFiltered version of output using a sigmoid layer decicdes with part to output\nNext, cell state goes through tanh (push values between -1 and 1) and multiply it by output of sigmoid gate\n\n\n\n\noutput\n\n\n\n\nAdvantages and Dis\nLSTM does not guarantee that there is no vanishing / exploding gradient, but it does provide an easier way for the model to learn long-distance dependencies."
+  },
+  {
+    "objectID": "wiki/Statistics/dl.html#attention-and-transformers",
+    "href": "wiki/Statistics/dl.html#attention-and-transformers",
+    "title": "",
+    "section": "Attention and Transformers",
+    "text": "Attention and Transformers\n\nSequence-to-Sequence Learning\n\nEncoder model turn source sequence into intermediate representation\nDecoder trained to predict next token i in the target sequence by looking at both previous token 0 to i-1 and the encoded source sequence.\n\ndecoder take initial “seed” token [start] and encoded source sequence and predicts first real token in sequence.\nnext, predicted sequence and encoded source is fed into decoder until stop token is generated [end]\n\n\nSeq2Seq Architecture - Encoder Takes input and generates a fixed-dimensional context vector C. Multiple LSTMs are stacked together and finay output becomes C. Seq2Seq encoders process sequence in reverse: last thing the model see is first thing it will output and this makes decoder easier to start. once it has the first few words translated correctly, it’s much easier to go on to construct a correct sentence than it is to do so from scratch\n\n\n\nseq2seq encoder\n\n\nSeq2Seq Architecture - Decoder\n\nuses softmax for output and cross-entropy loss\nencoder and decoder are trained at the same time, they both learn the same context vector\n\n\n\n\nseq2seq decoder\n\n\nBidirectional RNN\n\nfixes problem of only considering past input (hidden layer)\n\n\n ### Attention\n\ncan make features context aware\nembedding have a fixed position and fixed connections (so not context aware)\n\nsimilar concept of attention:\n\nmax pooling: “all or northing” form of attention, only keep max value\nTF-IDF normalization: importance score of tokens\n\n\n\nTransformers\nSelf-Attenation\nmodulate embeddet representation of a token given context around it\n\nStep 1: compute relevancy scores (=Attention scores) between vector “word” and every other “word” vector. This is done via dot product\nStep 2: Sum of all “word” vector in sentence weighted by attention scores (normalize + softamx)\nrepeat for each word in seq\noutput become the new vector for a word\n\nGeneralized Self-Attention: Query-Key-Value Model\n{width = 50%}\nIn practice keys and vlaues are often the same sequence. In ML query would be target sequence, source sequence would be both keys and values.\n\nfor each token in target (“tiempo”) go back to source (“How’s the weather today?”) and identify different bits that are related to “tiempo\n\nMulti-Head Attention\n\nextra dense projections\noutput space of self-attention gets split into independent subspaces (head), learned separately resulting in three vectors which are concatenated back together.\nfor each word we calculate it’s query, key and value\n\n\\(q_i=W^Qx_i\\), \\(k_i=W^Kx_1\\), \\(v_i = W^vx_i\\)\nwhere W’s are trainable projection matrices\n\n\n\n\n\nhead"
+  },
+  {
+    "objectID": "wiki/Statistics/dl.html#transformer",
+    "href": "wiki/Statistics/dl.html#transformer",
+    "title": "",
+    "section": "Transformer",
+    "text": "Transformer\nuses layer normalization instead of batch normalization which means for each token vector we calculate the mean and std of that vector and normalize it.\n\n\n\nnlp\n\n\ntransformer model get order awareness with positional encoding:\n\npositional embedding: learn position embedding vectors (sequence length needs to be known in advance)\n\n\n\n\ntransformer"
+  },
+  {
+    "objectID": "wiki/Statistics/dl.html#cnn",
+    "href": "wiki/Statistics/dl.html#cnn",
+    "title": "",
+    "section": "CNN",
+    "text": "CNN\n\ncalculate number of parameters Conv2D: \\((kernel_h *kernel_w * C_{input:colors} +1) *C_{out:numberfilter}\\)\nbatch: \\(4*C_{out:numberfilter}\\)"
+  },
+  {
+    "objectID": "wiki/Statistics/graphNN.html#loss-function-for-gnn",
+    "href": "wiki/Statistics/graphNN.html#loss-function-for-gnn",
+    "title": "graph NN",
+    "section": "Loss Function for GNN",
+    "text": "Loss Function for GNN\nGNN most often used for 3 tasks:\n\nnode classification (user is a bot in social network)\ngraph classification (proterty prediction based on molecular graph structures)\nrelation prediction (content recommendation in online platforms)\n\n\\(z_u, z_G\\) are embeddings of final layer (node, and graph). Graph embedding happens via pooling. Gradient of the loss is backpropagated through the parameters of the GNN using stochastic gradient descent.\n\nNode Classification\nexample, for non-binary classification:\n\nChose output function\n\n\nSoftmax\nSigmoid\n\n\nLoss function\n\n\nBinary cross-entropy\nCategorical cross-entropy (multiple classes)\nnegative log likelihood\n\n\\(L = \\sum_{u \\in N_{train}}-log(softmax(z_u,y_u))\\) where \\(z_u\\) is embedding of node u. Softmax turns real numbers into probabilities (e emphasises larg number), for numeric stable version we can subract max(z) from each z. Commonly neural networks output logits which are then turned into probabilies with softmax or sigmoid function.\\(y_u\\) is one-hot encodedﬁ⁄\n\\(softmax(z_i)= \\frac{e^z_i}{\\sum_{j=1}^Ke^{z_j}}\\)\nSoftmax with one-hot encoded class labels just selects the probability of correct class:\n\\(softmax(z_u,y_u) = \\sum_{i=1}^cy[i]\\frac{exp(z_u^Tw_i)}{\\sum_{j=1}^cexp(z_u^Tw_j)}\\)\n\nC = classes\ny one-hot encodede class label\n\n\\(sigmoid(z) = \\frac{1}{1+e^{-z}\\)\n\\(Negativeloglikelihood(\\theta) = -\\sum_{i=1}^nlog \\space p(y_i|x_i,\\theta)\\) which the goal is to minimize: if model assigns high probability to correct outcome then log probablilty is close to 0 low loss. - log goes to + infinity with probability approaching 0.\nThree types of nodes\n\nset of training nodes, \\(V_{train}\\): These nodes are included in the GNN message passing operations and for computing loss\nTransductive test nodes, \\(V_{trans}\\): These nodes are unlabeled and not used in loss computation but nodes are still involved in GNN message passing operations. = GNN generates hidden representations for \\(h_u^{(k)}\\) for the nodes \\(u\\in V_{trans}\\) during message passing operations. But the final layer embeddings of those nodes will not bes used in the loss function computation\nInductive test nodes, \\(V_{ind}\\): these nodes are not used in loss computation or message passing during training, meaning these nodes and all their edges are unobserved while training. For example train on subgraph\n\nSemi-supervised: transductive test nodes: included in message passing during trainig\n\n\nGraph classification\nSame as node classification but loss is computed over \\(z_g\\) graph level embeddings",
+    "crumbs": [
+      "Wiki",
+      "Statistics",
+      "Graph Neural Networks"
+    ]
+  },
+  {
+    "objectID": "wiki/Statistics/graphNN.html#training-and-optimization-of-gnn",
+    "href": "wiki/Statistics/graphNN.html#training-and-optimization-of-gnn",
+    "title": "graph NN",
+    "section": "Training and Optimization of GNN",
+    "text": "Training and Optimization of GNN\n\nGraph-level implementations\nto make calculations more efficient graph level implementation of GNN equations are used.\n\\(H^k = \\sigma(AH^{(k-1)}W^k_{neigh} + H^{(k-1)}W_{self}^k)\\) where \\(H^k\\) is a matrix containing the layer-k embeedings of all nodes in the graph. We compute embedding \\(h_u^k\\) exatctly once. Limitation one full batch gradient descent and memory problems.\n==Subsampling and mini batching==\n\n\nParameter Sharing and Regularization\n\nwe can use standard regularization: L2, dropout, layer normalization\n\nsome GNN specific regularizations:\n\nparameter sharing: use same parameters in all aggregate and update functions (most effective for GNN with more than 6 layers)\nEdge dropout: randomly remove (or mask) edgeds in adjacency matrix during training",
+    "crumbs": [
+      "Wiki",
+      "Statistics",
+      "Graph Neural Networks"
+    ]
+  },
+  {
+    "objectID": "wiki/Statistics/graphNN.html#computation-graph",
+    "href": "wiki/Statistics/graphNN.html#computation-graph",
+    "title": "graph NN",
+    "section": "Computation graph",
+    "text": "Computation graph\n\nnode’s neighborhood defines a computation graph\nnodes aggregate information form their neighbors using neural networks\nevery node defines a computation graph based on its neighborhood\nso that information of node v doesn’t get lost we include \\(h_v^{(l-1)}\\)\n\n\n\n\nComputational Graph\n\n\n==Attention scores==",
+    "crumbs": [
+      "Wiki",
+      "Statistics",
+      "Graph Neural Networks"
+    ]
+  },
+  {
+    "objectID": "wiki/Statistics/graphNN.html#gnn-layer-in-practice",
+    "href": "wiki/Statistics/graphNN.html#gnn-layer-in-practice",
+    "title": "graph NN",
+    "section": "GNN layer in practice",
+    "text": "GNN layer in practice\n\nBatch Normalization: stabilizes neural network training\nGiven a batch of inputs (node embeddings):\nfor each batch:\n\nre-center the node emebeddings into zero mean\nre-scale the variance into unit variance\napply trainable parameters to normalized feature input: \\(Y_{i,j} = \\gamma X + \\beta_\\)\n\n\n\nDropout\nPrevent overfitting:\n\nduring trainnig with some probability p, randomly set neurons to zero (turn off)\nduring testing use all the neurons for computation\nin GNN it is applied in the linear layer in the message function\n\n\n\nTraining Pipeline\n\n\n\nGNN Pipeline\n\n\nDifferent Tasks require different prediction heads:\n\nNode-level prediction: directly make prediction using node embeddings. Classification and Regression\nEdge-level-prediction: prediction using paris of node emebeddings.\n\nOptions are: Concatenation + Linear \\(\\hat y_{uv} = Linear(Concat(h_u,h_v))\\)\nOr: Dot product \\(\\hat y_{uv} = (h_u)^Th_v\\)\n\nonly 1-way prediction (existence of an edge). Can be addapted to k-way prediction using trainable weights for each K\n\n\nGraph-level prediction: prediction using all node embeddings\n\nOptions are:\n\nGlobal mean pooling, global max pooling, global sum pooling\n\n\n\nUnsupervised signals on graphs Page 56\n\n\nEvaluation metrics\n\nRoot mean square error (RMSE)\nMean absolute error (MAE)\nMulti-class classification: accuracy (korrekt/total)\nbinary classification: accuracy, precision/recall, ROC AUC, F1\n\nPage 66\n\n\nData Split\nFixed: split once\n\ntraining: optimize GNN parameters\nvalidation: develop model/hyperparameters\ntest: held out, test for final performance\n\nRandom: randomly split and report average across multiple random seeds\nIn graph we have problem that nodes are not independent, how to split?\nSolution 1: Transductive setting\n\ncompute embeddings using entire graphs\ntrain using node labels of 1/3 of nodes\nvalidation node labels of second third\ntes with last nodes\n\nSolution 2: Inductive setting\n\nbreak edges and split into multiple graves\n\ns74",
+    "crumbs": [
+      "Wiki",
+      "Statistics",
+      "Graph Neural Networks"
+    ]
+  },
+  {
+    "objectID": "wiki/Statistics/graphNN.html#causal-story-behind-data",
+    "href": "wiki/Statistics/graphNN.html#causal-story-behind-data",
+    "title": "graph NN",
+    "section": "Causal story behind data",
+    "text": "Causal story behind data\n\nStructural causal model (SCM) - M\n\na way of describing relevant features of the world and how they interact with each other\nedogenous: variables determined within the causal system\n\npart of causal mechanism\ninfluenced by other variables in the model\nis correlated with unobserved factors that affect outcome\ne.g. education/income\ncaused by at least one exogenous variable\n\nexogenous: variables that determined outside the causal system being modeled\n\ni.e. not caused by any variable inside the model\nnot affected by other variables in the model\noften treated as independent inputs\nhelp identify causal effects because they provide variation that is not influenced by the outcome\ne.g.: completley randomly assigned scholarships\n\n\nSCM consists of:\n\nU: set of exogenous variables\nV: set of endogenous variables\nF: set of functions that assign each variable in V a value based on the values of the other variables in the model\n\n #### Graphical Causal Models\nEvery SCM is assocaited with a graphical causal model, and consists of:\n\nset of nodes representing variables in U and V\nset of edges representing the functions in f\n\n\nedges can be directed vs. undirected\n\nstarting node = parent\nend node = child\nfor multiple connection: starting point == ancestor and every node on the path is descendant\n\nConsequently, every endogenous variable in a model is a descendant of at least one exogenous variable\nexogenous variables cannot be descendants of any other variables (root nodes in a graph).\n\nGraphical definition of causation:\n\nif in graphical model: X is child of Y then Y is direct cause of X. If x is desendant of Y, then Y is potential cause of X. ### DAG: Directed Acyclic Graphs (Bayesian networks)\n\nto be Acyclic:\n\nno self-lops or cycles\n\n\nExplaining Away\n\nSuppose we have two causes for an effect the conditional probability of one cause given effect is larger than conditional probaility of other cause given effect and second cause (even if both causes are independant)\n\n - conditioning on A = 1 is crucial for explaining away phenomenon\n\n\n\nBayesian Network\nLet \\(X=(X_1,...,X_n)\\) be random variables. Bayesian network is a DAG that specifies a joint distribution over X as a product of local conditional distributions:\n\\(\\mathbb{P} = (X_1 =x_1,...X_n=x_n = \\prod _{i=1}^np(x_i|x_{Parents(i)})\\)\n\nif no direct connection in a DAG, then they nodes are conditional independent if connecting node is known:\n\n\\(T \\perp F|V\\) which implies \\(p(f|v,t) = p(f|v)\\)",
+    "crumbs": [
+      "Wiki",
+      "Statistics",
+      "Graph Neural Networks"
+    ]
+  },
+  {
+    "objectID": "wiki/Statistics/graphNN.html#causalality-in-detail",
+    "href": "wiki/Statistics/graphNN.html#causalality-in-detail",
+    "title": "graph NN",
+    "section": "Causalality in Detail",
+    "text": "Causalality in Detail\n\nConditioning (Seeing) vs. Intervention (Doing) - Pearls Ladder of Causality\n\nConditioning: focuses on observed cases where a variable has a certain value (\\(P(Y|X=x)\\)) - filters data - Intervention: forces a variable to take certain value, \\(P(Y|do(X=x)\\) alters data-generating process\n\nRCT = doing\nwith RCT we eliminate the connection between confouder and Treatment variable but the effect of confonder on Y stays Average Treatment Effect:\n\\(ATE = \\mathbb{E}[y|do(X=x_0)] - \\mathbb{E}[Y|do(X=x_1)]\\)",
+    "crumbs": [
+      "Wiki",
+      "Statistics",
+      "Graph Neural Networks"
+    ]
+  },
+  {
+    "objectID": "wiki/Statistics/graphNN.html#causal-conclusions-form-observational-data",
+    "href": "wiki/Statistics/graphNN.html#causal-conclusions-form-observational-data",
+    "title": "graph NN",
+    "section": "Causal Conclusions form observational data",
+    "text": "Causal Conclusions form observational data\nTarget quantity is causal effect difference or average causal Effect (ACE)\n\\(ACE = P(Y=1|do(X=1))- P(Y=1|do(X=0))\\) # Causal Machine Learning (GNN & Causal Graphs)",
+    "crumbs": [
+      "Wiki",
+      "Statistics",
+      "Graph Neural Networks"
     ]
   }
 ]

@@ -10,8 +10,8 @@ format:
       - text: |
           \let\maketitle\relax
           \usepackage{etoolbox}
-          \AtBeginEnvironment{Shaded}{\tiny\setstretch{0.85}\vspace{-0.7em}}
-          \AtEndEnvironment{Shaded}{\vspace{-0.7em}}
+          \AtBeginEnvironment{Shaded}{\tiny\setstretch{0.85}\vspace{-0.2em}}
+          \AtEndEnvironment{Shaded}{\vspace{-0.2em}}
           \usepackage{multicol}
           \setlength{\columnsep}{20pt}
     pdf-engine: lualatex
@@ -22,7 +22,11 @@ execute:
 
 
 #
+
+Deep Learning models are differential functions!
+
 # Image Classification (Lecture 1)
+
 - Goal: predict a label or distribution over labels for a given image (probabilty)
 - Often width (pixel) x height (pixel) x 3 (red, green, blue) arrays, 
 - flattend to one large array where each value is an integer from 0 (black) to 255 (white)
@@ -39,13 +43,16 @@ Some challenges for computer vision algorithm (must be invariant to cross produc
 
 
 ## Nearest Neighbor Classifier (*k = 1*)
+
 Takes test image (array) and compares it to every image (array) in training set and takes image label of closest one. *It simply remembers all training data*
 
 - With k = 1 we create "small islands of liekly incorrect predictions, always use higher k
 
 ### How compare to arrays A and B?
 
-**L1 distance/norm**: Sum of over all absolute pixel differences
+**L1 distance/norm**: 
+
+- Sum of over all absolute pixel differences
 $d_1(A,B) = \sum_i|A_i-B_i|$ If $A = B$ than L1 will be zero.
 
 
@@ -93,11 +100,13 @@ distances = np.sqrt(np.sum(np.square(self.X_train - X[i,:]), axis = 1))
 ```
 
 **Difference L1 , L2**
+
 - L2 unforgiving: prefers many medium disagreements to one big one.
 
 ## k-Nearest Neighbor Classifier
 
 Find top k closets images and take "majority vote" of labels. Higher k-values have a smoothing effect and make classifier more resistant to outliers. 
+
 - Training is very fast
 - Predicting is slow since it compares x_test to each x_training
 - In practice we want efficient predictions!
@@ -234,7 +243,6 @@ for k in k_choices:
 - For
 example if the number of hyperparameters is large you may prefer to use bigger validation splits. If the number of examples in the validation set is small (perhaps only a few hundred or so), it is safer to use cross-validation. Typical number of folds you can see in practice would be 3-fold, 5-fold or 10-fold cross-validation.
 
-\newpage 
 # Neural Networks (Lecture 2)
 
 ## Linear Classificaiton of Images
@@ -270,16 +278,18 @@ X_train = np.hstack([X_train, np.ones((X_train.shape[0], 1))])
 ```
 
 ## Loss Function /Cost Function
+
 Measures the **unhappiness** with the output. Loss is high with poor classifying the training data
 
 ### Cross-Entropy Loss of Softmax Classifier
+
 Softmax Classifier is generalization of binary logistic Regression classifier to multiple classes:
 
 - gives normalized class probabilites 
 - is applied to every class score
 - softmax function takes class scores $z_j$ and squashes it to a vector of values between zero and one which sum to one (= probabilites). This can be interpreted as confidence in each class
 
-$\frac{e^{z_j}}{\sum_ke^{z_k}}$ 
+$softmax=\frac{e^{z_j}}{\sum_ke^{z_k}}$ 
 
 
 **Cross-entropy loss**
@@ -378,6 +388,7 @@ test_data -= mean
 test_data /= std
 ```
 
+![Activation](pic/activation.png){width=50%}
 
 ## Activation Functions 
 
@@ -445,8 +456,61 @@ of the number of neurons.
 ## Optimization with Backpropagation
 Computing gradients through recursive application of **chain rule**.
 
-- we get gradients for all parameters: weight matrix and bias vector
-- to do
+- we get gradients for each parameters: weight matrix and bias vector
+- Mini-batch Gradient Descent: computes average gradient over batch and performs gradient descent after each batch
+- SGD: performs gradient descent after each training example
+- We pass gradients backward because each layer’s weights indirectly affect the loss, and the chain rule lets us compute those indirect effects step by step.
+- Each layer needs the gradient from the layer after it to compute its own gradient.
+- output layer: gradient loss ("how sensitive is loss to changes in parameter i) $\frac{\partial L}{\partial W_i}$
+  - if gradient large than small change loss largely
+- chain rule gives indirect effects of parameter from other layer
+
+
+You take a mini-batch of size $B$:
+  
+
+$\{(x^{(1)}, y^{(1)}), (x^{(2)}, y^{(2)}), \dots, (x^{(B)}, y^{(B)})\}$
+
+
+*  For each example in the batch Compute the **individual loss**:
+  
+
+$L^{(i)} = \text{Loss}(f_\theta(x^{(i)}), y^{(i)})$
+    
+* Compute the **individual gradient**:
+    
+
+$g^{(i)} = \nabla_\theta L^{(i)} = \frac{\partial L^{(i)}}{\partial \theta}$
+      
+
+* Compute the **average loss for the batch**:
+      
+$L_{\text{batch}} = \frac{1}{B} \sum_{i=1}^B L^{(i)}$
+        
+* Compute the **average gradient**:
+        
+$g_{\text{batch}} = \frac{1}{B} \sum_{i=1}^B g^{(i)}$
+
+          
+
+Apply gradient descent using the average gradient:
+          
+$\theta \leftarrow \theta - \eta \cdot g_{\text{batch}}$
+
+          
+Summary:
+          
+* You're averaging both the losses and the gradients.
+* The update is based on the average gradient across the mini-batch.
+* The global loss landscape is like an average over all examples — mini-batch training gives you a good approximation of that with each step.
+
+
+Intuition
+
+* **Averaging losses** → smooths out noisy variations across examples.
+* **Averaging gradients** → gives a better estimate of the true direction in weight space.
+* Larger batches → more stable (less noisy) updates.
+
 
 ### Keras 
 
@@ -516,165 +580,525 @@ X -= np.mean(X, axis = (0,1,2))
 Features are same scale. Divide by standard deviation after zero-centered
 
 ### PCA and Whitening 
-First centered. Next covariance matrix (tell us about correlation structure). Then we can compute the SD factorization of the data covariance matrix 
+First center. Next covariance matrix (tell us about correlation structure). Then we can compute the SVD factorization of the data covariance matrix. In practice, we mention PCA/Whitening in these notes for completeness, but these transformations are not used with Convolutional Networks However, it is very important to zero-center the data, and it is common to see normalization of every pixel as well.
+Instead, the mean must be computed only over the training data and then subtracted equally from all splits (train/val/test).
 
+### Data Augmentation
 
-
-# Exercise 
-
-## Simple Celsisus to fahrenheit fun part
-```{python}
-input = tf.keras.layers.Input((1,))
-l0 = tf.keras.layers.Dense(units=4)
-l1 = tf.keras.layers.Dense(units=4)
-l2 = tf.keras.layers.Dense(units=1)
-model = tf.keras.Sequential([input, l0, l1, l2])
-model.compile(loss='mean_squared_error', optimizer=tf.keras.optimizers.Adam(0.1))
-model.fit(celsius_q, fahrenheit_a, epochs=500, verbose=False)
-print("Finished training the model")
-print("Model predicts that 100 degrees Celsius is: {} degrees Fahrenheit".format(model.predict(np.array([100.0]))))
-print("These are the l0 variables: {}".format(l0.get_weights()))
-print("These are the l1 variables: {}".format(l1.get_weights()))
-print("These are the l2 variables: {}".format(l2.get_weights()))
-```
-
-## Linear Classifier
+- Rotate
+- Shift
+- Shear 
+- Zoom
+- Flip
 
 ```{python}
-#Train a Linear Classifier
-
-# initialize parameters randomly
-W = 0.01 * np.random.randn(D,K)
-b = np.zeros((1,K))
-
-# some hyperparameters
-step_size = 1e-0
-reg = 1e-3 # regularization strength
-
-# gradient descent loop
-num_examples = X.shape[0]
-for i in range(200):
-
-  # evaluate class scores, [N x K]
-  scores = np.dot(X, W) + b
-
-  # compute the class probabilities
-  exp_scores = np.exp(scores)
-  # [N x K]
-  probs = exp_scores / np.sum(exp_scores, axis=1, keepdims=True)
-
-  # compute the loss: average cross-entropy loss and regularization
-  correct_logprobs = -np.log(probs[range(num_examples),y])
-  data_loss = np.sum(correct_logprobs)/num_examples
-  reg_loss = 0.5*reg*np.sum(W*W)
-  loss = data_loss + reg_loss
-  if i % 10 == 0:
-    print("iteration %d: loss %f" % (i, loss))
-
-  # compute the gradient on scores
-  dscores = probs
-  dscores[range(num_examples),y] -= 1
-  dscores /= num_examples
-
-  # backpropate the gradient to the parameters (W,b)
-  dW = np.dot(X.T, dscores)
-  db = np.sum(dscores, axis=0, keepdims=True)
-
-  dW += reg*W # regularization gradient
-
-  # perform a parameter update
-  W += -step_size * dW
-  b += -step_size * db
+datagen = ImageDataGenerator(
+  rescale=1./255,
+  rotation_range=40,
+  width_shift_range=0.2,
+  height_shift_range=0.2,
+  shear_range=0.2,
+  zoom_range=0.2,
+  horizontal_flip=True,
+  fill_mode='nearest')
 ```
 
-## NN
+### Weight initialization
 
-
-- broadcasting of bias vector b:np.dot gives 300x100 matrix and bias is 100x1. Broadcasting give us 300x100 by repeating the vector.
-- Input values can be bound from 0 to 1: e.g. for greyscale divide by 255, or use normalization
-- One hot encoding of labels
-```{python}
-hidden_layer = np.maximum(0, np.dot(X, W) + b) # b This is called broadcasting: it adds the same bias vector to each row.
-
-```
-
-
+- We need asymmetry between neurons at initialization: small number close to zero (symmetry breaking)
+- At the start each neuron should be random and unique so they compute dinstinct updates. Multivariate gaussian with m = 0 sd = 1
+- to help with uncalibrated variance problem we normalize the output
+- bias is typically set to 0
 
 ```{python}
-# initialize parameters randomly
-h = 100 # size of hidden layer
-W = 0.01 * np.random.randn(D,h)
-b = np.zeros((1,h))
-W2 = 0.01 * np.random.randn(h,K)
-b2 = np.zeros((1,K))
+w = np.random.randn(n) * sqrt(2.0/n)
+```
 
-# some hyperparameters
-step_size = 1e-0
-reg = 1e-3 # regularization strength
+### Batch Normalization 
 
-# gradient descent loop
-num_examples = X.shape[0]
-for i in range(10000):
+Insert a BachtNorm Layer after fully connected layer and before non-linearity
+- Makes networks much robuster to bad initialization
+- And can be interpreted as preprocessing at every layer 
+- Machine learning methods tend to work better when their input
+data consists of uncorrelated features with zero mean and unit variance. 
+-At training time, a batch normalization layer uses a
+minibatch of data to estimate the mean and standard deviation of each feature. These estimated means and standard deviations are then used to center and normalize the features of the minibatch. A running
+average of these means and standard deviations is kept during training, and at test time these running averages are used to center and normalize features.
+- To this end, the batch normalization layer includes learnable shift and scale parameters for each feature dimension: these parameters are learned with the other parameters and restore the representation
+power of the network. 
 
-  # evaluate class scores, [N x K]
-  hidden_layer = np.maximum(0, np.dot(X, W) + b) # note, ReLU activation
-  scores = np.dot(hidden_layer, W2) + b2
+## Learning parameters and finding hyperparameters
 
-  # compute the class probabilities
-  exp_scores = np.exp(scores)
-  probs = exp_scores / np.sum(exp_scores, axis=1, keepdims=True) # [N x K]
+Santiy checks at the start:
 
-  # compute the loss: average cross-entropy loss and regularization
-  correct_logprobs = -np.log(probs[range(num_examples),y])
-  data_loss = np.sum(correct_logprobs)/num_examples
-  reg_loss = 0.5*reg*np.sum(W*W) + 0.5*reg*np.sum(W2*W2)
-  loss = data_loss + reg_loss
-  if i % 1000 == 0:
-    print("iteration %d: loss %f" % (i, loss))
+1. correct loss at start (chance): for 10 images loss with regularization = 0 should be softmax: $-ln(0.1) = 2.302$ and svm: loss of 9
+2. regularization increase = increase in loss
+3. Choice tiny subsample and overfit: loss of zero (regularization = 0)
 
-  # compute the gradient on scores
-  dscores = probs
-  dscores[range(num_examples),y] -= 1
-  dscores /= num_examples
+### Check learning process and Loss
 
-  # backpropagate the gradient to the parameters
-  # first backprop into parameters W2 and b2
-  dW2 = np.dot(hidden_layer.T, dscores)
-  db2 = np.sum(dscores, axis=0, keepdims=True)
-  # next backprop into hidden layer
-  dhidden = np.dot(dscores, W2.T)
-  # backprop the ReLU non-linearity
-  dhidden[hidden_layer <= 0] = 0
-  # finally into W,b
-  dW = np.dot(X.T, dhidden)
-  db = np.sum(dhidden, axis=0, keepdims=True)
+Plot epoch (1 = every example hase been seen once on average) against loss:
 
-  # add regularization gradient contribution
-  dW2 += reg * W2
-  dW += reg * W
+- low learning rate = improvements linear
+- very high learning rates = exponential
+- high learning rates = fast decay and stuck at not optimal point (unsettled, bouncing)
+- if batch size too low: cost can be too noisy
+- loss is sometimes plotted in log() form
 
-  # perform a parameter update
-  W += -step_size * dW
-  b += -step_size * db
-  W2 += -step_size * dW2
-  b2 += -step_size * db2
+![loss](pic/loss.png){width=50%}
 
+### Check train/val Accuracy
+
+Shows overfitting. If val acc stops increaseing for two epochs we could interrupt training
+
+- gap between training and validation acc indicates amount of overfitting
+  - in practice: increase regularization L2 weight, collect more data, dropout, etc.
+- if train and val acc too similar = not complex enough, capacity is to low and make model larger (increase number of parameters)
+
+### Ratio of weights: updates
+Ratio should be around $10^{-3}$
+
+- if lower = learning rate might be too low
+- if higher = learning rate likely too high 
+
+## Regularization and More on Loss Functions
+
+### L2 Regularization 
+
+$L = L_{original} + \lambda\sum_iw^2_i$
+
+- prefers diffuse weight vectors instead of spikey ones therefore forcing the network to use all neurons
+
+```{python}
+tf.keras.layers.Dense(512,
+        kernel_regularizer=tf.keras.regularizers.l2(0.01))
+```
+
+### L1 Regularization
+
+$L = L_{orig} + \lambda\sum_i|w_i|$
+
+- add to each weight $w$ term $\lambda|w|$ 
+- has benefit of weights becoming sparse only using most important input
+- is good for feature selection
+- but generally L2 better 
+
+### Combination = Elastic net regulariztaion
+
+$\lambda_1|w|+\lambda_2w^2$
+
+### Max Norm Constraints
+
+bounds weights by c: $||w||_2 < c$, with c orders of 3 or 4. Network cant explode even with high learning rates
+
+### Dropout 
+
+during training neuron is keept active with some probability p (hyperparameter) or set to zero otherwise. "Sampling a neural network from the neural network"
+
+- Forward and backpropagation and parameter update for that training
+case are done only on this thinned network.
+- if p is set high = less dropout
+- at test time not droping anymore but we have to add p to get a comparable result as in training since: 
+  - a neuron is active $px + (1-p)0$ 
+  - use inverted dropout to overcome changing test-time code
+```{python}
+tf. keras.layers.Dropout(0.3)
+```
+
+### Bias regularization
+
+Not common but doesn't seem to harm.
+
+### Loss functions 
+
+```{python}
+from tf.keras import losses
+# Cross-Entropy Loss Function
+model.compile(loss=losses.categorical_crossentropy,
+    optimizer='sgd')
+# SVM Loss aka hinge loss
+model.compile(loss=losses.hinge,
+    optimizer='sgd')
+# Squared hinge loss
+model.compile(loss=losses.squared_hinge,
+    optimizer='sgd')
+```
+
+If we have many labels e.g. > 1000 use Hierarchical Softmax
+
+- decomposes labels into trees with each label as a branch, softmax can train to distinguish at every node between two labels
+
+If not one single correct label (e.g. hashtags photos):
+
+- train classifier for every single attribute
+
+## Parameter Updates 
+
+- Vanilla (regular): change parameters along negative gradient direction
+- Momentum Update: two additional hyper parameter *mu* and *v* with each epoch *mu* gets increases (build up momentum)
+- Nesterov Momentum
+
+```{python}
+tf.keras.optimizers.SGD(learning_rate=0.01, momentum=0.0, nesterov=False)
 ```
 
 
+## Annealing learning Rate
+
+It's helpful to anneal lr over time 
+
+- step decay: reducing by factor every few epochs (1/2 every 5 ep, 0.1 every 20 ep)
+  - watch validation error while training, if stuck reduce by constant
+- exponential decay: $\alpha = \alpha_0e^{-kt}$ t is iteration number (can use units of epoch too)
+- 1/t: $\alpha = \alpha_0/(1+kt)$
+- keras time-base: $lr = lr*\frac{1}{1 + decay * epoch}$
+- Adam: most common at the moment 
+
+If enough computation budget chose slower decay and train for longer time
+
+## Hyperparameter Optimazation 
+
+- initial learning rate
+- learning rate decay schedule
+- regularization strength (l2, dropout strength)
+
+## Model Ensembles
+
+Multiple different model together often better predictive power. Few approaches forming ensembles: 
+
+- Same model, different initialization: CV for hyperparameter, different models with diff inti.
+- Top models during cv: top 10 models and form ensemlbe
+- different checkpoints of single model: very cheap
+- Running average of parameters during training
+
+Disadvantage: take longer at test time
+
+# CNN (Lecture 4)
+
+Focuses on images and reduces parameters and are more efficient.
+A unit is not fully connected and input is not flatten but take use of structure of image  (widht, height, depth: 3D volume. Neurons are arrange in widgth, height, depth. Output layer is than 1x1x10 (in CIFAR-10)
+Layers used:
+
+- Convolutional Layer (weights and biases, additional hyperparameter)
+- Pooling Layer (fixed function, , additional hyperparameter)
+- RELU (fixed function)
+- Fully-Connected Layer (weights and biases, additional hyperparameter)
+
+## Convolutional Layer
+ConvNets can be interpreted as gradually transforming the images into a representation in which the classes are separable by a linear classifier.
+
+Most computation done. Consists of:
+
+- filters: for example 5 x 5 x 3 (5 x 5 pixel for 3 color channels)
+  - during forward pass: filters are convolved (slided)
+  - computes dot product of filter parameters and input 
+  - produces a 2-dimensional **acitivation map**
+  - CNN learn filters that activate for certain visual features
+  - activation maps are stacked along depth dimension
+  - neuron has a receptive field same size as filter (and are only connected locally along wight and height (space) but full connected along depth)
+  
+Example: 
+
+- Input = [32 x 32 x 3]
+- Receptive field = [5 x 5]
+- each neuron has weights to a [5 x 5 x 3] region (75 weights + 1 bias)
+  
+![cnn](pic/cnn.png){width=50%}
+
+### Hyperparameter in Conv Layer
+
+- depth: corresponds to **number of filters** used, the neuron try to look for something different in the same region of input (depth column/fibre)
+- stride: sliding filter (1 = 1 pixel at the time)
+- size zero-padding: zeros around the boarder of image
+- spatial extent F (receptive field)
+- dilation: increases gaps (skips pixel) increases receptive field without increasing number of parameters
+
+Output volume is calculated with: $(W-F+2P)/S+1$ where
+
+- W = input volume size
+- F = receptive field size
+- S = Stride
+- P = zero-padding
+- (common setting: F = 3, S & P = 1)
+The ouput gives widght and height, the depth is determined by deph of ConvLayer
+We can see which strides can be fit neatly when $(W-F+2P)/stride$ is dividable.
+Input and output is same chose zero-padding with gernal formular: $P=(F-1)/2$
+ 
+Each of the output volume x output volume x depth of conv, has parameters of F x F x 3(input vector) + 1 bias 
 
 
+  
+### Parameter Sharing
+
+we can slice each depth layer into a depth slice (= activation map) each of size output x output: 
 
 
+- we constraint the neuron of a slice to use the same weight and biases
+- the parameter and bias are sometimes refered to as filter (or kernel)
+- assumption: if learning horizontal edges is important at location xy than it's important at all other locations. Each slice learns something different of the image 
+  - doesn't make sense in the case of images with specific centered structure(e.g. faces) -> use locally-connected layer
+- With parameter sharing, it introduces F·F·D1 weights per filter, for a total of (F·F·D1)·K
+weights and K biases.
+
+```{python}
+keras.layers.Conv2D(filters, kernel_size, strides, padding)
+```
+
+## Pooling Layer
+
+Controls overfitting by reducing parameter by taking max value of defined space (often 2x2, with stride 2, depth stays the same, sometimes overlapping pooling with 3x3 and stride = 2)
+
+- instead of max we can use average or L2-norm
+- use same formula $(W-F+2P)/S+1$ depth k **stays the same**
+- Another way to reduce parameter is to only use conv layer but use larger stride once in a while
+
+```{python}
+model.add(tf.keras.layers.MaxPooling2D(pool_size = (2,2), strides = (2,2))
+```
+
+## Normalization Layer 
+
+- Function form of fully connected and conv layer are the same (dot products)
+- Any FC layer con be converted to conv
+
+## Computional considerations
+As is common with Convolutional Networks, notice that most of the memory (and also compute time)
+is used in the early CONV layers, and that most of the parameters are in the last FC layers. In this
+particular case, the first FC layer contains 100M weights, out of a total of 140M
+
+## Visual Interpreation
+
+- viz activation map of some filter (become clearer at later layers)
+- viz weights (most interpretable at first layer since uses raw pixel as input)
+  - if Noisy pattern = short training, low regularization, overfitted
+- iteratve over image black out spots and calculate true class probabability which gives us a heatmap with most important area of image
+
+Eearlier features of a ConvNet contain more generic features
+(e.g. edge detectors or color blob detectors) that should be useful to many tasks, but later layers of the ConvNet becomes progressively more specific to the details of the classes contained in the original dataset
+
+## Transfer Learning, when to fine-tune
+
+comes down to size of new dataset and similarity
+
+- new dataset small and similar: don't fine-tune because of overfiting
+- new dataset large and similar: no problem with overfiting 
+- new dataset small and very different: use activation from earlier layers
+- new dataset large and very diff: no problem fine-tuning can be done
+
+**use small learning rates** since we expect to already have good parameters
+
+# Neural Language Models 
+
+## Text preparation
+vectorizing = turning text into numbers.
+Steps:
+
+- standardize (i.e. lower case, remove punctiation, convert special character to standard, stemming)
+- split into units (tokens, tokenization), e.g. characters, words, groups of words
+- indexing all tokens in the data
+- each token to vector, vector encoding of indices (one-hot encoding or embedding)
 
 
+## Bag of words vs sequence models
+
+sequence models care about order of input. Bag of words model treat input words as a set discarding order.
+
+- Bag-of-words uses n-gram tokenization
+- sequence models uses world tokenization (sometimes even split into subwords)
+
+One-hot-encoding: 
+
+- Assumption is that the different tokens you’re encoding are all independent from each other: indeed, one-hot vectors are all orthogonal to one another.
+
+![embedding](pic/embedding.png){width=30%}
+
+So, word embeddings pack more information into far fewer dimensions.
+## TF-IDF Normalization
+term frequencey, inverse document frequency:
+
+- term frequencey: how often appears in current document 
+- document frequencey: estimates how often appears in dataset
+
+$\frac{term freq}{doc freq}$
+
+## Word Embedding Layer
+It’s thus reasonable to learn a new embedding space with every new task. 
+
+## Recurrent neural network
+
+![RNN](pic/rnn.png){width=50%}
+
+![rnnstep](pic/rnnstep.png){width=50%}
+
+- at each time step we have two inputs to the hidden layer: output of previous layer $h_{t-1}$, and input of timestep $x_t$
+- the previous output is multiplied with weight matrix $W^{(hh)}$
+- $x_t$ is multiplied with $W^{(hx)}$
+- output is $h_t$ that is multiple with weight matrix $W^{(S)}$ and run through a softmax function over vocabulary which ends with prediction output $\hat y$ for the next word
+
+Hidden Layer (with sigmoid or tanh function: element-wise):
+$h_t = \sigma((W^{(hh)}h_{t-1}+W^{(hx)}x_t))$
+
+prediction (uses document context score up to now + word vector at time point):
+$\hat y_t = softmax(W^{(S)}h_t)$
+
+What is interesting here is that the same weights W(hh) and W(hx) are applied repeatedly at each timestep. Thus, the number of parameters the model has to learn is less, and most importantly, is independent of the length of the input sequence - thus **defeating the curse of dimensionality**!
+
+![notation slightly different in this picture](pic/rnnmodel.png){width=50%}
+
+We can stack multiple RNN on top
+
+### Training / Loss Function (not relevant Exam)
+
+### Exploding and Vanishing Gradient Problems
+Gradients are shrinking expoentially and vanish, far away steps don't contribute to the update. Exploding gradients can be clipped (set back to a small number after reaching treshold. Common problems for RNN are very deep (as deep as input length)
+
+Vanishing Gradient fix:
+
+- first technique: set $W_{hh}$ not randomly but as identity matrix
+- second technique: use ReLU instead of sigmoid
+- Change architecure to LSTMs
+
+### Disadvantages
+
+- computation slow since sequential not parallelized
+- in practice, problematic getting information from steps back (vanishing/exploding gradients)
+
+## RNN LSTM
+
+- Cell state is the core idea of LSTM which runs down the entire chain where information can flow unchanged.
+- LSTM can add or remove information from cell state by 3 gates
+- gates are sigmoid neural(how much should be let in) net layer with pointwise multiplicaiton operation
+
+![cellgate](pic/cellgate.png){width=30%}
+
+### Gates
+
+**Forget Gate Layer**
+
+- looks at $h_{t-1}$ and $x_t$ and outputs a number between 0 and 1 for each number in the cell state $C_{t-1}$
+
+![forget gate](pic/forget.png){width=30%}
+
+**Input Gate Layer**
+
+- what new information is added:
+  - sigmoid layer decides which values are updated
+  - tanh layer creates vector with new values $C_t$
+
+![input gate](pic/input.png){width=30%}
+
+**New Cell Update**
+
+- Update old cell state $C_{t-1}$ into $C_t$
+  - multiply with forget gate
+  - add $(i_t * C_t)$
+  
+**Output Gate**
+
+- Filtered version of output using a sigmoid layer decicdes with part to output
+- Next, cell state goes through tanh (push values between -1 and 1) and multiply it by output of sigmoid gate
+
+![output](pic/output.png){width=30%}
 
 
+### Advantages and Dis
+LSTM does not guarantee that there is no vanishing / exploding gradient, but it does provide an easier way for the model to learn long-distance dependencies.
+
+## Attention and Transformers
+
+### Sequence-to-Sequence Learning 
+
+- Encoder model turn source sequence into intermediate representation
+- Decoder trained to predict next token i in the target sequence by looking at both previous token 0 to i-1 and the encoded source sequence. 
+  * decoder take initial "seed" token [start] and encoded source sequence and predicts first real token in sequence. 
+  * next, predicted sequence and encoded source is fed into decoder until stop token is generated [end]
+  
+**Seq2Seq Architecture - Encoder** 
+Takes input and generates a fixed-dimensional context vector C. Multiple LSTMs are stacked together and finay output becomes C. Seq2Seq encoders process sequence in reverse: last thing the model see is first thing it will output and this makes decoder easier to start. once it has the first few words translated correctly, it’s much easier to go on to
+construct a correct sentence than it is to do so from scratch
+
+![seq2seq encoder](pic/seq2seq.png){width=50%}
+
+**Seq2Seq Architecture - Decoder** 
+
+- uses softmax for output and cross-entropy loss
+- encoder and decoder are trained at the same time, they both learn the same context vector 
+
+![seq2seq decoder](pic/seq2seqdec.png){width=50%}
+
+**Bidirectional RNN** 
+
+- fixes problem of only considering past input (hidden layer)
+- 
+
+![Bidirection RNN](pic/bidir.png){width=50%}
+### Attention
+
+- can make features context aware
+- embedding have a fixed position and fixed connections (so not context aware)
+
+similar concept of attention:
+
+- max pooling: "all or northing" form of attention, only keep max value
+- TF-IDF normalization: importance score of tokens 
+
+### Transformers
+
+**Self-Attenation**
+
+modulate embeddet representation of a token given context around it
+
+- Step 1: compute relevancy scores (=Attention scores) between vector "word" and every other "word" vector. This is done via dot product
+- Step 2: Sum of all "word" vector in sentence weighted by attention scores (normalize + softamx)
+- repeat for each word in seq
+- output become the new vector for a word
+
+**Generalized Self-Attention: Query-Key-Value Model**
+
+![key](pic/key.png){width = 50%}
+
+In practice keys and vlaues are often the same sequence. In ML query would be target sequence, source sequence would be both keys and values.
+
+- for each token in target ("tiempo") go back to source ("How's the weather today?") and identify different bits that are related to "tiempo
 
 
+**Multi-Head Attention**
 
+- extra dense projections
+- output space of self-attention gets split into independent subspaces (head), learned separately resulting in three vectors which are concatenated back together. 
+- for each word we calculate it's query, key and value
+  - $q_i=W^Qx_i$, $k_i=W^Kx_1$, $v_i = W^vx_i$
+  - where W's are trainable projection matrices
 
+![head](pic/head.png){width=50%}
 
+## Transformer
 
+uses layer normalization instead of batch normalization which means for each token vector we calculate the mean and std of that vector and normalize it. 
 
+![nlp](pic/nlp.png){width=50%}
 
+transformer model get order awareness with **positional encoding**:
+
+- positional embedding: learn position embedding vectors (sequence length needs to be known in advance)
+
+![transformer](pic/transformer.png){width=50%}
+
+# General notes from exercise
+
+- if small dataset (eg. 500) use crossvalidation since simple split would be noisy
+- zero-center images for each color: faster convergence, stable gradients, less sensitiv to initialization, better model performance, avoid saturated activation function
+- data augmentation: flip horizontal, rotate imagem, zoom
+  - Training loss starts extremely high (>25), likely due to augmentation introducing harder or noisier examples at the beginning.
+- Find a good learning rate with custom shedular (see block 3 training and opt)
+- kernel_initializer parameter in dense layer gives option to set algo for weight init (default is glorot normal init, he_normal is a different one)
+- batch normalization extremly helpful for training but at cost of overfitting (see block3 )
+- santiy checks (see block 3 chapter 6)
+- High variance in validation loss suggests sensitivity to small changes in data (potentially small validation set or noisy labels).
+- most common to use global L2 (that was cv'ed) and combine with dropout layer with p = 0.5 at the end
+- batch norm layer normalizes every neuron output of prev layer and add scale and shift if less stric norm is needed.(block 3)
+
+## CNN
+
+- calculate number of parameters Conv2D: $(kernel_h *kernel_w * C_{input:colors} +1) *C_{out:numberfilter}$
+- batch: $4*C_{out:numberfilter}$

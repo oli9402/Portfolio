@@ -13,7 +13,7 @@ Definition:
 
 
 ## Traditional View on Attitude 
-A psychological tendecy that is expressed by evaluating a particular entity with some degree of favor or disfavor
+A psychological tendency that is expressed by evaluating a particular entity with some degree of favor or disfavor
 
 Attitudes are Pre-existing:
 - Automatic activation of attitudes (retrievable: "file-drawer")
@@ -41,10 +41,10 @@ Some attitude expressions are construced on the spot, some are retrieved almost 
 ## Schwarz Resolving
 No attitudes, but contextualized construction of evaluations/judgments on the spot drawing on what is available to Respondent (R)
 
-- Stable attitudes = similar evalutions arising from R drwaing on similar inputs or the sam chronically accessible information. 
+- Stable attitudes = similar evalutions arising from R drawing on similar inputs or the some chronically accessible information. 
 - Strong attitudes = R drawing on highly accessible information
--Context effects = R drawing on contexutal information when constructing evaluations
--Nonattitude = Same number of conflicting information accessible to R at the same time
+- Context effects = R drawing on contextual information when constructing evaluations
+- Nonattitude = Same number of conflicting information accessible to R at the same time
 
 ## Context Effects 
 
@@ -86,7 +86,7 @@ R like these scales
 Acquiesence Bias
 - R wants to be polite and agreeable
 - R might defer to higher status (yes sure)
-- R adopts a satisficing strategy (do just enough)
+- R adopts a satisfying strategy (do just enough)
 
 Multi-barrled 
 - multi information in statement 

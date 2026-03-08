@@ -1,0 +1,15 @@
+{
+  "hash": "a4003d34214948cbd99887df98c97808",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"index\"\nformat: html\neval: false\n---\n# Introduction \n\n\n\n\n## Installing Packages\n\n\n::: {.cell}\n\n```{.bash .cell-code}\ninstall.packages(\"devtools\")\ninstall.packages(\"usethis\")\n```\n:::\n\n\n## Create Package\n\n\n::: {.cell}\n\n```{.bash .cell-code}\nlibrary(usethis)\ncreate_package('~/Documents/siliconPackage')\n```\n:::\n\n\n## Create file\n\n\n::: {.cell}\n\n```{.bash .cell-code}\nlibrary(usethis)\nuse_r('silicon')\n```\n:::\n\n\n\n## Package vs R Script\n\nIn normal R Scripts you call libraries but in a package you track dependencies differently with using `use_package()` which adds the package to the DESCRIPTION file. \n\n\n::: {.cell}\n\n```{.bash .cell-code}\nuse_package('ggplot2')\n```\n:::\n\n\nBy default, r looks for function inside your own package first so we do not explicitly state the package name. But for external packages like `ggplot2` we would use `ggplot2::function`\n\n### .Rprofile\n\nWith an .Rprofile file we can add libraries that should be loaded after opening the Package Project in R\n\n\n::: {.cell}\n\n```{.r .cell-code}\nif (!require(devtools)) {\n  install.packages(\"devtools\")\n  library(devtools)\n}\n```\n:::\n\n\n\n## Do Checks \n\n\n::: {.cell}\n\n```{.bash .cell-code}\ndevtools::check()\n```\n:::\n\n\n## Publish on Github\nFirst init git with `use_git('init package')`\n\n\n\n::: {.cell}\n\n```{.bash .cell-code}\nuse_github()\n#or \nuse_github('NameOfOrganization')\n```\n:::\n\n\n## Download Package\n\n\n::: {.cell}\n\n```{.bash .cell-code}\ndevtools::install_github('username/packagename')\n```\n:::\n\n\n## Documentation\n\nRoxygen2 is a way of documenting function and with `@export` we tell roxygen2 that this function is ready for export and is accessible for other users that load the package. We can also call the usual `?function` the returns our short description. \nOther function **without** `@export` are internal function and can't be accessed. \n\n::: {.cell}\n\n```{.r .cell-code}\n#' Title\n#' \n#' Short description of function with *markdown* syntax\n#' \n#' @export\nfunction_name <- function(){\n  \n}\n```\n:::\n\n\nTo make the documentation call the following in the console: \n\n\n::: {.cell}\n\n```{.bash .cell-code}\ndevtools::document()\n```\n:::\n\n\n\n::: {.cell}\n\n```{.bash .cell-code}\nuse_mit_license()\n```\n:::\n\n\n## Test created functions \n\n\n::: {.cell}\n\n```{.bash .cell-code}\nuse_testthat()\n\nuse_test('nameOfRRcript')\n\ntest()\n```\n:::\n\n\nAlternatively in RStudio we can use `Build` to run all tests.\n\n\n## Rename file \n\n\n::: {.cell}\n\n```{.bash .cell-code}\nrename_file('old', 'new')\n```\n:::\n\n\n## Add readme for github\n\n\n::: {.cell}\n\n```{.bash .cell-code}\nuse_readme_rmd()\nbuild_readme()\n```\n:::\n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

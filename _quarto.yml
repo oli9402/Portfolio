@@ -58,17 +58,20 @@ website:
            contents: 
            - text: 'Confidence Intervals'
              href: wiki/Statistics/ci.qmd
-           - text: 'Glossary'
-             href: wiki/Statistics/Glossary.qmd
-           - text: 'General Linear Model'
+           - text: 'Generalized Linear Models'
              href: wiki/Statistics/glm.qmd
-           - text: 'Deep Learning Python'
+           - text: 'Deep Learning Python Cheatsheet'
+             icon: 'Document'
              href: wiki/Statistics/dl.qmd
+           - text: 'Model Diagnostic'
+             href: wiki/Statistics/modeldiagnostic.qmd
+           - text: 'Longitudinal Data'
+             href: wiki/Statistics/logitudinal.qmd
+           - text: 'Graph Neural Networks'
+             href: wiki/Statistics/graphNN.qmd
          - section: 'Linear Algebra'
            href: wiki/LinAlg/linalg_start.qmd
            contents:
-            - text: 'Things to remember'
-              href: wiki/LinAlg/ttr.qmd
             - text: 'Systems of Linear Equations'
               href: wiki/LinAlg/sys.qmd
             - text: 'Basis'
@@ -79,11 +82,12 @@ website:
               href: wiki/LinAlg/eigen.qmd
             - text: 'Orthonormal Basis'
               href: wiki/LinAlg/norm.qmd
-         - section: 'Design of Experiments' 
-           href: wiki/DOE/int.qmd
+         - section: 'SQL'
+           href: wiki/SQL/start.qmd
            contents:
-           - text: 'Research Design'
-             href: wiki/DOE/doe.qmd
+            - text: 'SQL Exercises'
+              href: wiki/SQL/index.qmd
+            
         
 format:
   html:

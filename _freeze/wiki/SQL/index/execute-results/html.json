@@ -1,0 +1,17 @@
+{
+  "hash": "61c2c178e1337ff9f938e43bfbcaa436",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"SQL Ex\"\n---\n\n\n# Execution Hierarchie\n\n✅ SQL Logical Execution Order (most important version)\n\n1. FROM\n\n2. ON\n\n3. JOIN\n\n4. WHERE\n\n5. GROUP BY\n\n6. HAVING\n\n7. SELECT\n\n8. DISTINCT\n\n9. WINDOW functions (e.g., LAG/LEAD)\n\n10. ORDER BY\n\n11. LIMIT / OFFSET\n\n# Ex 1\n\nTable: Visits\n\n+-------------+---------+\n| Column Name | Type    |\n+-------------+---------+\n| visit_id    | int     |\n| customer_id | int     |\n+-------------+---------+\nvisit_id is the column with unique values for this table.\nThis table contains information about the customers who visited the mall.\n \n\nTable: Transactions\n\n+----------------+---------+\n| Column Name    | Type    |\n+----------------+---------+\n| transaction_id | int     |\n| visit_id       | int     |\n| amount         | int     |\n+----------------+---------+\ntransaction_id is column with unique values for this table.\nThis table contains information about the transactions made during the visit_id.\n \n\nWrite a solution to find the IDs of the users who visited without making any transactions and the number of times they made these types of visits.\n\nReturn the result table sorted in any order.\n\nThe result format is in the following example.\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Write your MySQL query statement below\nSELECT \n  customer_id, \n  COUNT(visit_id) AS count_no_trans \nFROM \n  Visits \nWHERE \n  visit_id NOT IN (\n    SELECT \n      visit_id \n    FROM \n      Transactions\n  ) \nGROUP BY \n  customer_id\n```\n:::\n\n\n\n\n# Ex 2\n\nTable: Weather\n\n+---------------+---------+\n| Column Name   | Type    |\n+---------------+---------+\n| id            | int     |\n| recordDate    | date    |\n| temperature   | int     |\n+---------------+---------+\nid is the column with unique values for this table.\nThere are no different rows with the same recordDate.\nThis table contains information about the temperature on a certain day.\n \n\nWrite a solution to find all dates' id with higher temperatures compared to its previous dates (yesterday).\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Write your MySQL query statement below\nSELECT id \nFROM\n    (SELECT \n        id, \n        temperature, \n        recordDate, \n        lag(temperature) OVER(ORDER BY recordDate) AS prev_temp \nFROM Weather) t\nWHERE temperature > prev_temp\n```\n:::\n\n\n\n\n:::{.callout-note}\nHere, parentheses define a subquery, and SQL treats the subquery like a temporary table.\n\nImportant:\nThe entire subquery is executed in its own full logical order,\nbefore it participates in the outer query.\n:::\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

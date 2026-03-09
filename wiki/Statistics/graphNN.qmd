@@ -139,8 +139,9 @@ $H^{(l+1)} = \sigma\!\left(\tilde D^{-1/2}\,\tilde A\,\tilde D^{-1/2}\, H^{(l)} 
 
 Step 1: 
 
-*Normalize adjacency matrix:*
+*Normalize adjacency matrix and add degree matrix*
 
+Add self-loop (so own information is used in embedding, I = identity matrix):
 $\tilde A = A+I$
 
 *Compute Degree matrix:* $\tilde D$
@@ -259,7 +260,7 @@ $softmax(z_u,y_u) = \sum_{i=1}^cy[i]\frac{exp(z_u^Tw_i)}{\sum_{j=1}^cexp(z_u^Tw_
 - C = classes
 - y one-hot encodede class label 
 
-$sigmoid(z) = \frac{1}{1+e^{-z}$
+$sigmoid(z) = \frac{1}{1+e^{-z}}$
 
 $Negativeloglikelihood(\theta) = -\sum_{i=1}^nlog \space p(y_i|x_i,\theta)$ which the goal is to minimize: if model assigns high probability to correct outcome then log probablilty is close to 0 **low loss**. - log goes to + infinity with probability approaching 0. 
 
@@ -287,6 +288,7 @@ Setup:
 ### Node properity prediction (classification) 
 
 ![Feedforward Arichtectur](pic/feedforward.png)
+
 - Weights are shared within GCN Layer **but not across layers**
   - These weights are learned: "learn how to aggregate features of neighbors to optimize loss function" 
 - Dropout sets certain features of output of layer to zero

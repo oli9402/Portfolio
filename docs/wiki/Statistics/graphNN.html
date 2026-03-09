@@ -515,8 +515,8 @@ window.Quarto = {
 <p>How does aggregation work?:</p>
 <p><span class="math inline">\(H^{(l+1)} = \sigma\!\left(\tilde D^{-1/2}\,\tilde A\,\tilde D^{-1/2}\, H^{(l)} W^{(l)}\right)\)</span></p>
 <p>Step 1:</p>
-<p><em>Normalize adjacency matrix:</em></p>
-<p><span class="math inline">\(\tilde A = A+I\)</span></p>
+<p><em>Normalize adjacency matrix and add degree matrix</em></p>
+<p>Add self-loop (so own information is used in embedding, I = identity matrix): <span class="math inline">\(\tilde A = A+I\)</span></p>
 <p><em>Compute Degree matrix:</em> <span class="math inline">\(\tilde D\)</span></p>
 <ul>
 <li>each diagonal element = number of neighbors of that node</li>
@@ -630,7 +630,7 @@ window.Quarto = {
 <li>C = classes</li>
 <li>y one-hot encodede class label</li>
 </ul>
-<p><span class="math inline">\(sigmoid(z) = \frac{1}{1+e^{-z}\)</span></p>
+<p><span class="math inline">\(sigmoid(z) = \frac{1}{1+e^{-z}}\)</span></p>
 <p><span class="math inline">\(Negativeloglikelihood(\theta) = -\sum_{i=1}^nlog \space p(y_i|x_i,\theta)\)</span> which the goal is to minimize: if model assigns high probability to correct outcome then log probablilty is close to 0 <strong>low loss</strong>. - log goes to + infinity with probability approaching 0.</p>
 <p><strong>Three types of nodes</strong></p>
 <ol type="1">
@@ -654,8 +654,26 @@ window.Quarto = {
 </section>
 <section id="node-properity-prediction-classification" class="level3">
 <h3 class="anchored" data-anchor-id="node-properity-prediction-classification">Node properity prediction (classification)</h3>
-<p><img src="pic/feedforward.png" class="img-fluid" alt="Feedforward Arichtectur"> - Weights are shared within GCN Layer <strong>but not across layers</strong> - These weights are learned: “learn how to aggregate features of neighbors to optimize loss function” - Dropout sets certain features of output of layer to zero - BatchN rescales feature/embedding to more stable range (ca. mean = 0, variance = 1) - done per feature dimension/ column wise across all nodes since we input a feature matrix<br>
-- Relu sets negative feature/embebeding values to 0 - Input of feedforward function is feature matrix and adjacency matrix</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pic/feedforward.png" class="img-fluid figure-img"></p>
+<figcaption>Feedforward Arichtectur</figcaption>
+</figure>
+</div>
+<ul>
+<li>Weights are shared within GCN Layer <strong>but not across layers</strong>
+<ul>
+<li>These weights are learned: “learn how to aggregate features of neighbors to optimize loss function”</li>
+</ul></li>
+<li>Dropout sets certain features of output of layer to zero</li>
+<li>BatchN rescales feature/embedding to more stable range (ca. mean = 0, variance = 1)
+<ul>
+<li>done per feature dimension/ column wise across all nodes since we input a feature matrix<br>
+</li>
+</ul></li>
+<li>Relu sets negative feature/embebeding values to 0</li>
+<li>Input of feedforward function is feature matrix and adjacency matrix</li>
+</ul>
 <p>Learned weights:</p>
 <ol type="1">
 <li>Weight matrix in GCN layer</li>

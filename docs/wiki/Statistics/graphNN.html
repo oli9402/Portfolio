@@ -329,6 +329,7 @@ window.Quarto = {
   <li><a href="#permutation-invariance" id="toc-permutation-invariance" class="nav-link" data-scroll-target="#permutation-invariance">Permutation invariance</a></li>
   <li><a href="#gcn-gnn" id="toc-gcn-gnn" class="nav-link" data-scroll-target="#gcn-gnn">GCN /GNN</a>
   <ul class="collapse">
+  <li><a href="#statistics-of-graph" id="toc-statistics-of-graph" class="nav-link" data-scroll-target="#statistics-of-graph">Statistics of graph</a></li>
   <li><a href="#message-passing-framework" id="toc-message-passing-framework" class="nav-link" data-scroll-target="#message-passing-framework">Message Passing Framework</a></li>
   <li><a href="#self-supervised" id="toc-self-supervised" class="nav-link" data-scroll-target="#self-supervised">Self-supervised</a></li>
   <li><a href="#understand-process" id="toc-understand-process" class="nav-link" data-scroll-target="#understand-process">Understand process</a></li>
@@ -336,6 +337,8 @@ window.Quarto = {
   <li><a href="#loss-function-for-gnn" id="toc-loss-function-for-gnn" class="nav-link" data-scroll-target="#loss-function-for-gnn">Loss Function for GNN</a>
   <ul class="collapse">
   <li><a href="#node-classification" id="toc-node-classification" class="nav-link" data-scroll-target="#node-classification">Node Classification</a></li>
+  <li><a href="#link-prediction" id="toc-link-prediction" class="nav-link" data-scroll-target="#link-prediction">Link prediction</a></li>
+  <li><a href="#node-properity-prediction-classification" id="toc-node-properity-prediction-classification" class="nav-link" data-scroll-target="#node-properity-prediction-classification">Node properity prediction (classification)</a></li>
   <li><a href="#graph-classification" id="toc-graph-classification" class="nav-link" data-scroll-target="#graph-classification">Graph classification</a></li>
   </ul></li>
   <li><a href="#training-and-optimization-of-gnn" id="toc-training-and-optimization-of-gnn" class="nav-link" data-scroll-target="#training-and-optimization-of-gnn">Training and Optimization of GNN</a>
@@ -366,6 +369,7 @@ window.Quarto = {
   </ul></li>
   <li><a href="#causal-conclusions-form-observational-data" id="toc-causal-conclusions-form-observational-data" class="nav-link" data-scroll-target="#causal-conclusions-form-observational-data">Causal Conclusions form observational data</a></li>
   </ul></li>
+  <li><a href="#causal-machine-learning-gnn-causal-graphs" id="toc-causal-machine-learning-gnn-causal-graphs" class="nav-link" data-scroll-target="#causal-machine-learning-gnn-causal-graphs">Causal Machine Learning (GNN &amp; Causal Graphs)</a></li>
   </ul>
 </nav>
     </div>
@@ -435,6 +439,32 @@ window.Quarto = {
 <li>Translating nodes (e.g.&nbsp;neighbors) into a vector we have to enforce arbitrary ordering of these nodes. This would produces different outputs in a ML like CNN.</li>
 <li><strong>DEFINING FEATURE OF GNN IS THAT IT USES A FORM OF NEURAL MESSAGE PASSING</strong></li>
 </ul>
+<section id="statistics-of-graph" class="level3">
+<h3 class="anchored" data-anchor-id="statistics-of-graph">Statistics of graph</h3>
+<ul>
+<li>average degree of node</li>
+<li>clustering coefficient: how strong nodes tend to from connected groups (i.e., how likely are neighbors of node connected to each other - captures triangles in graph)
+<ul>
+<li>local clustering coefficient (node-level)
+<ul>
+<li>1 = all neighbors are connected</li>
+<li>0 none of neighbors are connected</li>
+</ul></li>
+<li>global clustering coefficent (network-level)
+<ul>
+<li>Average of all local clustering coeffiencts</li>
+</ul></li>
+</ul></li>
+<li>Pagereank: importance of a node: out-links are more important
+<ul>
+<li>Importance is calculated as the sum of votes: (importance/out-links) of in-links</li>
+</ul></li>
+<li>Closeness of node: 1/(sum: shortest path from node to any other node)
+<ul>
+<li>high closeness: efficent spreaders of information</li>
+</ul></li>
+</ul>
+</section>
 <section id="message-passing-framework" class="level3">
 <h3 class="anchored" data-anchor-id="message-passing-framework">Message Passing Framework</h3>
 <ul>
@@ -610,9 +640,62 @@ window.Quarto = {
 </ol>
 <p><strong>Semi-supervised</strong>: transductive test nodes: included in message passing during trainig</p>
 </section>
+<section id="link-prediction" class="level3">
+<h3 class="anchored" data-anchor-id="link-prediction">Link prediction</h3>
+<p>Setup:</p>
+<ol type="1">
+<li>get source and destination node embeddings (set random at start)</li>
+<li>compute pairwise dot products (high = similar)</li>
+<li>applies sigmoid (classifies based on threshold)</li>
+<li>computes binary loss</li>
+<li>prints loss/accuracy</li>
+<li>updates embedding weights</li>
+</ol>
+</section>
+<section id="node-properity-prediction-classification" class="level3">
+<h3 class="anchored" data-anchor-id="node-properity-prediction-classification">Node properity prediction (classification)</h3>
+<p><img src="pic/feedforward.png" class="img-fluid" alt="Feedforward Arichtectur"> - Weights are shared within GCN Layer <strong>but not across layers</strong> - These weights are learned: “learn how to aggregate features of neighbors to optimize loss function” - Dropout sets certain features of output of layer to zero - BatchN rescales feature/embedding to more stable range (ca. mean = 0, variance = 1) - done per feature dimension/ column wise across all nodes since we input a feature matrix<br>
+- Relu sets negative feature/embebeding values to 0 - Input of feedforward function is feature matrix and adjacency matrix</p>
+<p>Learned weights:</p>
+<ol type="1">
+<li>Weight matrix in GCN layer</li>
+<li>BatchNorm Parameters: scaling factor, shifting factor that applies after normalization</li>
+</ol>
+</section>
 <section id="graph-classification" class="level3">
 <h3 class="anchored" data-anchor-id="graph-classification">Graph classification</h3>
-<p>Same as node classification but loss is computed over <span class="math inline">\(z_g\)</span> graph level embeddings</p>
+<p>Same as node classification but loss is computed over <span class="math inline">\(z_g\)</span> graph level embeddings. Just using the forward passing in a GNN without training weights, we see a strong inductive bias: nodes that are close to each other have a similar embedding.</p>
+<p>To train model we need to define:</p>
+<ol type="1">
+<li>criterion = Loss function</li>
+<li>optimizer = e.g.&nbsp;ADAM</li>
+</ol>
+<ul>
+<li>Classifiyer like softmax or sigmoind or linear is already part of feedforwad pass</li>
+</ul>
+<p>Steps:</p>
+<ol type="1">
+<li>Forward pass</li>
+<li>Compute loss (based on trainig nodes)</li>
+<li>Derive gradiends</li>
+<li>Update parameters based on gradients (optimizer)</li>
+<li>Calculate Training accuracy (training nodes) /Validation acc (whole graph)</li>
+<li>Repeat for as many epochs as wished</li>
+</ol>
+<section id="graph-mini-batching" class="level4">
+<h4 class="anchored" data-anchor-id="graph-mini-batching">Graph Mini-BAtching</h4>
+<p>In order to parallelize: we combine graphs into a sinlge disconnected graph data object</p>
+<ul>
+<li>We use global pooling over the nodes to create graph level embeddings that can be used to predict properties of graphs
+<ul>
+<li>we need an index that states which nodes are of which graph</li>
+</ul></li>
+<li>Since we have adj matrix in message passing, disconnected embeddings don’t influence other embeddings.
+<ul>
+<li>but learned weights (GCN layer weights, batchNorm, etc.) are shared across disconnected graphs</li>
+</ul></li>
+</ul>
+</section>
 </section>
 </section>
 <section id="training-and-optimization-of-gnn" class="level2">
@@ -724,7 +807,7 @@ window.Quarto = {
 <p>Solution 1: Transductive setting</p>
 <ul>
 <li>compute embeddings using entire graphs</li>
-<li>train using node labels of 1/3 of nodes</li>
+<li>train (compute loss) using node labels of 1/3 of nodes</li>
 <li>validation node labels of second third</li>
 <li>tes with last nodes</li>
 </ul>
@@ -831,10 +914,13 @@ window.Quarto = {
 <section id="causal-conclusions-form-observational-data" class="level2">
 <h2 class="anchored" data-anchor-id="causal-conclusions-form-observational-data">Causal Conclusions form observational data</h2>
 <p>Target quantity is causal effect difference or average causal Effect (ACE)</p>
-<p><span class="math inline">\(ACE = P(Y=1|do(X=1))- P(Y=1|do(X=0))\)</span> # Causal Machine Learning (GNN &amp; Causal Graphs)</p>
-
-
+<p><span class="math inline">\(ACE = P(Y=1|do(X=1))- P(Y=1|do(X=0))\)</span></p>
 </section>
+</section>
+<section id="causal-machine-learning-gnn-causal-graphs" class="level1">
+<h1>Causal Machine Learning (GNN &amp; Causal Graphs)</h1>
+
+
 </section>
 
 </main> <!-- /main -->

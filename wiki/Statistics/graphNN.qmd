@@ -79,6 +79,20 @@ Why not feed each row of concat(adjacency matrix, feature matrix)?:
 - Translating nodes (e.g. neighbors) into a vector we have to enforce arbitrary ordering of these nodes. This would produces different outputs in a ML like CNN. 
 - **DEFINING FEATURE OF GNN IS THAT IT USES A FORM OF NEURAL MESSAGE PASSING** 
 
+### Statistics of graph 
+
+- average degree of node 
+- clustering coefficient: how strong nodes tend to from connected groups (i.e., how likely are neighbors of node connected to each other - captures triangles in graph)
+  - local clustering coefficient (node-level)
+    - 1 = all neighbors are connected
+    - 0 none of neighbors are connected
+  - global clustering coefficent (network-level)
+    - Average of all local clustering coeffiencts 
+- Pagereank: importance of a node: out-links are more important 
+  - Importance is calculated as the sum of votes: (importance/out-links) of in-links
+- Closeness of node: 1/(sum: shortest path from node to any other node)
+  - high closeness: efficent spreaders of information 
+
 ### Message Passing Framework 
 
 - there a different message-passing iteration 
@@ -258,10 +272,61 @@ $Negativeloglikelihood(\theta) = -\sum_{i=1}^nlog \space p(y_i|x_i,\theta)$ whic
 
 **Semi-supervised**: transductive test nodes: included in message passing during trainig
 
+
+### Link prediction 
+
+Setup:
+
+1. get source and destination node embeddings (set random at start)
+2. compute pairwise dot products (high = similar)
+3. applies sigmoid (classifies based on threshold)
+4. computes binary loss 
+5. prints loss/accuracy 
+6. updates embedding weights 
+
+### Node properity prediction (classification) 
+
+![Feedforward Arichtectur](pic/feedforward.png)
+- Weights are shared within GCN Layer **but not across layers**
+  - These weights are learned: "learn how to aggregate features of neighbors to optimize loss function" 
+- Dropout sets certain features of output of layer to zero
+- BatchN rescales feature/embedding to more stable range (ca. mean = 0, variance = 1)
+  - done per feature dimension/ column wise across all nodes since we input a feature matrix  
+- Relu sets negative feature/embebeding values to 0
+- Input of feedforward function is feature matrix and adjacency matrix 
+
+Learned weights: 
+
+1. Weight matrix in GCN layer
+2. BatchNorm Parameters: scaling factor, shifting factor that applies after normalization 
+
 ### Graph classification 
 
-Same as node classification but loss is computed over $z_g$ graph level embeddings 
+Same as node classification but loss is computed over $z_g$ graph level embeddings. Just using the forward passing in a GNN without training weights, we see a strong inductive bias: nodes that are close to each other have a similar embedding. 
 
+To train model we need to define: 
+
+1. criterion = Loss function
+2. optimizer = e.g. ADAM
+- Classifiyer like softmax or sigmoind or linear is already part of feedforwad pass 
+
+Steps: 
+
+1. Forward pass
+2. Compute loss (based on trainig nodes)
+3. Derive gradiends 
+4. Update parameters based on gradients (optimizer)
+5. Calculate Training accuracy (training nodes) /Validation acc (whole graph)
+6. Repeat for as many epochs as wished 
+
+#### Graph Mini-BAtching
+
+In order to parallelize: we combine graphs into a sinlge disconnected graph data object
+
+- We use global pooling over the nodes to create graph level embeddings that can be used to predict properties of graphs
+  - we need an index that states which nodes are of which graph
+- Since we have adj matrix in message passing, disconnected embeddings don't influence other embeddings. 
+  - but learned weights (GCN layer weights, batchNorm, etc.) are shared across disconnected graphs 
 
 ## Training and Optimization of GNN 
 
@@ -359,7 +424,7 @@ In graph we have problem that nodes are not independent, how to split?
 Solution 1: Transductive setting 
 
 - compute embeddings using entire graphs
-- train using node labels of 1/3 of nodes
+- train (compute loss) using node labels of 1/3 of nodes
 - validation node labels of second third 
 - tes with last nodes
 

@@ -330,7 +330,6 @@ window.Quarto = {
   <li><a href="#gcn-gnn" id="toc-gcn-gnn" class="nav-link" data-scroll-target="#gcn-gnn">GCN /GNN</a>
   <ul class="collapse">
   <li><a href="#statistics-of-graph" id="toc-statistics-of-graph" class="nav-link" data-scroll-target="#statistics-of-graph">Statistics of graph</a></li>
-  <li><a href="#message-passing-framework" id="toc-message-passing-framework" class="nav-link" data-scroll-target="#message-passing-framework">Message Passing Framework</a></li>
   <li><a href="#self-supervised" id="toc-self-supervised" class="nav-link" data-scroll-target="#self-supervised">Self-supervised</a></li>
   <li><a href="#understand-process" id="toc-understand-process" class="nav-link" data-scroll-target="#understand-process">Understand process</a></li>
   </ul></li>
@@ -355,12 +354,19 @@ window.Quarto = {
   <li><a href="#evaluation-metrics" id="toc-evaluation-metrics" class="nav-link" data-scroll-target="#evaluation-metrics">Evaluation metrics</a></li>
   <li><a href="#data-split" id="toc-data-split" class="nav-link" data-scroll-target="#data-split">Data Split</a></li>
   </ul></li>
+  <li><a href="#nlp-task" id="toc-nlp-task" class="nav-link" data-scroll-target="#nlp-task">NLP Task</a>
+  <ul class="collapse">
+  <li><a href="#unbalanced-edge-types" id="toc-unbalanced-edge-types" class="nav-link" data-scroll-target="#unbalanced-edge-types">Unbalanced edge types</a></li>
+  </ul></li>
+  <li><a href="#graphsage" id="toc-graphsage" class="nav-link" data-scroll-target="#graphsage">GraphSAGE</a></li>
   </ul></li>
   <li><a href="#bayesian-networks-and-causal-graphs" id="toc-bayesian-networks-and-causal-graphs" class="nav-link" data-scroll-target="#bayesian-networks-and-causal-graphs">Bayesian Networks and Causal Graphs</a>
   <ul class="collapse">
   <li><a href="#causal-story-behind-data" id="toc-causal-story-behind-data" class="nav-link" data-scroll-target="#causal-story-behind-data">Causal story behind data</a>
   <ul class="collapse">
   <li><a href="#structural-causal-model-scm---m" id="toc-structural-causal-model-scm---m" class="nav-link" data-scroll-target="#structural-causal-model-scm---m">Structural causal model (SCM) - M</a></li>
+  <li><a href="#graphical-causal-models" id="toc-graphical-causal-models" class="nav-link" data-scroll-target="#graphical-causal-models">Graphical Causal Models</a></li>
+  <li><a href="#explaining-away" id="toc-explaining-away" class="nav-link" data-scroll-target="#explaining-away">Explaining Away</a></li>
   <li><a href="#bayesian-network" id="toc-bayesian-network" class="nav-link" data-scroll-target="#bayesian-network">Bayesian Network</a></li>
   </ul></li>
   <li><a href="#causalality-in-detail" id="toc-causalality-in-detail" class="nav-link" data-scroll-target="#causalality-in-detail">Causalality in Detail</a>
@@ -369,7 +375,19 @@ window.Quarto = {
   </ul></li>
   <li><a href="#causal-conclusions-form-observational-data" id="toc-causal-conclusions-form-observational-data" class="nav-link" data-scroll-target="#causal-conclusions-form-observational-data">Causal Conclusions form observational data</a></li>
   </ul></li>
-  <li><a href="#causal-machine-learning-gnn-causal-graphs" id="toc-causal-machine-learning-gnn-causal-graphs" class="nav-link" data-scroll-target="#causal-machine-learning-gnn-causal-graphs">Causal Machine Learning (GNN &amp; Causal Graphs)</a></li>
+  <li><a href="#causal-machine-learning-gnn-causal-graphs" id="toc-causal-machine-learning-gnn-causal-graphs" class="nav-link" data-scroll-target="#causal-machine-learning-gnn-causal-graphs">Causal Machine Learning (GNN &amp; Causal Graphs)</a>
+  <ul class="collapse">
+  <li><a href="#propensity-scores" id="toc-propensity-scores" class="nav-link" data-scroll-target="#propensity-scores">Propensity Scores</a></li>
+  <li><a href="#overlap-assumption" id="toc-overlap-assumption" class="nav-link" data-scroll-target="#overlap-assumption">Overlap Assumption</a></li>
+  <li><a href="#difference-in-means-estimator" id="toc-difference-in-means-estimator" class="nav-link" data-scroll-target="#difference-in-means-estimator">Difference-In-Means Estimator</a></li>
+  <li><a href="#backdoor-criterion" id="toc-backdoor-criterion" class="nav-link" data-scroll-target="#backdoor-criterion">Backdoor Criterion</a>
+  <ul class="collapse">
+  <li><a href="#what-the-true-population-effect-looks-like" id="toc-what-the-true-population-effect-looks-like" class="nav-link" data-scroll-target="#what-the-true-population-effect-looks-like">What the true population effect looks like</a></li>
+  </ul></li>
+  <li><a href="#frontdoor-criterion" id="toc-frontdoor-criterion" class="nav-link" data-scroll-target="#frontdoor-criterion">Frontdoor Criterion</a></li>
+  <li><a href="#adjustment-formular" id="toc-adjustment-formular" class="nav-link" data-scroll-target="#adjustment-formular">Adjustment Formular</a></li>
+  <li><a href="#simpsons-paradox" id="toc-simpsons-paradox" class="nav-link" data-scroll-target="#simpsons-paradox">Simpsons Paradox</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -464,16 +482,16 @@ window.Quarto = {
 <li>high closeness: efficent spreaders of information</li>
 </ul></li>
 </ul>
-</section>
-<section id="message-passing-framework" class="level3">
-<h3 class="anchored" data-anchor-id="message-passing-framework">Message Passing Framework</h3>
+<p>Directed graph:</p>
 <ul>
-<li>there a different message-passing iteration
+<li><p>in-degree: number of incoming edges: <span class="math display">\[d_{in}(v) = \sum_{u \in V} A_{uv}\]</span></p></li>
+<li><p>out-degree: number of outgoing edges: <span class="math display">\[d_{out}(v) = \sum_{u \in V} A_{vu}\]</span> ### Message Passing Framework</p></li>
+<li><p>there a different message-passing iteration</p>
 <ul>
 <li>where a hidden embedding <span class="math inline">\(h_u^{(k)}\)</span> corresponding to each node <span class="math inline">\(u \in V\)</span> is updated with information aggregated/convoluted from <span class="math inline">\(u\)</span>’s graph neighborhood <span class="math inline">\(N(u)\)</span></li>
 <li>often two hops away considered.</li>
 </ul></li>
-<li>happens in the hidden layer</li>
+<li><p>happens in the hidden layer</p></li>
 </ul>
 <p>steps:</p>
 <ol type="1">
@@ -831,10 +849,52 @@ window.Quarto = {
 </ul>
 <p>Solution 2: Inductive setting</p>
 <ul>
-<li>break edges and split into multiple graves</li>
+<li>break edges and split into multiple disconnected graphs</li>
 </ul>
-<p>s74</p>
+<p>s74 # Exercise Wednesday</p>
 </section>
+</section>
+<section id="nlp-task" class="level2">
+<h2 class="anchored" data-anchor-id="nlp-task">NLP Task</h2>
+<ul>
+<li><p>Lemmitization: reduce word to its base form (e.g.&nbsp;“running” to “run”) is important because it helps to reduce the dimensionality of the data and improve the performance of NLP models. By converting words to their base form, we can group together different forms of the same word (e.g., “run”, “running”, “ran”) and treat them as a single entity. This can help to improve the accuracy of tasks such as text classification, sentiment analysis, and information retrieval by reducing the sparsity of the data and allowing the model to learn more general patterns.</p></li>
+<li><p>TF-IDF (Term Frequency-Inverse Document Frequency) is a numerical statistic that reflects the importance of a word in a document relative to a collection of documents (corpus). Term frequency (TF) of a word in a document by the inverse document frequency (IDF) of the word across the corpus.</p>
+<ul>
+<li><strong>word appears often within a text but not across the corpus</strong></li>
+</ul></li>
+</ul>
+<p>Structure of data:</p>
+<ul>
+<li>Modules: 222
+<ul>
+<li>features: 25</li>
+</ul></li>
+<li>Edge: prerequisites or dependencies (two types)
+<ul>
+<li>ingoing: source mentioned in target module “Vorausgesetzte Kompetenzen”</li>
+<li>outgoing described in source module as “ergönzende und Vertiefende Module”</li>
+</ul></li>
+</ul>
+<p>So two inconming edges have different types:</p>
+<ul>
+<li>this is not reflected in the in-degree statistic</li>
+</ul>
+<section id="unbalanced-edge-types" class="level3">
+<h3 class="anchored" data-anchor-id="unbalanced-edge-types">Unbalanced edge types</h3>
+<ul>
+<li>leads to favoring one type of edge over the other since loss is opimized for majority class</li>
+</ul>
+</section>
+</section>
+<section id="graphsage" class="level2">
+<h2 class="anchored" data-anchor-id="graphsage">GraphSAGE</h2>
+<p>graph sample and aggregation</p>
+<ul>
+<li>samples neighbors during message passing - doesn’t use all neighbors</li>
+<li>effienct and better generalization</li>
+<li>the dependency graph expands in classical gcn this can cause problems with mini-batching</li>
+<li>oversmoothing problem with a lot of layers</li>
+</ul>
 </section>
 </section>
 <section id="bayesian-networks-and-causal-graphs" class="level1">
@@ -875,7 +935,10 @@ window.Quarto = {
 <li>V: set of endogenous variables</li>
 <li>F: set of functions that assign each variable in V a value based on the values of the other variables in the model</li>
 </ol>
-<p><img src="pic/scm.png" class="img-fluid"> #### Graphical Causal Models</p>
+<p><img src="pic/scm.png" class="img-fluid"></p>
+</section>
+<section id="graphical-causal-models" class="level3">
+<h3 class="anchored" data-anchor-id="graphical-causal-models">Graphical Causal Models</h3>
 <p>Every SCM is assocaited with a graphical causal model, and consists of:</p>
 <ol type="1">
 <li>set of nodes representing variables in U and V</li>
@@ -899,13 +962,13 @@ window.Quarto = {
 <ul>
 <li>no self-lops or cycles</li>
 </ul>
-<section id="explaining-away" class="level4">
-<h4 class="anchored" data-anchor-id="explaining-away">Explaining Away</h4>
+</section>
+<section id="explaining-away" class="level3">
+<h3 class="anchored" data-anchor-id="explaining-away">Explaining Away</h3>
 <blockquote class="blockquote">
 <p>Suppose we have two causes for an effect the conditional probability of one cause given effect is larger than conditional probaility of other cause given effect and second cause (even if both causes are independant)</p>
 </blockquote>
 <p><img src="pic/explainingaway.png" class="img-fluid" alt="explaining away"> - conditioning on A = 1 is crucial for explaining away phenomenon</p>
-</section>
 </section>
 <section id="bayesian-network" class="level3">
 <h3 class="anchored" data-anchor-id="bayesian-network">Bayesian Network</h3>
@@ -937,8 +1000,100 @@ window.Quarto = {
 </section>
 <section id="causal-machine-learning-gnn-causal-graphs" class="level1">
 <h1>Causal Machine Learning (GNN &amp; Causal Graphs)</h1>
+<p>Oversvational setting:</p>
+<p><span class="math inline">\(Y_i(1), Y_i(0) \perp W_i|X_i\)</span></p>
+<ul>
+<li><span class="math inline">\(Y_i(1)\)</span>: potential outcome if unit i receives treatment</li>
+<li><span class="math inline">\(Y_i(0)\)</span>: potential outcome if unit i does not receive treatment</li>
+<li><span class="math inline">\(W_i\)</span>: treatment assignment for unit i</li>
+<li><span class="math inline">\(X_i\)</span>: observed covariates for unit i</li>
+<li>After controlling for the observed covariates, the treatment assignment is as good as random, allowing us to estimate causal effects from observational data.
+<ul>
+<li>unconfoundness</li>
+</ul></li>
+</ul>
+<p>All sources of self-selection can be explained by observable covariates <span class="math inline">\(X_i\)</span></p>
+<section id="propensity-scores" class="level2">
+<h2 class="anchored" data-anchor-id="propensity-scores">Propensity Scores</h2>
+<p><span class="math inline">\(e(X_I):= \mathbb{P}[W_i=1|X_i]\)</span></p>
+<ul>
+<li>in experiments usually known and fixed</li>
+<li>in obersvational settings must be estimated</li>
+</ul>
+</section>
+<section id="overlap-assumption" class="level2">
+<h2 class="anchored" data-anchor-id="overlap-assumption">Overlap Assumption</h2>
+<p><span class="math inline">\(0 &lt; e(X_i) &lt; 1\)</span> for all <span class="math inline">\(X_i\)</span></p>
+<ul>
+<li>ensures that for every combination of covariates, there is a positive probability of receiving both treatment and control, allowing for meaningful comparisons between treated and untreated units across the range of covariates.</li>
+</ul>
+</section>
+<section id="difference-in-means-estimator" class="level2">
+<h2 class="anchored" data-anchor-id="difference-in-means-estimator">Difference-In-Means Estimator</h2>
+<ul>
+<li>common estimator of treament effect in exp. settings</li>
+<li>sample average of outcomes in treatment minus control group:</li>
+<li></li>
+</ul>
+</section>
+<section id="backdoor-criterion" class="level2">
+<h2 class="anchored" data-anchor-id="backdoor-criterion">Backdoor Criterion</h2>
+<ul>
+<li>do-operator (for example randomiztaion) erases arrows entering X.</li>
+<li>backdoor criterion are variables that block every path between X and Y that contains an arrow into X &amp; is no descendant of X</li>
+<li>Parents of X always satisfies the backdoor criterion</li>
+<li>do not condition on mediators</li>
+<li>do not condition on colliders or their descendants (explaining away)
+<ul>
+<li>if controlling/conditioning on collider know one cause can make unrelated causes appear related (spurious negative correlation)</li>
+<li>example talent -&gt; Admission &lt;- wealth: conditioning on admission (look only at admitted students)</li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pic/collider.png" class="img-fluid figure-img"></p>
+<figcaption>collider</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pic/backdoor.png" class="img-fluid figure-img"></p>
+<figcaption>Backdoor</figcaption>
+</figure>
+</div>
+<p>This is a causal adjustment formular</p>
+<section id="what-the-true-population-effect-looks-like" class="level3">
+<h3 class="anchored" data-anchor-id="what-the-true-population-effect-looks-like">What the true population effect looks like</h3>
+<p>If you analyze the entire population (without conditioning on heart disease):</p>
+<ul>
+<li>Obesity increases mortality risk.</li>
+<li>Smoking increases mortality risk.</li>
+<li>No paradox.</li>
+</ul>
+<p><strong>The paradox appears only after conditioning on the collider. </strong></p>
+</section>
+</section>
+<section id="frontdoor-criterion" class="level2">
+<h2 class="anchored" data-anchor-id="frontdoor-criterion">Frontdoor Criterion</h2>
+<p>If there is a mediator M that lies on all causal paths from X to Y, and there are no unblocked backdoor paths from X to M or from M to Y, then the causal effect of X on Y can be identified using the front-door adjustment formula.</p>
+</section>
+<section id="adjustment-formular" class="level2">
+<h2 class="anchored" data-anchor-id="adjustment-formular">Adjustment Formular</h2>
+<p>The probability that 𝑌=𝑦if we intervene and set X =𝑥</p>
+<p>The do(X=x) operator represents a forced intervention, like a randomized experiment.</p>
+<p>Remove confounding is done by comparing people with same Z but different X. This is done by conditioning on Z. We calculate effect within each Z group and sum up the effects across all Z groups, weighted by the probability of each Z group occurring in the population. This allows us to estimate the causal effect of X on Y while controlling for the confounding variable Z.</p>
+<p><span class="math display">\[P(Y=y|do(X=x)) = \sum_zP(Y=y|X=x,Z=z)P(Z=z)\]</span> Using conditional probabilites we can calculate the average causal effect (ACE):</p>
+<p><span class="math display">\[P(Y=1|do(X=1)) - P(Y=1|do(X=0))\]</span></p>
+<p><img src="pic/drugs.png" class="img-fluid"></p>
+<p>an ACT of 5% woudl mean: if everyone would take the drug 5% more people would recover compared to if no one would take the drug.</p>
+<p>for continues z we use integrals instead of summation</p>
+</section>
+<section id="simpsons-paradox" class="level2">
+<h2 class="anchored" data-anchor-id="simpsons-paradox">Simpsons Paradox</h2>
+<p>Appears when a confounder affects both treatment assignment and outcome. A randomly selected subgroup of the population can show a different relationship between treatment and outcome than the overall population, leading to a paradoxical reversal of the observed effect when data is aggregated. If we randomly selected a patenint in treatment its most likely a women and women have less baseline recovery rate (generally less recovery due tue e.g.&nbsp;estrogen)</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

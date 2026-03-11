@@ -93,6 +93,10 @@ Why not feed each row of concat(adjacency matrix, feature matrix)?:
 - Closeness of node: 1/(sum: shortest path from node to any other node)
   - high closeness: efficent spreaders of information 
 
+Directed graph: 
+
+- in-degree: number of incoming edges:  $$d_{in}(v) = \sum_{u \in V} A_{uv}$$
+- out-degree: number of outgoing edges: $$d_{out}(v) = \sum_{u \in V} A_{vu}$$
 ### Message Passing Framework 
 
 - there a different message-passing iteration 
@@ -433,10 +437,43 @@ Solution 1: Transductive setting
 
 Solution 2: Inductive setting
 
-- break edges and split into multiple graves
+- break edges and split into multiple disconnected graphs 
 
 s74
- 
+# Exercise Wednesday
+
+## NLP Task
+
+- Lemmitization: reduce word to its base form (e.g. "running" to "run") is important because it helps to reduce the dimensionality of the data and improve the performance of NLP models. By converting words to their base form, we can group together different forms of the same word (e.g., "run", "running", "ran") and treat them as a single entity. This can help to improve the accuracy of tasks such as text classification, sentiment analysis, and information retrieval by reducing the sparsity of the data and allowing the model to learn more general patterns.
+
+- TF-IDF (Term Frequency-Inverse Document Frequency) is a numerical statistic that reflects the importance of a word in a document relative to a collection of documents (corpus). Term frequency (TF) of a word in a document by the inverse document frequency (IDF) of the word across the corpus. 
+  - **word appears often within a text but not across the corpus** 
+
+Structure of data:
+
+- Modules: 222
+  - features: 25
+- Edge: prerequisites or dependencies (two types)
+  - ingoing: source mentioned in target module "Vorausgesetzte Kompetenzen"
+  - outgoing described in source module as "ergönzende und Vertiefende Module" 
+  
+So two inconming edges have different types:
+
+- this is not reflected in the in-degree statistic 
+
+### Unbalanced edge types
+
+- leads to favoring one type of edge over the other since loss is opimized for majority class 
+
+## GraphSAGE
+
+graph sample and aggregation 
+
+- samples neighbors during message passing - doesn't use all neighbors
+- effienct and better generalization 
+- the dependency graph expands in classical gcn this can cause problems with mini-batching
+- oversmoothing problem with a lot of layers 
+
 # Bayesian Networks and Causal Graphs
 
 - Simple statistics and AI can't give us answers to causality questions.
@@ -471,7 +508,8 @@ s74
 
 
 ![](pic/scm.png)
-#### Graphical Causal Models 
+
+### Graphical Causal Models 
 
 Every SCM is assocaited with a graphical causal model, and consists of:
 
@@ -495,7 +533,7 @@ to be Acyclic:
 
 - no self-lops or cycles
 
-#### Explaining Away
+### Explaining Away
 
 > Suppose we have two causes for an effect the conditional probability of one cause given effect is larger than conditional probaility of other cause given effect and second cause (even if both causes are independant)
 
@@ -534,3 +572,94 @@ $ACE = P(Y=1|do(X=1))- P(Y=1|do(X=0))$
 
 
 # Causal Machine Learning (GNN & Causal Graphs)
+
+Oversvational setting: 
+
+$Y_i(1), Y_i(0) \perp W_i|X_i$
+
+- $Y_i(1)$: potential outcome if unit i receives treatment
+- $Y_i(0)$: potential outcome if unit i does not receive treatment
+- $W_i$: treatment assignment for unit i
+- $X_i$: observed covariates for unit i
+- After controlling for the observed covariates, the treatment assignment is as good as random, allowing us to estimate causal effects from observational data.
+  - unconfoundness
+  
+All sources of self-selection can be explained by observable covariates $X_i$
+
+## Propensity Scores 
+
+$e(X_I):= \mathbb{P}[W_i=1|X_i]$
+
+- in experiments usually known and fixed 
+- in obersvational settings must be estimated 
+
+## Overlap Assumption
+
+$0 < e(X_i) < 1$ for all $X_i$
+
+- ensures that for every combination of covariates, there is a positive probability of receiving both treatment and control, allowing for meaningful comparisons between treated and untreated units across the range of covariates.
+
+## Difference-In-Means Estimator 
+
+- common estimator of treament effect in exp. settings 
+- sample average of outcomes in treatment minus control group:
+- 
+
+
+## Backdoor Criterion
+
+- do-operator (for example randomiztaion) erases arrows entering X. 
+- backdoor criterion are variables that block every path between X and Y that contains an arrow into X  & is no descendant of X
+- Parents of X always satisfies the backdoor criterion
+- do not condition on mediators 
+- do not condition on colliders or their descendants (explaining away)
+  - if controlling/conditioning on collider know one cause can make unrelated causes appear related (spurious negative correlation)
+  - example talent -> Admission <- wealth: conditioning on admission (look only at admitted students)
+
+
+![collider](pic/collider.png)
+
+![Backdoor](pic/backdoor.png)
+
+This is a causal adjustment formular
+
+### What the true population effect looks like
+
+If you analyze the entire population (without conditioning on heart disease):
+
+- Obesity increases mortality risk.
+- Smoking increases mortality risk.
+- No paradox.
+
+**The paradox appears only after conditioning on the collider.
+**
+
+## Frontdoor Criterion 
+
+If there is a mediator M that lies on all causal paths from X to Y, and there are no unblocked backdoor paths from X to M or from M to Y, then the causal effect of X on Y can be identified using the front-door adjustment formula.
+
+
+## Adjustment Formular 
+
+The probability that 
+𝑌=𝑦if we intervene and set X =𝑥
+
+The do(X=x) operator represents a forced intervention, like a randomized experiment.
+
+Remove confounding is done by comparing people with same Z but different X. This is done by conditioning on Z. We calculate effect within each Z group and sum up the effects across all Z groups, weighted by the probability of each Z group occurring in the population. This allows us to estimate the causal effect of X on Y while controlling for the confounding variable Z.
+
+$$P(Y=y|do(X=x)) = \sum_zP(Y=y|X=x,Z=z)P(Z=z)$$
+Using conditional probabilites we can calculate the average causal effect (ACE): 
+
+$$P(Y=1|do(X=1)) - P(Y=1|do(X=0))$$
+
+![](pic/drugs.png)
+
+
+an ACT of 5% woudl mean: if everyone would take the drug 5% more people would recover compared to if no one would take the drug.
+
+for continues z we use integrals instead of summation 
+
+## Simpsons Paradox 
+
+Appears when a confounder affects both treatment assignment and outcome. A randomly selected subgroup of the population can show a different relationship between treatment and outcome than the overall population, leading to a paradoxical reversal of the observed effect when data is aggregated. If we randomly selected a patenint in treatment its most likely a women and women have less baseline recovery rate (generally less recovery due tue e.g. estrogen)

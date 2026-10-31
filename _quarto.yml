@@ -115,12 +115,13 @@ format:
     code-link: true
     code-fold: true
     grid:
-      sidebar-width: 240px
-      body-width: 860px
-      margin-width: 240px
+      sidebar-width: 260px
+      body-width: 1100px
+      margin-width: 260px
+      gutter-width: 2rem
     highlight-style:
-      light: a11y
-      dark: a11y-dark
+      light: github
+      dark: github-dark
     theme:
       light: [cosmo, theme.scss, theme-light.scss]
       dark: [cosmo, theme.scss, theme-dark.scss]

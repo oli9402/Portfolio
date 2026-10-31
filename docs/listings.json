@@ -1,5 +1,13 @@
 [
   {
+    "listing": "/index.html",
+    "items": [
+      "/posts/Bachelorarbeit/index.html",
+      "/posts/Masterarbeit/index.html",
+      "/posts/Presentation using Quarto/index.html"
+    ]
+  },
+  {
     "listing": "/projects.html",
     "items": [
       "/posts/Semdif/index.html",

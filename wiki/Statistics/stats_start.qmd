@@ -1,3 +1,12 @@
 ---
-title: 'Introduction to Statistical Knowledge'
+title: 'Statistics'
+description: 'Notes on statistical modelling and machine learning.'
 ---
+
+- [Confidence Intervals](ci.qmd)
+- [Generalized Linear Models](glm.qmd)
+- [Model Diagnostics](modeldiagnostic.qmd)
+- [Longitudinal Data](longitudinal.qmd)
+- [Graph Neural Networks](graphNN.qmd)
+- [Deep Learning Cheatsheet](dl.qmd)
+- [Glossary](Glossary.qmd)

@@ -1,4 +1,6 @@
 ---
-title: "start"
+title: "SQL"
+description: 'Notes and exercises on SQL.'
 ---
 
+- [SQL Exercises](index.qmd)

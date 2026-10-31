@@ -1,62 +1,423 @@
 /*-- scss:defaults --*/
+// Shared theme for the site. Colours are defined in theme-light.scss /
+// theme-dark.scss (their defaults take precedence over the !default ones here).
 
-$white:    #fff !default;
-$gray-100: #f8f9fa !default;
-$gray-200: #e9ecef !default;
-$gray-300: #dee2e6 !default;
-$gray-400: #ced4da !default;
-$gray-500: #adb5bd !default;
-$gray-600: #6c757d !default;
-$gray-700: #495057 !default;
-$gray-800: #343a40 !default;
-$gray-900: #212529 !default;
-$black:    #000 !default;
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
 
-$primary:  #1296e3 !default;
-$font-family-base:  'Source Sans Pro',  'Lato', 'Merriweather', 'Roboto Regular', 'Cabin Regular' !default;
-$body-color: $gray-700 !default;
-$headings-font-family:  'Merriweather', 'Roboto', 'Playfair Display', 'Montserrat'    !default;
-$font-size-base: 1.1rem;
+$font-family-sans-serif: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif !default;
+$headings-font-family: "Fraunces", Georgia, "Times New Roman", serif !default;
+$font-family-monospace: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace !default;
+$font-size-base: 1.0625rem !default;
+$line-height-base: 1.7 !default;
+$headings-font-weight: 600 !default;
+$border-radius: .6rem !default;
+$link-decoration: none !default;
+
+$body-bg: #faf8f4 !default;
+$body-color: #23262b !default;
+$primary: #2f6f4f !default;
+$oz-accent: #c8643b !default;
+$oz-muted: #6b6f76 !default;
+$oz-border: #e7e2d9 !default;
+$oz-card: #ffffff !default;
+$oz-soft: #f1ede5 !default;
+$oz-shadow: rgba(35, 38, 43, .08) !default;
+$oz-banner: #2f6f4f !default;
+$oz-on-primary: #ffffff !default;
 
 /*-- scss:rules --*/
 
-#title-block-header.quarto-title-block.default .quarto-title .title {
-  font-family: "Oleo Script", $headings-font-family;
-  font-size: $font-size-base * 2;
-  color: #1296e3;
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-
-.navbar-dark .navbar-brand {
-  font-family: "Oleo Script", $headings-font-family;
-  font-size: $font-size-base * 1.5;
+h1, h2, h3, h4, .title, .quarto-title .title {
+  font-family: $headings-font-family;
+  letter-spacing: -0.015em;
 }
 
-.navbar > .container-xxl, .navbar > .container-xl, .navbar > .container-lg, .navbar > .container-md, .navbar > .container-sm, .navbar > .container, .navbar > .container-fluid {
+h1 { font-weight: 700; }
+h2 { margin-top: 2.5rem; }
+
+::selection { background: rgba($primary, .2); }
+
+// ---------- Links -----------------------------------------------------------
+#quarto-document-content p a,
+#quarto-document-content li a {
+  text-decoration: underline;
+  text-decoration-color: rgba($primary, .35);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: text-decoration-color .15s ease;
+  &:hover { text-decoration-color: $primary; }
+}
+
+// ---------- Navbar ----------------------------------------------------------
+.navbar {
+  background-color: rgba($body-bg, .85) !important;
+  backdrop-filter: saturate(180%) blur(10px);
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
+  border-bottom: 1px solid $oz-border;
+  box-shadow: none;
+}
+
+.navbar > .container-fluid,
+.navbar > .container-xxl {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-
-div.quarto-post .listing-categories .listing-category {
-    color: $white;
-    background-color: $primary;
-    border: none;
-    border-radius: .4em;
-    text-transform: none;
+.navbar-brand .navbar-title,
+.navbar .navbar-title {
+  font-family: $headings-font-family;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: $body-color !important;
+  letter-spacing: -0.01em;
 }
 
-#title-block-header.quarto-title-block.default .quarto-categories .quarto-category {
-    color: $white;
-    background-color: $primary;
-    border: none;
-    border-radius: .4em;
-    text-transform: none;
-    opacity: 1;
+.navbar .nav-link {
+  font-weight: 500;
+  font-size: .95rem;
+  color: $oz-muted !important;
+  border-radius: 999px;
+  padding: .35rem .85rem !important;
+  transition: color .15s ease, background-color .15s ease;
+
+  &:hover { color: $body-color !important; background: $oz-soft; }
+  &.active { color: $primary !important; background: rgba($primary, .09); }
 }
 
-#about-me-text{
-  align-items: end;
+.quarto-color-scheme-toggle .bi::before { filter: none; }
+
+// ---------- Title banner (projects / posts) --------------------------------
+.quarto-title-banner {
+  background: linear-gradient(135deg, $oz-banner 0%, mix($oz-banner, #000, 78%) 100%);
+  color: #fff;
+  padding: 3.25rem 0 2.75rem;
+  margin-bottom: 2rem;
+
+  .title { color: #fff; font-size: clamp(2rem, 4vw, 2.9rem); }
+  .description, .subtitle { color: rgba(#fff, .85); font-size: 1.1rem; max-width: 46rem; }
+  .quarto-category {
+    color: #fff;
+    background: rgba(#fff, .15);
+    border: none;
+  }
+}
+
+.quarto-title-meta-heading { color: $oz-muted; font-size: .72rem; letter-spacing: .1em; }
+
+// ---------- Categories (pills) ---------------------------------------------
+.quarto-category,
+.listing-category {
+  border: none !important;
+  border-radius: 999px !important;
+  background: rgba($primary, .1);
+  color: $primary !important;
+  font-size: .72rem !important;
+  font-weight: 500;
+  padding: .15rem .6rem !important;
+  text-transform: none !important;
+  opacity: 1 !important;
+  letter-spacing: 0;
+}
+
+// ---------- Listing cards ---------------------------------------------------
+.quarto-grid-item.card {
+  background: $oz-card;
+  border: 1px solid $oz-border;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 34px $oz-shadow;
+    border-color: rgba($primary, .35);
+  }
+
+  .card-img-top { border-bottom: 1px solid $oz-border; }
+  .card-img-top img, img.thumbnail-image { object-fit: cover; width: 100%; }
+
+  .card-body { padding: 1.1rem 1.2rem .4rem; }
+  .card-title {
+    font-family: $headings-font-family;
+    font-weight: 600;
+    font-size: 1.15rem;
+    line-height: 1.3;
+    color: $body-color;
+  }
+  .card-text, .listing-description { color: $oz-muted; font-size: .92rem; }
+  .card-footer { background: transparent; border-top: none; padding: .4rem 1.2rem 1.1rem; color: $oz-muted; font-size: .8rem; }
+  .listing-categories { margin-top: .5rem; }
+}
+
+.card-img-top .listing-item-img-placeholder,
+.listing-item-img-placeholder {
+  background: linear-gradient(135deg, rgba($primary, .18), rgba($oz-accent, .18)) !important;
+}
+
+// ---------- Home page -------------------------------------------------------
+.hero {
   display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: 3.5rem;
+
+  > * { min-width: 0; }
+  align-items: center;
+  padding: 3.5rem 0 3rem;
+
+  @media (max-width: 860px) {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+    padding-top: 1.5rem;
+  }
 }
 
+.hero-eyebrow {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .5rem;
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: $oz-accent;
+
+  &::before {
+    content: "";
+    width: 1.75rem;
+    height: 2px;
+    background: $oz-accent;
+  }
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 5.2vw, 3.9rem);
+  line-height: 1.06;
+  margin: .9rem 0 1.25rem;
+  border: none;
+  padding: 0;
+
+  em { font-style: italic; color: $primary; font-weight: 600; }
+}
+
+.hero-lead {
+  font-size: 1.18rem;
+  color: $oz-muted;
+  max-width: 34rem;
+  overflow-wrap: break-word;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-top: 2rem;
+
+  p { display: contents; }
+}
+
+.btn-oz,
+.btn-oz-ghost {
+  display: inline-flex !important;
+  align-items: center;
+  gap: .5rem;
+  padding: .7rem 1.3rem;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: .95rem;
+  text-decoration: none !important;
+  transition: transform .15s ease, background-color .15s ease, border-color .15s ease, color .15s ease;
+
+  &:hover { transform: translateY(-1px); }
+}
+
+.btn-oz {
+  background: $primary;
+  color: $oz-on-primary !important;
+  border: 1px solid $primary;
+  &:hover { background: mix($primary, $oz-on-primary, 88%); }
+}
+
+.btn-oz-ghost {
+  background: transparent;
+  color: $body-color !important;
+  border: 1px solid $oz-border;
+  &:hover { border-color: $primary; color: $primary !important; }
+}
+
+.hero-photo {
+  position: relative;
+
+  img {
+    width: 100%;
+    aspect-ratio: 5 / 4;
+    object-fit: cover;
+    object-position: 62% center;
+    border-radius: 24px;
+    box-shadow: 0 30px 60px -20px rgba(0, 0, 0, .3);
+    position: relative;
+    z-index: 1;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 1.25rem -1.25rem -1.25rem 1.25rem;
+    border-radius: 24px;
+    background: rgba($oz-accent, .14);
+    z-index: 0;
+  }
+
+  @media (max-width: 860px) { &::before { display: none; } }
+}
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 3.5rem 0 1.25rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid $oz-border;
+
+  h2 {
+    margin: 0;
+    font-size: 1.9rem;
+    border: none;
+    padding: 0;
+  }
+
+  p { margin: 0; }
+  @media (max-width: 576px) { h2 { font-size: 1.5rem; } }
+  a {
+    font-size: .95rem;
+    font-weight: 500;
+    color: $primary;
+    text-decoration: none !important;
+    white-space: nowrap;
+  }
+}
+
+.section-sub { color: $oz-muted; margin-top: -.5rem; max-width: 40rem; }
+
+// ---------- Wiki topic cards ------------------------------------------------
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 1rem;
+}
+
+.topic-card {
+  position: relative;
+  background: $oz-card;
+  border: 1px solid $oz-border;
+  border-radius: 16px;
+  padding: 1.3rem 1.3rem 1.1rem;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px $oz-shadow;
+    border-color: rgba($primary, .35);
+  }
+
+  .bi {
+    display: inline-grid;
+    place-items: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 10px;
+    background: rgba($primary, .1);
+    color: $primary;
+    font-size: 1.15rem;
+    margin-bottom: .8rem;
+  }
+
+  p { margin: 0; }
+  p:first-of-type { margin-bottom: .2rem; }
+
+  a {
+    font-family: $headings-font-family;
+    font-weight: 600;
+    font-size: 1.15rem;
+    color: $body-color !important;
+    text-decoration: none !important;
+  }
+
+  .topic-desc { color: $oz-muted; font-size: .9rem; line-height: 1.5; }
+}
+
+// ---------- Sidebar & TOC ---------------------------------------------------
+#quarto-sidebar {
+  font-size: .9rem;
+
+  .sidebar-item-text { color: $oz-muted; }
+  .sidebar-item-section > .sidebar-item-container .sidebar-item-text {
+    font-weight: 600;
+    color: $body-color;
+  }
+  .sidebar-link.active .sidebar-item-text,
+  .sidebar-link:hover .sidebar-item-text { color: $primary; }
+}
+
+#TOC, #quarto-margin-sidebar {
+  font-size: .85rem;
+
+  .nav-link { color: $oz-muted; }
+  .nav-link.active { color: $primary; border-left-color: $primary !important; }
+}
+
+// ---------- Content elements ------------------------------------------------
+div.sourceCode, pre.sourceCode {
+  border: 1px solid $oz-border;
+  border-radius: 12px;
+}
+
+details.code-fold > summary { color: $oz-muted; font-size: .85rem; }
+
+.callout { border-radius: 12px; }
+
+blockquote {
+  border-left: 3px solid $oz-accent;
+  color: $oz-muted;
+  padding-left: 1.1rem;
+}
+
+// ---------- About page ------------------------------------------------------
+.quarto-about-trestles,
+.quarto-about-jolla {
+  .about-link {
+    border: 1px solid $oz-border !important;
+    border-radius: 999px !important;
+    color: $body-color !important;
+    padding: .4rem .9rem !important;
+    transition: border-color .15s ease, color .15s ease;
+    &:hover { border-color: $primary !important; color: $primary !important; }
+  }
+  .about-image { box-shadow: 0 20px 40px -18px rgba(0, 0, 0, .35); }
+}
+
+// ---------- CV ---------------------------------------------------------------
+.cv-entry {
+  border-left: 2px solid $oz-border;
+  padding: .1rem 0 .1rem 1.1rem;
+  margin: 1.4rem 0;
+}
+
+// ---------- Footer -----------------------------------------------------------
+.nav-footer {
+  border-top: 1px solid $oz-border;
+  font-size: .88rem;
+  color: $oz-muted;
+  min-height: 4.5rem;
+
+  a { color: $oz-muted; }
+  .nav-link:hover, a:hover { color: $primary; }
+  .bi { font-size: 1.05rem; }
+}

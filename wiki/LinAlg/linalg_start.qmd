@@ -1,8 +1,10 @@
 ---
-title: 'Linear Algebra' 
-page-layout: full
-format:
-  html:
-    mermaid:
-      theme: default
+title: 'Linear Algebra'
+description: 'From systems of linear equations to eigenvalues.'
 ---
+
+- [Systems of Linear Equations](sys.qmd)
+- [Basis](basis.qmd)
+- [Linear Maps](linear-maps.qmd)
+- [Eigenvalues and -vectors](eigen.qmd)
+- [Orthonormal Basis](norm.qmd)

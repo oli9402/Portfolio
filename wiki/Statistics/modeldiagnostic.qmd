@@ -1,5 +1,5 @@
 ---
-title: "modeldiagnostic"
+title: "Model Diagnostics"
 format: html
 ---
 

@@ -1,74 +1,77 @@
 project:
   type: website
   output-dir: docs
+  resources:
+    - img/placeholder.svg
 
 
 website:
   title: "Oliver Zingg"
+  description: "Psychology, statistics and data science — projects and a personal knowledge base."
   favicon: "oli.jpg"
   page-navigation: true
+  back-to-top-navigation: true
+  open-graph: true
+  twitter-card: true
+  search:
+    location: navbar
+    type: overlay
   page-footer:
-    background: "#000000"
-    center:  
+    left: "© 2026 Oliver Zingg · Built with [Quarto](https://quarto.org)"
+    right:
+      - href: mailto:oliver9402@gmail.com
+        icon: envelope
+        aria-label: Email
       - href: https://github.com/oli9402
         icon: github
         aria-label: GitHub
-      - href: https://twitter.com/oliver_zingg
-        icon: twitter
-        aria-label: Twitter
       - href: https://www.linkedin.com/in/oliver-zingg-321b0228a/
         icon: linkedin
         aria-label: LinkedIn
+      - href: https://twitter.com/oliver_zingg
+        icon: twitter-x
+        aria-label: Twitter / X
   navbar:
-    background: "#f0eeeb"
     title: 'Oliver Zingg'
     collapse-below: lg
     pinned: true
     right:
-      - icon: house-door
-        href: index.qmd
+      - href: index.qmd
         text: Home
-      - icon: file-person
-        href: about.qmd
-      - icon: list-task
-        href: projects.qmd
-      - icon: book-half
+      - href: about.qmd
+        text: About
+      - href: projects.qmd
+        text: Projects
+      - href: wiki.qmd
         text: Wiki
-        href: wiki.qmd
-       
-  sidebar: 
-      - title: "Wiki"
+      - href: CV.qmd
+        text: CV
+
+  sidebar:
+      - id: wiki
+        title: "Wiki"
+        logo-href: wiki.qmd
         style: "docked"
-        background: light
         contents:
          - href: wiki.qmd
-           text: 'Personal Wiki'
-         - text: '------'
-         - section: 'Python'
-           href: wiki/Python/python_start.qmd
-           contents:
-             - text: 'Basics'
-               href: wiki/Python/basics.qmd
-             - text: 'Wrangling'
-               href: wiki/Python/wrangling.qmd
-             - text: 'Retrueval Augmented Generation'
-               href: wiki/Python/rag.qmd
+           text: 'Overview'
          - section: 'Statistics'
            href: wiki/Statistics/stats_start.qmd
-           contents: 
+           contents:
            - text: 'Confidence Intervals'
              href: wiki/Statistics/ci.qmd
            - text: 'Generalized Linear Models'
              href: wiki/Statistics/glm.qmd
-           - text: 'Deep Learning Python Cheatsheet'
-             icon: 'Document'
-             href: wiki/Statistics/dl.qmd
-           - text: 'Model Diagnostic'
+           - text: 'Model Diagnostics'
              href: wiki/Statistics/modeldiagnostic.qmd
            - text: 'Longitudinal Data'
-             href: wiki/Statistics/logitudinal.qmd
+             href: wiki/Statistics/longitudinal.qmd
            - text: 'Graph Neural Networks'
              href: wiki/Statistics/graphNN.qmd
+           - text: 'Deep Learning Cheatsheet'
+             href: wiki/Statistics/dl.qmd
+           - text: 'Glossary'
+             href: wiki/Statistics/Glossary.qmd
          - section: 'Linear Algebra'
            href: wiki/LinAlg/linalg_start.qmd
            contents:
@@ -82,28 +85,49 @@ website:
               href: wiki/LinAlg/eigen.qmd
             - text: 'Orthonormal Basis'
               href: wiki/LinAlg/norm.qmd
+         - section: 'Python'
+           href: wiki/Python/python_start.qmd
+           contents:
+             - text: 'Basics'
+               href: wiki/Python/basics.qmd
+             - text: 'Retrieval Augmented Generation'
+               href: wiki/Python/rag.qmd
+             - text: 'Large Language Models'
+               href: wiki/Python/LLM.qmd
+             - text: 'Git'
+               href: wiki/Python/git.qmd
          - section: 'SQL'
            href: wiki/SQL/start.qmd
            contents:
             - text: 'SQL Exercises'
               href: wiki/SQL/index.qmd
-            
-        
+         - section: 'Research Methods'
+           contents:
+            - text: 'Research Design'
+              href: wiki/DOE/doe.qmd
+            - text: 'Questionnaires'
+              href: wiki/Questionnaires/start.qmd
+
+
 format:
   html:
     toc: true
     code-link: true
     code-fold: true
-    mainfont: Poltawski Nowy
     grid:
-      sidebar-width: 200px
-      body-width: 1000px
-      margin-width: 200px
-    highlight-style: breeze
-    theme: [Lux, rwds.scss]
+      sidebar-width: 240px
+      body-width: 860px
+      margin-width: 240px
+    highlight-style:
+      light: a11y
+      dark: a11y-dark
+    theme:
+      light: [cosmo, theme.scss, theme-light.scss]
+      dark: [cosmo, theme.scss, theme-dark.scss]
+    respect-user-color-scheme: true
     smooth-scroll: true
     anchor-sections: true
 
 
-execute: 
+execute:
   freeze: auto

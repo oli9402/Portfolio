@@ -1,12 +1,18 @@
 ---
 title: "Projects"
-listing: 
+description: "Theses, analyses and experiments in R, Python and Quarto."
+listing:
   contents: posts
   sort: "date-modified desc"
   type: grid
+  grid-columns: 3
+  image-height: 190px
+  image-placeholder: img/placeholder.svg
   categories: true
-  sort-ui: false #[title, date]
-  filter-ui: false 
+  sort-ui: false
+  filter-ui: false
+  fields: [image, title, description, categories]
+  max-description-length: 140
 page-layout: full
 title-block-banner: true
 ---

@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Theses, analyses and experiments in R, Python and Quarto.">
 
 <title>Projects – Oliver Zingg</title>
 <style>
@@ -39,10 +40,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-8d579c7e4cb5e38eaddfdf7e7f03f655.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-3bdfd843abe482fadfd1e82bbf3c96b2.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-cc3813e79965934a9b06c949b3be39b7.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-3bdfd843abe482fadfd1e82bbf3c96b2.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-f2f2a4d31ae93ce9411d6c9e03acd636.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-ae9d141315d85717890e88f7334f7cb6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-b1273b5f530586573bad60cbd84b87db.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-ae9d141315d85717890e88f7334f7cb6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -55,7 +60,6 @@ ul.task-list li input[type="checkbox"] {
     "/",
     "s"
   ],
-  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -80,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-image','listing-title','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
       searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
     };
@@ -131,9 +135,188 @@ window.Quarto = {
 };
 </script>
 
+<meta property="og:title" content="Projects – Oliver Zingg">
+<meta property="og:description" content="Theses, analyses and experiments in R, Python and Quarto.">
+<meta property="og:image" content="./posts/Semdif/sem_dif2.svg">
+<meta property="og:site_name" content="Oliver Zingg">
+<meta name="twitter:title" content="Projects – Oliver Zingg">
+<meta name="twitter:description" content="Theses, analyses and experiments in R, Python and Quarto.">
+<meta name="twitter:image" content="./posts/Semdif/sem_dif2.svg">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const queryPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkModeDefault = queryPrefersDark.matches;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    queryPrefersDark.addEventListener("change", e => {
+      if(window.localStorage.getItem("quarto-color-scheme") !== null)
+        return;
+      const alternate = e.matches
+      toggleColorMode(alternate);
+      localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
+      toggleGiscusIfUsed(alternate, darkModeDefault);
+    });
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -153,28 +336,29 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> <i class="bi bi-house-door" role="img">
-</i> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> <i class="bi bi-file-person" role="img">
-</i> 
-<span class="menu-text">About Me</span></a>
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./projects.html" aria-current="page"> <i class="bi bi-list-task" role="img">
-</i> 
+    <a class="nav-link active" href="./projects.html" aria-current="page"> 
 <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./wiki.html"> <i class="bi bi-book-half" role="img">
-</i> 
+    <a class="nav-link" href="./wiki.html"> 
 <span class="menu-text">Wiki</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./CV.html"> 
+<span class="menu-text">CV</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -184,7 +368,12 @@ window.Quarto = {
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
       <h1 class="title">Projects</h1>
-                      </div>
+                  <div>
+        <div class="description">
+          Theses, analyses and experiments in R, Python and Quarto.
+        </div>
+      </div>
+                </div>
   </div>
     
   
@@ -213,44 +402,35 @@ window.Quarto = {
 
 
 
+
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
 <div class="g-col-1" data-index="0" data-listing-file-modified-sort="1733156466922" data-listing-reading-time-sort="1" data-listing-word-count-sort="121">
 <a href="./posts/Semdif/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img loading="lazy" src="./posts/Semdif/sem_dif2.svg" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" src="./posts/Semdif/sem_dif2.svg" class="thumbnail-image card-img" style="height: 190px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Visualizing Semantic Difference Scales
 </h5>
 <div class="card-text listing-description delink">
-A common way to test user experience of a product of app is to use semantic difference scales where adjectives of for example opposite meaning are placed compared. The…
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
+A common way to test user experience of a product of app is to use semantic difference scales where adjectives of for example opposite…
 </div>
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="1" data-listing-file-modified-sort="1751398107962" data-listing-reading-time-sort="2" data-listing-word-count-sort="206">
+<div class="g-col-1" data-index="1" data-listing-file-modified-sort="1793488999769" data-listing-reading-time-sort="2" data-listing-word-count-sort="206">
 <a href="./posts/First R Package/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<p class="card-img-top"><img src="img/placeholder.svg" style="height: 190px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
-index
+Building My First R Package
 </h5>
 <div class="card-text listing-description delink">
-In normal R Scripts you call libraries but in a package you track dependencies differently with using <code>use_package()</code> which adds the package to the DESCRIPTION file.
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
+In normal R Scripts you call libraries but in a package you track dependencies differently with using <code>use_package()</code> which adds the package…
 </div>
 </div>
 </div></a>
@@ -259,7 +439,7 @@ In normal R Scripts you call libraries but in a package you track dependencies d
 <a href="./posts/Visualizing Likert Scale/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img loading="lazy" src="./posts/Visualizing Likert Scale/likert001.png" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" src="./posts/Visualizing Likert Scale/likert001.png" class="thumbnail-image card-img" style="height: 190px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -277,14 +457,6 @@ Visualizing Likert Scales
 <div class="card-text listing-description delink">
 <p>Diverging Bar Plots for visualizing positive vs.&nbsp;negative opinions</p>
 </div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Oliver Zingg
-</div>
-<div class="listing-date">
-Nov 21, 2024
-</div>
-</div>
 </div>
 </div></a>
 </div>
@@ -292,7 +464,7 @@ Nov 21, 2024
 <a href="./posts/Presentation using Quarto/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img loading="lazy" src="./posts/Presentation using Quarto/quarto.png" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" src="./posts/Presentation using Quarto/quarto.png" class="thumbnail-image card-img" style="height: 190px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -312,15 +484,7 @@ Using Quarto for interactive Presentations
 
 </div>
 <div class="card-text listing-description delink">
-<p>A simple demonstration of how to use R, Revealjs and Echarts4r to create interactive Presentations. HTML file can be easily sent to other and opened with different browsers.…</p>
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Oliver Zingg
-</div>
-<div class="listing-date">
-Nov 19, 2024
-</div>
+<p>A simple demonstration of how to use R, Revealjs and Echarts4r to create interactive Presentations. HTML file can be easily sent to other…</p>
 </div>
 </div>
 </div></a>
@@ -329,7 +493,7 @@ Nov 19, 2024
 <a href="./posts/Masterarbeit/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img loading="lazy" src="./posts/Masterarbeit/MA.jpg" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" src="./posts/Masterarbeit/MA.jpg" class="thumbnail-image card-img" style="height: 190px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -349,15 +513,7 @@ Masterarbeit
 
 </div>
 <div class="card-text listing-description delink">
-My master thesis <strong>“Investigating the Neuronal Basis of Learning Processes and Memory Formation in Children and Adolescents with Various Psychiatric Disorders”</strong> can be found on …
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Oliver Zingg
-</div>
-<div class="listing-date">
-Jun 1, 2023
-</div>
+My master thesis <strong>“Investigating the Neuronal Basis of Learning Processes and Memory Formation in Children and Adolescents with Various…</strong>
 </div>
 </div>
 </div></a>
@@ -366,22 +522,14 @@ Jun 1, 2023
 <a href="./posts/variable_selection/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img loading="lazy" src="./posts/variable_selection/jacksonj.jpg" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" src="./posts/variable_selection/jacksonj.jpg" class="thumbnail-image card-img" style="height: 190px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Accuracy of selected predictors per sample size
 </h5>
 <div class="card-text listing-description delink">
-With this exercise we want to inspect how <strong>lm function</strong> and <strong>step function</strong> vary when it comes to selection of correct variables depending on sample size.
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-
-</div>
-<div class="listing-date">
-Oct 10, 2022
-</div>
+With this exercise we want to inspect how <strong>lm function</strong> and <strong>step function</strong> vary when it comes to selection of correct variables depending on…
 </div>
 </div>
 </div></a>
@@ -390,7 +538,7 @@ Oct 10, 2022
 <a href="./posts/Bachelorarbeit/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img loading="lazy" src="./posts/Bachelorarbeit/BA.jpg" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" src="./posts/Bachelorarbeit/BA.jpg" class="thumbnail-image card-img" style="height: 190px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -408,15 +556,7 @@ Bachelorarbeit
 
 </div>
 <div class="card-text listing-description delink">
-My bachelor thesis <strong>“Comparison between Support Vector Machine and Convolutional Neural Network for Alzheimer’s Disease Classification”</strong> can be found on GitHub.
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Oliver Zingg
-</div>
-<div class="listing-date">
-Jun 1, 2021
-</div>
+My bachelor thesis <strong>“Comparison between Support Vector Machine and Convolutional Neural Network for Alzheimer’s Disease Classification”</strong> can…
 </div>
 </div>
 </div></a>
@@ -424,7 +564,7 @@ Jun 1, 2021
 <div class="g-col-1" data-index="7" data-categories="SGVhZGxpbmVzJTJDR29vZ2xlJTJDUHl0aG9uJTJDU2VudGltZW50JTIwQW5hbHlzaXM=" data-listing-date-sort="1700434800000" data-listing-file-modified-sort="1732056496038" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="150">
 <a href="./posts/Google Headlines Sentiment Analysis/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<p class="card-img-top"><img src="img/placeholder.svg" style="height: 190px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Google Headlines Analysis
@@ -443,21 +583,13 @@ Google Headlines Analysis
 <div class="card-text listing-description delink">
 <p>…</p>
 </div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Oliver Zingg
-</div>
-<div class="listing-date">
-Nov 20, 2023
-</div>
-</div>
 </div>
 </div></a>
 </div>
 <div class="g-col-1" data-index="8" data-categories="Z2dwbG90MiUyQ1Zpc3VhbGl6YXRpb24lMkNCb3hwbG90JTJDQ29tcGFueSUyMFRoZW1l" data-listing-date-sort="1698793200000" data-listing-file-modified-sort="1732195658789" data-listing-date-modified-sort="1732057200000" data-listing-reading-time-sort="5" data-listing-word-count-sort="900">
 <a href="./posts/Theme/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="posts/Theme/index_files/figure-html/unnamed-chunk-2-1.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img src="posts/Theme/index_files/figure-html/unnamed-chunk-2-1.png" style="height: 190px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Own Theme
@@ -476,14 +608,6 @@ Own Theme
 <div class="card-text listing-description delink">
 <p>Experimenting with own themes</p>
 </div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Oliver Zingg
-</div>
-<div class="listing-date">
-Nov 1, 2023
-</div>
-</div>
 </div>
 </div></a>
 </div>
@@ -491,7 +615,7 @@ Nov 1, 2023
 <a href="./posts/confidence_intervals/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img loading="lazy" src="./posts/confidence_intervals/ci.png" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" src="./posts/confidence_intervals/ci.png" class="thumbnail-image card-img" style="height: 190px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -500,14 +624,6 @@ Confidence Intervals
 <div class="card-text listing-description delink">
 The following example simulates the process of finding the <strong>mean age value</strong> of a population of voters.
 </div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Oliver Zingg
-</div>
-<div class="listing-date">
-Sep 6, 2023
-</div>
-</div>
 </div>
 </div></a>
 </div>
@@ -515,22 +631,14 @@ Sep 6, 2023
 <a href="./posts/Data Visualization with R/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img loading="lazy" src="./posts/Data Visualization with R/pic.png" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" src="./posts/Data Visualization with R/pic.png" class="thumbnail-image card-img" style="height: 190px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Themes for Data Visualization with R
 </h5>
 <div class="card-text listing-description delink">
-Annotionations can be great to highlight information that gets lost otherwise. For example we see that South Africa increases its GDP per capita from 2002 to 2007 but life…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Oliver Zingg
-</div>
-<div class="listing-date">
-Sep 10, 2023
-</div>
+Annotionations can be great to highlight information that gets lost otherwise. For example we see that South Africa increases its GDP per…
 </div>
 </div>
 </div></a>
@@ -538,7 +646,7 @@ Sep 10, 2023
 <div class="g-col-1" data-index="11" data-categories="TGluZWFyJTIwTWl4ZWQlMjBFZmZlY3RzJTJDU3RhdGlzdGljcyUyQ1JhbmRvbSUyMEVmZmVjdHM=" data-listing-date-sort="1693864800000" data-listing-file-modified-sort="1732023063846" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="730">
 <a href="./posts/Simpsons_Paradox/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="posts/Simpsons_Paradox/index_files/figure-html/unnamed-chunk-3-1.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img src="posts/Simpsons_Paradox/index_files/figure-html/unnamed-chunk-3-1.png" style="height: 190px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Simpson’s Paradox
@@ -553,24 +661,29 @@ Simpson’s Paradox
 
 </div>
 <div class="card-text listing-description delink">
-Simpson’s Paradox bezeichnet ein statistische Phänomen, in dem die Daten eine hierarchisch angeordnete Struktur aufweisen. Die Analyse der Daten kann deshalb auf…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Oliver Zingg
-</div>
-<div class="listing-date">
-Sep 5, 2023
-</div>
+Simpson’s Paradox bezeichnet ein statistische Phänomen, in dem die Daten eine hierarchisch angeordnete Struktur aufweisen. Die Analyse der…
 </div>
 </div>
 </div></a>
 </div>
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</div><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
@@ -973,19 +1086,22 @@ Sep 5, 2023
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-      &nbsp;
-    </div>   
+<p>© 2026 Oliver Zingg · Built with <a href="https://quarto.org">Quarto</a></p>
+</div>   
     <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/oli9402">
-      <i class="bi bi-github" role="img" aria-label="GitHub">
+    <a class="nav-link" href="mailto:oliver9402@gmail.com">
+      <i class="bi bi-envelope" role="img" aria-label="Email">
 </i> 
     </a>
   </li>  
     <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/oliver_zingg">
-      <i class="bi bi-twitter" role="img" aria-label="Twitter">
+    <a class="nav-link" href="https://github.com/oli9402">
+      <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
     </a>
   </li>  
@@ -995,10 +1111,13 @@ Sep 5, 2023
 </i> 
     </a>
   </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/oliver_zingg">
+      <i class="bi bi-twitter-x" role="img" aria-label="Twitter / X">
+</i> 
+    </a>
+  </li>  
 </ul>
-    </div>
-    <div class="nav-footer-right">
-      &nbsp;
     </div>
   </div>
 </footer>

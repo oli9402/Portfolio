@@ -1,4 +1,9 @@
 ---
-title: 'Collection of Python Knowledge'
+title: 'Python'
+description: 'A collection of Python knowledge.'
 ---
 
+- [Basics](basics.qmd)
+- [Retrieval Augmented Generation](rag.qmd)
+- [Large Language Models](LLM.qmd)
+- [Git](git.qmd)

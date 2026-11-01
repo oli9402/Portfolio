@@ -64,7 +64,7 @@ h2 { margin-top: 2.5rem; }
 
 .navbar > .container-fluid,
 .navbar > .container-xxl {
-  max-width: 1440px;
+  max-width: min(92vw, 2100px);
   margin: 0 auto;
 }
 
@@ -235,7 +235,7 @@ h2 { margin-top: 2.5rem; }
 .hero-lead {
   font-size: 1.18rem;
   color: $oz-muted;
-  max-width: 34rem;
+  max-width: 40rem;
   overflow-wrap: break-word;
 }
 
@@ -451,11 +451,52 @@ blockquote {
 }
 
 // ---------- Wider layout ----------------------------------------------------
+// Full-width pages (home, projects): scale with the window instead of a fixed cap.
 .page-layout-full #quarto-document-content,
 .page-layout-full main.content {
-  max-width: 1360px;
+  max-width: min(92vw, 2100px);
   margin-left: auto;
   margin-right: auto;
 }
 
-.quarto-title-banner .quarto-title { max-width: 1360px; }
+.quarto-title-banner .quarto-title { max-width: min(92vw, 2100px); }
+
+// Pages with the docked wiki sidebar / TOC: let the body column absorb the
+// spare width on large screens instead of leaving it empty on the right.
+@media (min-width: 1400px) {
+  body.docked #quarto-content.page-columns {
+    grid-template-columns:
+      [screen-start] 1.5rem
+      [screen-start-inset page-start] 260px
+      [page-start-inset] 2rem
+      [body-start-outset] 0
+      [body-start] 1rem
+      [body-content-start] minmax(600px, 1fr)
+      [body-content-end] 1rem
+      [body-end] 0
+      [body-end-outset] 2rem
+      [page-end-inset] 240px
+      [page-end] 1.5rem
+      [screen-end-inset] 0
+      [screen-end];
+  }
+
+  // Pages without the wiki sidebar (posts, CV, about, home, projects):
+  // centred, symmetric grid applied to every page-columns block so the
+  // title banner, title meta and body stay aligned.
+  body:not(.docked) .page-columns {
+    grid-template-columns:
+      [screen-start] minmax(1.5rem, 1fr)
+      [screen-start-inset page-start] 240px
+      [page-start-inset] 2rem
+      [body-start-outset] 0
+      [body-start] 1rem
+      [body-content-start] minmax(600px, 1500px)
+      [body-content-end] 1rem
+      [body-end] 0
+      [body-end-outset] 2rem
+      [page-end-inset] 240px
+      [page-end screen-end-inset] minmax(1.5rem, 1fr)
+      [screen-end];
+  }
+}
